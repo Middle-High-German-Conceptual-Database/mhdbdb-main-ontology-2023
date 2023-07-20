@@ -1,0 +1,5096 @@
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix constants: <https://dh.plus.ac.at/constants/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
+@prefix dhpluso: <https://dh.plus.ac.at/ontology#> .
+@prefix dhplusoValidation: <https://dh.plus.ac.at/dhplusoValidation/> .
+@prefix dnb: <https://d-nb.info/> .
+@prefix ecrm: <http://erlangen-crm.org/200717/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gnd: <https://d-nb.info/gnd/> .
+@prefix gndo: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix parameter: <https://dh.plus.ac.at/parameter-ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix tmp: <https://dh.plus.ac.at/tmp/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+constants:EndpointDhplusInferTemp a sh:SPARQLFunction ;
+    rdfs:label "Sparql endpoint inferTemp."@de,
+        "Sparql endpoint inferTemp."@en ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT (<http://v220210975074161988.quicksrv.de:7200/repositories/inferTemp> AS ?res)
+        WHERE {}
+        """ .
+
+constants:EndpointDhplusInstances a sh:SPARQLFunction ;
+    rdfs:label "Sparql endpoint DHPLUS."@de,
+        "Sparql endpoint DHPLUS."@en ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT (<http://v220210975074161988.quicksrv.de:7200/repositories/dhPLUS> AS ?res)
+        WHERE {}
+        """ .
+
+constants:EndpointDhplusOntology a sh:SPARQLFunction ;
+    rdfs:label "Sparql endpoint DHPLUS Ontology and DHPLUS Vocabulary."@de,
+        "Sparql endpoint DHPLUS Ontology and DHPLUS Vocabulary."@en ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT (<http://v220210975074161988.quicksrv.de:7200/repositories/dhPLUS-Ontology> AS ?res)
+        WHERE {}
+        """ .
+
+constants:EndpointMirroredAuthorityFiles a sh:SPARQLFunction ;
+    rdfs:label "Sparql endpoint AUTHORITYFILES."@de,
+        "Sparql endpoint AUTHORITYFILES."@en ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+    SELECT (<http://v220210975074161988.quicksrv.de:7200/repositories/AuthorityFiles> AS ?res)
+    WHERE {}
+    """ .
+
+constants:EndpointWD a sh:SPARQLFunction ;
+    rdfs:label "Sparql endpoint WD."@de,
+        "Sparql endpoint WD."@en ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT (<https://query.wikidata.org/sparql> AS ?res)
+        WHERE {}
+        """ .
+
+constants:MirroredAuthorityFilesGraphPrefix a sh:SPARQLFunction ;
+    rdfs:label "Named Graph Prefix for Authorityfiles."@de,
+        "Named Graph Prefix for Authorityfiles."@en ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+
+    SELECT (?res)
+    WHERE {
+        BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+        BIND(IRI(CONCAT(STR(?af),'/rdf-graphs/')) AS ?res)
+    }
+    """ .
+
+dhplusoValidation:dhplusoOwlClass a sh:NodeShape ;
+    rdfs:label "Validierung von owl:class für dhPLUS Ontologien"@de,
+        "Validation of owl:class for dhPLUS Ontologies"@en ;
+    rdfs:definition "Validiert owl:class."@de,
+        "Validates owl:class."@en ;
+    sh:property [ sh:NodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:path dcterms:created ;
+            sh:severity sh:Violation ],
+        [ sh:NodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ],
+        [ sh:NodeKind sh:IRI ;
+            sh:minCount 1 ;
+            sh:path rdfs:subClassOf ;
+            sh:severity sh:Violation ],
+        [ sh:NodeKind sh:Literal ;
+            sh:languageIn ( "de" "en" ) ;
+            sh:minCount 2 ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:NodeKind sh:Literal ;
+            sh:languageIn ( "de" "en" ) ;
+            sh:minCount 2 ;
+            sh:path skos:definition ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:NodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:path dc:creator ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhplusoValidation:targetClassNS ;
+            tmp:nameSpace "https://dh.plus.ac.at/ontology#" ] .
+
+dhplusoValidation:dhplusoOwlProperty a sh:NodeShape ;
+    rdfs:label "Validierung von OWL Eigenschaften für dhPLUS Ontologien"@de,
+        "Validation of owl properties for dhPLUS Ontologies"@en ;
+    rdfs:definition "Validiert OWL Eigenschaften."@de,
+        "Validates owl properties."@en ;
+    sh:property [ sh:NodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:path dc:creator ;
+            sh:severity sh:Violation ],
+        [ sh:NodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:path dcterms:created ;
+            sh:severity sh:Violation ],
+        [ sh:NodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ],
+        [ sh:NodeKind sh:IRI ;
+            sh:path rdfs:subPropertyOf ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:path rdfs:domain ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:path rdfs:range ;
+            sh:severity sh:Violation ],
+        [ sh:NodeKind sh:Literal ;
+            sh:languageIn ( "de" "en" ) ;
+            sh:minCount 2 ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:NodeKind sh:Literal ;
+            sh:languageIn ( "de" "en" ) ;
+            sh:path skos:definition ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ] ;
+    sh:target [ a dhplusoValidation:targetPropertyNS ;
+            tmp:nameSpace "https://dh.plus.ac.at/ontology#" ] .
+
+dhpluso:AddReificationStatements a sh:NodeShape ;
+    rdfs:label "Hinzufügen von Reification Statements für alle abgeleiteten Triple."@de,
+        "Add reification statements for all inferred Triple."@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-11" ;
+    dcterms:modified "2021-10-12+09:10" ;
+    rdfs:definition "Hinzufügen von Reification Statements für alle abgeleiteten Triple."@de,
+        "Add reification statements for all inferred Triple."@en ;
+    sh:order 3 ;
+    sh:rule [ a sh:SPARQLRule ;
+            sh:construct """
+            construct {
+    ?statement
+        a rdf:Statement ;
+        rdf:subject ?this ;
+        rdf:predicate ?p ;
+        rdf:object ?o ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;                    
+    .
+} where {                 
+    ?in a parameter:InputParameterSet .                            
+    OPTIONAL{?in parameter:addReificationStatements ?addReificationStatements}
+    OPTIONAL{?in parameter:now ?now}
+    ?in parameter:hasParameter ?parameter .
+    ?parameter parameter:authorityUri ?authorityUri .
+    ?this ?p ?o .      
+    
+    BIND (
+        IF(
+            BOUND(?addReificationStatements),
+            IF(
+                ?addReificationStatements = true,
+                BNODE(),
+                ?nothing
+            ),
+            ?nothing
+        )
+        AS ?statement
+    )  
+}
+        """ ;
+            sh:prefixes constants:Prefixes ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Entity ] .
+
+dhpluso:DhPlusParameterUri a sh:SPARQLFunction ;
+    rdfs:comment "generate a new dhPLUS Parameter Uri" ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener String"@de,
+                "passed string"@en ;
+            sh:path tmp:s ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType rdf:Description ;
+    sh:select """SELECT ?uri
+WHERE {
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    SERVICE ?wd {
+        OPTIONAL {
+            ?wdUri ?p $s .
+            FILTER(STRSTARTS(STR(?wdUri),STR(wd:)))
+            FILTER(!(STRSTARTS(STR(?wdUri),STR(wds:))))
+        }
+    }
+
+    BIND (
+        IF (
+            STRSTARTS(
+                STR($s), STR(wd:)
+            ),
+            $s,
+            IF (
+                BOUND(?wdUri),
+                ?wdUri,
+                $s
+            )
+        )
+        AS ?foundUri
+    )
+
+    BIND (
+        IRI (
+            CONCAT(
+                STR(parameter:) ,
+                SHA256(STR(?foundUri))
+            )
+        )
+        AS ?uri
+    )
+}""" .
+
+dhpluso:DhPlusUri a sh:SPARQLFunction ;
+    rdfs:label "GET dhPLUS Uri"@de,
+        "GET dhPLUS Uri"@en ;
+    rdfs:definition "Erzeugt eine dhPLUS Uri aus einer übergebenen Authority URI. In dieser Reihenfolge wird eine Uri erzeugt: 1. Entsprechung im Triple Store 2. Entsprechung im Parameterdatensatz 3. Entsprechung in Wikidata, Uri erzeugt mit SHA256 4 erzeugung aus übergebener Uri (SHA256)"@de,
+        "Generates a dhPLUS Uri from a passed authority URI. A Uri is generated in this order: 1. correspondence in the Triple Store 2. correspondence in the parameter dataset 3. correspondence in Wikidata, Uri generated with SHA256 4 generation from passed Uri (SHA256)"@en ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener uri"@de,
+                "passed uri"@en ;
+            sh:path tmp:passedUri ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType rdf:Description ;
+    sh:select """
+        
+SELECT ?uri
+WHERE {
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+
+    # Search for equivalent in Wikidata
+    SERVICE ?wd {
+        OPTIONAL {
+            ?wdUri ?p $passedUri .
+            FILTER(STRSTARTS(STR(?wdUri),STR(wd:)))
+            FILTER(!(STRSTARTS(STR(?wdUri),STR(wds:))))
+        }
+    }
+
+    # If found, bind as uri, else bind passed authority uri
+    BIND (
+        IF (
+            STRSTARTS(
+                STR($passedUri), STR(wd:)
+            ),
+            $passedUri,
+            IF (
+                BOUND(?wdUri),
+                ?wdUri,
+                $passedUri
+            )
+        )
+        AS ?foundWdUri
+    )
+
+    # Search for equivalent in dhPLUS triple store
+    SERVICE ?dhPLUSInstances {
+        OPTIONAL {
+            ?dhpUri
+                owl:sameAs $passedUri .            
+        }
+    }
+
+    # Search for equivalent in dhPLUS temp infer triple store
+    SERVICE ?dhPLUSInferTemp {
+        OPTIONAL {
+            ?dhpUriTmp
+                owl:sameAs $passedUri .            
+        }
+    }
+
+    # Search for equivalent in Parameter Files
+    OPTIONAL {
+        ?parameter
+            a parameter:InstanceParameter ;
+            parameter:dhpUri ?dhpParameterUri ;
+            parameter:authorityUri $passedUri .
+    }
+
+    BIND (
+        IF(
+            BOUND(?dhpUri),
+            ?dhpUri,
+            IF(
+                BOUND(?dhpUriTmp),
+                ?dhpUriTmp,
+                IF(
+                    BOUND(?dhpParameterUri),
+                    ?dhpParameterUri,
+                    IRI (
+                        CONCAT(
+                            STR(mhdbdbi:) ,
+                            SHA256(STR(?foundWdUri))
+                        )
+                    )
+                )    
+            )
+            
+        )
+        AS ?uri
+    )
+}
+
+    """ .
+
+dhpluso:GndNameEntityString a sh:SPARQLFunction ;
+    rdfs:label "Funktion zur Generierung eines Strings aus einer GNDO name entity"@de,
+        "Function to generate a string from a GNDO name entity"@en ;
+    skos:definition "Basisklasse aller dhpluso Klassen."@de,
+        "Generates a GND-like string from a given name entity."@en ;
+    sh:parameter [ sh:description "a GNDO name entity"@en,
+                "eine GNDO name entity"@en ;
+            sh:path dhpluso:nameEntity ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType xsd:string ;
+    sh:select """
+        SELECT (GROUP_CONCAT(DISTINCT ?ng; separator = ", ") as ?nameString)
+WHERE {
+    {
+        #nameGroup1
+        SELECT (GROUP_CONCAT(DISTINCT ?name; separator = " ") as ?ng)
+        WHERE {
+            $nameEntity gndo:surname ?name .
+        }
+        GROUP BY ?nameEntity
+    }
+    UNION
+    {
+        #nameGroup2
+        SELECT (GROUP_CONCAT(DISTINCT ?name; separator = " ") as ?ng)
+        WHERE {
+            $nameEntity gndo:forename|gndo:personalName|gndo:counting|gndo:prefix ?name .
+        }
+        GROUP BY ?nameEntity
+    }
+    UNION
+    {
+        #nameGroup3
+        SELECT (GROUP_CONCAT(DISTINCT ?name; separator = " ") as ?ng)
+        WHERE {
+            $nameEntity gndo:nameAddition ?name .
+        }
+        GROUP BY ?nameEntity
+    }
+}
+GROUP BY ?nameEntity
+        """ .
+
+dhpluso:IF_authorityFileInDhPLUS a sh:SPARQLFunction ;
+    rdfs:label "Ist Normdatensatz in dhPLUS?"@de,
+        "Is authority file in dhPLUS?"@en ;
+    skos:definition "Funktion testet, ob eine gegebener Normdatensatz als owl:sameAs von einer dhpluso-Entität referenziert wird."@de,
+        "Function tests if a given authority file is referenced as owl:sameAs from a dhpluso Entity."@en ;
+    sh:ask """
+        ASK {
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    {
+        SERVICE ?dhPLUSInstances {
+            ?uri owl:sameAs $af .        
+        }
+    }
+    UNION
+    {
+        SERVICE ?dhPLUSInferTemp {
+            ?uri owl:sameAs $af .        
+        }
+    }
+}
+        """ ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener Normdatensatz"@de,
+                "passed authority file"@en ;
+            sh:path tmp:af ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType xsd:boolean .
+
+dhpluso:IF_dnbUri a sh:SPARQLFunction ;
+    rdfs:label "Funktions testet ob ein übergebener String eine DNB Uri ist."@de,
+        "Functions tests if a given string is a DNB uri."@en ;
+    skos:definition "Gibt true zurück wenn string DNB uri ist."@de,
+        "Returns true if string is DNB uri."@en ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener String"@de,
+                "passed string"@en ;
+            sh:path tmp:dnb ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType xsd:boolean ;
+    sh:select """
+        SELECT ?res
+WHERE {
+    BIND(
+        IF(
+            STRSTARTS(STR($dnb), STR(gnd:)),
+            false,
+            STRSTARTS(STR($dnb), STR(dnb:))
+        )
+        AS
+        ?res
+    )
+}
+        """ .
+
+dhpluso:IF_gndUri a sh:SPARQLFunction ;
+    rdfs:label "Funktions testet ob ein übergebener String eine GND Uri ist."@de,
+        "Functions tests if a given string is a GND uri."@en ;
+    skos:definition "Gibt true zurück wenn string GND uri ist."@de,
+        "Returns true if string is GND uri."@en ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener String"@de,
+                "passed string"@en ;
+            sh:path tmp:gnd ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType xsd:boolean ;
+    sh:select """
+        SELECT (STRSTARTS(STR($gnd), STR(gnd:)) AS ?res)
+WHERE {}
+        """ .
+
+dhpluso:IF_inLanguages a sh:SPARQLFunction ;
+    rdfs:label "Die Funktion prüft, ob eine gegebene Zeichenkette lang mit dem Parameter filter language übereinstimmt."@de,
+        "Function tests if a given string lang matches the parameter filter language."@en ;
+    skos:definition "Gibt true zurück, wenn die Zeichenkette die passende Sprache hat oder kein Sprach-Tag gesetzt ist."@de,
+        "Returns true if string has matching language or not language tag is set."@en ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener parameter"@de,
+                "passed parameter"@en ;
+            sh:order 1 ;
+            sh:path tmp:parameter ],
+        [ sh:datatype rdf:Description ;
+            sh:description "übergebener String"@de,
+                "passed string"@en ;
+            sh:order 2 ;
+            sh:path tmp:passedString ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType xsd:boolean ;
+    sh:select """
+        SELECT (CONTAINS(dhpluso:ParameterFilterLanguage($parameter), STR(LANG($passedString))) AS ?res)
+WHERE {}
+        """ .
+
+dhpluso:IF_wdUri a sh:SPARQLFunction ;
+    rdfs:label "Funktions testet ob ein übergebener String eine Wikidata Uri ist."@de,
+        "Functions tests if a given string is a Wikidata uri."@en ;
+    skos:definition "Gibt true zurück wenn string Wikidata uri ist."@de,
+        "Returns true if string is Wikidata uri."@en ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener String"@de,
+                "passed string"@en ;
+            sh:path tmp:wd ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType xsd:boolean ;
+    sh:select """
+        SELECT (STRSTARTS(STR($wd), STR(wd:)) AS ?res)
+WHERE {}
+        """ .
+
+dhpluso:InferAddAdditionalTriples a sh:NodeShape ;
+    rdfs:label "fürge weitere triple hinzu"@de,
+        "add additional triples"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-13" ;
+    dcterms:modified "2021-10-11+07:36" ;
+    rdfs:definition "Füge dem Graph weitere Triple hinzu, die im ParameterSet übergeben worden sind."@de,
+        "Add more triples to the graph that have been passed in the ParameterSet."@en ;
+    sh:order 2 ;
+    sh:rule dhpluso:RuleAddAdditionalTriples ;
+    sh:target [ a sh:SPARQLTarget ;
+            sh:prefixes constants:Prefixes ;
+            sh:select """
+            SELECT ?this
+            WHERE {
+                ?this a parameter:Statement .
+            }
+            """ ] .
+
+dhpluso:InferDNBInstance a sh:NodeShape ;
+    rdfs:label "Leite Instanz von DNB ab"@de,
+        "Infer Instance from DNB"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-11+07:36" ;
+    rdfs:definition "Leitet eine Instanz von einem DNB Normdatensatz ab."@de,
+        "Infers an instance from a DNB authority file."@en ;
+    sh:order 2 ;
+    sh:rule dhpluso:BFRuleConstructBibliographicLabel,
+        dhpluso:BFRuleConstructBibliographicProvisionActivityStatement,
+        dhpluso:BFRuleConstructBibliographicTitle,
+        dhpluso:BFRuleConstructInstanceInstanceOf,
+        dhpluso:OwlRuleConstructSameAs,
+        dhpluso:RuleConstructDhplusType ;
+    sh:target [ a dhpluso:InferTarget ;
+            tmp:authorityNamespace dnb: ;
+            tmp:class dhpluso:Instance ] .
+
+dhpluso:InferDNBWork a sh:NodeShape ;
+    rdfs:label "Leite Werk von DNB ab"@de,
+        "Infer Work from DNB"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-11+07:36" ;
+    rdfs:definition "Leitet eine Werk von einem DNB Normdatensatz ab."@de,
+        "Infers an Work from a DNB authority file."@en ;
+    sh:order 2 ;
+    sh:rule dhpluso:BFRuleConstructBibliographicLabel,
+        dhpluso:BFRuleConstructBibliographicProvisionActivityStatement,
+        dhpluso:BFRuleConstructBibliographicTitle,
+        dhpluso:BFRuleConstructInstanceHasInstance,
+        dhpluso:BFRuleConstructWorkCreation,
+        dhpluso:OwlRuleConstructSameAs,
+        dhpluso:RuleConstructDhplusType ;
+    sh:target [ a dhpluso:InferTarget ;
+            tmp:authorityNamespace dnb: ;
+            tmp:class dhpluso:Work ] .
+
+dhpluso:InferGNDPerson a sh:NodeShape ;
+    rdfs:label "Leite Person von GND ab"@de,
+        "Infer Person from GND"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-12+09:10" ;
+    rdfs:definition "Leitet eine Person von einem GND Normdatensatz ab."@de,
+        "Infers a person from a GND authority file."@en ;
+    sh:order 2 ;
+    sh:rule dhpluso:GNDORuleConstructPersonBirthDate,
+        dhpluso:GNDORuleConstructPersonBirthPlace,
+        dhpluso:GNDORuleConstructPersonDeathDate,
+        dhpluso:GNDORuleConstructPersonDeathPlace,
+        dhpluso:GNDORuleConstructPersonGender,
+        dhpluso:GNDORuleConstructPersonLabel,
+        dhpluso:GNDORuleConstructPersonNameOfThePerson,
+        dhpluso:OwlRuleConstructSameAs,
+        dhpluso:RuleConstructDhplusType ;
+    sh:target [ a dhpluso:InferTarget ;
+            tmp:authorityNamespace gnd: ;
+            tmp:class dhpluso:Person ] .
+
+dhpluso:InferGNDPlace a sh:NodeShape ;
+    rdfs:label "Leite Ort von GND ab"@de,
+        "Infer Place from GND"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-11+07:36" ;
+    rdfs:definition "Leitet einen Ort von einem GND Normdatensatz ab."@de,
+        "Infers a place from a GND authority file."@en ;
+    sh:order 2 ;
+    sh:rule dhpluso:GNDORuleConstructPlaceGeometry,
+        dhpluso:GNDORuleConstructPlaceLabel,
+        dhpluso:GNDORuleConstructPlaceNameOfThePlace,
+        dhpluso:OwlRuleConstructSameAs,
+        dhpluso:RuleConstructDhplusType ;
+    sh:target [ a dhpluso:InferTarget ;
+            tmp:authorityNamespace gnd: ;
+            tmp:class dhpluso:Place ] .
+
+dhpluso:InferGNDWork a sh:NodeShape ;
+    rdfs:label "Leite Werk von GND ab"@de,
+        "Infer Work from GND"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-11+07:36" ;
+    rdfs:definition "Leitet ein Werk von einem GND Normdatensatz ab."@de,
+        "Infers a work from a GND authority file."@en ;
+    sh:order 2 ;
+    sh:rule dhpluso:GNDORuleConstructWorkContribution,
+        dhpluso:GNDORuleConstructWorkCreation,
+        dhpluso:GNDORuleConstructWorkTitle,
+        dhpluso:OwlRuleConstructSameAs,
+        dhpluso:RuleConstructDhplusType ;
+    sh:target [ a dhpluso:InferTarget ;
+            tmp:authorityNamespace gnd: ;
+            tmp:class dhpluso:Work ] .
+
+dhpluso:InferInit a sh:NodeShape ;
+    rdfs:label "Initialisiere Herleitung"@de,
+        "Initialising infer"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-11+07:36" ;
+    skos:definition "dhPLUS-Instanzen für die Herleitung aus Autoritätsdateien initialisieren."@de,
+        "Initialise dhPLUS instances for infer from authority files."@en ;
+    sh:order 1 ;
+    sh:rule dhpluso:RuleInferInit ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class parameter:ParameterSet ] .
+
+dhpluso:InferPassAll a sh:NodeShape ;
+    rdfs:label "Gib alle abgeleiteten Triples an die nächste Stufe weiter."@de,
+        "Pass all infered triples to the next stage."@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-18" ;
+    dcterms:modified "2021-10-11+12:52" ;
+    skos:definition "Übergebe alle Triples"@de,
+        "Pass all triples. "@en ;
+    sh:rule [ a sh:SPARQLRule ;
+            sh:construct """
+            construct {
+                ?this ?p ?o .
+            } where {                
+                ?this ?p ?o .
+            }
+        """ ;
+            sh:prefixes constants:Prefixes ] ;
+    sh:target [ a dhpluso:AllSubjectsTarget ] .
+
+dhpluso:InferWDPerson a sh:NodeShape ;
+    rdfs:label "Leite Person von WikiData ab"@de,
+        "Infer Person from WikiData"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-04" ;
+    dcterms:modified "2021-10-11+07:36" ;
+    rdfs:definition "Leitet eine Person von einem WikiData Normdatensatz ab."@de,
+        "Infers a person from a WikiData authority file."@en ;
+    sh:order 2 ;
+    sh:rule dhpluso:OwlRuleConstructSameAs,
+        dhpluso:RuleConstructDhplusType,
+        dhpluso:WDRuleConstructPersonBirth,
+        dhpluso:WDRuleConstructPersonDeath,
+        dhpluso:WDRuleConstructPersonGender,
+        dhpluso:WDRuleConstructPersonLabel,
+        dhpluso:WDRuleConstructPersonNameOfThePerson ;
+    sh:target [ a dhpluso:InferTarget ;
+            tmp:authorityNamespace wd: ;
+            tmp:class dhpluso:Person ] .
+
+dhpluso:InferWDPlace a sh:NodeShape ;
+    rdfs:label "Leite Place von WikiData ab"@de,
+        "Infer Place from WikiData"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-04" ;
+    dcterms:modified "2021-10-11+07:36" ;
+    rdfs:definition "Leitet eine Place von einem WikiData Normdatensatz ab."@de,
+        "Infers a person from a WikiData authority file."@en ;
+    sh:order 2 ;
+    sh:rule dhpluso:OwlRuleConstructSameAs,
+        dhpluso:RuleConstructDhplusType,
+        dhpluso:WDRuleConstructPlaceGeometry,
+        dhpluso:WDRuleConstructPlaceLabel,
+        dhpluso:WDRuleConstructPlaceNameOfThePlace ;
+    sh:target [ a dhpluso:InferTarget ;
+            tmp:authorityNamespace wd: ;
+            tmp:class dhpluso:Place ] .
+
+dhpluso:InferWDWork a sh:NodeShape ;
+    rdfs:label "Leite Werk von WD ab"@de,
+        "Infer Work from WD"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-11+07:36" ;
+    rdfs:definition "Leitet ein Werk von einem WD Normdatensatz ab."@de,
+        "Infers a work from a WD authority file."@en ;
+    sh:order 2 ;
+    sh:rule dhpluso:OwlRuleConstructSameAs,
+        dhpluso:RuleConstructDhplusType,
+        dhpluso:WDRuleConstructBibliographicContribution,
+        dhpluso:WDRuleConstructBibliographicTitle,
+        dhpluso:WDRuleConstructWorkCreation ;
+    sh:target [ a dhpluso:InferTarget ;
+            tmp:authorityNamespace wd: ;
+            tmp:class dhpluso:Work ] .
+
+dhpluso:LanguageExistsConstraintComponent a sh:ConstraintComponent ;
+    rdfs:label "Sprache existiert constraint component"@de,
+        "Language exists constraint component"@en ;
+    rdfs:definition "Gibt true zurück, wenn ein Literal einer bestimmten Sprache und eines bestimmten Pfades für den angegebenen Knoten existiert."@de,
+        "Returns true if a Literal of a given language and path exists for given node."@en ;
+    sh:labelTemplate "{$this}/{$PATH} has no values with language tag \"{$languageExists}\""@en,
+        "{$this}/{$PATH} hat keine Werte mit Sprach-Tag \"{$languageExists}\""@en ;
+    sh:parameter [ sh:description "Der Sprachtag, z.B. \"de\"."@de,
+                "The language tag, e.g. \"de\"."@en ;
+            sh:minLength 2 ;
+            sh:name "Sprache"@de,
+                "language"@en ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path tmp:languageExists ] ;
+    sh:propertyValidator [ a sh:SPARQLSelectValidator ;
+            sh:message "{$this}/{$PATH} has no values with language tag \"{$languageExists}\""@en,
+                "{$this}/{$PATH} hat keine Werte mit Sprach-Tag \"{$languageExists}\""@en ;
+            sh:prefixes constants:Prefixes ;
+            sh:select """
+            SELECT DISTINCT $this $languageExists $PATH
+WHERE
+{
+    $this $PATH ?label .
+
+    FILTER NOT EXISTS
+    {
+        SELECT DISTINCT $this $languageExists
+        WHERE {
+            $this $PATH ?label .
+        }
+        GROUP BY $this $languageExists ?label
+        HAVING (
+            langMatches(lang(?label), $languageExists)
+        )
+    }
+}
+            """ ] .
+
+dhpluso:NamedBnode a sh:SPARQLFunction ;
+    rdfs:label "Gibt einen eindeutigen BNODE aus string zurück."@de,
+        "Returns a unique BNODE from string"@en ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener String"@de,
+                "passed string"@en ;
+            sh:path tmp:passedString ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType xsd:boolean ;
+    sh:select """
+        SELECT (BNODE($passedString) AS ?bnode)
+WHERE {}
+        """ .
+
+dhpluso:ParameterAddReificationStatements a sh:SPARQLFunction ;
+    rdfs:comment "return set addReificationStatements" ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener parameter"@de,
+                "passed parameter"@en ;
+            sh:path tmp:parameter ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType rdf:Description ;
+    sh:select """
+        
+SELECT ?addReificationStatements
+WHERE {
+    ?set parameter:hasParameter $parameter .
+    ?set parameter:addReificationStatements ?addReificationStatements .
+}
+        """ .
+
+dhpluso:ParameterExpandViaWikiData a sh:SPARQLFunction ;
+    rdfs:comment "return set expandViaWikiData" ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener parameter"@de,
+                "passed parameter"@en ;
+            sh:path tmp:parameter ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType rdf:Description ;
+    sh:select """
+        
+SELECT ?expandViaWikiData
+WHERE {
+    ?set parameter:hasParameter $parameter .
+    ?set parameter:expandViaWikiData ?expandViaWikiData .
+}
+        """ .
+
+dhpluso:ParameterFilterLanguage a sh:SPARQLFunction ;
+    rdfs:comment "return set language filter" ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener parameter"@de,
+                "passed parameter"@en ;
+            sh:path tmp:parameter ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType rdf:Description,
+        rdf:literal ;
+    sh:select """
+        
+SELECT ?filterLanguage
+WHERE {
+    ?set parameter:hasParameter $parameter .
+    ?set parameter:filterLanguage ?filterLanguage .
+}
+        """ .
+
+dhpluso:SameAsGND a sh:SPARQLFunction ;
+    rdfs:comment "Returns GND uri for instance. Use Wikidate endpoint" ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener wikidata uri"@de,
+                "passed wikidata uri"@en ;
+            sh:path tmp:wikidataUri ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType rdf:Description ;
+    sh:select """
+        SELECT ?res
+WHERE {
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    SERVICE ?wd {
+        $wikidataUri wdt:P227 ?gndNo.
+    }
+    BIND(IRI(CONCAT(STR(gnd:),?gndNo)) AS ?res)
+}
+LIMIT 1
+        """ .
+
+dhpluso:SameAsWikiData a sh:SPARQLFunction ;
+    rdfs:comment "Returns wikidata uri for instance" ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "uri einer anderen Autoritätsdatei als Wikidata"@de,
+                "passed uri of other authority file than wikidata"@en ;
+            sh:path tmp:passedUri ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType rdf:Description ;
+    sh:select """
+        SELECT ?wdUri
+WHERE {
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    SERVICE ?wd {
+        ?wdUri ?p $passedUri .
+        FILTER(STRSTARTS(STR(?wdUri),STR(wd:)))
+        FILTER(!(STRSTARTS(STR(?wdUri),STR(wds:))))
+        FILTER(STRSTARTS(STR($passedUri),STR(wd:)))
+        FILTER(!(STRSTARTS(STR($passedUri),STR(wds:))))
+    }
+}
+        """ .
+
+dhpluso:ValidationAdminMetadata a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-10-08+08:56" ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:minCount 1 ;
+            sh:path dhpluso:changeDate ;
+            sh:severity sh:Violation ],
+        [ sh:datatype xsd:date ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dhpluso:creationDate ;
+            sh:severity sh:Violation ],
+        [ sh:class dc:source ;
+            sh:path dc:source ;
+            sh:severity sh:Info ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:AdminMetadata ] .
+
+dhpluso:ValidationAnnotation a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:minCount 1 ;
+            sh:path oa:hasBody ;
+            sh:severity sh:Violation ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dc:date ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:path oa:hasTarget ;
+            sh:severity sh:Violation ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:or ( [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ] [ sh:class dhpluso:Person ] ) ;
+            sh:path dc:creator ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass oa:Annotation .
+
+dhpluso:ValidationBibliographic a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+08:56" ;
+    sh:property [ sh:class dhpluso:AdminMetadata ;
+            sh:maxCount 1 ;
+            sh:path dhpluso:adminMetadata ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Extent ;
+            sh:maxCount 1 ;
+            sh:path dhpluso:extent ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Note ;
+            sh:path dhpluso:note ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Contribution ;
+            sh:path dhpluso:contribution ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Title ;
+            sh:minCount 1 ;
+            sh:path dhpluso:title ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Bibliographic ] .
+
+dhpluso:ValidationBirth a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Person ;
+            sh:minCount 1 ;
+            sh:path dhpluso:broughtIntoLife ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Birth ] .
+
+dhpluso:ValidationContent a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdfs:label ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Content ] .
+
+dhpluso:ValidationContribution a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Person ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dhpluso:agent ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:or ( [ sh:hasValue <http://id.loc.gov/vocabulary/relators/aut> ] [ sh:hasValue <http://id.loc.gov/vocabulary/relators/aft> ] [ sh:hasValue <http://id.loc.gov/vocabulary/relators/cmp> ] [ sh:hasValue <http://id.loc.gov/vocabulary/relators/ctb> ] [ sh:hasValue <http://id.loc.gov/vocabulary/relators/edt> ] [ sh:hasValue <http://id.loc.gov/vocabulary/relators/ill> ] [ sh:hasValue <http://id.loc.gov/vocabulary/relators/oth> ] [ sh:hasValue <http://id.loc.gov/vocabulary/relators/trl> ] [ sh:hasValue <http://id.loc.gov/vocabulary/relators/wpr> ] [ sh:nodeKind sh:BlankNode ] ) ;
+            sh:path dhpluso:role ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Contribution ] .
+
+dhpluso:ValidationCreation a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Work ;
+            sh:minCount 1 ;
+            sh:path dhpluso:hasCreated ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Creation ] .
+
+dhpluso:ValidationDeath a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Person ;
+            sh:minCount 1 ;
+            sh:path dhpluso:wasDeathOf ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Death ] .
+
+dhpluso:ValidationElectronic a sh:NodeShape ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Electronic ] .
+
+dhpluso:ValidationEntity a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dc:date ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:or ( [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ] [ sh:class dhpluso:Person ] ) ;
+            sh:path dc:publisher ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path rdf:type ],
+        [ sh:datatype xsd:dateTime ;
+            sh:minCount 1 ;
+            sh:path dc:rights ;
+            sh:severity sh:Violation ],
+        [ sh:nodeKind sh:IRI ;
+            sh:path dc:source ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dc:title ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dcterms:created ;
+            sh:severity sh:Violation ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:path dcterms:modified ;
+            sh:severity sh:Violation ],
+        [ sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:path dcterms:available ;
+            sh:severity sh:Violation ],
+        [ sh:nodeKind sh:IRI ;
+            sh:path owl:sameAs ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Appellation ;
+            sh:path dhpluso:isIdentifiedBy ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Type ;
+            sh:path dhpluso:hasType ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Identifier ;
+            sh:path dhpluso:hasPreferredIdentifier ;
+            sh:severity sh:Violation ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:or ( [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ] [ sh:class dhpluso:Person ] ) ;
+            sh:path dc:creator ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:NamedEntityTarget ;
+            tmp:class dhpluso:Entity ] .
+
+dhpluso:ValidationEvent a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Date ;
+            sh:optional true ;
+            sh:path dhpluso:isIdentifiedBy ;
+            sh:severity sh:Info ],
+        [ sh:class dhpluso:TimeSpan ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dhpluso:hasTimeSpan ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Place ;
+            sh:optional true ;
+            sh:path dhpluso:tookPlaceAt ;
+            sh:severity sh:Info ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Event ] .
+
+dhpluso:ValidationExtent a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Extent ] .
+
+dhpluso:ValidationForm a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:datatype rdfs:Literal ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Orthographihsche Form"@de,
+                "written representation"@en ;
+            sh:path dhpluso:writtenRep ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Form ] .
+
+dhpluso:ValidationGeometry a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:datatype geo:wktLiteral ;
+            sh:path dhpluso:asWKT ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Geometry ] .
+
+dhpluso:ValidationImmediateAcquisition a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:ImmediateAcquisition ] .
+
+dhpluso:ValidationInstance a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Instance ;
+            sh:path dhpluso:hasItem ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Instance ;
+            sh:path dhpluso:hasSeries ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Work ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dhpluso:instanceOf ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Issuance ;
+            sh:flags "i" ;
+            sh:path dhpluso:issuance ;
+            sh:pattern "^https://id.loc.gov/vocabulary/issuance/" ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Note ;
+            sh:path dhpluso:note ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:ProvisionActivity ;
+            sh:path dhpluso:provisionActivity ;
+            sh:severity sh:Violation ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:provisionActivityStatement ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:dimension ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:responsibilityStatement ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:class dhpluso:Title ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dhpluso:title ;
+            sh:severity sh:Violation ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:editionStatement ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Instance ] .
+
+dhpluso:ValidationIssuance a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:maxCount 1 ;
+            sh:nodeKind sh:Literal ;
+            sh:path dhpluso:code ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Issuance ] .
+
+dhpluso:ValidationItem a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:ImmediateAcquisition ;
+            sh:path dhpluso:immediateAcquisition ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Instance ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dhpluso:itemOf ;
+            sh:severity sh:Violation ],
+        [ sh:path dhpluso:custodialHistory ;
+            sh:severity sh:Warning ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Item ] .
+
+dhpluso:ValidationLexicalConcept a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class skos:Concept ;
+            sh:name "verwandtes Konzept"@de,
+                "related concept"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:or ( [ sh:path skos:relatedMatch ] [ sh:path skos:broadMatch ] [ sh:path skos:narrowMatch ] [ sh:path skos:closeMatch ] [ sh:path skos:exactMatch ] ) ;
+            sh:severity sh:Info ],
+        [ sh:datatype rdf:langString ;
+            sh:languageIn ( "en" "de" ) ;
+            sh:minCount 2 ;
+            sh:name "primäres Label"@de,
+                "preferred label"@en ;
+            sh:path skos:prefLabel ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:datatype rdf:langString ;
+            sh:languageIn ( "en" "de" ) ;
+            sh:name "alternatives Label"@de,
+                "alternate label"@en ;
+            sh:path skos:altLabel ;
+            sh:severity sh:Info ],
+        [ sh:class dhpluso:LexicalConceptSet ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Teil eines Begriffssystems"@de,
+                "part of conceptual system"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:inScheme ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:LexicalConcept ;
+            sh:name "verwandter Begriff"@de,
+                "related concept"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:or ( [ sh:path skos:related ] [ sh:path skos:broader ] [ sh:path dhpluso:antonymConcept ] [ sh:path dhpluso:synonymConcept ] ) ;
+            sh:severity sh:Info ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:LexicalConcept ] .
+
+dhpluso:ValidationLexicalConceptSet a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:datatype rdf:langString ;
+            sh:languageIn ( "en" "de" ) ;
+            sh:minCount 2 ;
+            sh:name "primäres Label"@de,
+                "preferred label"@en ;
+            sh:path skos:prefLabel ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:datatype rdf:langString ;
+            sh:languageIn ( "en" "de" ) ;
+            sh:name "alternatives Label"@de,
+                "alternate label"@en ;
+            sh:path skos:altLabel ;
+            sh:severity sh:Info ],
+        [ sh:class dhpluso:LexicalConcept ;
+            sh:minCount 1 ;
+            sh:name "Oberbegriff"@de,
+                "top concept"@en ;
+            sh:path skos:hasTopConcept ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:LexicalConceptSet ] .
+
+dhpluso:ValidationLexicalEntry a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Form ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Ansatzform"@de,
+                "Canonical Form"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:canonicalForm ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Form ;
+            sh:name "Andere Formen"@de,
+                "Other Forms"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:otherForm ;
+            sh:severity sh:Info ],
+        [ sh:datatype xsd:anyURI ;
+            sh:name "Siehe auch"@de,
+                "See also"@en ;
+            sh:path rdfs:seeAlso ;
+            sh:severity sh:Info ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:LexicalEntry ] .
+
+dhpluso:ValidationLexicalSense a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:LexicalConcept ;
+            sh:minCount 1 ;
+            sh:name "Verknüpfter lexikalischer Begriff"@de,
+                "Related lexical concept"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:isLexicalizedSenseOf ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:LexicalSense ;
+            sh:name "Bedeutungsrelation"@de,
+                "sense relation"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:or ( [ sh:path dhpluso:antonym ] [ sh:path dhpluso:synonym ] [ sh:path dhpluso:hypernym ] [ sh:path dhpluso:hyponym ] ) ;
+            sh:severity sh:Info ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:LexicalSense ] .
+
+dhpluso:ValidationLexicon a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:datatype rdf:langString ;
+            sh:languageIn ( "en" "de" ) ;
+            sh:minCount 2 ;
+            sh:name "Titel des Wörterbuchs"@de,
+                "title of dictionary"@en ;
+            sh:path dc:title ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:datatype xsd:language ;
+            sh:minCount 1 ;
+            sh:name "Sprache des Wörterbuchs"@de,
+                "language of dictionary"@en ;
+            sh:path dhpluso:language ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:name "Artikel des Wörterbuchs"@de,
+                "entry of dictionary"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:entry ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Lexicon ] .
+
+dhpluso:ValidationNameOfThePerson a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-18-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:surname ;
+            sh:severity sh:Violation ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:personalName ;
+            sh:severity sh:Violation ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:forename ;
+            sh:severity sh:Violation ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:counting ;
+            sh:severity sh:Violation ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:nameAddition ;
+            sh:severity sh:Violation ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:prefix ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:NameOfThePerson ] .
+
+dhpluso:ValidationNameOfThePlace a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:placename ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:NameOfThePlace ] .
+
+dhpluso:ValidationNote a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:noteType ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Note ] .
+
+dhpluso:ValidationOnomasticConcept a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class skos:Concept ;
+            sh:name "verwandtes Konzept"@de,
+                "related concept"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:or ( [ sh:path skos:relatedMatch ] [ sh:path skos:broadMatch ] [ sh:path skos:narrowMatch ] [ sh:path skos:closeMatch ] [ sh:path skos:exactMatch ] ) ;
+            sh:severity sh:Info ],
+        [ sh:datatype rdf:langString ;
+            sh:languageIn ( "en" "de" ) ;
+            sh:minCount 2 ;
+            sh:name "primäres Label"@de,
+                "preferred label"@en ;
+            sh:path skos:prefLabel ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:datatype rdf:langString ;
+            sh:languageIn ( "en" "de" ) ;
+            sh:name "alternatives Label"@de,
+                "alternate label"@en ;
+            sh:path skos:altLabel ;
+            sh:severity sh:Info ],
+        [ sh:class dhpluso:OnomasticConceptSet ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:name "Teil einer Namenskategorisierung"@de,
+                "part of onomastic system"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:inScheme ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:OnomasticConcept ;
+            sh:name "verwandte Namenskategorie"@de,
+                "related concept"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:or ( [ sh:path skos:related ] [ sh:path skos:broader ] ) ;
+            sh:severity sh:Info ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:OnomasticConcept ] .
+
+dhpluso:ValidationOnomasticConceptSet a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:datatype rdf:langString ;
+            sh:languageIn ( "en" "de" ) ;
+            sh:minCount 2 ;
+            sh:name "primäres Label"@de,
+                "preferred label"@en ;
+            sh:path skos:prefLabel ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:datatype rdf:langString ;
+            sh:languageIn ( "en" "de" ) ;
+            sh:name "alternatives Label"@de,
+                "alternate label"@en ;
+            sh:path skos:altLabel ;
+            sh:severity sh:Info ],
+        [ sh:class dhpluso:OnomasticConcept ;
+            sh:minCount 1 ;
+            sh:name "Oberbegriff"@de,
+                "top concept"@en ;
+            sh:path skos:hasTopConcept ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:OnomasticConceptSet ] .
+
+dhpluso:ValidationOnomasticUsage a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:OnomasticConcept ;
+            sh:minCount 1 ;
+            sh:name "Verknüpfter lexikalischer Begriff"@de,
+                "Related lexical concept"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:isUsedOnomasticConceptOf ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:OnomasticUsage ] .
+
+dhpluso:ValidationPerson a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Birth ;
+            sh:maxCount 1 ;
+            sh:path dhpluso:wasBorn ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Death ;
+            sh:maxCount 1 ;
+            sh:path dhpluso:diedIn ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:NameOfThePerson ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dhpluso:preferredNameEntityForThePerson ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:NameOfThePerson ;
+            sh:path dhpluso:variantNameEntityForThePerson ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Gender ;
+            sh:maxCount 1 ;
+            sh:path dhpluso:gender ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Person ] .
+
+dhpluso:ValidationPlace a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:NameOfThePlace ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dhpluso:preferredNameEntityForThePlace ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:NameOfThePlace ;
+            sh:path dhpluso:variantNameEntityForThePlace ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Point ;
+            sh:maxCount 1 ;
+            sh:path dhpluso:coordinatesForThePlace ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Event ;
+            sh:optional true ;
+            sh:path dhpluso:witnessed ;
+            sh:severity sh:Info ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Place ] .
+
+dhpluso:ValidationProvisionActivity a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Agent ;
+            sh:path dhpluso:agent ;
+            sh:severity sh:Violation ],
+        [ sh:maxCount 1 ;
+            sh:or ( [ sh:datatype <http://id.loc.gov/datatypes/edtf> ] [ sh:datatype xsd:date ] ) ;
+            sh:path dhpluso:date ;
+            sh:severity sh:Violation ],
+        [ sh:minCount 1 ;
+            sh:or ( [ sh:class dhpluso:Place ] [ sh:flags "i" ;
+                        sh:nodeKind sh:IRI ;
+                        sh:pattern "^http://id.loc.gov/vocabulary/countries/" ] ) ;
+            sh:path dhpluso:place ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:ProvisionActivity ] .
+
+dhpluso:ValidationRDFStmtShape a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path rdf:subject ],
+        [ sh:datatype xsd:dateTime ;
+            sh:path dcterms:modified ],
+        [ sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:value-source-uri ],
+        [ sh:maxCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:value-source-prop ],
+        [ sh:nodeKind sh:IRI ;
+            sh:path dhpluso:value-code ;
+            sh:pattern "https://dh.plus.ac.at/vocabulary#" ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path rdf:predicate ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path rdf:object ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:nodeKind sh:IRI ] ) ;
+            sh:path dc:creator ],
+        [ sh:datatype xsd:dateTime ;
+            sh:path dcterms:created ] ;
+    sh:targetClass rdf:Statement .
+
+dhpluso:ValidationTitle a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:minCount 1 ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:mainTitle ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:partName ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path rdfs:label ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:partNumber ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:subtitle ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
+        [ sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:path dhpluso:titleSortKey ;
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Title ] .
+
+dhpluso:ValidationWord a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:name "Wortbildungsbestandteil"@de,
+                "Component"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:or ( [ sh:class dhpluso:Word ] [ sh:class dhpluso:Affix ] ) ;
+            sh:path dhpluso:subterm ;
+            sh:severity sh:Info ],
+        [ sh:class dhpluso:LexicalSense ;
+            sh:minCount 1 ;
+            sh:name "Lexikalische Bedeutunge"@de,
+                "Lexical Sense"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:sense ;
+            sh:severity sh:Warning ],
+        [ sh:class dhpluso:OnomasticUsage ;
+            sh:name "Namensgebrauch"@de,
+                "onomastic Usage"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:onomasticUsage ;
+            sh:severity sh:Info ],
+        [ sh:class dhpluso:PartOfSpeech ;
+            sh:minCount 1 ;
+            sh:name "Wortart"@de,
+                "Part of Speech"@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path dhpluso:partOfSpeech ;
+            sh:severity sh:Warning ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Word ] .
+
+dhpluso:ValidationWork a sh:NodeShape ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "2021-10-08+07:20" ;
+    sh:property [ sh:class dhpluso:Content ;
+            sh:flags "i" ;
+            sh:path dhpluso:content ;
+            sh:pattern "^https://id.loc.gov/vocabulary/contentTypes/" ;
+            sh:severity sh:Warning ],
+        [ sh:class dhpluso:Work ;
+            sh:path dhpluso:continuedBy ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Work ;
+            sh:path dhpluso:continues ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Contribution ;
+            sh:path dhpluso:contribution ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Instance ;
+            sh:path dhpluso:hasInstance ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Work ;
+            sh:path dhpluso:hasSeries ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Work ;
+            sh:path dhpluso:hasPart ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Issuance ;
+            sh:maxCount 1 ;
+            sh:path dhpluso:issuance ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Language ;
+            sh:flags "i" ;
+            sh:path dhpluso:language ;
+            sh:pattern "^https://id.loc.gov/vocabulary/languages/" ;
+            sh:severity sh:Warning ],
+        [ sh:class dhpluso:Work ;
+            sh:path dhpluso:partOf ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Work ;
+            sh:maxCount 1 ;
+            sh:path [ sh:alternativePath ( dhpluso:expressionOf dhpluso:hasExpression ) ] ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Work ;
+            sh:path dhpluso:seriesOf ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Creation ;
+            sh:path dhpluso:wasCreatedBy ;
+            sh:severity sh:Violation ],
+        [ sh:class dhpluso:Work ;
+            sh:maxCount 1 ;
+            sh:path [ sh:alternativePath ( dhpluso:derivativeOf dhpluso:hasDerivative ) ] ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Work ] .
+
+dhpluso:uriInDhPLUSOrParameterFile a sh:SPARQLFunction ;
+    rdfs:label "Suche bereits vergebene dhPLUS-Uri in Triple Store und Parameter-File."@de,
+        "Search already assigned dhPLUS-Uri in Triple Store and Parameter-File."@en ;
+    skos:definition "Suche bereits vergebene dhPLUS-Uri in Triple Store und Parameter-File auf Basis einer Normdaten-URI."@de,
+        "Search already assigned dhPLUS-Uri in Triple Store and parameter file based on a authority file URI"@en ;
+    sh:parameter [ sh:datatype rdf:Description ;
+            sh:description "übergebener Normdatensatz"@de,
+                "passed authority file"@en ;
+            sh:path tmp:af ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:returnType xsd:boolean ;
+    sh:select """
+        SELECT ?dhpInstance
+WHERE {
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    {
+        SERVICE ?dhPLUSInstances {
+            ?dhpInstance owl:sameAs $authority .            
+        }
+    } UNION
+    {
+        SERVICE ?dhPLUSInferTemp {
+            ?dhpInstance owl:sameAs $authority .            
+        }
+    } UNION
+    {
+        ?parameter parameter:dhpUri ?dhpInstance .
+        ?parameter parameter:authorityUri $authority .
+    }
+}
+        """ .
+
+dhplusoValidation:targetClassNS a sh:SPARQLTargetType ;
+    rdfs:label "Zielklasse eines bestimmten Namensraums"@de,
+        "target class of specific name space"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:definition "Entspricht allen Instanzen von owl:class des spezifischen Namespace."@de,
+        "Matches all instances of owl:class of the specific namespace."@en ;
+    rdfs:subClassOf sh:Target ;
+    sh:parameter [ sh:description "Namensraum"@de,
+                "Name space."@en ;
+            sh:nodeKind sh:Literal ;
+            sh:path tmp:nameSpace ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT ?this
+        WHERE {
+            ?this a owl:Class .
+            FILTER(STRSTARTS(STR(?this), $nameSpace))
+        }
+        """ .
+
+dhplusoValidation:targetPropertyNS a sh:SPARQLTargetType ;
+    rdfs:label "Zieleigenschaft eines bestimmten Namensraums"@de,
+        "target property of specific name space"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:definition "Entspricht allen Instanzen von owl:class des spezifischen Namespace."@de,
+        "Matches all instances of owl:ObjectProperty, owl:DatatypeProperty and owl:AnnotationProperty of the specific namespace."@en ;
+    rdfs:subClassOf sh:Target ;
+    sh:parameter [ sh:description "Namensraum"@de,
+                "Name space."@en ;
+            sh:nodeKind sh:Literal ;
+            sh:path tmp:nameSpace ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT ?this
+        WHERE {
+            {
+                ?this a owl:ObjectProperty .
+            }
+            UNION
+            {
+                ?this a owl:DatatypeProperty .
+            }
+            UNION
+            {
+                ?this a owl:AnnotationProperty .
+            }
+            FILTER(STRSTARTS(STR(?this), $nameSpace))
+        }
+        """ .
+
+dhpluso:Affix a owl:Class ;
+    rdfs:label "Affixartikel"@de,
+        "affix entry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:Affix,
+        dhpluso:LexicalEntry ;
+    skos:definition "Ein Affix ist ein lexikalischer Eintrag, der ein Morphem (Suffix, Präfix, Infix, Zirkumfix) darstellt, das an einen Wortstamm angehängt wird, um ein neues Wort zu bilden."@de,
+        "An affix is a lexical entry that represents a morpheme (suffix, prefix, infix, circumfix) that is attached to a word stem to form a new word."@en .
+
+dhpluso:AllSubjectsTarget a sh:SPARQLTargetType ;
+    rdfs:label "Target für alle Subjekte"@de,
+        "Target for all subjects"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-11" ;
+    dcterms:modified "2021-10-11+12:52" ;
+    rdfs:definition "Target für alle Subjekte."@de,
+        "Target for all subjects."@en ;
+    rdfs:subClassOf sh:Target ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT ?s
+WHERE {
+    ?s ?p ?o .
+}
+        """ .
+
+dhpluso:BFRuleConstructInstanceHasInstance a sh:SPARQLRule ;
+    rdfs:label "Leite hasInstance von DNB ab"@de,
+        "Infer hasInstance from DNB"@en ;
+    rdfs:definition "Leitet hasInstance von einem DNB Normdatensatz ab."@de,
+        "Infers hasInstance from a DNB authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:hasInstance ?instance .
+
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?instance ;
+        parameter:dhpClass dhpluso:Instance ;
+        parameter:authorityUri ?dnbInstance ;
+    .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    
+
+    SERVICE ?af {
+        ?authorityUri bf:hasInstance ?dnbInstance .
+    }
+
+    OPTIONAL {
+        SERVICE ?dhPLUSInferTemp {
+            ?dhpInstance owl:sameAs ?dnbInstance .            
+        }
+    }
+
+    BIND (
+        IF(
+            bound(?dhpInstance) ,
+            ?dhpInstance ,
+            dhpluso:DhPlusUri(?dnbInstance)
+        )
+        AS ?instance
+    )
+
+    # OutputParameterSet   
+    BIND (
+        IF(
+            bound(?dhpInstance) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?dnbInstance)
+        )
+        AS ?OutputParameter
+    )    
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:BFRuleConstructInstanceInstanceOf a sh:SPARQLRule ;
+    rdfs:label "Leite instanceOf von DNB ab"@de,
+        "Infer instanceOf from DNB"@en ;
+    rdfs:definition "Leitet instanceOf von einem DNB Normdatensatz ab."@de,
+        "Infers instanceOf from a DNB authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:instanceOf ?work .
+
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?work ;
+        parameter:dhpClass dhpluso:Work ;
+        parameter:authorityUri ?dnbWork ;
+    .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    
+
+    SERVICE ?af {
+        ?authorityUri bf:instanceOf ?dnbWork .
+    }
+
+    OPTIONAL {
+        SERVICE ?dhPLUSInferTemp {
+            ?dhpWork owl:sameAs ?dnbWork .
+            ?dhpWork rdfs:subClassOf* dhpluso:Entity .
+        }
+    }
+
+    BIND (
+        IF(
+            bound(?dhpWork) ,
+            ?dhpWork ,
+            dhpluso:DhPlusUri(?dnbWork)
+        )
+        AS ?work
+    )
+
+    # OutputParameterSet    
+    BIND (
+        IF(
+            bound(?dhpWork) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?dnbWork)
+        )
+        AS ?OutputParameter
+    )
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:BFRuleConstructWorkCreation a sh:SPARQLRule ;
+    rdfs:label "Leite Erschaffung von DNB ab"@de,
+        "Infer Creation from DNB"@en ;
+    rdfs:definition "Leitet Erschaffung von einem DNB Normdatensatz ab."@de,
+        "Infers Creation from a DNB authority file."@en ;
+    sh:construct """
+       CONSTRUCT {
+    ?dhpUri dhpluso:wasCreatedBy ?dhpCreation .
+    
+    ?dhpCreation
+        a dhpluso:Creation ;
+        dhpluso:hasCreated ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate ;
+    .    
+
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?dnbPlace .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+
+    
+
+    OPTIONAL {
+        SERVICE ?af {
+            ?authorityUri bf:originPlace ?dnbPlace .
+        }
+    }
+    OPTIONAL {
+        SERVICE ?af {
+            ?authorityUri bf:originDate ?date .
+        }
+    }
+    BIND (
+        IF(
+            BOUND(?date),
+            BNODE(),
+            ?nothing
+        )
+        AS ?dhpTimeSpan
+    ) 
+    BIND(
+        IF(
+            BOUND(?date),
+            xsd:date(?date),
+            ?nothing
+        )
+        AS ?xsDate
+    )
+    BIND (
+        IF(
+            BOUND(?xsDate),
+            IRI(CONCAT(STR(?dhpUri),'/creation')),
+            IF(
+                BOUND(?dnbPlace),
+                IRI(CONCAT(STR(?dhpUri),'/creation')),
+                ?nothing
+            )
+        )
+        AS ?dhpCreation
+    )
+
+    BIND (
+        IF(
+            BOUND(?dnbPlace),
+            dhpluso:DhPlusUri(?dnbPlace),
+            ?nothing
+        )
+        AS ?place
+    )
+
+    # OutputParameterSet
+    BIND (
+        IF (
+            BOUND(?dnbPlace),
+            IF(
+                dhpluso:IF_authorityFileInDhPLUS(?place) ,
+                ?nothing ,
+                dhpluso:DhPlusParameterUri(?dnbPlace)
+            ),
+            ?nothing
+        )
+        AS ?OutputParameter
+    )
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:Electronic a owl:Class ;
+    rdfs:label "Elektronische Ressource"@de,
+        "Electronic"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Electronic,
+        dhpluso:Instance ;
+    skos:definition "Instanz, die für die Bearbeitung durch einen Computer vorgesehen ist und auf die entweder direkt oder aus der Ferne zugegriffen wird."@de,
+        "Instance that is intended for manipulation by a computer, accessed either directly or remotely."@en .
+
+dhpluso:GNDORuleConstructPersonBirthDate a sh:SPARQLRule ;
+    rdfs:label "Leite Geburtsdatum von GND ab"@de,
+        "Infer Birth date from GND"@en ;
+    rdfs:definition "Leitet Geburtsdatum von einem GND Normdatensatz ab."@de,
+        "Infers Birth date from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:wasBorn ?dhpBirth .
+    
+    ?dhpBirth
+        a dhpluso:Birth ;
+        dhpluso:broughtIntoLife ?dhpUri ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate 
+    .    
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .    
+    
+    SERVICE ?af {
+        ?authorityUri gndo:dateOfBirth ?date .
+    }
+    
+    BIND(
+        IF(
+            BOUND(?date),
+            IRI(CONCAT(STR(?dhpUri),'/birth')),
+            ?nothing
+        )
+        AS ?dhpBirth
+    )
+    
+    BIND(
+        IF(
+            BOUND(?date),
+            xsd:date(?date),
+            ?nothing
+        )
+        AS ?xsDate
+    )
+
+    BIND(
+        IF(
+            BOUND(?xsDate),
+            BNODE(),
+            ?nothing
+        )
+        AS ?dhpTimeSpan
+    )    
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructPersonBirthPlace a sh:SPARQLRule ;
+    rdfs:label "Leite Geburtsort von GND ab"@de,
+        "Infer Birth Place from GND"@en ;
+    rdfs:definition "Leitet Geburtsort von einem GND Normdatensatz ab."@de,
+        "Infers Birth Place from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:wasBorn ?dhpBirth .
+    
+    ?dhpBirth
+        a dhpluso:Birth ;
+        dhpluso:broughtIntoLife ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;    
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+    
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?gndPlace 
+    .   
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .    
+
+    
+    
+    SERVICE ?af {
+        ?authorityUri gndo:placeOfBirth ?gndPlace .
+    }  
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            IRI(CONCAT(STR(?dhpUri),'/birth')),
+            ?nothing
+        )
+        AS ?dhpBirth
+    ) .  
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            dhpluso:DhPlusUri(?gndPlace),
+            ?nothing
+        )
+        AS ?place
+    ) .  
+
+    # OutputParameterSet
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?place) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?gndPlace)
+        )
+        AS ?OutputParameter
+    )  
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructPersonDeathDate a sh:SPARQLRule ;
+    rdfs:label "Leite Todesdatum von GND ab"@de,
+        "Infer Death date from GND"@en ;
+    rdfs:definition "Leitet Todesdatum von einem GND Normdatensatz ab."@de,
+        "Infers Death date from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:diedIn ?dhpDeath .
+    
+    ?dhpDeath
+        a dhpluso:Death ;
+        dhpluso:wasDeathOf ?dhpUri ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate 
+    .   
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .    
+    
+    SERVICE ?af {
+        ?authorityUri gndo:dateOfDeath ?date .
+    }
+    
+    BIND(
+        IF(
+            BOUND(?date),
+            IRI(CONCAT(STR(?dhpUri),'/death')),
+            ?nothing
+        )
+        AS ?dhpDeath
+    )
+    
+    BIND(
+        IF(
+            BOUND(?date),
+            xsd:date(?date),
+            ?nothing
+        )
+        AS ?xsDate
+    )
+
+    BIND(
+        IF(
+            BOUND(?xsDate),
+            BNODE(),
+            ?nothing
+        )
+        AS ?dhpTimeSpan
+    )
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructPersonDeathPlace a sh:SPARQLRule ;
+    rdfs:label "Leite Sterbeort von GND ab"@de,
+        "Infer Death Place from GND"@en ;
+    rdfs:definition "Leitet Sterbeort von einem GND Normdatensatz ab."@de,
+        "Infers Death Place from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:diedIn ?dhpDeath .
+    
+    ?dhpDeath
+        a dhpluso:Death ;
+        dhpluso:wasDeathOf ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;    
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+    
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?gndPlace 
+    . 
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .    
+
+    
+    
+    SERVICE ?af {
+        ?authorityUri gndo:placeOfDeath ?gndPlace .
+    }  
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            IRI(CONCAT(STR(?dhpUri),'/death')),
+            ?nothing
+        )
+        AS ?dhpDeath
+    ) .  
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            dhpluso:DhPlusUri(?gndPlace),
+            ?nothing
+        )
+        AS ?place
+    ) .  
+
+    # OutputParameterSet
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?place) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?gndPlace)
+        )
+        AS ?OutputParameter
+    )
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructPersonGender a sh:SPARQLRule ;
+    rdfs:label "Leite Gender von GND ab"@de,
+        "Infer gender from GND"@en ;
+    rdfs:definition "Leitet Gender von einem GND Normdatensatz ab."@de,
+        "Infers gender from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:gender ?Gender . 
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?af {
+        ?authorityUri gndo:gender ?GndoGender .
+    }
+    SERVICE ?dhPLUSOntology {
+        ?Gender owl:sameAs ?GndoGender .
+        ?Gender skos:inScheme dhplusv:GenderVocabulary .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructPersonLabel a sh:SPARQLRule ;
+    rdfs:label "Leite Label von GND ab"@de,
+        "Infer label from GND"@en ;
+    rdfs:definition "Leitet Label von einem GND Normdatensatz ab."@de,
+        "Infers label from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?af {
+        ?authorityUri gndo:preferredNameForThePerson ?label .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructPersonNameOfThePerson a sh:SPARQLRule ;
+    rdfs:label "Leite dhpluso:NameOfThePerson von GND ab"@de,
+        "Infer dhpluso:NameOfThePerson from GND"@en ;
+    rdfs:definition "Leitet alle Namen von einem GND Normdatensatz ab."@de,
+        "Infers all names from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri ?dhpNameEntityProperty ?bnode .
+    ?bnode a dhpluso:NameOfThePerson ;
+        ?dhpNameProperty ?label .   
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?af {
+        {
+            SELECT DISTINCT
+                (BNODE() AS ?bnode)
+                ?GndoNameEntity
+            WHERE {
+                ?authorityUri gndo:preferredNameEntityForThePerson|gndo:variantNameEntityForThePerson ?GndoNameEntity .
+            }
+            GROUP BY ?GndoNameEntity
+        }
+        ?authorityUri ?gndoNameEntityProperty ?GndoNameEntity .
+        ?GndoNameEntity ?gndoNameProperty ?label . 
+    }
+
+
+    SERVICE ?dhPLUSOntology {
+        ?dhpNameEntityProperty rdfs:subPropertyOf ?gndoNameEntityProperty .
+        ?dhpNameEntityProperty rdfs:domain dhpluso:Person .
+        ?dhpNameProperty rdfs:subPropertyOf ?gndoNameProperty .
+        ?dhpNameProperty rdfs:domain dhpluso:NameOfThePerson .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructPlaceGeometry a sh:SPARQLRule ;
+    rdfs:label "Leite dhpluso:Geometry von GND ab"@de,
+        "Infer dhpluso:Geometry from GND"@en ;
+    rdfs:definition "Leitet Geometrie von einem GND Normdatensatz ab."@de,
+        "Infers geometry from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:coordinatesForThePlace ?bnode .
+    ?bnode a dhpluso:Point ;
+        dhpluso:asWKT ?wtkValue .  
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .    
+
+    SERVICE ?af {
+        BIND(BNODE() AS ?bnode)
+        ?authorityUri geo:hasGeometry ?geometricEntity .
+        ?geometricEntity geo:asWKT ?wtkValue .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructPlaceLabel a sh:SPARQLRule ;
+    rdfs:label "Leite Label von GND ab"@de,
+        "Infer label from GND"@en ;
+    rdfs:definition "Leitet Label von einem GND Normdatensatz ab."@de,
+        "Infers label from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .    
+
+    SERVICE ?af {
+        ?authorityUri gndo:preferredNameForThePlaceOrGeographicName ?label .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructPlaceNameOfThePlace a sh:SPARQLRule ;
+    rdfs:label "Leite dhpluso:NameOfThePlace von GND ab"@de,
+        "Infer dhpluso:NameOfThePlace from GND"@en ;
+    rdfs:definition "Leitet alle Namen von einem GND Normdatensatz ab."@de,
+        "Infers all names from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri ?dhpNameEntityProperty ?bnode .
+    ?bnode a dhpluso:NameOfThePlace ;
+        dhpluso:placename ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?af {
+        ?authorityUri gndo:preferredNameForThePlaceOrGeographicName|gndo:variantNameForThePlaceOrGeographicName ?label .
+        ?authorityUri ?gndoPlaceNameProperty ?label .
+    }
+    BIND(BNODE(STR(?label)) AS ?bnode) .
+    SERVICE ?dhPLUSOntology {
+        ?dhpNameEntityProperty rdfs:subPropertyOf ?gndoPlaceNameProperty .
+        ?dhpNameEntityProperty rdfs:domain dhpluso:Place .        
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructWorkContribution a sh:SPARQLRule ;
+    rdfs:label "Leite Mitwirkung von GND ab"@de,
+        "Infer contribution from GND"@en ;
+    rdfs:definition "Leitet Mitwirkung von einem GND Normdatensatz ab."@de,
+        "Infers contribution from a GND authority file."@en ;
+    sh:construct """
+       CONSTRUCT {
+    ?dhpUri dhpluso:contribution ?contribution .
+    ?contribution
+        a dhpluso:Contribution ;
+        dhpluso:agent ?author ;
+        dhpluso:role <http://id.loc.gov/vocabulary/relators/aut> .
+
+
+    # Output Parameter
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?author ;
+        parameter:dhpClass dhpluso:Person ;
+        parameter:authorityUri ?gndAuthor ;
+    .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    BIND (
+        IRI(CONCAT(STR(?dhpUri),'/authors'))
+        AS ?contribution
+    )
+
+    #Output Parameter Options
+    
+
+    SERVICE ?af {
+        ?authorityUri gndo:firstAuthor ?gndAuthor .
+    }
+
+    BIND (dhpluso:DhPlusUri(?gndAuthor) AS ?author)
+
+    # Output Parameter
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?author) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?gndAuthor)
+        )
+        AS ?OutputParameter
+    )
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructWorkCreation a sh:SPARQLRule ;
+    rdfs:label "Leite Erschaffung von GND ab"@de,
+        "Infer Creation from GND"@en ;
+    rdfs:definition "Leitet Erschaffung von einem GND Normdatensatz ab."@de,
+        "Infers Creation from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:wasCreatedBy ?dhpCreation .
+    ?dhpCreation
+        a dhpluso:Creation ;
+        dhpluso:hasCreated ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .    
+
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate ;
+    .
+    
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?gndPlace .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+
+    
+
+    OPTIONAL {
+        SERVICE ?af {
+            ?authorityUri gndo:placeOfManufacture ?gndPlace .
+        }
+    }
+    OPTIONAL {
+        SERVICE ?af {
+            # gndo:dateOfProduction and gndo:dateOfPublication can be used in gnd instances with the same intend
+            {
+                ?authorityUri gndo:dateOfProduction ?date .
+            }
+            UNION
+            {
+                ?authorityUri gndo:dateOfPublication ?date .
+            }
+            ?authorityUri ?dateProperty ?date .
+        }
+    }
+    BIND (
+        IF(
+            BOUND(?date),
+            BNODE(),
+            ?nothing
+        )
+        AS ?dhpTimeSpan
+    ) .
+    BIND(
+        IF(
+            BOUND(?date),
+            xsd:date(?date),
+            ?nothing
+        )
+        AS ?xsDate
+    )
+    BIND (
+        IF(
+            BOUND(?xsDate),
+            IRI(CONCAT(STR(?dhpUri),'/creation')),
+            IF(
+                BOUND(?gndPlace),
+                IRI(CONCAT(STR(?dhpUri),'/creation')),
+                ?nothing
+            )
+        )
+        AS ?dhpCreation
+    )
+
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            dhpluso:DhPlusUri(?gndPlace),
+            ?nothing
+        )
+        AS ?place
+    )
+
+    # OutputParameterSet
+    BIND (
+        IF (
+            BOUND(?gndPlace),
+            IF(
+                dhpluso:IF_authorityFileInDhPLUS(?place) ,
+                ?nothing ,
+                dhpluso:DhPlusParameterUri(?gndPlace)
+            ),
+            ?nothing
+        )
+        AS ?OutputParameter
+    )
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:GNDORuleConstructWorkTitle a sh:SPARQLRule ;
+    rdfs:label "Leite Titel von GND ab"@de,
+        "Infer title from GND"@en ;
+    rdfs:definition "Leitet Titel von einem GND Normdatensatz ab."@de,
+        "Infers title from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+    ?dhpUri dhpluso:preferredTitle ?bnode .
+    ?bnode a dhpluso:Title .
+    ?bnode dhpluso:mainTitle ?label .
+    ?bnode rdfs:label ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .    
+
+    SERVICE ?af {
+        ?authorityUri gndo:preferredNameForTheWork ?label .
+        BIND(BNODE() AS ?bnode)
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:NamedEntityTarget a sh:SPARQLTargetType ;
+    rdfs:label "Target für benannte Knoten einer Klasse"@de,
+        "Target for named nodes of class"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:definition "Matcht alle Knoten mit dhpluso-Klasse und definierter URI."@de,
+        "Matches all nodes with a dhpluso-class and defined URI."@en ;
+    rdfs:subClassOf sh:Target ;
+    sh:labelTemplate "All named entities of class {$class}"@en,
+        "Alle benannten Entitäten der Klasse {$class}"@en ;
+    sh:parameter [ sh:class tmp:class ;
+            sh:description "Klasse des zu prüfenden Knotens."@en,
+                "The class of the focus nodes."@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path tmp:class ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT ?this
+WHERE {
+    ?this a $class .
+    FILTER (!isBlank(?this))
+}
+        """ .
+
+dhpluso:RuleAddAdditionalTriples a sh:SPARQLRule ;
+    rdfs:label "fürge weitere triple hinzu"@de,
+        "add additional triples"@en ;
+    rdfs:definition "Füge dem Graph weitere Triple hinzu, die im ParameterSet übergeben worden sind."@de,
+        "Add more triples to the graph that have been passed in the ParameterSet."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?s ?p ?o .
+}
+WHERE {
+    ?this parameter:subject ?s .
+    ?this parameter:predicate ?p .
+    ?this parameter:object ?o .
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:RuleInferInit a sh:SPARQLRule ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri a ?dhpClass ;            
+        dc:source ?authorityUri ;    
+        dcterms:created ?now ;    
+    . 
+    
+    parameter:output 
+        a parameter:OutputParameterSet ;
+        parameter:filterLanguage ?lang ;
+        parameter:expandViaWikiData ?expandWD ;
+        parameter:addReificationStatements ?addReificationStatements ;
+        dc:creator ?creator ;
+    .   
+    
+    ?this parameter:now ?now .
+
+} WHERE {      
+    BIND(xsd:dateTime(NOW()) AS ?now) .    
+    OPTIONAL {
+        ?this parameter:filterLanguage ?lang .
+    }                
+    OPTIONAL {
+        ?this parameter:expandViaWikiData ?expandWD .
+    }
+    OPTIONAL {
+        ?this parameter:addReificationStatements ?addReificationStatements .
+    }
+    OPTIONAL {
+        ?this dc:creator ?creator .
+    }
+    ?this parameter:hasParameter ?instanceParameter .
+    ?instanceParameter parameter:dhpUri ?dhpUri .
+    ?instanceParameter parameter:dhpClass ?dhpClass .
+    ?instanceParameter parameter:authorityUri ?authorityUri .    
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructBibliographicContribution a sh:SPARQLRule ;
+    rdfs:label "Leite Mitwirkung von WD ab"@de,
+        "Infer contribution from WD"@en ;
+    rdfs:definition "Leitet Mitwirkung von einem WD Normdatensatz ab."@de,
+        "Infers contribution from a WD authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:contribution ?contribution .
+    ?contribution
+        a dhpluso:Contribution ;
+        dhpluso:agent ?author ;
+        dhpluso:role <http://id.loc.gov/vocabulary/relators/aut> .
+
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?author ;
+        parameter:dhpClass dhpluso:Person ;
+        parameter:authorityUri ?wdAuthor ;
+    .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    BIND (
+        IRI(CONCAT(STR(?dhpUri),'/authors'))
+        AS ?contribution
+    )
+
+    #Output Parameter Options
+    
+
+    SERVICE ?wd {
+        ?authorityUri wdt:P50 ?wdAuthor .
+        FILTER (!isBlank(?wdAuthor)) # needed to filter wikidata 'Nothing'
+    }
+
+    BIND (dhpluso:DhPlusUri(?wdAuthor) AS ?author)
+
+    # OutputParameterSet
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?author) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?wdAuthor)
+        )
+        AS ?OutputParameter
+    )
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructBibliographicTitle a sh:SPARQLRule ;
+    rdfs:label "Leite Titel von WD ab"@de,
+        "Infer title from WD"@en ;
+    rdfs:definition "Leitet Titel von einem WD Normdatensatz ab."@de,
+        "Infers title from a WD authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+    ?dhpUri dhpluso:preferredTitle ?bnode .
+    ?bnode a dhpluso:Title .
+    ?bnode rdfs:label ?label .    
+    ?bnode dhpluso:mainTitle ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?wd {
+        ?authorityUri rdfs:label ?label .
+        BIND(BNODE() AS ?bnode)
+    }
+    FILTER (dhpluso:IF_inLanguages(?this,?label)) .
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructPersonBirth a sh:SPARQLRule ;
+    rdfs:label "Leite Birth von WD ab"@de,
+        "Infer Birth from WD"@en ;
+    rdfs:definition "Leitet Geburtsevent von einem WD Normdatensatz ab."@de,
+        "Infers Birth Event from a WD authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:wasBorn ?dhpBirth .
+    ?dhpBirth
+        a dhpluso:Birth ;
+        dhpluso:broughtIntoLife ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .    
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate ;
+    .    
+
+    # Output Parameter
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?wdPlace .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .    
+
+    BIND (IRI(CONCAT(STR(?dhpUri),'/birth')) AS ?dhpBirth) .
+    BIND (BNODE() AS ?dhpTimeSpan) .
+    
+    SERVICE ?wd {
+        ?authorityUri wdt:P19 ?wdPlace .
+        ?authorityUri wdt:P569 ?date .
+        BIND(xsd:date(?date) AS ?xsDate)
+        FILTER (!isBlank(?wdPlace)) # needed to filter wikidata 'Nothing'
+    }
+    BIND (dhpluso:DhPlusUri(?wdPlace) AS ?place)
+
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?place) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?wdPlace)
+        )
+        AS ?OutputParameter
+    )
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructPersonDeath a sh:SPARQLRule ;
+    rdfs:label "Leite Death von WD ab"@de,
+        "Infer Death from WD"@en ;
+    rdfs:definition "Leitet Geburtsevent von einem WD Normdatensatz ab."@de,
+        "Infers Death Event from a WD authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:diedIn ?dhpDeath .
+    ?dhpDeath
+        a dhpluso:Death ;
+        dhpluso:wasDeathOf ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .    
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate ;
+    .
+    
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?wdPlace .  
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    BIND (IRI(CONCAT(STR(?dhpUri),'/death')) AS ?dhpDeath) .
+    BIND (BNODE() AS ?dhpTimeSpan) .
+
+    
+
+    SERVICE ?wd {
+        ?authorityUri wdt:P20 ?wdPlace .
+        ?authorityUri wdt:P570 ?date .
+        BIND(xsd:date(?date) AS ?xsDate)
+        FILTER (!isBlank(?wdPlace)) # needed to filter wikidata 'Nothing'
+    }
+    BIND (dhpluso:DhPlusUri(?wdPlace) AS ?place)
+
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?place) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?wdPlace)
+        )
+        AS ?OutputParameter
+    )
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructPersonGender a sh:SPARQLRule ;
+    rdfs:label "Leite Gender von GND ab"@de,
+        "Infer gender from GND"@en ;
+    rdfs:definition "Leitet Gender von einem GND Normdatensatz ab."@de,
+        "Infers gender from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:gender ?Gender .    
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .    
+
+    SERVICE ?wd {
+        ?authorityUri wdt:P21 ?WDGender .
+    }
+    SERVICE ?dhPLUSOntology {
+        ?Gender owl:sameAs ?WDGender .
+        ?Gender skos:inScheme dhplusv:GenderVocabulary .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructPersonLabel a sh:SPARQLRule ;
+    rdfs:label "Leite Label von WikiData ab"@de,
+        "Infer label from WikiData"@en ;
+    rdfs:definition "Leitet Label von einem WikiData Normdatensatz ab."@de,
+        "Infers label from a WikiData authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?wd {
+        ?authorityUri rdfs:label ?label .
+    }
+    FILTER (dhpluso:IF_inLanguages(?this,?label)) .
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructPersonNameOfThePerson a sh:SPARQLRule ;
+    rdfs:label "Leite dhpluso:NameOfThePerson von GND ab"@de,
+        "Infer dhpluso:NameOfThePerson from GND"@en ;
+    rdfs:definition "Leitet alle Namen von einem GND Normdatensatz ab."@de,
+        "Infers all names from a GND authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:preferredNameEntityForThePerson ?bnode .
+    ?bnode a dhpluso:NameOfThePerson ;
+        ?dhpNameProperty ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?wd {
+        ?authorityUri ?wdtNameProperty ?wdNameEntity .
+        ?wdNameEntity rdfs:label ?label .
+        BIND(BNODE(STR(LANG(?label))) AS ?bnode)
+    }
+    FILTER (dhpluso:IF_inLanguages(?this,?label)) .
+
+    SERVICE ?dhPLUSOntology {
+        ?dhpNameProperty rdfs:subPropertyOf ?wdtNameProperty .
+        ?dhpNameProperty rdfs:domain dhpluso:NameOfThePerson .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructPlaceGeometry a sh:SPARQLRule ;
+    rdfs:label "Leite dhpluso:Geometry von WD ab"@de,
+        "Infer dhpluso:Geometry from WD"@en ;
+    rdfs:definition "Leitet Geometrie von einem WD Normdatensatz ab."@de,
+        "Infers geometry from a WD authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:coordinatesForThePlace ?bnode .
+    ?bnode a dhpluso:Point ;
+        dhpluso:asWKT ?wtkValue .                 
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?wd {
+        BIND(BNODE() AS ?bnode)
+        ?authorityUri wdt:P625 ?wtkValue .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructPlaceLabel a sh:SPARQLRule ;
+    rdfs:label "Leite Label von WD ab"@de,
+        "Infer label from WD"@en ;
+    rdfs:definition "Leitet Label von einem WD Normdatensatz ab."@de,
+        "Infers label from a WD authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    SERVICE ?wd {
+        ?authorityUri rdfs:label ?label .
+    }
+    FILTER (dhpluso:IF_inLanguages(?this,?label)) .
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructPlaceNameOfThePlace a sh:SPARQLRule ;
+    rdfs:label "Leite Label von WD ab"@de,
+        "Infer label from WD"@en ;
+    rdfs:definition "Leitet Label von einem WD Normdatensatz ab."@de,
+        "Infers label from a WD authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:preferredNameEntityForThePlace ?bnode .
+    ?bnode a dhpluso:NameOfThePlace ;
+        dhpluso:placename ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?wd {
+        ?authorityUri rdfs:label ?label .
+    }
+    BIND (BNODE(STR(CONCAT(?label,LANG(?label)))) AS ?bnode) .
+    FILTER (dhpluso:IF_inLanguages(?this,?label)) .
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:WDRuleConstructWorkCreation a sh:SPARQLRule ;
+    rdfs:label "Leite Erschaffung von Wikidata ab"@de,
+        "Infer Creation from Wikidata"@en ;
+    rdfs:definition "Leitet Erschaffung von einem Wikidata Normdatensatz ab."@de,
+        "Infers Creation from a Wikidata authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:wasCreatedBy ?dhpCreation .
+    ?dhpCreation
+        a dhpluso:Creation ;
+        dhpluso:hasCreated ?dhpUri ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate ;
+    .    
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    BIND (BNODE() AS ?dhpTimeSpan) .
+
+    
+
+    SERVICE ?wd {
+        ?authorityUri wdt:P571 ?date .
+    }
+    BIND(
+        IF(
+            BOUND(?date),
+            xsd:date(?date),
+            ?nothing
+        )
+        AS ?xsDate
+    )
+    BIND (
+        IF(
+            BOUND(?xsDate) ,
+            IRI(CONCAT(STR(?dhpUri),'/creation')),
+            ?nothing
+        )
+        AS ?dhpCreation
+    ) .
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:adminMetadata a owl:ObjectProperty ;
+    rdfs:label "hat administrative Metadaten"@de,
+        "has admin metadata"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:AdminMetadata ;
+    rdfs:subPropertyOf bf:adminMetadata ;
+    skos:definition "Metadaten über die Metadaten, insbesondere Provenienzinformationen."@de,
+        "Metadata about the metadata, especially provenance information."@en .
+
+dhpluso:antonym a owl:ObjectProperty ;
+    rdfs:label "hat antonyme Bedeutung"@de,
+        "has antonym lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf lexinfo:antonym ;
+    skos:definition "Verbindet eine lexikalische Bedeutung mit ihrem Antonym."@de,
+        "Links a lexical sense with its antonym."@en .
+
+dhpluso:antonymConcept a owl:ObjectProperty ;
+    rdfs:label "hat antonymen Begriff"@de,
+        "has antonym lexical concept"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalConcept ;
+    rdfs:range dhpluso:LexicalConcept .
+
+dhpluso:content a owl:ObjectProperty ;
+    rdfs:label "hat Inhalt"@de,
+        "has content"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Content ;
+    rdfs:subPropertyOf bf:content ;
+    skos:definition "Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll."@de,
+        "Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived."@en .
+
+dhpluso:coordinatesForThePlace a owl:ObjectProperty ;
+    rdfs:label "Koordinatenentität"@de,
+        "coordinates entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:Point ;
+    rdfs:subPropertyOf gndo:preferredNameEntityForThePlace,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die Koordinatenentität eines Ortes."@de,
+        "Reference to the coordinates entity of a place."@en .
+
+dhpluso:counting a owl:DatatypeProperty ;
+    rdfs:label "Zählung"@de,
+        "Counting"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gndo:counting ;
+    skos:definition "Zählungsname einer Person."@de,
+        "Counting name of a person."@en .
+
+dhpluso:custodialHistory a owl:DatatypeProperty ;
+    rdfs:label "Provenienzgeschichte"@de,
+        "custodial history"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Item dhpluso:Instance ) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf bf:custodialHistory ;
+    skos:definition "Informationen über die Provenienz einer Ressource, z. B. Herkunft, Eigentum und Aufbewahrungsgeschichte."@de,
+        "Information about the provenance, such as origin, ownership and custodial history (chain of custody), of a resource."@en .
+
+dhpluso:dimension a owl:DatatypeProperty ;
+    rdfs:label "hat Dimension"@de,
+        "has dimension"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf ecrm:P43_has_dimension,
+        bf:dimension ;
+    skos:definition "Maße des Trägers oder der Träger und/oder des Behälters einer Ressource."@de,
+        "Measurements of the carrier or carriers and/or the container of a resource."@en .
+
+dhpluso:editionStatement a owl:DatatypeProperty ;
+    rdfs:label "hat editorische Bemerkung"@de,
+        "has edition statement"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf bf:editionStatement ;
+    skos:definition "Informationen zur Identifizierung der Ausgabe oder Version der Ressource und zugehörige Erklärungen zur Verantwortung für die Ausgabe; in der Regel transkribiert."@de,
+        "Information identifying the edition or version of the resource and associated statements of responsibility for the edition; usually transcribed."@en .
+
+dhpluso:entry a owl:ObjectProperty ;
+    rdfs:label "hat Artikel"@de,
+        "has entry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Lexicon ;
+    rdfs:range dhpluso:LexicalEntry ;
+    rdfs:subPropertyOf lime:entry .
+
+dhpluso:extent a owl:ObjectProperty ;
+    rdfs:label "hat Umfang"@de,
+        "has extent"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Extent ;
+    rdfs:subPropertyOf bf:extent ;
+    skos:definition "Anzahl und Typ der Einheiten und/oder Untereinheiten des Umfangs einer Ressource."@de,
+        "Number and type of units and/or subunits making up a resource."@en .
+
+dhpluso:forename a owl:DatatypeProperty ;
+    rdfs:label "Vorname"@de,
+        "forename"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf wdt:P735,
+        gndo:forename ;
+    skos:definition "Vorname einer Person."@de,
+        "Forname of a person."@en .
+
+dhpluso:gender a owl:ObjectProperty ;
+    rdfs:label "Geschlecht einer Person"@de,
+        "gender of a person"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:Gender ;
+    rdfs:subPropertyOf wdt:P21,
+        gndo:gender,
+        dhpluso:hasType ;
+    skos:definition "Verweis auf das Geschlecht einer Person."@de,
+        "Reference to the gender of a person."@en .
+
+dhpluso:hasPreferredIdentifier a owl:ObjectProperty ;
+    rdfs:label "hat bevorzugten Identifizierer"@de,
+        "has preferred identifier"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Entity ;
+    rdfs:range dhpluso:Identifier ;
+    rdfs:subPropertyOf ecrm:P48_has_preferred_identifier ;
+    skos:definition "Diese Eigenschaft zeichnet die bevorzugte Instanz von Identifier auf, die zur Identifizierung einer Instanz von Entity zum Zeitpunkt der Aufzeichnung dieser Eigenschaft verwendet wurde."@de,
+        "This property records the preferred instance of Identifier that was used to identify an instance of Entity at the time this property was recorded."@en .
+
+dhpluso:hypernym a owl:ObjectProperty ;
+    rdfs:label "hat hypernyme Bedeutung"@de,
+        "has hypernym lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf lexinfo:hypernym .
+
+dhpluso:hyponym a owl:ObjectProperty ;
+    rdfs:label "hat hyponyme Bedeutung"@de,
+        "has hyponym lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf lexinfo:hyponym .
+
+dhpluso:immediateAcquisition a owl:ObjectProperty ;
+    rdfs:label "direkte Erwerbung"@de,
+        "immediate acquisition"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Item ;
+    rdfs:range dhpluso:ImmediateAcquisition ;
+    rdfs:subPropertyOf bf:immediateAcquisition ;
+    skos:definition "Informationen über die Umstände (z. B. Quelle, Datum, Methode), unter denen die Ressource direkt erworben wurde."@de,
+        "Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired."@en .
+
+dhpluso:isLexicalizedSenseOf a owl:ObjectProperty ;
+    rdfs:label "ist lexikalisierte Bedeutung von"@de,
+        "is lexicalized sense of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalConcept ;
+    rdfs:subPropertyOf ontolex:isLexicalizedSenseOf .
+
+dhpluso:isTimeSpanOf a owl:ObjectProperty ;
+    rdfs:label "ist Zeitspanne von"@de,
+        "is time span of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:TimeSpan ;
+    rdfs:range dhpluso:Event ;
+    rdfs:subPropertyOf ecrm:P4i_is_time-span_of ;
+    owl:inverseOf dhpluso:hasTimeSpan ;
+    skos:definition "Diese Eigenschaft verknüpft die Zeitspanne mit einer Instanz von Event."@de,
+        "This property associates the Time-Span with an instance of Event."@en .
+
+dhpluso:isUsedOnomasticConceptOf a owl:ObjectProperty ;
+    rdfs:label "ist gebrauchte Namenskategorie von"@de,
+        "is used onomastic concept of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:OnomasticUsage ;
+    rdfs:range dhpluso:OnomasticConcept ;
+    rdfs:subPropertyOf ontolex:isLexicalizedSenseOf .
+
+dhpluso:mainTitle a owl:DatatypeProperty ;
+    rdfs:label "Haupttitel"@de,
+        "main title"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-12" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Title ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf bf:mainTitle ;
+    skos:definition "Angesprochener Titel. Mögliche Titelkomponente."@de,
+        "Title being addressed. Possible title component."@en .
+
+dhpluso:nameAddition a owl:DatatypeProperty ;
+    rdfs:label "Namensszusatz"@de,
+        "Name addition"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gndo:nameAddition ;
+    skos:definition "Namensszusatz einer Person."@de,
+        "Name addition of a person."@en .
+
+dhpluso:onomasticUsage a owl:ObjectProperty ;
+    rdfs:label "hat Namensgebrauch"@de,
+        "has onomastic Usage"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:OnomasticUsage ;
+    rdfs:subPropertyOf ontolex:sense .
+
+dhpluso:otherForm a owl:ObjectProperty ;
+    rdfs:label "hat weitere Form"@de,
+        "has other form"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:Form ;
+    rdfs:subPropertyOf ontolex:otherForm .
+
+dhpluso:partName a owl:DatatypeProperty ;
+    rdfs:label "Nummer des Teils"@de,
+        "part number"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-12" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Title ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf bf:partName ;
+    skos:definition "Teil- oder Abschnittsname eines Titels. Mögliche Titelkomponente."@de,
+        "Part or section name of a title. Possible title component."@en .
+
+dhpluso:partNumber a owl:DatatypeProperty ;
+    rdfs:label "Nummer des Teils"@de,
+        "part number"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-12" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Title ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf bf:partNumber ;
+    skos:definition "Teil oder Abschnitt der Aufzählung eines Titels. Mögliche Titelkomponente."@de,
+        "Part or section enumeration of a title. Possible title component."@en .
+
+dhpluso:partOfSpeech a owl:ObjectProperty ;
+    rdfs:label "hat Wortart"@de,
+        "has part of speech"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:PartOfSpeech ;
+    rdfs:subPropertyOf lexinfo:partOfSpeech .
+
+dhpluso:personalName a owl:DatatypeProperty ;
+    rdfs:label "Persönlicher Name"@de,
+        "Personal name"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gndo:personalName ;
+    skos:definition "Persönlicher Name einer Person."@de,
+        "Personal name of a person."@en .
+
+dhpluso:placename a owl:DatatypeProperty ;
+    rdfs:label "Ortsname"@de,
+        "place name"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePlace ;
+    rdfs:range xsd:string ;
+    skos:definition "Name eines Ortes."@de,
+        "Name of a place."@en .
+
+dhpluso:preferredNameEntityForThePerson a owl:ObjectProperty ;
+    rdfs:label "bevorzugte Namensentität"@de,
+        "prefered name entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:NameOfThePerson ;
+    rdfs:subPropertyOf gndo:preferredNameEntityForThePerson,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die bevorzugte Namensentität einer Person."@de,
+        "Reference to the prefered name entity of a person."@en .
+
+dhpluso:preferredNameEntityForThePlace a owl:ObjectProperty ;
+    rdfs:label "bevorzugte Namensentität"@de,
+        "prefered name entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:NameOfThePlace ;
+    rdfs:subPropertyOf gndo:preferredNameForThePlaceOrGeographicName,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die bevorzugte Namensentität einer Place."@de,
+        "Reference to the prefered name entity of a place."@en .
+
+dhpluso:prefix a owl:DatatypeProperty ;
+    rdfs:label "Namenspräfix"@de,
+        "name prefix"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gndo:prefix ;
+    skos:definition "Namenspräfix einer Person."@de,
+        "name prefix of a person."@en .
+
+dhpluso:provisionActivity a owl:ObjectProperty ;
+    rdfs:label "hat Veröffentlichungsaktivität"@de,
+        "has provision activity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range dhpluso:ProvisionActivity ;
+    rdfs:subPropertyOf bf:provisionActivity ;
+    skos:definition "Orts-, Namens- und/oder Datumsangaben, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe, die Produktion usw. einer Ressource beziehen."@de,
+        "Place, name, and/or date information relating to the publication, printing, distribution, issue, release, production, etc. of a resource."@en .
+
+dhpluso:provisionActivityStatement a owl:DatatypeProperty ;
+    rdfs:label "hat Anmerkung zur Veröffentlichungsaktivität"@de,
+        "has provision activity statement"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf bf:provisionActivityStatement ;
+    owl:deprecated true ;
+    skos:definition "Aussage, die sich auf Anbieter einer Ressource bezieht; in der Regel transkribiert."@de,
+        "Statement relating to providers of a resource; usually transcribed."@en .
+
+dhpluso:responsibilityStatement a owl:DatatypeProperty ;
+    rdfs:label "hat Anmerkung zur Verantwortlichkeit"@de,
+        "has responsibility statement"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf bf:responsibilityStatement ;
+    owl:deprecated true ;
+    skos:definition "Aussage zu Personen, Familien oder Körperschaften, die für die Erstellung einer Ressource verantwortlich sind oder zum Inhalt beitragen; in der Regel transkribiert."@de,
+        "Statement relating to any persons, families, or corporate bodies responsible for the creation of, or contributing to the content of a resource; usually transcribed."@en .
+
+dhpluso:sense a owl:ObjectProperty ;
+    rdfs:label "hat lexikalische Bedeutung"@de,
+        "has lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf ontolex:sense .
+
+dhpluso:subterm a owl:ObjectProperty ;
+    rdfs:label "hat Wortbildungsbestandteil"@de,
+        "has subterm"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:LexicalEntry ;
+    rdfs:subPropertyOf decomp:subterm .
+
+dhpluso:subtitle a owl:DatatypeProperty ;
+    rdfs:label "Untertitel"@de,
+        "sub title"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-12" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Title ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf bf:subtitle ;
+    skos:definition "Wort, Zeichen oder Gruppe von Wörtern und/oder Zeichen, die den Rest des Titels nach dem Haupttitel enthält. Mögliche Titelkomponente."@de,
+        "Word, character, or group of words and/or characters that contains the remainder of the title after the main title. Possible title component."@en .
+
+dhpluso:surname a owl:DatatypeProperty ;
+    rdfs:label "Nachname"@de,
+        "surname"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf wdt:P734,
+        gndo:surname ;
+    skos:definition "Nachname einer Person."@de,
+        "surname of a person."@en .
+
+dhpluso:synonym a owl:ObjectProperty ;
+    rdfs:label "hat synonyme Bedeutung"@de,
+        "has synonym lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf lexinfo:synonym .
+
+dhpluso:synonymConcept a owl:ObjectProperty ;
+    rdfs:label "hat synonymen Begriff"@de,
+        "has synonym lexical concept"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalConcept ;
+    rdfs:range dhpluso:LexicalConcept ;
+    rdfs:subPropertyOf dhpluso:objectProperty .
+
+dhpluso:variantNameEntityForThePerson a owl:ObjectProperty ;
+    rdfs:label "alternative Namensentität"@de,
+        "variant name entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:NameOfThePerson ;
+    rdfs:subPropertyOf gndo:variantNameEntityForThePerson,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die alternative Namensentität einer Person."@de,
+        "Reference to the variant name entity of a person."@en .
+
+dhpluso:variantNameEntityForThePlace a owl:ObjectProperty ;
+    rdfs:label "alternative Namensentität"@de,
+        "variant name entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:NameOfThePlace ;
+    rdfs:subPropertyOf gndo:variantNameForThePlaceOrGeographicName,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die alternative Namensentität einer Place."@de,
+        "Reference to the variant name entity of a place."@en .
+
+dhpluso:writtenRep a owl:DatatypeProperty ;
+    rdfs:label "graphische Repräsentation"@de,
+        "written representation"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Form ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf ontolex:writtenRep .
+
+dhpluso:BFRuleConstructBibliographicLabel a sh:SPARQLRule ;
+    rdfs:label "Leite Label von DNB ab"@de,
+        "Infer label from DNB"@en ;
+    rdfs:definition "Leitet Label von einem DNB Normdatensatz ab."@de,
+        "Infers label from a DNB authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+    SERVICE ?af {
+        ?authorityUri bf:title/bf:mainTitle ?label .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:BFRuleConstructBibliographicProvisionActivityStatement a sh:SPARQLRule ;
+    rdfs:label "Leite ProvisionActivity von DNB ab"@de,
+        "Infer ProvisionActivity from DNB"@en ;
+    rdfs:definition "Leitet ProvisionActivity von einem DNB Normdatensatz ab."@de,
+        "Infers ProvisionActivity from a DNB authority file."@en ;
+    sh:construct """
+        
+CONSTRUCT {
+    ?dhpUri dhpluso:provisionActivityStatement ?provisionActivityStatement .    
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+    SERVICE ?af {
+        ?authorityUri bf:provisionActivityStatement ?provisionActivityStatement .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:BFRuleConstructBibliographicTitle a sh:SPARQLRule ;
+    rdfs:label "Leite Titel von DNB ab"@de,
+        "Infer title from DNB"@en ;
+    rdfs:definition "Leitet Titel von einem DNB Normdatensatz ab."@de,
+        "Infers title from a DNB authority file."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri dhpluso:preferredTitle ?titleBnode .
+
+    ?titleBnode
+        a dhpluso:Title ;
+        ?dhpTitleProperty ?label ;
+    .  
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+    
+
+    SERVICE ?af {
+        ?authorityUri bf:title ?title .
+        ?title ?bfTitleProperty ?label .
+        BIND (BNODE() AS ?titleBnode)
+    }
+
+    SERVICE ?dhPLUSOntology {
+        ?dhpTitleProperty rdfs:subPropertyOf ?bfTitleProperty .
+        ?dhpTitleProperty rdfs:domain dhpluso:preferredTitle .
+    }
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:BeginningOfExistence a owl:Class ;
+    rdfs:label "Beginn der Existenz"@de,
+        "Beginning of Existence"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E63_Beginning_of_Existence,
+        dhpluso:Event ;
+    skos:definition "Diese Klasse umfasst Ereignisse, die eine beliebige Instanz von Persistent Item ins Leben rufen."@de,
+        "This class comprises events that bring into existence any instance of Persistent Item."@en .
+
+dhpluso:Gender a owl:Class ;
+    rdfs:label "Geschlecht"@de,
+        "Gender"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf dhpluso:Type ;
+    skos:definition "Geschlecht"@de,
+        "Gender"@en .
+
+dhpluso:Identifier a owl:Class ;
+    rdfs:label "Indentifier"@de,
+        "Indentifier"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E42_Identifier,
+        dhpluso:Appellation ;
+    skos:definition "Diese Klasse umfasst Zeichenfolgen oder Codes, die Instanzen von E1 CRM Entity zugewiesen werden, um sie eindeutig und dauerhaft im Kontext einer oder mehrerer Organisationen zu identifizieren."@de,
+        "This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations."@en .
+
+dhpluso:Language a owl:Class ;
+    rdfs:label "Language"@de,
+        "Language"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Language,
+        dhpluso:Entity ;
+    skos:definition "Sprachenentität."@de,
+        "Language Entity."@en .
+
+dhpluso:LexicalConceptSet a owl:Class ;
+    rdfs:label "Lexikalisches Begriffssystem"@de,
+        "Lexical Concept Set"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:ConceptSet,
+        dhpluso:Entity ;
+    skos:definition "Ein Begriffssystem stellt eine Sammlung lexikalischer Begriffe dar."@de,
+        "A concept set represents a collection of lexical concepts."@en .
+
+dhpluso:OnomasticConceptSet a owl:Class ;
+    rdfs:label "Sammlung von Namenskategorisierungen"@de,
+        "onomastic concept set"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:ConceptSet,
+        dhpluso:Entity ;
+    skos:definition "Eine Sammlung von Namenskategorisierungen stellt eine Sammlung onomastischer Kategorisierungen dar."@de,
+        "A onomastic concept set represents a collection of onomastic concepts."@en .
+
+dhpluso:PartOfSpeech a owl:Class ;
+    rdfs:label "Wortart"@de,
+        "part of speech"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf lexinfo:PartOfSpeech,
+        dhpluso:Entity ;
+    skos:definition "Eine Kategorie, die einem Wort auf der Grundlage seiner grammatikalischen und semantischen Eigenschaften zugeordnet wird."@de,
+        "A category assigned to a word based on its grammatical and semantic properties."@en .
+
+dhpluso:Point a owl:Class ;
+    rdfs:label "Punkt"@de,
+        "Point"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf sf:Point,
+        dhpluso:Geometry ;
+    skos:definition "Ein Punkt ist ein 0-dimensionales geometrisches Objekt und repräsentiert einen einzelnen Ort im Koordinatenraum."@de,
+        "A Point is a 0-dimensional geometric object and represents a single location in coordinate space."@en .
+
+dhpluso:Word a owl:Class ;
+    rdfs:label "Wortartikel"@de,
+        "word entry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:Word,
+        dhpluso:LexicalEntry ;
+    skos:definition "Ein Wort ist ein lexikalischer Eintrag, der aus einem einzigen Token besteht."@de,
+        "A word is a lexical entry that consists of a single token."@en .
+
+dhpluso:asWKT a owl:DatatypeProperty ;
+    rdfs:label "als WKT"@de,
+        "as WKT"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Geometry ;
+    rdfs:range geo:wktLiteral ;
+    rdfs:subPropertyOf geo:asWKT ;
+    skos:definition "Die WKT-Serialisierung einer Geometrie."@de,
+        "The WKT serialization of a geometry."@en .
+
+dhpluso:broughtIntoLife a owl:ObjectProperty ;
+    rdfs:label "brachte zur Welt"@de,
+        "brought into life"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Birth ;
+    rdfs:range dhpluso:Person ;
+    rdfs:subPropertyOf ecrm:P98_brought_into_life ;
+    owl:inverseOf dhpluso:wasBorn ;
+    skos:definition "Referenz vom Geburtsereignis auf die geborene Person."@de,
+        "Reference from the birth event to the born person."@en .
+
+dhpluso:continuedBy a owl:ObjectProperty ;
+    rdfs:label "fortgesetzt von"@de,
+        "continued by"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Work dhpluso:Instance ) ] ;
+    rdfs:range [ owl:unionOf ( dhpluso:Work dhpluso:Instance ) ] ;
+    rdfs:subPropertyOf bf:continuedBy ;
+    owl:inverseOf dhpluso:continues ;
+    skos:definition "Ressource, deren Inhalt eine frühere Ressource unter einem neuen Titel fortsetzt."@de,
+        "Resource whose content continues an earlier resource under a new title."@en .
+
+dhpluso:continues a owl:ObjectProperty ;
+    rdfs:label "setzt fort"@de,
+        "continues"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Work dhpluso:Instance ) ] ;
+    rdfs:range [ owl:unionOf ( dhpluso:Work dhpluso:Instance ) ] ;
+    rdfs:subPropertyOf bf:continues ;
+    owl:inverseOf dhpluso:continuedBy ;
+    skos:definition "Ressource, die durch den Inhalt einer späteren Ressource unter einem neuen Titel fortgesetzt wird."@de,
+        "Resource that is continued by the content of a later resource under a new title."@en .
+
+dhpluso:contribution a owl:ObjectProperty ;
+    rdfs:label "hat Mitarbeit"@de,
+        "has contribution"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Contribution ;
+    rdfs:subPropertyOf bf:contribution ;
+    skos:definition "Agent und seine Rolle in Bezug auf die Ressource."@de,
+        "Agent and its role in relation to the resource."@en .
+
+dhpluso:derivativeOf a owl:ObjectProperty ;
+    rdfs:label "Ableitung von"@de,
+        "Derivative of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:derivativeOf ;
+    owl:inverseOf dhpluso:hasDerivative ;
+    skos:definition "Werk, von dem das beschriebene Werk abgeleitet ist."@de,
+        "Source work from which the described work is derived."@en .
+
+dhpluso:diedIn a owl:ObjectProperty ;
+    rdfs:label "gestorben"@de,
+        "died"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:Death ;
+    rdfs:subPropertyOf ecrm:P100i_died_in ;
+    owl:inverseOf dhpluso:wasDeathOf ;
+    skos:definition "Verweis auf das Todesevent einer Person."@de,
+        "Reference to the death event of a person."@en .
+
+dhpluso:expressionOf a owl:ObjectProperty ;
+    rdfs:label "Expression von"@de,
+        "Expression of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:expressionOf ;
+    owl:inverseOf dhpluso:hasExpression ;
+    skos:definition "Werk, von dem das beschriebene Werk eine Expression ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verbinden. Bespielsweise ist eine kritische Edition eine Expression eines mhd. Werkes."@de,
+        "Work that the described Work is an expression of. For use to connect Works under FRBR/RDA rules. For example, a critical edition is an expression of a gmh. work."@en .
+
+dhpluso:hasCreated a owl:ObjectProperty ;
+    rdfs:label "hat erschaffen"@de,
+        "has created"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Creation ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf ecrm:P94_has_created ;
+    owl:inverseOf dhpluso:wasCreatedBy ;
+    skos:definition "Diese Eigenschaft verknüpft eine Instanz von Creation mit der Instanz von Werk, die durch sie erstellt wurde."@de,
+        "This property links an instance of Creation to the instance of Work created by it."@en .
+
+dhpluso:hasDerivative a owl:ObjectProperty ;
+    rdfs:label "Hat Ableitung"@de,
+        "Has Derivative"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:hasDerivative ;
+    owl:inverseOf dhpluso:derivativeOf ;
+    skos:definition "Ressource, die eine Ableitung des beschriebenen Werks ist."@de,
+        "Resource that is a modification of the described work."@en .
+
+dhpluso:hasExpression a owl:ObjectProperty ;
+    rdfs:label "Hat Expression"@de,
+        "Has Expression"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:hasExpression ;
+    owl:inverseOf dhpluso:expressionOf ;
+    skos:definition "Werk, das eine Expression eines beschriebenen Werks ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verknüpfen."@de,
+        "Work that is an expression of a described Work. For use to relate Works under FRBR/RDA rules."@en .
+
+dhpluso:hasInstance a owl:ObjectProperty ;
+    rdfs:label "hat Instanz"@de,
+        "has instance"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Instance ;
+    rdfs:subPropertyOf bf:hasInstance ;
+    owl:inverseOf dhpluso:instanceOf ;
+    skos:definition "Die Instanz ist mit dem beschriebenen Werk verbunden."@de,
+        "Instance is related to described Work."@en .
+
+dhpluso:hasItem a owl:ObjectProperty ;
+    rdfs:label "hat Exemplar"@de,
+        "has Item"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range dhpluso:Item ;
+    rdfs:subPropertyOf bf:hasItem ;
+    owl:inverseOf dhpluso:itemOf ;
+    skos:definition "Exemplar, das ein Beispiel für die beschriebene Instanz ist."@de,
+        "Item which is an example of the described Instance."@en .
+
+dhpluso:hasSeries a owl:ObjectProperty ;
+    rdfs:label "hat Serie"@de,
+        "has series"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Instance dhpluso:Work ) ] ;
+    rdfs:range [ owl:unionOf ( dhpluso:Instance dhpluso:Work ) ] ;
+    rdfs:subPropertyOf bf:hasSeries ;
+    skos:definition "Ressource, in der der Band herausgegeben wurde; der Titel der größeren Ressource erscheint auf dem Band."@de,
+        "Resource in which the part has been issued; the title of the larger resource appears on the part."@en .
+
+dhpluso:hasTimeSpan a owl:ObjectProperty ;
+    rdfs:label "hat Zeitspanne"@de,
+        "has time span"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Event ;
+    rdfs:range dhpluso:TimeSpan ;
+    rdfs:subPropertyOf ecrm:P4_has_time-span ;
+    owl:inverseOf dhpluso:isTimeSpanOf ;
+    skos:definition "Diese Eigenschaft verknüpft ein Ereignis mit der Zeitspanne, in der es stattfand."@de,
+        "This property associates an instance of Event with the Time-Span during which it was on-going."@en .
+
+dhpluso:hasType a owl:ObjectProperty ;
+    rdfs:label "hat Typ"@de,
+        "has type"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Entity ;
+    rdfs:range dhpluso:Type ;
+    rdfs:subPropertyOf ecrm:P2_has_type ;
+    skos:definition "Diese Eigenschaft ermöglicht die Subtypisierung von dhPLUS-Entitäten - eine Form der Spezialisierung - durch die Verwendung einer terminologischen Hierarchie oder eines Thesaurus."@de,
+        "This property allows sub typing of dhPLUS entities - a form of specialisation - through the use of a terminological hierarchy, or thesaurus."@en .
+
+dhpluso:instanceOf a owl:ObjectProperty ;
+    rdfs:label "Instanz von"@de,
+        "instance of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:instanceOf ;
+    owl:inverseOf dhpluso:hasInstance ;
+    skos:definition "Werk, das die beschriebene Instanz instanziiert oder minifestiert."@de,
+        "Work the Instance described instantiates or manifests."@en .
+
+dhpluso:issuance a owl:ObjectProperty ;
+    rdfs:label "hat Ausgabe"@de,
+        "has issuance"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Instance dhpluso:Work ) ] ;
+    rdfs:range dhpluso:Issuance ;
+    rdfs:subPropertyOf bf:issuance ;
+    skos:definition "Kategorisierung, die widerspiegelt, ob eine Ressource in einem oder mehreren Teilen ausgegeben wird, wie sie aktualisiert wird und wie sie beendet werden soll."@de,
+        "Categorization reflecting whether a resource is issued in one or more parts, the way it is updated, and its intended termination."@en .
+
+dhpluso:itemOf a owl:ObjectProperty ;
+    rdfs:label "ist Exemplar von"@de,
+        "is item of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Item ;
+    rdfs:range dhpluso:Instance ;
+    rdfs:subPropertyOf bf:itemOf ;
+    owl:inverseOf dhpluso:hasItem ;
+    skos:definition "Instanz, für die das beschriebene Exemplar ein Beispiel ist."@de,
+        "Instance for which the described Item is an example."@en .
+
+dhpluso:language a owl:DatatypeProperty ;
+    rdfs:label "hat Sprache"@de,
+        "has language"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic,
+        dhpluso:Lexicon ;
+    rdfs:range dhpluso:Language ;
+    rdfs:subPropertyOf bf:language,
+        lime:language ;
+    skos:definition "Sprache, die mit einer Ressource oder ihren Teilen verbunden ist."@de,
+        "Language associated with a resource or its parts."@en .
+
+dhpluso:note a owl:ObjectProperty ;
+    rdfs:label "hat Anmerkung"@de,
+        "has note"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Note ;
+    rdfs:subPropertyOf bf:note ;
+    skos:definition "Allgemeine Textinformationen, die sich auf eine Ressource beziehen, wie z. B. Informationen über eine bestimmte Kopie einer Ressource oder Informationen über ein bestimmtes Attribut einer Ressource."@de,
+        "General textual information relating to a resource, such as Information about a specific copy of a resource or information about a particular attribute of a resource."@en .
+
+dhpluso:title a owl:ObjectProperty ;
+    rdfs:label "hat Titel"@de,
+        "has title"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Title ;
+    rdfs:subPropertyOf ecrm:P102_has_title,
+        bf:title ;
+    skos:definition "Name einer Ressource."@de,
+        "Name given to a resource."@en .
+
+dhpluso:tookPlaceAt a owl:ObjectProperty ;
+    rdfs:label "fand statt an"@de,
+        "took place at"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-26" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Event ;
+    rdfs:range dhpluso:Place ;
+    rdfs:subPropertyOf ecrm:P7_took_place_at ;
+    owl:inverseOf dhpluso:witnessed ;
+    skos:definition "Diese Eigenschaft beschreibt die räumliche Lage eines Ereignisses."@de,
+        "This property describes the spatial location of an event."@en .
+
+dhpluso:wasBorn a owl:ObjectProperty ;
+    rdfs:label "wurde geboren"@de,
+        "was born"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:Birth ;
+    rdfs:subPropertyOf ecrm:P98i_was_born ;
+    owl:inverseOf dhpluso:broughtIntoLife ;
+    skos:definition "Verweis auf das Geburtsevent einer Person."@de,
+        "Reference to the birth event of a person."@en .
+
+dhpluso:wasCreatedBy a owl:ObjectProperty ;
+    rdfs:label "wurde erschaffen durch"@de,
+        "was created by"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Creation ;
+    rdfs:subPropertyOf ecrm:P94i_was_created_by ;
+    owl:inverseOf dhpluso:hasCreated ;
+    skos:definition "Diese Eigenschaft verknüpft eine Instanz von Werk mit der Instanz von Erschaffung, deren Produkt das Werk ist."@de,
+        "This property links an instance of Work to the instance of Creation whose product is the work."@en .
+
+dhpluso:wasDeathOf a owl:ObjectProperty ;
+    rdfs:label "war Tod von"@de,
+        "was death of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Death ;
+    rdfs:range dhpluso:Person ;
+    rdfs:subPropertyOf ecrm:P100_was_death_of ;
+    owl:inverseOf dhpluso:diedIn ;
+    skos:definition "Verweis auf die Person, die in einem Todesevent verstorben ist."@de,
+        "Reference to the person dying in a death event."@en .
+
+dhpluso:witnessed a owl:ObjectProperty ;
+    rdfs:label "fand statt an"@de,
+        "took place at"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-26" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:Event ;
+    rdfs:subPropertyOf ecrm:P7i_witnessed ;
+    owl:inverseOf dhpluso:tookPlaceAt ;
+    skos:definition "Diese Eigenschaft beschreibt die Ereignisse, die an einem bestimmten Ort stattfinden."@de,
+        "This property describes the events happening at a spatial location."@en .
+
+dhpluso:AdminMetadata a owl:Class ;
+    rdfs:label "Administrative Metadaten"@de,
+        "Admin Metadata"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:AdminMetadata,
+        dhpluso:Entity ;
+    skos:definition "Metadaten über die Metadaten, insbesondere Provenienzinformationen."@de,
+        "Metadata about the metadata, especially provenance information."@en .
+
+dhpluso:Content a owl:Class ;
+    rdfs:label "Inhalt"@de,
+        "Content"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Content,
+        dhpluso:Entity ;
+    skos:definition "Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll."@de,
+        "Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived."@en .
+
+dhpluso:Extent a owl:Class ;
+    rdfs:label "Umfang"@de,
+        "Extent"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Extent,
+        dhpluso:Entity ;
+    skos:definition "Anzahl und Typ der Einheiten und/oder Untereinheiten, aus denen eine Ressource besteht."@de,
+        "Number and type of units and/or subunits making up a resource."@en .
+
+dhpluso:ImmediateAcquisition a owl:Class ;
+    rdfs:label "Erwerbungsumstände"@de,
+        "Immediate acquisition"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:ImmediateAcquisition,
+        dhpluso:Entity ;
+    skos:definition "Informationen über die Umstände, z. B. Quelle, Datum, Methode, unter denen die Ressource direkt erworben wurde."@de,
+        "Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired."@en .
+
+dhpluso:Lexicon a owl:Class ;
+    rdfs:label "Wörterbuch"@de,
+        "lexicon"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf lime:Lexicon,
+        dhpluso:Entity ;
+    skos:definition "Ein Lexikon ist eine Sammlung von lexikalischen Einträgen für eine bestimmte Sprache oder einen bestimmten Bereich."@de,
+        "A lexicon represents a collection of lexical entries for a particular language or domain."@en .
+
+dhpluso:ProvisionActivity a owl:Class ;
+    rdfs:label "Veröffentlichung"@de,
+        "Provision Activity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E65_Creation,
+        bf:ProvisionActivity,
+        dhpluso:Event ;
+    skos:definition "Informationen über den Akteur oder Ort, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe oder die Produktion einer Ressource beziehen."@de,
+        "Information about the agent or place relating to the publication, printing, distribution, issue, release, or production of a resource."@en .
+
+dhpluso:TimeSpan a owl:Class ;
+    rdfs:label "Zeitspanne"@de,
+        "time span"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-10-05+14:42" ;
+    rdfs:subClassOf ecrm:E52_Time-Span,
+        bf:Temporal,
+        time:TemporalEntity,
+        dhpluso:Entity ;
+    skos:definition "Diese Klasse umfasst abstrakte zeitliche Ausdehnungen im Sinne der Galileischen Physik, die einen Anfang, ein Ende und eine Dauer haben. "@de,
+        "This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration."@en .
+
+dhpluso:Type a owl:Class ;
+    rdfs:label "Typ"@de,
+        "Type"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E55_Type,
+        skos:Concept,
+        dhpluso:Entity ;
+    skos:definition "Diese Klasse umfasst Konzepte, die durch Begriffe aus Thesauri und kontrollierten Vokabularen bezeichnet werden, die zur Charakterisierung und Klassifizierung von Instanzen von CIDOC CRM-Klassen verwendet werden. Instanzen von E55 Type repräsentieren Konzepte im Gegensatz zu Instanzen von E41 Appellation, die zur Benennung von Instanzen von CIDOC-CRM-Klassen verwendet werden."@de,
+        "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CIDOC CRM classes. Instances of E55 Type represent concepts in contrast to instances of E41 Appellation which are used to name instances of CIDOC CRM classes."@en .
+
+dhpluso:Birth a owl:Class ;
+    rdfs:label "Geburt"@de,
+        "Birth"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E67_Birth,
+        dhpluso:BeginningOfExistence ;
+    skos:definition "Diese Klasse umfasst die Geburten von Menschen. "@de,
+        "This class comprises the births of human beings."@en .
+
+dhpluso:Contribution a owl:Class ;
+    rdfs:label "Beitrag"@de,
+        "Contribution"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Contribution,
+        dhpluso:Entity ;
+    skos:definition "Agent und Rolle in Bezug auf die zu beschreibende Ressource."@de,
+        "Agent and role with respect to the resource being described."@en .
+
+dhpluso:Creation a owl:Class ;
+    rdfs:label "Erschaffung"@de,
+        "Creation"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E65_Creation,
+        dhpluso:BeginningOfExistence ;
+    skos:definition "Diese Klasse umfasst Ereignisse, die zur Schaffung von begrifflichen Gegenständen oder immateriellen Produkten führen, wie Legenden, Gedichte, Texte, Musik, Bilder, Filme, Gesetze, Schriften usw."@de,
+        "This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts, music, images, movies, laws, types etc."@en .
+
+dhpluso:Death a owl:Class ;
+    rdfs:label "Tod"@de,
+        "Death"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E69_Death,
+        dhpluso:Event ;
+    skos:definition "Diese Klasse umfasst den Tod von Menschen. "@de,
+        "This class comprises the death of human beings."@en .
+
+dhpluso:Geometry a owl:Class ;
+    rdfs:label "Geometrie"@de,
+        "Geometry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf crm:E94_Space_Primitive,
+        sf:Geometry,
+        dhpluso:Appellation ;
+    skos:definition "Oberklasse aller Geometrieklassen."@de,
+        "Root of all geometry classes."@en ;
+    sh:property [ sh:datatype geo:wktLiteral ;
+            sh:path dhpluso:asWKT ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Geometry ] .
+
+dhpluso:Issuance a owl:Class ;
+    rdfs:label "Art der Veröffentlichung"@de,
+        "Mode of issuance"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Issuance,
+        dhpluso:Entity ;
+    skos:definition "Informationen darüber, ob eine Ressource in einem oder mehreren Teilen veröffentlicht wird, wie sie aktualisiert wird und wie sie abgeschlossen werden soll."@de,
+        "Information about whether a resource is issued in one or more parts, the way it is updated, and its intended termination."@en .
+
+dhpluso:Note a owl:Class ;
+    rdfs:label "Anmerkung"@de,
+        "Note"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Note,
+        dhpluso:Entity ;
+    skos:definition "Informationen, in der Regel in Textform, über Attribute einer Ressource oder einen Aspekt einer Ressource."@de,
+        "Information, usually in textual form, on attributes of a resource or some aspect of a resource."@en .
+
+dhpluso:OnomasticUsage a owl:Class ;
+    rdfs:label "Eigennamengebrauch"@de,
+        "onomastic usage"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalSense,
+        dhpluso:Entity ;
+    skos:definition "Eigennamengebrauch"@de,
+        "onomastic usage"@en .
+
+dhpluso:Form a owl:Class ;
+    rdfs:label "Form"@de,
+        "Form"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-09-16+14:25" ;
+    rdfs:subClassOf ontolex:Form,
+        dhpluso:Entity ;
+    skos:definition "Eine Form stellt eine grammatikalische Realisierung eines lexikalischen Eintrags dar."@de,
+        "A form represents one grammatical realization of a lexical entry."@en .
+
+dhpluso:Item a owl:Class ;
+    rdfs:label "Exemplar"@de,
+        "Item"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E22_Human-Made_Object,
+        bf:Item,
+        dhpluso:Bibliographic ;
+    skos:definition "Einzelnes Exemplar einer Instanz."@de,
+        "Single example of an Instance."@en .
+
+dhpluso:OnomasticConcept a owl:Class ;
+    rdfs:label "onomastische Kategorie"@de,
+        "onomastic concept"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalConcept,
+        dhpluso:Entity ;
+    skos:definition "Ein onomastisches Konzept stellt eine Kategorisierung von Namen dar."@de,
+        "A onomastic concept represents a categorization of names."@en .
+
+dhpluso:NameOfThePlace a owl:Class ;
+    rdfs:label "Namensentität einer Place"@de,
+        "Name entity of a place"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf gndo:PlaceOrGeographicName,
+        dhpluso:Appellation ;
+    skos:definition "Entität für die verschiedenen Data Properties eines Ortsnamens."@de,
+        "Entity for the different data properties of a places name."@en .
+
+dhpluso:Appellation a owl:Class ;
+    rdfs:label "Indentifier"@de,
+        "Indentifier"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E41_Appellation,
+        dhpluso:Entity ;
+    skos:definition "Diese Klasse umfasst sinnvolle oder nicht sinnvolle Zeichen oder Anordnungen von Zeichen, die einer bestimmten Syntax folgen, die verwendet werden oder verwendet werden können, um auf eine bestimmte Instanz einer Klasse oder Kategorie innerhalb eines bestimmten Kontexts zu verweisen und diese zu identifizieren."@de,
+        "This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context."@en .
+
+dhpluso:isIdentifiedBy a owl:ObjectProperty ;
+    rdfs:label "wird identifiziert durch"@de,
+        "is identified by"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Entity ;
+    rdfs:range dhpluso:Appellation ;
+    rdfs:subPropertyOf ecrm:P1_is_identified_by,
+        bf:identifiedBy ;
+    skos:definition "Diese Eigenschaft beschreibt die Benennung oder Identifizierung eines beliebigen Elements der realen Welt durch einen Namen oder einen anderen Bezeichner."@de,
+        "This property describes the naming or identification of any real world item by a name or any other identifier."@en .
+
+dhpluso:InferTarget a sh:SPARQLTargetType ;
+    rdfs:label "Target für Unterklassen und die Klasse selbst"@de,
+        "Target for all subclasses or self"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-13" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:definition "Matcht alle Knoten mit dhpluso-Klasse oder einer Unterklasse dieser Klasse."@de,
+        "Matches all nodes with a dhpluso-class or subclasses of this class."@en ;
+    rdfs:subClassOf sh:Target ;
+    sh:labelTemplate "All instances of class {$class} or subclasses of this class"@en,
+        "Alle Instanzen der Klasse {$class} oder Unterklassen dieser Klasse"@en ;
+    sh:parameter [ sh:description "Namespace der Normdaten."@en,
+                "The Namespace of the authority file."@en ;
+            sh:order 1 ;
+            sh:path tmp:authorityNamespace ],
+        [ sh:description "Klasse des Knotens."@en,
+                "The class of the nodes."@en ;
+            sh:order 2 ;
+            sh:path tmp:class ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT ?return
+WHERE {
+    BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+
+    ?this a parameter:InstanceParameter .
+
+    {
+        ?this parameter:dhpClass $class .
+    }
+    UNION
+    {
+        ?this parameter:dhpClass ?currentClass .
+        SERVICE ?dhPLUSOntology {
+            ?currentClass rdfs:subClassOf* $class .
+        }
+    }
+
+    ?this parameter:authorityUri ?authorityUri .
+    BIND(
+        IF(
+            # DNB is problematic, because it is part of GND namespace
+            STR($authorityNamespace) = STR(dnb:),
+            ?this,
+            IF (
+                STRSTARTS(STR(?authorityUri), STR($authorityNamespace)),
+                ?this,
+                ?nothing
+            )
+        )
+        AS ?return
+    )
+
+}
+        """ .
+
+dhpluso:OwlRuleConstructSameAs a sh:SPARQLRule ;
+    rdfs:label "dhpUri owl:sameAs authorityUri"@de,
+        "dhpUri owl:sameAs authorityUri"@en ;
+    rdfs:definition "dhpUri owl:sameAs authorityUri."@de,
+        "dhpUri owl:sameAs authorityUri."@en ;
+    sh:construct """
+        CONSTRUCT {
+    ?dhpUri owl:sameAs ?authorityUri .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:RuleConstructDhplusType a sh:SPARQLRule ;
+    rdfs:label "Leite Klasse ab"@de,
+        "Infer class"@en ;
+    rdfs:definition "Leitet Klasse von Parameter ab."@de,
+        "Infers class from parameter."@en ;
+    sh:construct """
+       CONSTRUCT {
+    ?dhpUri a ?dhpClass .
+}
+WHERE {
+    ?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
+}
+    """ ;
+    sh:prefixes constants:Prefixes .
+
+dhpluso:Title a owl:Class ;
+    rdfs:label "Titel"@de,
+        "Titel"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E35_Title,
+        bf:Title,
+        dhpluso:Appellation ;
+    skos:definition "Titelinformationen zu einer Ressource: Werktitel, bevorzugter Titel, Instanztitel, transkribierter Titel, übersetzter Titel, abweichende Form des Titels usw."@de,
+        "Title information relating to a resource: work title, preferred title, instance title, transcribed title, translated title, variant form of title, etc."@en .
+
+dhpluso:Event a owl:Class ;
+    rdfs:label "Ereignis"@de,
+        "Event"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E5_Event,
+        bf:Event,
+        dhpluso:Entity ;
+    skos:definition "Diese Klasse umfasst eindeutige, abgegrenzte und kohärente Prozesse und Interaktionen materieller Natur in kulturellen, sozialen oder physischen Systemen, die Instanzen von Persistent Item in einer für die Art des Prozesses charakteristischen Weise einbeziehen und beeinflussen. Typische Beispiele sind Versammlungen, Geburten, Todesfälle, Handlungen der Entscheidungsfindung, des Herstellens oder Erfindens von Dingen, aber auch komplexere und umfangreichere wie Konferenzen, Wahlen, der Bau einer Burg oder Schlachten."@de,
+        "This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles."@en .
+
+dhpluso:LexicalConcept a owl:Class ;
+    rdfs:label "Lexikalischer Begriff"@de,
+        "Lexical Concept"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalConcept,
+        dhpluso:Entity ;
+    skos:definition "Ein lexikalisches Konzept ist eine mentale Abstraktion, ein Konzept oder eine Gedankeneinheit, die durch eine bestimmte Sammlung von Bedeutungen lexikalisiert werden kann."@de,
+        "A lexical concept represents a mental abstraction, concept or unit of thought that can be lexicalized by a given collection of senses."@en .
+
+dhpluso:LexicalEntry a owl:Class ;
+    rdfs:label "lexikalischer Artikel"@de,
+        "lexical entry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalEntry,
+        dhpluso:Entity ;
+    skos:definition "Ein lexikalischer Eintrag stellt eine Analyseeinheit des Lexikons dar, die aus einer Reihe von grammatikalisch verwandten Formen und einer Reihe von Grundbedeutungen besteht, die mit all diesen Formen verbunden sind. Ein lexikalischer Eintrag ist also ein Wort, ein Mehrwortausdruck oder ein Affix mit einem einzigen Part-of-Speech, einem morphologischen Muster, einer Etymologie und einer Reihe von Bedeutungen."@de,
+        "A lexical entry represents a unit of analysis of the lexicon that consists of a set of forms that are grammatically related and a set of base meanings that are associated with all of these forms. Thus, a lexical entry is a word, multiword expression or affix with a single part-of-speech, morphological pattern, etymology and set of senses."@en .
+
+dhpluso:Place a owl:Class ;
+    rdfs:label "Ort"@de,
+        "Place"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-19" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E53_Place,
+        bf:Place,
+        wd:Q17334923,
+        gndo:PlaceOrGeographicName,
+        dhpluso:Entity ;
+    skos:definition "Ein dhpluso Ort."@de,
+        "A dhpluso place."@en .
+
+dhpluso:Bibliographic a owl:Class ;
+    rdfs:label "Bibliographische Entität"@de,
+        "Bibliographic Entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        ecrm:E89_Propositional_Object,
+        dhpluso:Entity ;
+    skos:definition "Bibliographische Entitäten sind Werke, Instanzen und Exemplare."@de,
+        "Bibliographic Entities are Works, Instances and Items."@en .
+
+dhpluso:NameOfThePerson a owl:Class ;
+    rdfs:label "Namensentität einer Person"@de,
+        "Name entity of a person"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf gndo:NameOfThePerson,
+        dhpluso:Appellation ;
+    skos:definition "Entität für die verschiedenen Data Properties eines Personennamens."@de,
+        "Entity for the different data properties of a person's name."@en .
+
+dhpluso:LexicalSense a owl:Class ;
+    rdfs:label "lexikalische Bedeutung"@de,
+        "lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalSense,
+        dhpluso:Entity ;
+    skos:definition "Ein lexikalischer Sinn stellt die lexikalische Bedeutung eines lexikalischen Eintrags dar, wenn er als Verweis auf das entsprechende Ontologieelement interpretiert wird. Ein lexikalischer Sinn stellt somit eine Verdinglichung eines Paares aus einem eindeutig bestimmten lexikalischen Eintrag und einer eindeutig bestimmten Ontologie-Entität dar, auf die er sich bezieht. Eine Verknüpfung zwischen einem lexikalischen Eintrag und einer Ontologie-Entität über ein Lexical Sense-Objekt impliziert, dass der lexikalische Eintrag verwendet werden kann, um auf die betreffende Ontologie-Entität zu verweisen."@de,
+        "A lexical sense represents the lexical meaning of a lexical entry when interpreted as referring to the corresponding ontology element. A lexical sense thus represents a reification of a pair of a uniquely determined lexical entry and a uniquely determined ontology entity it refers to. A link between a lexical entry and an ontology entity via a Lexical Sense object implies that the lexical entry can be used to refer to the ontology entity in question."@en .
+
+dhpluso:Person a owl:Class ;
+    rdfs:label "Person"@de,
+        "Person"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E21_Person,
+        bf:Person,
+        wd:Q5,
+        gndo:Person,
+        dhpluso:Entity ;
+    skos:definition "Eine dhpluso Person."@de,
+        "A dhpluso person."@en .
+
+dhpluso:Instance a owl:Class ;
+    rdfs:label "Instanz"@de,
+        "Instance"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E89_Propositional_Object,
+        bf:Instance,
+        dhpluso:Bibliographic ;
+    skos:definition "Ressource, die eine individuelle, materielle Verkörperung eines Werkes darstellt."@de,
+        "Resource reflecting an individual, material embodiment of a Work."@en .
+
+dhpluso:Entity a owl:Class ;
+    rdfs:label "Entität"@de,
+        "Entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E1_CRM_Entity ;
+    skos:definition "Basisklasse aller dhpluso Klassen."@de,
+        "Base class for all dhpluso classes."@en .
+
+dhpluso:Work a owl:Class ;
+    rdfs:label "Werk"@de,
+        "Work"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E89_Propositional_Object,
+        bf:Work,
+        dhpluso:Bibliographic ;
+    skos:definition "Ressource, die eine konzeptionelle Essenz einer Katalogisierungsressource widerspiegelt."@de,
+        "Resource reflecting a conceptual essence of a cataloging resource."@en .
+
+dhpluso:SubclassTarget a sh:SPARQLTargetType ;
+    rdfs:label "Target für Unterklassen und die Klasse selbst"@de,
+        "Target for all subclasses or self"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-30" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:definition "Matcht alle Knoten mit dhpluso-Klasse oder einer Unterklasse dieser Klasse."@de,
+        "Matches all nodes with a dhpluso-class or subclasses of this class."@en ;
+    rdfs:subClassOf sh:Target ;
+    sh:labelTemplate "All instances of class {$class} or subclasses of this class"@en,
+        "Alle Instanzen der Klasse {$class} oder Unterklassen dieser Klasse"@en ;
+    sh:parameter [ sh:class tmp:class ;
+            sh:description "Klasse des zu prüfenden Knotens."@en,
+                "The class of the focus nodes."@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path tmp:class ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT ?this
+WHERE {
+    {
+        ?this a $class .
+    }
+    UNION
+    {
+        BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+        ?this a ?currentClass .
+        SERVICE ?dhPLUSOntology {
+            ?currentClass rdfs:subClassOf* $class .
+        }
+    }
+}
+        """ .
+
+constants:Prefixes rdfs:label "Präfixe"@de,
+        "Prefixes"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    skos:definition "Praäfixdeklaration für Shacl."@de,
+        "Prefix declaration for Shacl."@en ;
+    sh:declare [ sh:namespace "http://www.w3.org/ns/shacl#" ;
+            sh:prefix "sh" ],
+        [ sh:namespace "http://www.w3.org/ns/lemon/decomp#" ;
+            sh:prefix "decomp" ],
+        [ sh:namespace "http://www.cidoc-crm.org/cidoc-crm/" ;
+            sh:prefix "crm" ],
+        [ sh:namespace "http://www.w3.org/XML/1998/namespace" ;
+            sh:prefix "xml" ],
+        [ sh:namespace "https://dh.plus.ac.at/mhdbdb/text/" ;
+            sh:prefix "mhdbdbtext" ],
+        [ sh:namespace "http://purl.org/dc/terms/" ;
+            sh:prefix "dcterms" ],
+        [ sh:namespace "https://dh.plus.ac.at/constants/" ;
+            sh:prefix "constants" ],
+        [ sh:namespace "http://www.w3.org/ns/lemon/ontolex#" ;
+            sh:prefix "ontolex" ],
+        [ sh:namespace "https://d-nb.info/" ;
+            sh:prefix "dnb" ],
+        [ sh:namespace "https://dh.plus.ac.at/dhplusoValidation/" ;
+            sh:prefix "dhplusoValidation" ],
+        [ sh:namespace "http://www.wikidata.org/prop/direct/" ;
+            sh:prefix "wdt" ],
+        [ sh:namespace "https://dh.plus.ac.at/mhdbdb/instance/" ;
+            sh:prefix "mhdbdbi" ],
+        [ sh:namespace "http://purl.org/vocab/vann/" ;
+            sh:prefix "vann" ],
+        [ sh:namespace "https://gams.uni-graz.at/o:szd.ontology#" ;
+            sh:prefix "szd" ],
+        [ sh:namespace "https://dh.plus.ac.at/parameter/" ;
+            sh:prefix "parameteri" ],
+        [ sh:namespace "http://www.w3.org/ns/oa#" ;
+            sh:prefix "oa" ],
+        [ sh:namespace "http://www.w3.org/ns/lemon/lime#" ;
+            sh:prefix "lime" ],
+        [ sh:namespace "https://dh.plus.ac.at/xml-ontology#" ;
+            sh:prefix "dhplusXml" ],
+        [ sh:namespace "http://www.w3.org/2007/05/powder-s#" ;
+            sh:prefix "wdrs" ],
+        [ sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
+            sh:prefix "rdf" ],
+        [ sh:namespace "http://erlangen-crm.org/200717/" ;
+            sh:prefix "ecrm" ],
+        [ sh:namespace "http://id.loc.gov/ontologies/bibframe/" ;
+            sh:prefix "bf" ],
+        [ sh:namespace "http://creativecommons.org/ns#" ;
+            sh:prefix "cc" ],
+        [ sh:namespace "https://d-nb.info/gnd/" ;
+            sh:prefix "gnd" ],
+        [ sh:namespace "https://dh.plus.ac.at/instance/" ;
+            sh:prefix "dhplusi" ],
+        [ sh:namespace "https://dh.plus.ac.at/ontology#" ;
+            sh:prefix "dhpluso" ],
+        [ sh:namespace "http://purl.org/dc/elements/1.1/" ;
+            sh:prefix "dc" ],
+        [ sh:namespace "http://xmlns.com/foaf/0.1/" ;
+            sh:prefix "foaf" ],
+        [ sh:namespace "http://id.loc.gov/ontologies/bflc/" ;
+            sh:prefix "bflc" ],
+        [ sh:namespace "http://www.lexinfo.net/ontology/3.0/lexinfo#" ;
+            sh:prefix "lexinfo" ],
+        [ sh:namespace "http://www.w3.org/2002/07/owl#" ;
+            sh:prefix "owl" ],
+        [ sh:namespace "http://www.wikidata.org/entity/statement/" ;
+            sh:prefix "wds" ],
+        [ sh:namespace "http://www.w3.org/2004/02/skos/core#" ;
+            sh:prefix "skos" ],
+        [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#" ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace "http://www.opengis.net/ont/sf#" ;
+            sh:prefix "ogcsf" ],
+        [ sh:namespace "http://www.opengis.net/ont/sf#" ;
+            sh:prefix "sf" ],
+        [ sh:namespace "https://dh.plus.ac.at/mhdbdb/ontology#" ;
+            sh:prefix "mhdbdbo" ],
+        [ sh:namespace "http://www.wikidata.org/entity/" ;
+            sh:prefix "wd" ],
+        [ sh:namespace "http://www.wikidata.org/prop/direct-normalized/" ;
+            sh:prefix "wdtn" ],
+        [ sh:namespace "https://dh.plus.ac.at/tmp/" ;
+            sh:prefix "tmp" ],
+        [ sh:namespace "https://mhdbdbd.plus.ac.at/xml-ontology#" ;
+            sh:prefix "mhdbdbxml" ],
+        [ sh:namespace "http://schema.org/" ;
+            sh:prefix "schema" ],
+        [ sh:namespace "http://www.opengis.net/ont/geosparql#" ;
+            sh:prefix "geo" ],
+        [ sh:namespace "https://dh.plus.ac.at/vocabulary/" ;
+            sh:prefix "dhplusv" ],
+        [ sh:namespace "https://d-nb.info/standards/elementset/dnb#" ;
+            sh:prefix "dnbt" ],
+        [ sh:namespace "http://www.w3.org/2006/time#" ;
+            sh:prefix "time" ],
+        [ sh:namespace "http://purl.org/dc/terms/" ;
+            sh:prefix "dct" ],
+        [ sh:namespace "https://d-nb.info/standards/elementset/gnd#" ;
+            sh:prefix "gndo" ],
+        [ sh:namespace "http://www.w3.org/2001/XMLSchema#" ;
+            sh:prefix "xsd" ],
+        [ sh:namespace "https://dh.plus.ac.at/parameter-ontology#" ;
+            sh:prefix "parameter" ] .
+

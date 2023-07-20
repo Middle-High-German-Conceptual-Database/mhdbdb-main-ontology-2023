@@ -1,0 +1,1753 @@
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix constants: <https://dh.plus.ac.at/constants/> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix decomp: <http://www.w3.org/ns/lemon/decomp#> .
+@prefix dhpluso: <https://dh.plus.ac.at/ontology#> .
+@prefix ecrm: <http://erlangen-crm.org/200717/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix gndo: <https://d-nb.info/standards/elementset/gnd#> .
+@prefix lexinfo: <http://www.lexinfo.net/ontology/3.0/lexinfo#> .
+@prefix lime: <http://www.w3.org/ns/lemon/lime#> .
+@prefix mhdbdbxml: <https://mhdbdbd.plus.ac.at/xml-ontology#> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix tmp: <https://dh.plus.ac.at/tmp/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+@prefix wdt: <http://www.wikidata.org/prop/direct/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dhpluso:Affix a owl:Class ;
+    rdfs:label "Affixartikel"@de,
+        "affix entry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:Affix,
+        dhpluso:LexicalEntry ;
+    skos:definition "Ein Affix ist ein lexikalischer Eintrag, der ein Morphem (Suffix, Präfix, Infix, Zirkumfix) darstellt, das an einen Wortstamm angehängt wird, um ein neues Wort zu bilden."@de,
+        "An affix is a lexical entry that represents a morpheme (suffix, prefix, infix, circumfix) that is attached to a word stem to form a new word."@en .
+
+dhpluso:Interval a owl:Class ;
+    rdfs:label "Zeitspanne"@de,
+        "Interval"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "2021-10-05+14:42" ;
+    rdfs:subClassOf time:Interval,
+        dhpluso:TimeSpan ;
+    skos:definition "Eine zeitliche Einheit mit einem Umfang oder einer Dauer. "@de,
+        "A temporal entity with an extent or duration."@en .
+
+dhpluso:LexicalConceptSet a owl:Class ;
+    rdfs:label "Lexikalisches Begriffssystem"@de,
+        "Lexical Concept Set"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:ConceptSet,
+        dhpluso:Entity ;
+    skos:definition "Ein Begriffssystem stellt eine Sammlung lexikalischer Begriffe dar."@de,
+        "A concept set represents a collection of lexical concepts."@en .
+
+dhpluso:Manuscript a owl:Class ;
+    rdfs:label "Handschrift"@de,
+        "Manuscript"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E22_Human-Made_Object,
+        bf:Manuscript,
+        dhpluso:Instance ;
+    skos:definition "Instanz die hand- oder maschinengeschrieben ist. Üblicherweise ein Unikat."@de,
+        "Instance that is written in handwriting or typescript. These are generally unique resources."@en .
+
+dhpluso:OnomasticConceptSet a owl:Class ;
+    rdfs:label "Sammlung von Namenskategorisierungen"@de,
+        "onomastic concept set"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:ConceptSet,
+        dhpluso:Entity ;
+    skos:definition "Eine Sammlung von Namenskategorisierungen stellt eine Sammlung onomastischer Kategorisierungen dar."@de,
+        "A onomastic concept set represents a collection of onomastic concepts."@en .
+
+dhpluso:Print a owl:Class ;
+    rdfs:label "Druck"@de,
+        "Print"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E89_Propositional_Object,
+        bf:Print,
+        dhpluso:Instance ;
+    skos:definition "Ressource, die gedruckt ist."@de,
+        "Resource that is printed."@en .
+
+dhpluso:Publication a owl:Class ;
+    rdfs:label "Veröffentlichung"@de,
+        "Publication"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Publication,
+        dhpluso:ProvisionActivity ;
+    skos:definition "Informationen über die Veröffentlichung einer Ressource."@de,
+        "Information relating to publication of a resource."@en .
+
+dhpluso:Text a owl:Class ;
+    rdfs:label "Text"@de,
+        "Text"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E89_Propositional_Object,
+        bf:Text,
+        dhpluso:Work ;
+    skos:definition "Ressource, die dazu bestimmt ist, visuell wahrgenommen und durch den Gebrauch von Sprache in schriftlicher oder gesprochener Form verstanden zu werden."@de,
+        "Resource intended to be perceived visually and understood through the use of language in written or spoken form."@en .
+
+dhpluso:Word a owl:Class ;
+    rdfs:label "Wortartikel"@de,
+        "word entry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:Word,
+        dhpluso:LexicalEntry ;
+    skos:definition "Ein Wort ist ein lexikalischer Eintrag, der aus einem einzigen Token besteht."@de,
+        "A word is a lexical entry that consists of a single token."@en .
+
+dhpluso:adminMetadata a owl:ObjectProperty ;
+    rdfs:label "hat administrative Metadaten"@de,
+        "has admin metadata"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:AdminMetadata ;
+    rdfs:subPropertyOf bf:adminMetadata ;
+    skos:definition "Metadaten über die Metadaten, insbesondere Provenienzinformationen."@de,
+        "Metadata about the metadata, especially provenance information."@en .
+
+dhpluso:antonym a owl:ObjectProperty ;
+    rdfs:label "hat antonyme Bedeutung"@de,
+        "has antonym lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf lexinfo:antonym ;
+    skos:definition "Verbindet eine lexikalische Bedeutung mit ihrem Antonym."@de,
+        "Links a lexical sense with its antonym."@en .
+
+dhpluso:antonymConcept a owl:ObjectProperty ;
+    rdfs:label "hat antonymen Begriff"@de,
+        "has antonym lexical concept"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalConcept ;
+    rdfs:range dhpluso:LexicalConcept .
+
+dhpluso:content a owl:ObjectProperty ;
+    rdfs:label "hat Inhalt"@de,
+        "has content"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Content ;
+    rdfs:subPropertyOf bf:content ;
+    skos:definition "Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll."@de,
+        "Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived."@en .
+
+dhpluso:contribution a owl:ObjectProperty ;
+    rdfs:label "hat Mitarbeit"@de,
+        "has contribution"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Contribution ;
+    rdfs:subPropertyOf bf:contribution ;
+    skos:definition "Agent und seine Rolle in Bezug auf die Ressource."@de,
+        "Agent and its role in relation to the resource."@en .
+
+dhpluso:coordinatesForThePlace a owl:ObjectProperty ;
+    rdfs:label "Koordinatenentität"@de,
+        "coordinates entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:Point ;
+    rdfs:subPropertyOf gndo:preferredNameEntityForThePlace,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die Koordinatenentität eines Ortes."@de,
+        "Reference to the coordinates entity of a place."@en .
+
+dhpluso:counting a owl:DatatypeProperty ;
+    rdfs:label "Zählung"@de,
+        "Counting"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gndo:counting ;
+    skos:definition "Zählungsname einer Person."@de,
+        "Counting name of a person."@en .
+
+dhpluso:custodialHistory a owl:DatatypeProperty ;
+    rdfs:label "Provenienzgeschichte"@de,
+        "custodial history"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Item dhpluso:Instance ) ] ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf bf:custodialHistory ;
+    skos:definition "Informationen über die Provenienz einer Ressource, z. B. Herkunft, Eigentum und Aufbewahrungsgeschichte."@de,
+        "Information about the provenance, such as origin, ownership and custodial history (chain of custody), of a resource."@en .
+
+dhpluso:dimension a owl:DatatypeProperty ;
+    rdfs:label "hat Dimension"@de,
+        "has dimension"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf ecrm:P43_has_dimension,
+        bf:dimension ;
+    skos:definition "Maße des Trägers oder der Träger und/oder des Behälters einer Ressource."@de,
+        "Measurements of the carrier or carriers and/or the container of a resource."@en .
+
+dhpluso:editionStatement a owl:DatatypeProperty ;
+    rdfs:label "hat editorische Bemerkung"@de,
+        "has edition statement"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf bf:editionStatement ;
+    skos:definition "Informationen zur Identifizierung der Ausgabe oder Version der Ressource und zugehörige Erklärungen zur Verantwortung für die Ausgabe; in der Regel transkribiert."@de,
+        "Information identifying the edition or version of the resource and associated statements of responsibility for the edition; usually transcribed."@en .
+
+dhpluso:entry a owl:ObjectProperty ;
+    rdfs:label "hat Artikel"@de,
+        "has entry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Lexicon ;
+    rdfs:range dhpluso:LexicalEntry ;
+    rdfs:subPropertyOf lime:entry .
+
+dhpluso:extent a owl:ObjectProperty ;
+    rdfs:label "hat Umfang"@de,
+        "has extent"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Extent ;
+    rdfs:subPropertyOf bf:extent ;
+    skos:definition "Anzahl und Typ der Einheiten und/oder Untereinheiten des Umfangs einer Ressource."@de,
+        "Number and type of units and/or subunits making up a resource."@en .
+
+dhpluso:forename a owl:DatatypeProperty ;
+    rdfs:label "Vorname"@de,
+        "forename"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf wdt:P735,
+        gndo:forename ;
+    skos:definition "Vorname einer Person."@de,
+        "Forname of a person."@en .
+
+dhpluso:gender a owl:ObjectProperty ;
+    rdfs:label "Geschlecht einer Person"@de,
+        "gender of a person"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:Gender ;
+    rdfs:subPropertyOf wdt:P21,
+        gndo:gender,
+        dhpluso:hasType ;
+    skos:definition "Verweis auf das Geschlecht einer Person."@de,
+        "Reference to the gender of a person."@en .
+
+dhpluso:hasBeginning a owl:ObjectProperty ;
+    rdfs:label "hat Anfang"@de,
+        "has beginning"@en ;
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "2021-10-05+14:42" ;
+    rdfs:domain dhpluso:TimeSpan ;
+    rdfs:range dhpluso:Instant ;
+    rdfs:subPropertyOf time:hasBeginning ;
+    skos:definition "Beginn einer zeitlichen Einheit."@de,
+        "Beginning of a temporal entity."@en .
+
+dhpluso:hasEnd a owl:ObjectProperty ;
+    rdfs:label "hat Ende"@de,
+        "has end"@en ;
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "2021-10-05+14:42" ;
+    rdfs:domain dhpluso:TimeSpan ;
+    rdfs:range dhpluso:Instant ;
+    rdfs:subPropertyOf time:hasEnd ;
+    skos:definition "Ende einer zeitlichen Einheit."@de,
+        "End of a temporal entity."@en .
+
+dhpluso:hasPreferredIdentifier a owl:ObjectProperty ;
+    rdfs:label "hat bevorzugten Identifizierer"@de,
+        "has preferred identifier"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Entity ;
+    rdfs:range dhpluso:Identifier ;
+    rdfs:subPropertyOf ecrm:P48_has_preferred_identifier ;
+    skos:definition "Diese Eigenschaft zeichnet die bevorzugte Instanz von Identifier auf, die zur Identifizierung einer Instanz von Entity zum Zeitpunkt der Aufzeichnung dieser Eigenschaft verwendet wurde."@de,
+        "This property records the preferred instance of Identifier that was used to identify an instance of Entity at the time this property was recorded."@en .
+
+dhpluso:hasSeries a owl:ObjectProperty ;
+    rdfs:label "hat Serie"@de,
+        "has series"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Instance dhpluso:Work ) ] ;
+    rdfs:range [ owl:unionOf ( dhpluso:Instance dhpluso:Work ) ] ;
+    rdfs:subPropertyOf bf:hasSeries ;
+    skos:definition "Ressource, in der der Band herausgegeben wurde; der Titel der größeren Ressource erscheint auf dem Band."@de,
+        "Resource in which the part has been issued; the title of the larger resource appears on the part."@en .
+
+dhpluso:hypernym a owl:ObjectProperty ;
+    rdfs:label "hat hypernyme Bedeutung"@de,
+        "has hypernym lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf lexinfo:hypernym .
+
+dhpluso:hyponym a owl:ObjectProperty ;
+    rdfs:label "hat hyponyme Bedeutung"@de,
+        "has hyponym lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf lexinfo:hyponym .
+
+dhpluso:immediateAcquisition a owl:ObjectProperty ;
+    rdfs:label "direkte Erwerbung"@de,
+        "immediate acquisition"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Item ;
+    rdfs:range dhpluso:ImmediateAcquisition ;
+    rdfs:subPropertyOf bf:immediateAcquisition ;
+    skos:definition "Informationen über die Umstände (z. B. Quelle, Datum, Methode), unter denen die Ressource direkt erworben wurde."@de,
+        "Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired."@en .
+
+dhpluso:inXSDDate a owl:DatatypeProperty ;
+    rdfs:label "als XSD Date"@de,
+        "als XSD gYear"@de,
+        "in XSD Date"@en,
+        "in XSD gYear"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "2021-10-05+14:42",
+        "2021-10-07+07:59" ;
+    rdfs:domain dhpluso:Instant ;
+    rdfs:range xsd:date,
+        xsd:gYear ;
+    rdfs:subPropertyOf time:inXSDDate,
+        time:inXSDgYear ;
+    skos:definition "Position eines Zeitpunkts, ausgedrückt durch xsd:date."@de,
+        "Position eines Zeitpunkts, ausgedrückt durch xsd:gYear."@de,
+        "Position of an instant, expressed using xsd:date."@en,
+        "Position of an instant, expressed using xsd:gYear."@en .
+
+dhpluso:isIdentifiedByIdentifier a owl:ObjectProperty ;
+    rdfs:label "identifiziert durch Zeichenkette"@de,
+        "identified by identifier"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Identifier ;
+    rdfs:subPropertyOf bf:identifiedBy,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Einer Ressource zugeordnete Zeichenkette, die dazu dient, diese Ressource von anderen Ressourcen zu unterscheiden, d. h. die eine Entität eindeutig identifiziert."@de,
+        "Character string associated with a resource that serves to differentiate that resource from other resources, i.e., that uniquely identifies an entity."@en .
+
+dhpluso:isLexicalizedSenseOf a owl:ObjectProperty ;
+    rdfs:label "ist lexikalisierte Bedeutung von"@de,
+        "is lexicalized sense of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalConcept ;
+    rdfs:subPropertyOf ontolex:isLexicalizedSenseOf .
+
+dhpluso:isUsedOnomasticConceptOf a owl:ObjectProperty ;
+    rdfs:label "ist gebrauchte Namenskategorie von"@de,
+        "is used onomastic concept of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:OnomasticUsage ;
+    rdfs:range dhpluso:OnomasticConcept ;
+    rdfs:subPropertyOf ontolex:isLexicalizedSenseOf .
+
+dhpluso:issuance a owl:ObjectProperty ;
+    rdfs:label "hat Ausgabe"@de,
+        "has issuance"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Instance dhpluso:Work ) ] ;
+    rdfs:range dhpluso:Issuance ;
+    rdfs:subPropertyOf bf:issuance ;
+    skos:definition "Kategorisierung, die widerspiegelt, ob eine Ressource in einem oder mehreren Teilen ausgegeben wird, wie sie aktualisiert wird und wie sie beendet werden soll."@de,
+        "Categorization reflecting whether a resource is issued in one or more parts, the way it is updated, and its intended termination."@en .
+
+dhpluso:language a owl:DatatypeProperty ;
+    rdfs:label "hat Sprache"@de,
+        "has language"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic,
+        dhpluso:Lexicon ;
+    rdfs:range dhpluso:Language ;
+    rdfs:subPropertyOf bf:language,
+        lime:language ;
+    skos:definition "Sprache, die mit einer Ressource oder ihren Teilen verbunden ist."@de,
+        "Language associated with a resource or its parts."@en .
+
+dhpluso:mainTitle a owl:DatatypeProperty ;
+    rdfs:label "Haupttitel"@de,
+        "main title"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-12" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Title ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf bf:mainTitle ;
+    skos:definition "Angesprochener Titel. Mögliche Titelkomponente."@de,
+        "Title being addressed. Possible title component."@en .
+
+dhpluso:nameAddition a owl:DatatypeProperty ;
+    rdfs:label "Namensszusatz"@de,
+        "Name addition"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gndo:nameAddition ;
+    skos:definition "Namensszusatz einer Person."@de,
+        "Name addition of a person."@en .
+
+dhpluso:note a owl:ObjectProperty ;
+    rdfs:label "hat Anmerkung"@de,
+        "has note"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Note ;
+    rdfs:subPropertyOf bf:note ;
+    skos:definition "Allgemeine Textinformationen, die sich auf eine Ressource beziehen, wie z. B. Informationen über eine bestimmte Kopie einer Ressource oder Informationen über ein bestimmtes Attribut einer Ressource."@de,
+        "General textual information relating to a resource, such as Information about a specific copy of a resource or information about a particular attribute of a resource."@en .
+
+dhpluso:onomasticUsage a owl:ObjectProperty ;
+    rdfs:label "hat Namensgebrauch"@de,
+        "has onomastic Usage"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:OnomasticUsage ;
+    rdfs:subPropertyOf ontolex:sense .
+
+dhpluso:otherForm a owl:ObjectProperty ;
+    rdfs:label "hat weitere Form"@de,
+        "has other form"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:Form ;
+    rdfs:subPropertyOf ontolex:otherForm .
+
+dhpluso:partName a owl:DatatypeProperty ;
+    rdfs:label "Nummer des Teils"@de,
+        "part number"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-12" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Title ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf bf:partName ;
+    skos:definition "Teil- oder Abschnittsname eines Titels. Mögliche Titelkomponente."@de,
+        "Part or section name of a title. Possible title component."@en .
+
+dhpluso:partNumber a owl:DatatypeProperty ;
+    rdfs:label "Nummer des Teils"@de,
+        "part number"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-12" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Title ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf bf:partNumber ;
+    skos:definition "Teil oder Abschnitt der Aufzählung eines Titels. Mögliche Titelkomponente."@de,
+        "Part or section enumeration of a title. Possible title component."@en .
+
+dhpluso:partOfSpeech a owl:ObjectProperty ;
+    rdfs:label "hat Wortart"@de,
+        "has part of speech"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:PartOfSpeech ;
+    rdfs:subPropertyOf lexinfo:partOfSpeech .
+
+dhpluso:personalName a owl:DatatypeProperty ;
+    rdfs:label "Persönlicher Name"@de,
+        "Personal name"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gndo:personalName ;
+    skos:definition "Persönlicher Name einer Person."@de,
+        "Personal name of a person."@en .
+
+dhpluso:placename a owl:DatatypeProperty ;
+    rdfs:label "Ortsname"@de,
+        "place name"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePlace ;
+    rdfs:range xsd:string ;
+    skos:definition "Name eines Ortes."@de,
+        "Name of a place."@en .
+
+dhpluso:preferredNameEntityForThePerson a owl:ObjectProperty ;
+    rdfs:label "bevorzugte Namensentität"@de,
+        "prefered name entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:NameOfThePerson ;
+    rdfs:subPropertyOf gndo:preferredNameEntityForThePerson,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die bevorzugte Namensentität einer Person."@de,
+        "Reference to the prefered name entity of a person."@en .
+
+dhpluso:preferredNameEntityForThePlace a owl:ObjectProperty ;
+    rdfs:label "bevorzugte Namensentität"@de,
+        "prefered name entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:NameOfThePlace ;
+    rdfs:subPropertyOf gndo:preferredNameForThePlaceOrGeographicName,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die bevorzugte Namensentität einer Place."@de,
+        "Reference to the prefered name entity of a place."@en .
+
+dhpluso:preferredTitle a owl:ObjectProperty ;
+    rdfs:label "hat preferred Titel"@de,
+        "has preferred title"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-07+07:59" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Title ;
+    rdfs:subPropertyOf dhpluso:title ;
+    skos:definition "Name einer Ressource."@de,
+        "Name given to a resource."@en .
+
+dhpluso:prefix a owl:DatatypeProperty ;
+    rdfs:label "Namenspräfix"@de,
+        "name prefix"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf gndo:prefix ;
+    skos:definition "Namenspräfix einer Person."@de,
+        "name prefix of a person."@en .
+
+dhpluso:provisionActivity a owl:ObjectProperty ;
+    rdfs:label "hat Veröffentlichungsaktivität"@de,
+        "has provision activity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range dhpluso:ProvisionActivity ;
+    rdfs:subPropertyOf bf:provisionActivity ;
+    skos:definition "Orts-, Namens- und/oder Datumsangaben, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe, die Produktion usw. einer Ressource beziehen."@de,
+        "Place, name, and/or date information relating to the publication, printing, distribution, issue, release, production, etc. of a resource."@en .
+
+dhpluso:provisionActivityStatement a owl:DatatypeProperty ;
+    rdfs:label "hat Anmerkung zur Veröffentlichungsaktivität"@de,
+        "has provision activity statement"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf bf:provisionActivityStatement ;
+    owl:deprecated true ;
+    skos:definition "Aussage, die sich auf Anbieter einer Ressource bezieht; in der Regel transkribiert."@de,
+        "Statement relating to providers of a resource; usually transcribed."@en .
+
+dhpluso:responsibilityStatement a owl:DatatypeProperty ;
+    rdfs:label "hat Anmerkung zur Verantwortlichkeit"@de,
+        "has responsibility statement"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf bf:responsibilityStatement ;
+    owl:deprecated true ;
+    skos:definition "Aussage zu Personen, Familien oder Körperschaften, die für die Erstellung einer Ressource verantwortlich sind oder zum Inhalt beitragen; in der Regel transkribiert."@de,
+        "Statement relating to any persons, families, or corporate bodies responsible for the creation of, or contributing to the content of a resource; usually transcribed."@en .
+
+dhpluso:sense a owl:ObjectProperty ;
+    rdfs:label "hat lexikalische Bedeutung"@de,
+        "has lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf ontolex:sense .
+
+dhpluso:subterm a owl:ObjectProperty ;
+    rdfs:label "hat Wortbildungsbestandteil"@de,
+        "has subterm"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:LexicalEntry ;
+    rdfs:subPropertyOf decomp:subterm .
+
+dhpluso:subtitle a owl:DatatypeProperty ;
+    rdfs:label "Untertitel"@de,
+        "sub title"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-12" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Title ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf bf:subtitle ;
+    skos:definition "Wort, Zeichen oder Gruppe von Wörtern und/oder Zeichen, die den Rest des Titels nach dem Haupttitel enthält. Mögliche Titelkomponente."@de,
+        "Word, character, or group of words and/or characters that contains the remainder of the title after the main title. Possible title component."@en .
+
+dhpluso:surname a owl:DatatypeProperty ;
+    rdfs:label "Nachname"@de,
+        "surname"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf wdt:P734,
+        gndo:surname ;
+    skos:definition "Nachname einer Person."@de,
+        "surname of a person."@en .
+
+dhpluso:synonym a owl:ObjectProperty ;
+    rdfs:label "hat synonyme Bedeutung"@de,
+        "has synonym lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:subPropertyOf lexinfo:synonym .
+
+dhpluso:synonymConcept a owl:ObjectProperty ;
+    rdfs:label "hat synonymen Begriff"@de,
+        "has synonym lexical concept"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:LexicalConcept ;
+    rdfs:range dhpluso:LexicalConcept ;
+    rdfs:subPropertyOf dhpluso:objectProperty .
+
+dhpluso:timePrecision a owl:DatatypeProperty ;
+    rdfs:label "Genauigkeit der Zeitangabe"@de,
+        "time precision"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "2021-10-07+07:59" ;
+    rdfs:domain dhpluso:TimeSpan ;
+    rdfs:range xsd:duration ;
+    rdfs:subPropertyOf wdt:P2803 ;
+    skos:definition "Definiert die Genauigkeit eines Zeitwertes."@de,
+        "Defines the precision of a time value."@en ;
+    skos:example "Die Präposition 'P5Y' und die Jahreszahl 1250 implizieren, dass das Datum 1250±5 sein könnte, also der Zeitraum 1245–1255."@de,
+        "Precesion 'P5Y' and a date 1250 implies, the date could be 1250±5 – i.e. the period 1245–1255"@en .
+
+dhpluso:variantNameEntityForThePerson a owl:ObjectProperty ;
+    rdfs:label "alternative Namensentität"@de,
+        "variant name entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:NameOfThePerson ;
+    rdfs:subPropertyOf gndo:variantNameEntityForThePerson,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die alternative Namensentität einer Person."@de,
+        "Reference to the variant name entity of a person."@en .
+
+dhpluso:variantNameEntityForThePlace a owl:ObjectProperty ;
+    rdfs:label "alternative Namensentität"@de,
+        "variant name entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:NameOfThePlace ;
+    rdfs:subPropertyOf gndo:variantNameForThePlaceOrGeographicName,
+        dhpluso:isIdentifiedBy ;
+    skos:definition "Verweis auf die alternative Namensentität einer Place."@de,
+        "Reference to the variant name entity of a place."@en .
+
+dhpluso:variantTitle a owl:ObjectProperty ;
+    rdfs:label "hat variant Titel"@de,
+        "has variant title"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-07+07:59" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Title ;
+    rdfs:subPropertyOf dhpluso:title ;
+    skos:definition "Name einer Ressource."@de,
+        "Name given to a resource."@en .
+
+dhpluso:writtenRep a owl:DatatypeProperty ;
+    rdfs:label "graphische Repräsentation"@de,
+        "written representation"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Form ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf ontolex:writtenRep .
+
+dhpluso:xmlDocument a owl:ObjectProperty ;
+    rdfs:label "hat xml Dokument"@de,
+        "has xml document"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2022-02-28" ;
+    dcterms:modified "" ;
+    rdfs:domain dhpluso:Electronic ;
+    rdfs:range mhdbdbxml:Document ;
+    skos:definition "Repräsentation der elektronischen Ressource als mhdbdbxml:Document."@de,
+        "Representation of Electronic as mhdbdbxml:Document."@en .
+
+constants:Prefixes rdfs:label "Präfixe"@de,
+        "Prefixes"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    skos:definition "Praäfixdeklaration für Shacl."@de,
+        "Prefix declaration for Shacl."@en ;
+    sh:declare [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#" ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace "http://www.w3.org/ns/shacl#" ;
+            sh:prefix "sh" ],
+        [ sh:namespace "http://www.w3.org/2007/05/powder-s#" ;
+            sh:prefix "wdrs" ],
+        [ sh:namespace "http://id.loc.gov/ontologies/bflc/" ;
+            sh:prefix "bflc" ],
+        [ sh:namespace "http://purl.org/vocab/vann/" ;
+            sh:prefix "vann" ],
+        [ sh:namespace "http://www.w3.org/2006/time#" ;
+            sh:prefix "time" ],
+        [ sh:namespace "https://gams.uni-graz.at/o:szd.ontology#" ;
+            sh:prefix "szd" ],
+        [ sh:namespace "http://www.w3.org/2002/07/owl#" ;
+            sh:prefix "owl" ],
+        [ sh:namespace "http://id.loc.gov/ontologies/bibframe/" ;
+            sh:prefix "bf" ],
+        [ sh:namespace "https://dh.plus.ac.at/parameter/" ;
+            sh:prefix "parameteri" ],
+        [ sh:namespace "http://purl.org/dc/terms/" ;
+            sh:prefix "dcterms" ],
+        [ sh:namespace "http://www.w3.org/ns/lemon/decomp#" ;
+            sh:prefix "decomp" ],
+        [ sh:namespace "https://dh.plus.ac.at/mhdbdb/ontology#" ;
+            sh:prefix "mhdbdbo" ],
+        [ sh:namespace "http://www.w3.org/2001/XMLSchema#" ;
+            sh:prefix "xsd" ],
+        [ sh:namespace "https://dh.plus.ac.at/dhplusoValidation/" ;
+            sh:prefix "dhplusoValidation" ],
+        [ sh:namespace "http://erlangen-crm.org/200717/" ;
+            sh:prefix "ecrm" ],
+        [ sh:namespace "http://creativecommons.org/ns#" ;
+            sh:prefix "cc" ],
+        [ sh:namespace "https://dh.plus.ac.at/xml-ontology#" ;
+            sh:prefix "dhplusXml" ],
+        [ sh:namespace "https://d-nb.info/standards/elementset/gnd#" ;
+            sh:prefix "gndo" ],
+        [ sh:namespace "http://www.wikidata.org/prop/direct/" ;
+            sh:prefix "wdt" ],
+        [ sh:namespace "https://dh.plus.ac.at/ontology#" ;
+            sh:prefix "dhpluso" ],
+        [ sh:namespace "http://xmlns.com/foaf/0.1/" ;
+            sh:prefix "foaf" ],
+        [ sh:namespace "http://www.w3.org/2004/02/skos/core#" ;
+            sh:prefix "skos" ],
+        [ sh:namespace "https://mhdbdbd.plus.ac.at/xml-ontology#" ;
+            sh:prefix "mhdbdbxml" ],
+        [ sh:namespace "https://d-nb.info/" ;
+            sh:prefix "dnb" ],
+        [ sh:namespace "http://www.w3.org/ns/oa#" ;
+            sh:prefix "oa" ],
+        [ sh:namespace "https://dh.plus.ac.at/tmp/" ;
+            sh:prefix "tmp" ],
+        [ sh:namespace "https://dh.plus.ac.at/mhdbdb/instance/" ;
+            sh:prefix "mhdbdbi" ],
+        [ sh:namespace "http://www.opengis.net/ont/sf#" ;
+            sh:prefix "ogcsf" ],
+        [ sh:namespace "https://dh.plus.ac.at/parameter-ontology#" ;
+            sh:prefix "parameter" ],
+        [ sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
+            sh:prefix "rdf" ],
+        [ sh:namespace "http://purl.org/dc/terms/" ;
+            sh:prefix "dct" ],
+        [ sh:namespace "http://www.opengis.net/ont/geosparql#" ;
+            sh:prefix "geo" ],
+        [ sh:namespace "https://dh.plus.ac.at/mhdbdb/text/" ;
+            sh:prefix "mhdbdbtext" ],
+        [ sh:namespace "http://schema.org/" ;
+            sh:prefix "schema" ],
+        [ sh:namespace "http://www.wikidata.org/entity/statement/" ;
+            sh:prefix "wds" ],
+        [ sh:namespace "https://dh.plus.ac.at/instance/" ;
+            sh:prefix "dhplusi" ],
+        [ sh:namespace "https://dh.plus.ac.at/constants/" ;
+            sh:prefix "constants" ],
+        [ sh:namespace "https://dh.plus.ac.at/vocabulary/" ;
+            sh:prefix "dhplusv" ],
+        [ sh:namespace "https://d-nb.info/gnd/" ;
+            sh:prefix "gnd" ],
+        [ sh:namespace "http://www.w3.org/ns/lemon/lime#" ;
+            sh:prefix "lime" ],
+        [ sh:namespace "http://www.wikidata.org/prop/direct-normalized/" ;
+            sh:prefix "wdtn" ],
+        [ sh:namespace "http://www.opengis.net/ont/sf#" ;
+            sh:prefix "sf" ],
+        [ sh:namespace "http://www.wikidata.org/entity/" ;
+            sh:prefix "wd" ],
+        [ sh:namespace "http://www.w3.org/XML/1998/namespace" ;
+            sh:prefix "xml" ],
+        [ sh:namespace "http://www.lexinfo.net/ontology/3.0/lexinfo#" ;
+            sh:prefix "lexinfo" ],
+        [ sh:namespace "http://www.cidoc-crm.org/cidoc-crm/" ;
+            sh:prefix "crm" ],
+        [ sh:namespace "http://www.w3.org/ns/lemon/ontolex#" ;
+            sh:prefix "ontolex" ],
+        [ sh:namespace "https://d-nb.info/standards/elementset/dnb#" ;
+            sh:prefix "dnbt" ],
+        [ sh:namespace "http://purl.org/dc/elements/1.1/" ;
+            sh:prefix "dc" ] .
+
+dhpluso: a owl:Ontology ;
+    rdfs:label "dhPLUS Ontologie"@de,
+        "dhPLUS Ontology"@en ;
+    dc:creator "Peter Hinkelmanns",
+        "Richard Hörmann" ;
+    dc:rights <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dc:title "dhPLUS Ontologie"@de,
+        "dhPLUS Ontology"@en ;
+    dcterms:created "2019-12-27" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    vann:preferredNamespacePrefix "dhpluso" ;
+    vann:preferredNamespaceUri "https://dh.plus.ac.at/ontology#" ;
+    owl:imports <http://id.loc.gov/vocabulary/relators.skos.rdf>,
+        <https://d-nb.info/standards/elementset/gnd_20191015.rdf>,
+        <https://raw.githubusercontent.com/erlangen-crm/ecrm/master/ecrm_200717.owl>,
+        <https://raw.githubusercontent.com/lcnetdev/bibframe-ontology/main/archive/bibframe-2.1.0.rdf>,
+        <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl> ;
+    owl:ontologyIRI dhpluso: ;
+    owl:versionIRI <https://dh.plus.ac.at/ontology/0-1#> ;
+    owl:versionInfo "2019-12-27"^^xsd:date,
+        "0.1"^^xsd:string ;
+    skos:definition "Dies ist eine Ontologie des dhPLUS-Repositoriums für Digital Humanities-Projekte der Universität Salzburg."@de,
+        "This is an ontology of the dhPLUS repository for Digital Humanities Projects of the University of Salzburg."@en .
+
+dhpluso:AdminMetadata a owl:Class ;
+    rdfs:label "Administrative Metadaten"@de,
+        "Admin Metadata"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:AdminMetadata,
+        dhpluso:Entity ;
+    skos:definition "Metadaten über die Metadaten, insbesondere Provenienzinformationen."@de,
+        "Metadata about the metadata, especially provenance information."@en .
+
+dhpluso:Content a owl:Class ;
+    rdfs:label "Inhalt"@de,
+        "Content"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Content,
+        dhpluso:Entity ;
+    skos:definition "Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll."@de,
+        "Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived."@en .
+
+dhpluso:Contribution a owl:Class ;
+    rdfs:label "Beitrag"@de,
+        "Contribution"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Contribution,
+        dhpluso:Entity ;
+    skos:definition "Agent und Rolle in Bezug auf die zu beschreibende Ressource."@de,
+        "Agent and role with respect to the resource being described."@en .
+
+dhpluso:Electronic a owl:Class ;
+    rdfs:label "Elektronische Ressource"@de,
+        "Electronic"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Electronic,
+        dhpluso:Instance ;
+    skos:definition "Instanz, die für die Bearbeitung durch einen Computer vorgesehen ist und auf die entweder direkt oder aus der Ferne zugegriffen wird."@de,
+        "Instance that is intended for manipulation by a computer, accessed either directly or remotely."@en .
+
+dhpluso:Extent a owl:Class ;
+    rdfs:label "Umfang"@de,
+        "Extent"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Extent,
+        dhpluso:Entity ;
+    skos:definition "Anzahl und Typ der Einheiten und/oder Untereinheiten, aus denen eine Ressource besteht."@de,
+        "Number and type of units and/or subunits making up a resource."@en .
+
+dhpluso:Gender a owl:Class ;
+    rdfs:label "Geschlecht"@de,
+        "Gender"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf dhpluso:Type ;
+    skos:definition "Geschlecht"@de,
+        "Gender"@en .
+
+dhpluso:ImmediateAcquisition a owl:Class ;
+    rdfs:label "Erwerbungsumstände"@de,
+        "Immediate acquisition"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:ImmediateAcquisition,
+        dhpluso:Entity ;
+    skos:definition "Informationen über die Umstände, z. B. Quelle, Datum, Methode, unter denen die Ressource direkt erworben wurde."@de,
+        "Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired."@en .
+
+dhpluso:Issuance a owl:Class ;
+    rdfs:label "Art der Veröffentlichung"@de,
+        "Mode of issuance"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Issuance,
+        dhpluso:Entity ;
+    skos:definition "Informationen darüber, ob eine Ressource in einem oder mehreren Teilen veröffentlicht wird, wie sie aktualisiert wird und wie sie abgeschlossen werden soll."@de,
+        "Information about whether a resource is issued in one or more parts, the way it is updated, and its intended termination."@en .
+
+dhpluso:Language a owl:Class ;
+    rdfs:label "Language"@de,
+        "Language"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Language,
+        dhpluso:Entity ;
+    skos:definition "Sprachenentität."@de,
+        "Language Entity."@en .
+
+dhpluso:Note a owl:Class ;
+    rdfs:label "Anmerkung"@de,
+        "Note"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        bf:Note,
+        dhpluso:Entity ;
+    skos:definition "Informationen, in der Regel in Textform, über Attribute einer Ressource oder einen Aspekt einer Ressource."@de,
+        "Information, usually in textual form, on attributes of a resource or some aspect of a resource."@en .
+
+dhpluso:OnomasticConcept a owl:Class ;
+    rdfs:label "onomastische Kategorie"@de,
+        "onomastic concept"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalConcept,
+        dhpluso:Entity ;
+    skos:definition "Ein onomastisches Konzept stellt eine Kategorisierung von Namen dar."@de,
+        "A onomastic concept represents a categorization of names."@en .
+
+dhpluso:PartOfSpeech a owl:Class ;
+    rdfs:label "Wortart"@de,
+        "part of speech"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf lexinfo:PartOfSpeech,
+        dhpluso:Entity ;
+    skos:definition "Eine Kategorie, die einem Wort auf der Grundlage seiner grammatikalischen und semantischen Eigenschaften zugeordnet wird."@de,
+        "A category assigned to a word based on its grammatical and semantic properties."@en .
+
+dhpluso:Point a owl:Class ;
+    rdfs:label "Punkt"@de,
+        "Point"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf sf:Point,
+        dhpluso:Geometry ;
+    skos:definition "Ein Punkt ist ein 0-dimensionales geometrisches Objekt und repräsentiert einen einzelnen Ort im Koordinatenraum."@de,
+        "A Point is a 0-dimensional geometric object and represents a single location in coordinate space."@en .
+
+dhpluso:SubclassTarget a sh:SPARQLTargetType ;
+    rdfs:label "Target für Unterklassen und die Klasse selbst"@de,
+        "Target for all subclasses or self"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-30" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:definition "Matcht alle Knoten mit dhpluso-Klasse oder einer Unterklasse dieser Klasse."@de,
+        "Matches all nodes with a dhpluso-class or subclasses of this class."@en ;
+    rdfs:subClassOf sh:Target ;
+    sh:labelTemplate "All instances of class {$class} or subclasses of this class"@en,
+        "Alle Instanzen der Klasse {$class} oder Unterklassen dieser Klasse"@en ;
+    sh:parameter [ sh:class tmp:class ;
+            sh:description "Klasse des zu prüfenden Knotens."@en,
+                "The class of the focus nodes."@en ;
+            sh:nodeKind sh:IRI ;
+            sh:path tmp:class ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT ?this
+WHERE {
+    {
+        ?this a $class .
+    }
+    UNION
+    {
+        BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+        ?this a ?currentClass .
+        SERVICE ?dhPLUSOntology {
+            ?currentClass rdfs:subClassOf* $class .
+        }
+    }
+}
+        """ .
+
+dhpluso:asWKT a owl:DatatypeProperty ;
+    rdfs:label "als WKT"@de,
+        "as WKT"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Geometry ;
+    rdfs:range geo:wktLiteral ;
+    rdfs:subPropertyOf geo:asWKT ;
+    skos:definition "Die WKT-Serialisierung einer Geometrie."@de,
+        "The WKT serialization of a geometry."@en .
+
+dhpluso:broughtIntoLife a owl:ObjectProperty ;
+    rdfs:label "brachte zur Welt"@de,
+        "brought into life"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Birth ;
+    rdfs:range dhpluso:Person ;
+    rdfs:subPropertyOf ecrm:P98_brought_into_life ;
+    owl:inverseOf dhpluso:wasBorn ;
+    skos:definition "Referenz vom Geburtsereignis auf die geborene Person."@de,
+        "Reference from the birth event to the born person."@en .
+
+dhpluso:continuedBy a owl:ObjectProperty ;
+    rdfs:label "fortgesetzt von"@de,
+        "continued by"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Work dhpluso:Instance ) ] ;
+    rdfs:range [ owl:unionOf ( dhpluso:Work dhpluso:Instance ) ] ;
+    rdfs:subPropertyOf bf:continuedBy ;
+    owl:inverseOf dhpluso:continues ;
+    skos:definition "Ressource, deren Inhalt eine frühere Ressource unter einem neuen Titel fortsetzt."@de,
+        "Resource whose content continues an earlier resource under a new title."@en .
+
+dhpluso:continues a owl:ObjectProperty ;
+    rdfs:label "setzt fort"@de,
+        "continues"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain [ owl:unionOf ( dhpluso:Work dhpluso:Instance ) ] ;
+    rdfs:range [ owl:unionOf ( dhpluso:Work dhpluso:Instance ) ] ;
+    rdfs:subPropertyOf bf:continues ;
+    owl:inverseOf dhpluso:continuedBy ;
+    skos:definition "Ressource, die durch den Inhalt einer späteren Ressource unter einem neuen Titel fortgesetzt wird."@de,
+        "Resource that is continued by the content of a later resource under a new title."@en .
+
+dhpluso:derivativeOf a owl:ObjectProperty ;
+    rdfs:label "Ableitung von"@de,
+        "Derivative of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:derivativeOf ;
+    owl:inverseOf dhpluso:hasDerivative ;
+    skos:definition "Werk, von dem das beschriebene Werk abgeleitet ist."@de,
+        "Source work from which the described work is derived."@en .
+
+dhpluso:diedIn a owl:ObjectProperty ;
+    rdfs:label "gestorben"@de,
+        "died"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:Death ;
+    rdfs:subPropertyOf ecrm:P100i_died_in ;
+    owl:inverseOf dhpluso:wasDeathOf ;
+    skos:definition "Verweis auf das Todesevent einer Person."@de,
+        "Reference to the death event of a person."@en .
+
+dhpluso:expressionOf a owl:ObjectProperty ;
+    rdfs:label "Expression von"@de,
+        "Expression of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:expressionOf ;
+    owl:inverseOf dhpluso:hasExpression ;
+    skos:definition "Werk, von dem das beschriebene Werk eine Expression ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verbinden. Bespielsweise ist eine kritische Edition eine Expression eines mhd. Werkes."@de,
+        "Work that the described Work is an expression of. For use to connect Works under FRBR/RDA rules. For example, a critical edition is an expression of a gmh. work."@en .
+
+dhpluso:hasCreated a owl:ObjectProperty ;
+    rdfs:label "hat erschaffen"@de,
+        "has created"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Creation ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf ecrm:P94_has_created ;
+    owl:inverseOf dhpluso:wasCreatedBy ;
+    skos:definition "Diese Eigenschaft verknüpft eine Instanz von Creation mit der Instanz von Werk, die durch sie erstellt wurde."@de,
+        "This property links an instance of Creation to the instance of Work created by it."@en .
+
+dhpluso:hasDerivative a owl:ObjectProperty ;
+    rdfs:label "Hat Ableitung"@de,
+        "Has Derivative"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:hasDerivative ;
+    owl:inverseOf dhpluso:derivativeOf ;
+    skos:definition "Ressource, die eine Ableitung des beschriebenen Werks ist."@de,
+        "Resource that is a modification of the described work."@en .
+
+dhpluso:hasExpression a owl:ObjectProperty ;
+    rdfs:label "Hat Expression"@de,
+        "Has Expression"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:hasExpression ;
+    owl:inverseOf dhpluso:expressionOf ;
+    skos:definition "Werk, das eine Expression eines beschriebenen Werks ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verknüpfen."@de,
+        "Work that is an expression of a described Work. For use to relate Works under FRBR/RDA rules."@en .
+
+dhpluso:hasInstance a owl:ObjectProperty ;
+    rdfs:label "hat Instanz"@de,
+        "has instance"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Instance ;
+    rdfs:subPropertyOf bf:hasInstance ;
+    owl:inverseOf dhpluso:instanceOf ;
+    skos:definition "Die Instanz ist mit dem beschriebenen Werk verbunden."@de,
+        "Instance is related to described Work."@en .
+
+dhpluso:hasItem a owl:ObjectProperty ;
+    rdfs:label "hat Exemplar"@de,
+        "has Item"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range dhpluso:Item ;
+    rdfs:subPropertyOf bf:hasItem ;
+    owl:inverseOf dhpluso:itemOf ;
+    skos:definition "Exemplar, das ein Beispiel für die beschriebene Instanz ist."@de,
+        "Item which is an example of the described Instance."@en .
+
+dhpluso:hasTimeSpan a owl:ObjectProperty ;
+    rdfs:label "hat Zeitspanne"@de,
+        "has time span"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Event ;
+    rdfs:range dhpluso:TimeSpan ;
+    rdfs:subPropertyOf ecrm:P4_has_time-span ;
+    owl:inverseOf dhpluso:isTimeSpanOf ;
+    skos:definition "Diese Eigenschaft verknüpft ein Ereignis mit der Zeitspanne, in der es stattfand."@de,
+        "This property associates an instance of Event with the Time-Span during which it was on-going."@en .
+
+dhpluso:hasType a owl:ObjectProperty ;
+    rdfs:label "hat Typ"@de,
+        "has type"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Entity ;
+    rdfs:range dhpluso:Type ;
+    rdfs:subPropertyOf ecrm:P2_has_type ;
+    skos:definition "Diese Eigenschaft ermöglicht die Subtypisierung von dhPLUS-Entitäten - eine Form der Spezialisierung - durch die Verwendung einer terminologischen Hierarchie oder eines Thesaurus."@de,
+        "This property allows sub typing of dhPLUS entities - a form of specialisation - through the use of a terminological hierarchy, or thesaurus."@en .
+
+dhpluso:instanceOf a owl:ObjectProperty ;
+    rdfs:label "Instanz von"@de,
+        "instance of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range dhpluso:Work ;
+    rdfs:subPropertyOf bf:instanceOf ;
+    owl:inverseOf dhpluso:hasInstance ;
+    skos:definition "Werk, das die beschriebene Instanz instanziiert oder minifestiert."@de,
+        "Work the Instance described instantiates or manifests."@en .
+
+dhpluso:isTimeSpanOf a owl:ObjectProperty ;
+    rdfs:label "ist Zeitspanne von"@de,
+        "is time span of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:TimeSpan ;
+    rdfs:range dhpluso:Event ;
+    rdfs:subPropertyOf ecrm:P4i_is_time-span_of ;
+    owl:inverseOf dhpluso:hasTimeSpan ;
+    skos:definition "Diese Eigenschaft verknüpft die Zeitspanne mit einer Instanz von Event."@de,
+        "This property associates the Time-Span with an instance of Event."@en .
+
+dhpluso:itemOf a owl:ObjectProperty ;
+    rdfs:label "ist Exemplar von"@de,
+        "is item of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Item ;
+    rdfs:range dhpluso:Instance ;
+    rdfs:subPropertyOf bf:itemOf ;
+    owl:inverseOf dhpluso:hasItem ;
+    skos:definition "Instanz, für die das beschriebene Exemplar ein Beispiel ist."@de,
+        "Instance for which the described Item is an example."@en .
+
+dhpluso:tookPlaceAt a owl:ObjectProperty ;
+    rdfs:label "fand statt an"@de,
+        "took place at"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-26" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Event ;
+    rdfs:range dhpluso:Place ;
+    rdfs:subPropertyOf ecrm:P7_took_place_at ;
+    owl:inverseOf dhpluso:witnessed ;
+    skos:definition "Diese Eigenschaft beschreibt die räumliche Lage eines Ereignisses."@de,
+        "This property describes the spatial location of an event."@en .
+
+dhpluso:wasBorn a owl:ObjectProperty ;
+    rdfs:label "wurde geboren"@de,
+        "was born"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:Birth ;
+    rdfs:subPropertyOf ecrm:P98i_was_born ;
+    owl:inverseOf dhpluso:broughtIntoLife ;
+    skos:definition "Verweis auf das Geburtsevent einer Person."@de,
+        "Reference to the birth event of a person."@en .
+
+dhpluso:wasCreatedBy a owl:ObjectProperty ;
+    rdfs:label "wurde erschaffen durch"@de,
+        "was created by"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Creation ;
+    rdfs:subPropertyOf ecrm:P94i_was_created_by ;
+    owl:inverseOf dhpluso:hasCreated ;
+    skos:definition "Diese Eigenschaft verknüpft eine Instanz von Werk mit der Instanz von Erschaffung, deren Produkt das Werk ist."@de,
+        "This property links an instance of Work to the instance of Creation whose product is the work."@en .
+
+dhpluso:wasDeathOf a owl:ObjectProperty ;
+    rdfs:label "war Tod von"@de,
+        "was death of"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Death ;
+    rdfs:range dhpluso:Person ;
+    rdfs:subPropertyOf ecrm:P100_was_death_of ;
+    owl:inverseOf dhpluso:diedIn ;
+    skos:definition "Verweis auf die Person, die in einem Todesevent verstorben ist."@de,
+        "Reference to the person dying in a death event."@en .
+
+dhpluso:witnessed a owl:ObjectProperty ;
+    rdfs:label "fand statt an"@de,
+        "took place at"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-26" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:Event ;
+    rdfs:subPropertyOf ecrm:P7i_witnessed ;
+    owl:inverseOf dhpluso:tookPlaceAt ;
+    skos:definition "Diese Eigenschaft beschreibt die Ereignisse, die an einem bestimmten Ort stattfinden."@de,
+        "This property describes the events happening at a spatial location."@en .
+
+dhpluso:BeginningOfExistence a owl:Class ;
+    rdfs:label "Beginn der Existenz"@de,
+        "Beginning of Existence"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E63_Beginning_of_Existence,
+        dhpluso:Event ;
+    skos:definition "Diese Klasse umfasst Ereignisse, die eine beliebige Instanz von Persistent Item ins Leben rufen."@de,
+        "This class comprises events that bring into existence any instance of Persistent Item."@en .
+
+dhpluso:Birth a owl:Class ;
+    rdfs:label "Geburt"@de,
+        "Birth"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E67_Birth,
+        dhpluso:BeginningOfExistence ;
+    skos:definition "Diese Klasse umfasst die Geburten von Menschen. "@de,
+        "This class comprises the births of human beings."@en .
+
+dhpluso:Creation a owl:Class ;
+    rdfs:label "Erschaffung"@de,
+        "Creation"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E65_Creation,
+        dhpluso:BeginningOfExistence ;
+    skos:definition "Diese Klasse umfasst Ereignisse, die zur Schaffung von begrifflichen Gegenständen oder immateriellen Produkten führen, wie Legenden, Gedichte, Texte, Musik, Bilder, Filme, Gesetze, Schriften usw."@de,
+        "This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts, music, images, movies, laws, types etc."@en .
+
+dhpluso:Death a owl:Class ;
+    rdfs:label "Tod"@de,
+        "Death"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E69_Death,
+        dhpluso:Event ;
+    skos:definition "Diese Klasse umfasst den Tod von Menschen. "@de,
+        "This class comprises the death of human beings."@en .
+
+dhpluso:Form a owl:Class ;
+    rdfs:label "Form"@de,
+        "Form"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-09-16+14:25" ;
+    rdfs:subClassOf ontolex:Form,
+        dhpluso:Entity ;
+    skos:definition "Eine Form stellt eine grammatikalische Realisierung eines lexikalischen Eintrags dar."@de,
+        "A form represents one grammatical realization of a lexical entry."@en .
+
+dhpluso:Identifier a owl:Class ;
+    rdfs:label "Indentifier"@de,
+        "Indentifier"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E42_Identifier,
+        dhpluso:Appellation ;
+    skos:definition "Diese Klasse umfasst Zeichenfolgen oder Codes, die Instanzen von E1 CRM Entity zugewiesen werden, um sie eindeutig und dauerhaft im Kontext einer oder mehrerer Organisationen zu identifizieren."@de,
+        "This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations."@en .
+
+dhpluso:Lexicon a owl:Class ;
+    rdfs:label "Wörterbuch"@de,
+        "lexicon"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf lime:Lexicon,
+        dhpluso:Entity ;
+    skos:definition "Ein Lexikon ist eine Sammlung von lexikalischen Einträgen für eine bestimmte Sprache oder einen bestimmten Bereich."@de,
+        "A lexicon represents a collection of lexical entries for a particular language or domain."@en .
+
+dhpluso:OnomasticUsage a owl:Class ;
+    rdfs:label "Eigennamengebrauch"@de,
+        "onomastic usage"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalSense,
+        dhpluso:Entity ;
+    skos:definition "Eigennamengebrauch"@de,
+        "onomastic usage"@en .
+
+dhpluso:ProvisionActivity a owl:Class ;
+    rdfs:label "Veröffentlichung"@de,
+        "Provision Activity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E65_Creation,
+        bf:ProvisionActivity,
+        dhpluso:Event ;
+    skos:definition "Informationen über den Akteur oder Ort, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe oder die Produktion einer Ressource beziehen."@de,
+        "Information about the agent or place relating to the publication, printing, distribution, issue, release, or production of a resource."@en .
+
+dhpluso:Type a owl:Class ;
+    rdfs:label "Typ"@de,
+        "Type"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E55_Type,
+        skos:Concept,
+        dhpluso:Entity ;
+    skos:definition "Diese Klasse umfasst Konzepte, die durch Begriffe aus Thesauri und kontrollierten Vokabularen bezeichnet werden, die zur Charakterisierung und Klassifizierung von Instanzen von CIDOC CRM-Klassen verwendet werden. Instanzen von E55 Type repräsentieren Konzepte im Gegensatz zu Instanzen von E41 Appellation, die zur Benennung von Instanzen von CIDOC-CRM-Klassen verwendet werden."@de,
+        "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CIDOC CRM classes. Instances of E55 Type represent concepts in contrast to instances of E41 Appellation which are used to name instances of CIDOC CRM classes."@en .
+
+dhpluso:title a owl:ObjectProperty ;
+    rdfs:label "hat Titel"@de,
+        "has title"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Title ;
+    rdfs:subPropertyOf ecrm:P102_has_title,
+        bf:title ;
+    skos:definition "Name einer Ressource."@de,
+        "Name given to a resource."@en .
+
+dhpluso:Geometry a owl:Class ;
+    rdfs:label "Geometrie"@de,
+        "Geometry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf crm:E94_Space_Primitive,
+        sf:Geometry,
+        dhpluso:Appellation ;
+    skos:definition "Oberklasse aller Geometrieklassen."@de,
+        "Root of all geometry classes."@en ;
+    sh:property [ sh:datatype geo:wktLiteral ;
+            sh:path dhpluso:asWKT ;
+            sh:severity sh:Violation ] ;
+    sh:target [ a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:Geometry ] .
+
+dhpluso:Instant a owl:Class ;
+    rdfs:label "Zeitpunkt"@de,
+        "Instant"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "2021-10-05+14:42" ;
+    rdfs:subClassOf time:Instant,
+        dhpluso:TimeSpan ;
+    skos:definition "Eine zeitliche Einheit ohne Ausmaß oder Dauer. "@de,
+        "A temporal entity with zero extent or duration."@en .
+
+dhpluso:NameOfThePlace a owl:Class ;
+    rdfs:label "Namensentität einer Place"@de,
+        "Name entity of a place"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf gndo:PlaceOrGeographicName,
+        dhpluso:Appellation ;
+    skos:definition "Entität für die verschiedenen Data Properties eines Ortsnamens."@de,
+        "Entity for the different data properties of a places name."@en .
+
+dhpluso:Item a owl:Class ;
+    rdfs:label "Exemplar"@de,
+        "Item"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E22_Human-Made_Object,
+        bf:Item,
+        dhpluso:Bibliographic ;
+    skos:definition "Einzelnes Exemplar einer Instanz."@de,
+        "Single example of an Instance."@en .
+
+dhpluso:LexicalConcept a owl:Class ;
+    rdfs:label "Lexikalischer Begriff"@de,
+        "Lexical Concept"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalConcept,
+        dhpluso:Entity ;
+    skos:definition "Ein lexikalisches Konzept ist eine mentale Abstraktion, ein Konzept oder eine Gedankeneinheit, die durch eine bestimmte Sammlung von Bedeutungen lexikalisiert werden kann."@de,
+        "A lexical concept represents a mental abstraction, concept or unit of thought that can be lexicalized by a given collection of senses."@en .
+
+dhpluso:Place a owl:Class ;
+    rdfs:label "Ort"@de,
+        "Place"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-19" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E53_Place,
+        bf:Place,
+        wd:Q17334923,
+        gndo:PlaceOrGeographicName,
+        dhpluso:Entity ;
+    skos:definition "Ein dhpluso Ort."@de,
+        "A dhpluso place."@en .
+
+dhpluso:Appellation a owl:Class ;
+    rdfs:label "Indentifier"@de,
+        "Indentifier"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E41_Appellation,
+        dhpluso:Entity ;
+    skos:definition "Diese Klasse umfasst sinnvolle oder nicht sinnvolle Zeichen oder Anordnungen von Zeichen, die einer bestimmten Syntax folgen, die verwendet werden oder verwendet werden können, um auf eine bestimmte Instanz einer Klasse oder Kategorie innerhalb eines bestimmten Kontexts zu verweisen und diese zu identifizieren."@de,
+        "This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context."@en .
+
+dhpluso:isIdentifiedBy a owl:ObjectProperty ;
+    rdfs:label "wird identifiziert durch"@de,
+        "is identified by"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-10-05+08:50" ;
+    rdfs:domain dhpluso:Entity ;
+    rdfs:range dhpluso:Appellation ;
+    rdfs:subPropertyOf ecrm:P1_is_identified_by,
+        bf:identifiedBy ;
+    skos:definition "Diese Eigenschaft beschreibt die Benennung oder Identifizierung eines beliebigen Elements der realen Welt durch einen Namen oder einen anderen Bezeichner."@de,
+        "This property describes the naming or identification of any real world item by a name or any other identifier."@en .
+
+dhpluso:Event a owl:Class ;
+    rdfs:label "Ereignis"@de,
+        "Event"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E5_Event,
+        bf:Event,
+        dhpluso:Entity ;
+    skos:definition "Diese Klasse umfasst eindeutige, abgegrenzte und kohärente Prozesse und Interaktionen materieller Natur in kulturellen, sozialen oder physischen Systemen, die Instanzen von Persistent Item in einer für die Art des Prozesses charakteristischen Weise einbeziehen und beeinflussen. Typische Beispiele sind Versammlungen, Geburten, Todesfälle, Handlungen der Entscheidungsfindung, des Herstellens oder Erfindens von Dingen, aber auch komplexere und umfangreichere wie Konferenzen, Wahlen, der Bau einer Burg oder Schlachten."@de,
+        "This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles."@en .
+
+dhpluso:Person a owl:Class ;
+    rdfs:label "Person"@de,
+        "Person"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E21_Person,
+        bf:Person,
+        wd:Q5,
+        gndo:Person,
+        dhpluso:Entity ;
+    skos:definition "Eine dhpluso Person."@de,
+        "A dhpluso person."@en .
+
+dhpluso:TimeSpan a owl:Class ;
+    rdfs:label "Zeitspanne"@de,
+        "time span"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "2021-10-05+14:42" ;
+    rdfs:subClassOf ecrm:E52_Time-Span,
+        bf:Temporal,
+        time:TemporalEntity,
+        dhpluso:Entity ;
+    skos:definition "Diese Klasse umfasst abstrakte zeitliche Ausdehnungen im Sinne der Galileischen Physik, die einen Anfang, ein Ende und eine Dauer haben. "@de,
+        "This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration."@en .
+
+dhpluso:Title a owl:Class ;
+    rdfs:label "Titel"@de,
+        "Titel"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E35_Title,
+        bf:Title,
+        dhpluso:Appellation ;
+    skos:definition "Titelinformationen zu einer Ressource: Werktitel, bevorzugter Titel, Instanztitel, transkribierter Titel, übersetzter Titel, abweichende Form des Titels usw."@de,
+        "Title information relating to a resource: work title, preferred title, instance title, transcribed title, translated title, variant form of title, etc."@en .
+
+dhpluso:NameOfThePerson a owl:Class ;
+    rdfs:label "Namensentität einer Person"@de,
+        "Name entity of a person"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf gndo:NameOfThePerson,
+        dhpluso:Appellation ;
+    skos:definition "Entität für die verschiedenen Data Properties eines Personennamens."@de,
+        "Entity for the different data properties of a person's name."@en .
+
+dhpluso:LexicalEntry a owl:Class ;
+    rdfs:label "lexikalischer Artikel"@de,
+        "lexical entry"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalEntry,
+        dhpluso:Entity ;
+    skos:definition "Ein lexikalischer Eintrag stellt eine Analyseeinheit des Lexikons dar, die aus einer Reihe von grammatikalisch verwandten Formen und einer Reihe von Grundbedeutungen besteht, die mit all diesen Formen verbunden sind. Ein lexikalischer Eintrag ist also ein Wort, ein Mehrwortausdruck oder ein Affix mit einem einzigen Part-of-Speech, einem morphologischen Muster, einer Etymologie und einer Reihe von Bedeutungen."@de,
+        "A lexical entry represents a unit of analysis of the lexicon that consists of a set of forms that are grammatically related and a set of base meanings that are associated with all of these forms. Thus, a lexical entry is a word, multiword expression or affix with a single part-of-speech, morphological pattern, etymology and set of senses."@en .
+
+dhpluso:LexicalSense a owl:Class ;
+    rdfs:label "lexikalische Bedeutung"@de,
+        "lexical sense"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ontolex:LexicalSense,
+        dhpluso:Entity ;
+    skos:definition "Ein lexikalischer Sinn stellt die lexikalische Bedeutung eines lexikalischen Eintrags dar, wenn er als Verweis auf das entsprechende Ontologieelement interpretiert wird. Ein lexikalischer Sinn stellt somit eine Verdinglichung eines Paares aus einem eindeutig bestimmten lexikalischen Eintrag und einer eindeutig bestimmten Ontologie-Entität dar, auf die er sich bezieht. Eine Verknüpfung zwischen einem lexikalischen Eintrag und einer Ontologie-Entität über ein Lexical Sense-Objekt impliziert, dass der lexikalische Eintrag verwendet werden kann, um auf die betreffende Ontologie-Entität zu verweisen."@de,
+        "A lexical sense represents the lexical meaning of a lexical entry when interpreted as referring to the corresponding ontology element. A lexical sense thus represents a reification of a pair of a uniquely determined lexical entry and a uniquely determined ontology entity it refers to. A link between a lexical entry and an ontology entity via a Lexical Sense object implies that the lexical entry can be used to refer to the ontology entity in question."@en .
+
+dhpluso:Bibliographic a owl:Class ;
+    rdfs:label "Bibliographische Entität"@de,
+        "Bibliographic Entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E73_Information_Object,
+        ecrm:E89_Propositional_Object,
+        dhpluso:Entity ;
+    skos:definition "Bibliographische Entitäten sind Werke, Instanzen und Exemplare."@de,
+        "Bibliographic Entities are Works, Instances and Items."@en .
+
+dhpluso:Instance a owl:Class ;
+    rdfs:label "Instanz"@de,
+        "Instance"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E89_Propositional_Object,
+        bf:Instance,
+        dhpluso:Bibliographic ;
+    skos:definition "Ressource, die eine individuelle, materielle Verkörperung eines Werkes darstellt."@de,
+        "Resource reflecting an individual, material embodiment of a Work."@en .
+
+dhpluso:Work a owl:Class ;
+    rdfs:label "Werk"@de,
+        "Work"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E89_Propositional_Object,
+        bf:Work,
+        dhpluso:Bibliographic ;
+    skos:definition "Ressource, die eine konzeptionelle Essenz einer Katalogisierungsressource widerspiegelt."@de,
+        "Resource reflecting a conceptual essence of a cataloging resource."@en .
+
+dhpluso:Entity a owl:Class ;
+    rdfs:label "Entität"@de,
+        "Entity"@en ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "2021-09-16+12:28" ;
+    rdfs:subClassOf ecrm:E1_CRM_Entity ;
+    skos:definition "Basisklasse aller dhpluso Klassen."@de,
+        "Base class for all dhpluso classes."@en .
+

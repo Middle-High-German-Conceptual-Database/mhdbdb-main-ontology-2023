@@ -1,0 +1,100 @@
+<mxfile host="65bd71144e">
+    <diagram id="UDF7MfAlkTpB1ZZiwey4" name="InferredAssertion">
+        <mxGraphModel dx="1273" dy="368" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="10" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="60" width="520" height="590" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="rdfs:label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="320" y="100" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value=":Wolfram" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="80" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="&lt;pre style=&quot;overflow-wrap: break-word&quot;&gt;&quot;Wolfram Eschenbach&quot;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="90" width="180" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="rdf:subject" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="5" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="230" y="200"/>
+                            <mxPoint x="140" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="rdf:predicate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="rdf:object" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="1" source="5" target="4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="290" y="200"/>
+                            <mxPoint x="400" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" value=":s_123123" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="200" y="240" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value=":s_123123&lt;br&gt;&amp;nbsp; &amp;nbsp; a dhluso:InferredAssertion&amp;nbsp;;&lt;br&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; # Identification&lt;br&gt;&amp;nbsp; &amp;nbsp; rdf:subject&amp;nbsp;&lt;span style=&quot;color: rgb(0 , 0 , 0) ; text-align: center&quot;&gt;:Wolfram&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&amp;nbsp;;&lt;br&gt;&lt;/span&gt;&amp;nbsp; &amp;nbsp; rdf:predicate&amp;nbsp;&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-size: 11px ; text-align: center ; background-color: rgb(255 , 255 , 255)&quot;&gt;rdfs:label&lt;/span&gt;&amp;nbsp;;&lt;br&gt;&amp;nbsp; &amp;nbsp; rdf:object&amp;nbsp;&quot;Wolfram Eschenbach&quot; ;&lt;br&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; # Source&lt;br&gt;&amp;nbsp; &amp;nbsp; dhpluso:assertionInferredFrom gnd:&lt;span style=&quot;text-align: center&quot;&gt;118634933 ;&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;dhpluso&lt;span style=&quot;text-align: center&quot;&gt;:assertionAuthority dhplusv:GND ;&lt;br&gt;.&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="95" y="290" width="450" height="340" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="t9VmDVLNErnJeptSrzHt" name="Assertion">
+        <mxGraphModel dx="1273" dy="368" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="uQLcmQMxbqDZ4wOtFvH9-0"/>
+                <mxCell id="uQLcmQMxbqDZ4wOtFvH9-1" parent="uQLcmQMxbqDZ4wOtFvH9-0"/>
+                <mxCell id="Fui1o2CdEG19mXiN9LMX-0" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" parent="uQLcmQMxbqDZ4wOtFvH9-1" vertex="1">
+                    <mxGeometry x="60" y="60" width="460" height="590" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fui1o2CdEG19mXiN9LMX-1" value="rdfs:label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="uQLcmQMxbqDZ4wOtFvH9-1" source="Fui1o2CdEG19mXiN9LMX-2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="319.9999999999999" y="100" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Fui1o2CdEG19mXiN9LMX-2" value=":Wolfram" style="rounded=1;whiteSpace=wrap;html=1;" parent="uQLcmQMxbqDZ4wOtFvH9-1" vertex="1">
+                    <mxGeometry x="80" y="80" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fui1o2CdEG19mXiN9LMX-3" value="&lt;pre style=&quot;overflow-wrap: break-word&quot;&gt;&quot;Wolfram von Eschenbach&quot;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="uQLcmQMxbqDZ4wOtFvH9-1" vertex="1">
+                    <mxGeometry x="320" y="90" width="180" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fui1o2CdEG19mXiN9LMX-4" value="rdf:subject" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="uQLcmQMxbqDZ4wOtFvH9-1" source="Fui1o2CdEG19mXiN9LMX-7" target="Fui1o2CdEG19mXiN9LMX-2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="230" y="200"/>
+                            <mxPoint x="140" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Fui1o2CdEG19mXiN9LMX-5" value="rdf:predicate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="uQLcmQMxbqDZ4wOtFvH9-1" source="Fui1o2CdEG19mXiN9LMX-7" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="259.9999999999999" y="120" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Fui1o2CdEG19mXiN9LMX-6" value="rdf:object" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" parent="uQLcmQMxbqDZ4wOtFvH9-1" source="Fui1o2CdEG19mXiN9LMX-7" target="Fui1o2CdEG19mXiN9LMX-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="290" y="200"/>
+                            <mxPoint x="400" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="Fui1o2CdEG19mXiN9LMX-7" value=":s_123123" style="rounded=1;whiteSpace=wrap;html=1;" parent="uQLcmQMxbqDZ4wOtFvH9-1" vertex="1">
+                    <mxGeometry x="200" y="240" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="Fui1o2CdEG19mXiN9LMX-8" value=":s_123123&lt;br&gt;&amp;nbsp; &amp;nbsp; a dhluso:Assertion ;&lt;br&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; # Identification&lt;br&gt;&amp;nbsp; &amp;nbsp; rdf:subject&amp;nbsp;&lt;span style=&quot;color: rgb(0 , 0 , 0) ; text-align: center&quot;&gt;:Wolfram&lt;/span&gt;&lt;span style=&quot;text-align: center&quot;&gt;&amp;nbsp;;&lt;br&gt;&lt;/span&gt;&amp;nbsp; &amp;nbsp; rdf:predicate&amp;nbsp;&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-size: 11px ; text-align: center ; background-color: rgb(255 , 255 , 255)&quot;&gt;rdfs:label&lt;/span&gt;&amp;nbsp;;&lt;br&gt;&amp;nbsp; &amp;nbsp; rdf:object&amp;nbsp;&quot;Wolfram von Eschenbach&quot; ;&lt;br&gt;&lt;br&gt;&amp;nbsp; &amp;nbsp; # Source&lt;br&gt;&lt;span style=&quot;text-align: center&quot;&gt;&amp;nbsp; &amp;nbsp; dhpluso:assertionAuthority &quot;MHDBDB&quot; ;&lt;br&gt;.&lt;br&gt;&lt;/span&gt;" style="text;html=1;strokeColor=#666666;fillColor=#f5f5f5;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fontColor=#333333;" parent="uQLcmQMxbqDZ4wOtFvH9-1" vertex="1">
+                    <mxGeometry x="120" y="290" width="380" height="340" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

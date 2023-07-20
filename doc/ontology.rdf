@@ -1,0 +1,3342 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://dh.plus.ac.at/ontology#"
+     xml:base="https://dh.plus.ac.at/ontology"
+     xmlns:a="http://rdaregistry.info/Elements/a/"
+     xmlns:u="http://rdaregistry.info/Elements/u/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:gnd="https://d-nb.info/standards/elementset/gnd#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tmp="https://dh.plus.ac.at/tmp/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:shacl="http://www.w3.org/ns/shacl#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/"
+     xmlns:agrelon="https://d-nb.info/standards/elementset/agrelon#">
+    <owl:Ontology rdf:about="https://dh.plus.ac.at/ontology#">
+        <owl:versionIRI rdf:resource="https://dh.plus.ac.at/ontology/0-1#"/>
+        <owl:imports rdf:resource="https://d-nb.info/standards/elementset/gnd_20191015.rdf"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/erlangen-crm/ecrm/master/ecrm_200717.owl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/lcnetdev/bibframe-ontology/main/archive/bibframe-2.1.0.rdf"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <dc:creator>Richard Hörmann</dc:creator>
+        <dc:rights rdf:resource="https://creativecommons.org/publicdomain/zero/1.0/"/>
+        <dc:title xml:lang="de">dhPLUS Ontologie</dc:title>
+        <dc:title xml:lang="en">dhPLUS Ontology</dc:title>
+        <terms:created>2019-12-27</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <vann:preferredNamespacePrefix>dhpluso</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceUri>https://dh.plus.ac.at/ontology#</vann:preferredNamespaceUri>
+        <rdfs:label xml:lang="de">dhPLUS Ontologie</rdfs:label>
+        <rdfs:label xml:lang="en">dhPLUS Ontology</rdfs:label>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-12-27</owl:versionInfo>
+        <owl:versionInfo>0.1</owl:versionInfo>
+        <skos:definition xml:lang="de">Dies ist eine Ontologie des dhPLUS-Repositoriums für Digital Humanities-Projekte der Universität Salzburg.</skos:definition>
+        <skos:definition xml:lang="en">This is an ontology of the dhPLUS repository for Digital Humanities Projects of the University of Salzburg.</skos:definition>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/rights -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#definition"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#class -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#class"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#datatype -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#datatype"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#declare -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#declare"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#description"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#labelTemplate -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#labelTemplate"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#namespace -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#namespace"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#nodeKind -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#nodeKind"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#parameter -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#parameter"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#path -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#path"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#prefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#prefix"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#prefixes -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#prefixes"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#property -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#property"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#select -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#select"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#severity -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#severity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#target -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/shacl#target"/>
+    
+
+
+    <!-- https://dh.plus.ac.at/tmp/class -->
+
+
+    <owl:AnnotationProperty rdf:about="https://dh.plus.ac.at/tmp/class"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#duration -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#duration"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.lexinfo.net/ontology/3.0/lexinfo#antonym -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.lexinfo.net/ontology/3.0/lexinfo#antonym"/>
+    
+
+
+    <!-- http://www.lexinfo.net/ontology/3.0/lexinfo#hypernym -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.lexinfo.net/ontology/3.0/lexinfo#hypernym"/>
+    
+
+
+    <!-- http://www.lexinfo.net/ontology/3.0/lexinfo#hyponym -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.lexinfo.net/ontology/3.0/lexinfo#hyponym"/>
+    
+
+
+    <!-- http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech"/>
+    
+
+
+    <!-- http://www.lexinfo.net/ontology/3.0/lexinfo#synonym -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.lexinfo.net/ontology/3.0/lexinfo#synonym"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasBeginning -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasBeginning"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#hasEnd -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2006/time#hasEnd"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/decomp#subterm -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/lemon/decomp#subterm"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/lime#entry -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/lemon/lime#entry"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#otherForm -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/lemon/ontolex#otherForm"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#sense -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/lemon/ontolex#sense"/>
+    
+
+
+    <!-- http://www.wikidata.org/prop/direct/P21 -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.wikidata.org/prop/direct/P21"/>
+    
+
+
+    <!-- https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePlace -->
+
+
+    <owl:ObjectProperty rdf:about="https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePlace"/>
+    
+
+
+    <!-- https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName -->
+
+
+    <owl:ObjectProperty rdf:about="https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName"/>
+    
+
+
+    <!-- https://d-nb.info/standards/elementset/gnd#variantNameForThePlaceOrGeographicName -->
+
+
+    <owl:ObjectProperty rdf:about="https://d-nb.info/standards/elementset/gnd#variantNameForThePlaceOrGeographicName"/>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#adminMetadata -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#adminMetadata">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/adminMetadata"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#AdminMetadata"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has admin metadata</rdfs:label>
+        <rdfs:label xml:lang="de">hat administrative Metadaten</rdfs:label>
+        <skos:definition xml:lang="en">Metadata about the metadata, especially provenance information.</skos:definition>
+        <skos:definition xml:lang="de">Metadaten über die Metadaten, insbesondere Provenienzinformationen.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#antonym -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#antonym">
+        <rdfs:subPropertyOf rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#antonym"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has antonym lexical sense</rdfs:label>
+        <rdfs:label xml:lang="de">hat antonyme Bedeutung</rdfs:label>
+        <skos:definition xml:lang="en">Links a lexical sense with its antonym.</skos:definition>
+        <skos:definition xml:lang="de">Verbindet eine lexikalische Bedeutung mit ihrem Antonym.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#antonymConcept -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#antonymConcept">
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalConcept"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalConcept"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has antonym lexical concept</rdfs:label>
+        <rdfs:label xml:lang="de">hat antonymen Begriff</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#broughtIntoLife -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#broughtIntoLife">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P98_brought_into_life"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Birth"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Person"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-23</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">brachte zur Welt</rdfs:label>
+        <rdfs:label xml:lang="en">brought into life</rdfs:label>
+        <skos:definition xml:lang="en">Reference from the birth event to the born person.</skos:definition>
+        <skos:definition xml:lang="de">Referenz vom Geburtsereignis auf die geborene Person.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#content -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#content">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/content"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Content"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has content</rdfs:label>
+        <rdfs:label xml:lang="de">hat Inhalt</rdfs:label>
+        <skos:definition xml:lang="en">Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived.</skos:definition>
+        <skos:definition xml:lang="de">Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#continuedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#continuedBy">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/continuedBy"/>
+        <rdfs:domain rdf:resource="_:genid-nodeid-node1ft0aqj11x76"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Instance"/>
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Work"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">continued by</rdfs:label>
+        <rdfs:label xml:lang="de">fortgesetzt von</rdfs:label>
+        <skos:definition xml:lang="en">Resource whose content continues an earlier resource under a new title.</skos:definition>
+        <skos:definition xml:lang="de">Ressource, deren Inhalt eine frühere Ressource unter einem neuen Titel fortsetzt.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#continues -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#continues">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/continues"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#continuedBy"/>
+        <rdfs:domain rdf:resource="_:genid-nodeid-node1ft0aqj11x82"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Instance"/>
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Work"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">continues</rdfs:label>
+        <rdfs:label xml:lang="de">setzt fort</rdfs:label>
+        <skos:definition xml:lang="en">Resource that is continued by the content of a later resource under a new title.</skos:definition>
+        <skos:definition xml:lang="de">Ressource, die durch den Inhalt einer späteren Ressource unter einem neuen Titel fortgesetzt wird.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#contribution -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#contribution">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/contribution"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Contribution"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has contribution</rdfs:label>
+        <rdfs:label xml:lang="de">hat Mitarbeit</rdfs:label>
+        <skos:definition xml:lang="en">Agent and its role in relation to the resource.</skos:definition>
+        <skos:definition xml:lang="de">Agent und seine Rolle in Bezug auf die Ressource.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#coordinatesForThePlace -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#coordinatesForThePlace">
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePlace"/>
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#isIdentifiedBy"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Place"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Point"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Koordinatenentität</rdfs:label>
+        <rdfs:label xml:lang="en">coordinates entity</rdfs:label>
+        <skos:definition xml:lang="en">Reference to the coordinates entity of a place.</skos:definition>
+        <skos:definition xml:lang="de">Verweis auf die Koordinatenentität eines Ortes.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#derivativeOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#derivativeOf">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/derivativeOf"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Ableitung von</rdfs:label>
+        <rdfs:label xml:lang="en">Derivative of</rdfs:label>
+        <skos:definition xml:lang="en">Source work from which the described work is derived.</skos:definition>
+        <skos:definition xml:lang="de">Werk, von dem das beschriebene Werk abgeleitet ist.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#diedIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#diedIn">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P100i_died_in"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Person"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Death"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">died</rdfs:label>
+        <rdfs:label xml:lang="de">gestorben</rdfs:label>
+        <skos:definition xml:lang="en">Reference to the death event of a person.</skos:definition>
+        <skos:definition xml:lang="de">Verweis auf das Todesevent einer Person.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#entry -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#entry">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/lemon/lime#entry"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Lexicon"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalEntry"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has entry</rdfs:label>
+        <rdfs:label xml:lang="de">hat Artikel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#expressionOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#expressionOf">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/expressionOf"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">Expression of</rdfs:label>
+        <rdfs:label xml:lang="de">Expression von</rdfs:label>
+        <skos:definition xml:lang="de">Werk, von dem das beschriebene Werk eine Expression ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verbinden. Bespielsweise ist eine kritische Edition eine Expression eines mhd. Werkes.</skos:definition>
+        <skos:definition xml:lang="en">Work that the described Work is an expression of. For use to connect Works under FRBR/RDA rules. For example, a critical edition is an expression of a gmh. work.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#extent -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#extent">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/extent"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Extent"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has extent</rdfs:label>
+        <rdfs:label xml:lang="de">hat Umfang</rdfs:label>
+        <skos:definition xml:lang="de">Anzahl und Typ der Einheiten und/oder Untereinheiten des Umfangs einer Ressource.</skos:definition>
+        <skos:definition xml:lang="en">Number and type of units and/or subunits making up a resource.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#gender -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#gender">
+        <rdfs:subPropertyOf rdf:resource="http://www.wikidata.org/prop/direct/P21"/>
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#gender"/>
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#hasType"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Person"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Gender"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Geschlecht einer Person</rdfs:label>
+        <rdfs:label xml:lang="en">gender of a person</rdfs:label>
+        <skos:definition xml:lang="en">Reference to the gender of a person.</skos:definition>
+        <skos:definition xml:lang="de">Verweis auf das Geschlecht einer Person.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasBeginning -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasBeginning">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasBeginning"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#TimeSpan"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Instant"/>
+        <terms:created>2021-10-05</terms:created>
+        <terms:modified>2021-10-05+14:42</terms:modified>
+        <rdfs:label xml:lang="en">has beginning</rdfs:label>
+        <rdfs:label xml:lang="de">hat Anfang</rdfs:label>
+        <skos:definition xml:lang="de">Beginn einer zeitlichen Einheit.</skos:definition>
+        <skos:definition xml:lang="en">Beginning of a temporal entity.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasCreated -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasCreated">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P94_has_created"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Creation"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has created</rdfs:label>
+        <rdfs:label xml:lang="de">hat erschaffen</rdfs:label>
+        <skos:definition xml:lang="de">Diese Eigenschaft verknüpft eine Instanz von Creation mit der Instanz von Werk, die durch sie erstellt wurde.</skos:definition>
+        <skos:definition xml:lang="en">This property links an instance of Creation to the instance of Work created by it.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasDerivative -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasDerivative">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/hasDerivative"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#derivativeOf"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">Has Derivative</rdfs:label>
+        <rdfs:label xml:lang="de">Hat Ableitung</rdfs:label>
+        <skos:definition xml:lang="en">Resource that is a modification of the described work.</skos:definition>
+        <skos:definition xml:lang="de">Ressource, die eine Ableitung des beschriebenen Werks ist.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasEnd -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasEnd">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#hasEnd"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#TimeSpan"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Instant"/>
+        <terms:created>2021-10-05</terms:created>
+        <terms:modified>2021-10-05+14:42</terms:modified>
+        <rdfs:label xml:lang="en">has end</rdfs:label>
+        <rdfs:label xml:lang="de">hat Ende</rdfs:label>
+        <skos:definition xml:lang="en">End of a temporal entity.</skos:definition>
+        <skos:definition xml:lang="de">Ende einer zeitlichen Einheit.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasExpression -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasExpression">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/hasExpression"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#expressionOf"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">Has Expression</rdfs:label>
+        <rdfs:label xml:lang="de">Hat Expression</rdfs:label>
+        <skos:definition xml:lang="de">Werk, das eine Expression eines beschriebenen Werks ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verknüpfen.</skos:definition>
+        <skos:definition xml:lang="en">Work that is an expression of a described Work. For use to relate Works under FRBR/RDA rules.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasInstance -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasInstance">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/hasInstance"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has instance</rdfs:label>
+        <rdfs:label xml:lang="de">hat Instanz</rdfs:label>
+        <skos:definition xml:lang="de">Die Instanz ist mit dem beschriebenen Werk verbunden.</skos:definition>
+        <skos:definition xml:lang="en">Instance is related to described Work.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasItem -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasItem">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/hasItem"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#itemOf"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Item"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has Item</rdfs:label>
+        <rdfs:label xml:lang="de">hat Exemplar</rdfs:label>
+        <skos:definition xml:lang="de">Exemplar, das ein Beispiel für die beschriebene Instanz ist.</skos:definition>
+        <skos:definition xml:lang="en">Item which is an example of the described Instance.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasPreferredIdentifier -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasPreferredIdentifier">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P48_has_preferred_identifier"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Identifier"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has preferred identifier</rdfs:label>
+        <rdfs:label xml:lang="de">hat bevorzugten Identifizierer</rdfs:label>
+        <skos:definition xml:lang="de">Diese Eigenschaft zeichnet die bevorzugte Instanz von Identifier auf, die zur Identifizierung einer Instanz von Entity zum Zeitpunkt der Aufzeichnung dieser Eigenschaft verwendet wurde.</skos:definition>
+        <skos:definition xml:lang="en">This property records the preferred instance of Identifier that was used to identify an instance of Entity at the time this property was recorded.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasSeries -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasSeries">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/hasSeries"/>
+        <rdfs:domain rdf:resource="_:genid-nodeid-node1ft0aqj11x4"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Instance"/>
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Work"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has series</rdfs:label>
+        <rdfs:label xml:lang="de">hat Serie</rdfs:label>
+        <skos:definition xml:lang="en">Resource in which the part has been issued; the title of the larger resource appears on the part.</skos:definition>
+        <skos:definition xml:lang="de">Ressource, in der der Band herausgegeben wurde; der Titel der größeren Ressource erscheint auf dem Band.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasTimeSpan -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasTimeSpan">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P4_has_time-span"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#isTimeSpanOf"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Event"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#TimeSpan"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has time span</rdfs:label>
+        <rdfs:label xml:lang="de">hat Zeitspanne</rdfs:label>
+        <skos:definition xml:lang="de">Diese Eigenschaft verknüpft ein Ereignis mit der Zeitspanne, in der es stattfand.</skos:definition>
+        <skos:definition xml:lang="en">This property associates an instance of Event with the Time-Span during which it was on-going.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hasType -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hasType">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P2_has_type"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Type"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has type</rdfs:label>
+        <rdfs:label xml:lang="de">hat Typ</rdfs:label>
+        <skos:definition xml:lang="de">Diese Eigenschaft ermöglicht die Subtypisierung von dhPLUS-Entitäten - eine Form der Spezialisierung - durch die Verwendung einer terminologischen Hierarchie oder eines Thesaurus.</skos:definition>
+        <skos:definition xml:lang="en">This property allows sub typing of dhPLUS entities - a form of specialisation - through the use of a terminological hierarchy, or thesaurus.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hypernym -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hypernym">
+        <rdfs:subPropertyOf rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#hypernym"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has hypernym lexical sense</rdfs:label>
+        <rdfs:label xml:lang="de">hat hypernyme Bedeutung</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#hyponym -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#hyponym">
+        <rdfs:subPropertyOf rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#hyponym"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has hyponym lexical sense</rdfs:label>
+        <rdfs:label xml:lang="de">hat hyponyme Bedeutung</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#immediateAcquisition -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#immediateAcquisition">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/immediateAcquisition"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Item"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#ImmediateAcquisition"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">direkte Erwerbung</rdfs:label>
+        <rdfs:label xml:lang="en">immediate acquisition</rdfs:label>
+        <skos:definition xml:lang="en">Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired.</skos:definition>
+        <skos:definition xml:lang="de">Informationen über die Umstände (z. B. Quelle, Datum, Methode), unter denen die Ressource direkt erworben wurde.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#instanceOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#instanceOf">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/instanceOf"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#hasInstance"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Instanz von</rdfs:label>
+        <rdfs:label xml:lang="en">instance of</rdfs:label>
+        <skos:definition xml:lang="de">Werk, das die beschriebene Instanz instanziiert oder minifestiert.</skos:definition>
+        <skos:definition xml:lang="en">Work the Instance described instantiates or manifests.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#isIdentifiedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#isIdentifiedBy">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P1_is_identified_by"/>
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/identifiedBy"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Appellation"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-23</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">is identified by</rdfs:label>
+        <rdfs:label xml:lang="de">wird identifiziert durch</rdfs:label>
+        <skos:definition xml:lang="de">Diese Eigenschaft beschreibt die Benennung oder Identifizierung eines beliebigen Elements der realen Welt durch einen Namen oder einen anderen Bezeichner.</skos:definition>
+        <skos:definition xml:lang="en">This property describes the naming or identification of any real world item by a name or any other identifier.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#isIdentifiedByIdentifier -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#isIdentifiedByIdentifier">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/identifiedBy"/>
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#isIdentifiedBy"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Identifier"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">identified by identifier</rdfs:label>
+        <rdfs:label xml:lang="de">identifiziert durch Zeichenkette</rdfs:label>
+        <skos:definition xml:lang="en">Character string associated with a resource that serves to differentiate that resource from other resources, i.e., that uniquely identifies an entity.</skos:definition>
+        <skos:definition xml:lang="de">Einer Ressource zugeordnete Zeichenkette, die dazu dient, diese Ressource von anderen Ressourcen zu unterscheiden, d. h. die eine Entität eindeutig identifiziert.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#isLexicalizedSenseOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#isLexicalizedSenseOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalConcept"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">is lexicalized sense of</rdfs:label>
+        <rdfs:label xml:lang="de">ist lexikalisierte Bedeutung von</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#isTimeSpanOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#isTimeSpanOf">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P4i_is_time-span_of"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#TimeSpan"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Event"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">is time span of</rdfs:label>
+        <rdfs:label xml:lang="de">ist Zeitspanne von</rdfs:label>
+        <skos:definition xml:lang="de">Diese Eigenschaft verknüpft die Zeitspanne mit einer Instanz von Event.</skos:definition>
+        <skos:definition xml:lang="en">This property associates the Time-Span with an instance of Event.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#isUsedOnomasticConceptOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#isUsedOnomasticConceptOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#OnomasticUsage"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#OnomasticConcept"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">is used onomastic concept of</rdfs:label>
+        <rdfs:label xml:lang="de">ist gebrauchte Namenskategorie von</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#issuance -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#issuance">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/issuance"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Instance"/>
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Work"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Issuance"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has issuance</rdfs:label>
+        <rdfs:label xml:lang="de">hat Ausgabe</rdfs:label>
+        <skos:definition xml:lang="en">Categorization reflecting whether a resource is issued in one or more parts, the way it is updated, and its intended termination.</skos:definition>
+        <skos:definition xml:lang="de">Kategorisierung, die widerspiegelt, ob eine Ressource in einem oder mehreren Teilen ausgegeben wird, wie sie aktualisiert wird und wie sie beendet werden soll.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#itemOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#itemOf">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/itemOf"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Item"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">is item of</rdfs:label>
+        <rdfs:label xml:lang="de">ist Exemplar von</rdfs:label>
+        <skos:definition xml:lang="en">Instance for which the described Item is an example.</skos:definition>
+        <skos:definition xml:lang="de">Instanz, für die das beschriebene Exemplar ein Beispiel ist.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#language -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#language">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/language"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Lexicon"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Language"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#note -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#note">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/note"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Note"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has note</rdfs:label>
+        <rdfs:label xml:lang="de">hat Anmerkung</rdfs:label>
+        <skos:definition xml:lang="de">Allgemeine Textinformationen, die sich auf eine Ressource beziehen, wie z. B. Informationen über eine bestimmte Kopie einer Ressource oder Informationen über ein bestimmtes Attribut einer Ressource.</skos:definition>
+        <skos:definition xml:lang="en">General textual information relating to a resource, such as Information about a specific copy of a resource or information about a particular attribute of a resource.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#objectProperty -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#objectProperty"/>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#onomasticUsage -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#onomasticUsage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#sense"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalEntry"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#OnomasticUsage"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has onomastic Usage</rdfs:label>
+        <rdfs:label xml:lang="de">hat Namensgebrauch</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#otherForm -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#otherForm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#otherForm"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalEntry"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Form"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has other form</rdfs:label>
+        <rdfs:label xml:lang="de">hat weitere Form</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#partOfSpeech -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#partOfSpeech">
+        <rdfs:subPropertyOf rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalEntry"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#PartOfSpeech"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has part of speech</rdfs:label>
+        <rdfs:label xml:lang="de">hat Wortart</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#preferredNameEntityForThePerson -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#preferredNameEntityForThePerson">
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePerson"/>
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#isIdentifiedBy"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Person"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePerson"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">bevorzugte Namensentität</rdfs:label>
+        <rdfs:label xml:lang="en">prefered name entity</rdfs:label>
+        <skos:definition xml:lang="en">Reference to the prefered name entity of a person.</skos:definition>
+        <skos:definition xml:lang="de">Verweis auf die bevorzugte Namensentität einer Person.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#preferredNameEntityForThePlace -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#preferredNameEntityForThePlace">
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName"/>
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#isIdentifiedBy"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Place"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePlace"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">bevorzugte Namensentität</rdfs:label>
+        <rdfs:label xml:lang="en">prefered name entity</rdfs:label>
+        <skos:definition xml:lang="en">Reference to the prefered name entity of a place.</skos:definition>
+        <skos:definition xml:lang="de">Verweis auf die bevorzugte Namensentität einer Place.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#preferredTitle -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#preferredTitle">
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#title"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Title"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-07+07:59</terms:modified>
+        <rdfs:label xml:lang="en">has preferred title</rdfs:label>
+        <rdfs:label xml:lang="de">hat preferred Titel</rdfs:label>
+        <skos:definition xml:lang="de">Name einer Ressource.</skos:definition>
+        <skos:definition xml:lang="en">Name given to a resource.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#provisionActivity -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#provisionActivity">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/provisionActivity"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#ProvisionActivity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has provision activity</rdfs:label>
+        <rdfs:label xml:lang="de">hat Veröffentlichungsaktivität</rdfs:label>
+        <skos:definition xml:lang="de">Orts-, Namens- und/oder Datumsangaben, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe, die Produktion usw. einer Ressource beziehen.</skos:definition>
+        <skos:definition xml:lang="en">Place, name, and/or date information relating to the publication, printing, distribution, issue, release, production, etc. of a resource.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#sense -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#sense">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#sense"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalEntry"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has lexical sense</rdfs:label>
+        <rdfs:label xml:lang="de">hat lexikalische Bedeutung</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#subterm -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#subterm">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/lemon/decomp#subterm"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalEntry"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalEntry"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has subterm</rdfs:label>
+        <rdfs:label xml:lang="de">hat Wortbildungsbestandteil</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#synonym -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#synonym">
+        <rdfs:subPropertyOf rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#synonym"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalSense"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has synonym lexical sense</rdfs:label>
+        <rdfs:label xml:lang="de">hat synonyme Bedeutung</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#synonymConcept -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#synonymConcept">
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#objectProperty"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#LexicalConcept"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#LexicalConcept"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has synonym lexical concept</rdfs:label>
+        <rdfs:label xml:lang="de">hat synonymen Begriff</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#title -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#title">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P102_has_title"/>
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/title"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Title"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has title</rdfs:label>
+        <rdfs:label xml:lang="de">hat Titel</rdfs:label>
+        <skos:definition xml:lang="de">Name einer Ressource.</skos:definition>
+        <skos:definition xml:lang="en">Name given to a resource.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#tookPlaceAt -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#tookPlaceAt">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P7_took_place_at"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Event"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Place"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-26</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">fand statt an</rdfs:label>
+        <rdfs:label xml:lang="en">took place at</rdfs:label>
+        <skos:definition xml:lang="de">Diese Eigenschaft beschreibt die räumliche Lage eines Ereignisses.</skos:definition>
+        <skos:definition xml:lang="en">This property describes the spatial location of an event.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#variantNameEntityForThePerson -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#variantNameEntityForThePerson">
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#variantNameEntityForThePerson"/>
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#isIdentifiedBy"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Person"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePerson"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">alternative Namensentität</rdfs:label>
+        <rdfs:label xml:lang="en">variant name entity</rdfs:label>
+        <skos:definition xml:lang="en">Reference to the variant name entity of a person.</skos:definition>
+        <skos:definition xml:lang="de">Verweis auf die alternative Namensentität einer Person.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#variantNameEntityForThePlace -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#variantNameEntityForThePlace">
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#variantNameForThePlaceOrGeographicName"/>
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#isIdentifiedBy"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Place"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePlace"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">alternative Namensentität</rdfs:label>
+        <rdfs:label xml:lang="en">variant name entity</rdfs:label>
+        <skos:definition xml:lang="en">Reference to the variant name entity of a place.</skos:definition>
+        <skos:definition xml:lang="de">Verweis auf die alternative Namensentität einer Place.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#variantTitle -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#variantTitle">
+        <rdfs:subPropertyOf rdf:resource="https://dh.plus.ac.at/ontology#title"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Title"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-07+07:59</terms:modified>
+        <rdfs:label xml:lang="en">has variant title</rdfs:label>
+        <rdfs:label xml:lang="de">hat variant Titel</rdfs:label>
+        <skos:definition xml:lang="de">Name einer Ressource.</skos:definition>
+        <skos:definition xml:lang="en">Name given to a resource.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#wasBorn -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#wasBorn">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P98i_was_born"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#broughtIntoLife"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Person"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Birth"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">was born</rdfs:label>
+        <rdfs:label xml:lang="de">wurde geboren</rdfs:label>
+        <skos:definition xml:lang="en">Reference to the birth event of a person.</skos:definition>
+        <skos:definition xml:lang="de">Verweis auf das Geburtsevent einer Person.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#wasCreatedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#wasCreatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P94i_was_created_by"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#hasCreated"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Creation"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">was created by</rdfs:label>
+        <rdfs:label xml:lang="de">wurde erschaffen durch</rdfs:label>
+        <skos:definition xml:lang="de">Diese Eigenschaft verknüpft eine Instanz von Werk mit der Instanz von Erschaffung, deren Produkt das Werk ist.</skos:definition>
+        <skos:definition xml:lang="en">This property links an instance of Work to the instance of Creation whose product is the work.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#wasDeathOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#wasDeathOf">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P100_was_death_of"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#diedIn"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Death"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Person"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">war Tod von</rdfs:label>
+        <rdfs:label xml:lang="en">was death of</rdfs:label>
+        <skos:definition xml:lang="en">Reference to the person dying in a death event.</skos:definition>
+        <skos:definition xml:lang="de">Verweis auf die Person, die in einem Todesevent verstorben ist.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#witnessed -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#witnessed">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P7i_witnessed"/>
+        <owl:inverseOf rdf:resource="https://dh.plus.ac.at/ontology#tookPlaceAt"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Place"/>
+        <rdfs:range rdf:resource="https://dh.plus.ac.at/ontology#Event"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-26</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">fand statt an</rdfs:label>
+        <rdfs:label xml:lang="en">took place at</rdfs:label>
+        <skos:definition xml:lang="de">Diese Eigenschaft beschreibt die Ereignisse, die an einem bestimmten Ort stattfinden.</skos:definition>
+        <skos:definition xml:lang="en">This property describes the events happening at a spatial location.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#xmlDocument -->
+
+
+    <owl:ObjectProperty rdf:about="https://dh.plus.ac.at/ontology#xmlDocument">
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Electronic"/>
+        <rdfs:range rdf:resource="https://mhdbdbd.plus.ac.at/xml-ontology#Document"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2022-02-28</terms:created>
+        <terms:modified></terms:modified>
+        <rdfs:label xml:lang="en">has xml document</rdfs:label>
+        <rdfs:label xml:lang="de">hat xml Dokument</rdfs:label>
+        <skos:definition xml:lang="en">Representation of Electronic as mhdbdbxml:Document.</skos:definition>
+        <skos:definition xml:lang="de">Repräsentation der elektronischen Ressource als mhdbdbxml:Document.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://erlangen-crm.org/200717/P43_has_dimension -->
+
+
+    <owl:DatatypeProperty rdf:about="http://erlangen-crm.org/200717/P43_has_dimension"/>
+    
+
+
+    <!-- http://id.loc.gov/ontologies/bibframe/dimension -->
+
+
+    <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/dimension"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDDate -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDDate"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#inXSDgYear -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2006/time#inXSDgYear"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/lime#language -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/lemon/lime#language"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#writtenRep -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/lemon/ontolex#writtenRep"/>
+    
+
+
+    <!-- http://www.wikidata.org/prop/direct/P2803 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.wikidata.org/prop/direct/P2803"/>
+    
+
+
+    <!-- http://www.wikidata.org/prop/direct/P734 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.wikidata.org/prop/direct/P734"/>
+    
+
+
+    <!-- http://www.wikidata.org/prop/direct/P735 -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.wikidata.org/prop/direct/P735"/>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#asWKT -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#asWKT">
+        <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#asWKT"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Geometry"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">als WKT</rdfs:label>
+        <rdfs:label xml:lang="en">as WKT</rdfs:label>
+        <skos:definition xml:lang="de">Die WKT-Serialisierung einer Geometrie.</skos:definition>
+        <skos:definition xml:lang="en">The WKT serialization of a geometry.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#counting -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#counting">
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#counting"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePerson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">Counting</rdfs:label>
+        <rdfs:label xml:lang="de">Zählung</rdfs:label>
+        <skos:definition xml:lang="en">Counting name of a person.</skos:definition>
+        <skos:definition xml:lang="de">Zählungsname einer Person.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#custodialHistory -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#custodialHistory">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/custodialHistory"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Instance"/>
+                    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#Item"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Provenienzgeschichte</rdfs:label>
+        <rdfs:label xml:lang="en">custodial history</rdfs:label>
+        <skos:definition xml:lang="en">Information about the provenance, such as origin, ownership and custodial history (chain of custody), of a resource.</skos:definition>
+        <skos:definition xml:lang="de">Informationen über die Provenienz einer Ressource, z. B. Herkunft, Eigentum und Aufbewahrungsgeschichte.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#dimension -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#dimension">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/200717/P43_has_dimension"/>
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/dimension"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has dimension</rdfs:label>
+        <rdfs:label xml:lang="de">hat Dimension</rdfs:label>
+        <skos:definition xml:lang="de">Maße des Trägers oder der Träger und/oder des Behälters einer Ressource.</skos:definition>
+        <skos:definition xml:lang="en">Measurements of the carrier or carriers and/or the container of a resource.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#editionStatement -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#editionStatement">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/editionStatement"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has edition statement</rdfs:label>
+        <rdfs:label xml:lang="de">hat editorische Bemerkung</rdfs:label>
+        <skos:definition xml:lang="en">Information identifying the edition or version of the resource and associated statements of responsibility for the edition; usually transcribed.</skos:definition>
+        <skos:definition xml:lang="de">Informationen zur Identifizierung der Ausgabe oder Version der Ressource und zugehörige Erklärungen zur Verantwortung für die Ausgabe; in der Regel transkribiert.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#forename -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#forename">
+        <rdfs:subPropertyOf rdf:resource="http://www.wikidata.org/prop/direct/P735"/>
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#forename"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePerson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Vorname</rdfs:label>
+        <rdfs:label xml:lang="en">forename</rdfs:label>
+        <skos:definition xml:lang="en">Forname of a person.</skos:definition>
+        <skos:definition xml:lang="de">Vorname einer Person.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#inXSDDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#inXSDDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#inXSDDate"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2006/time#inXSDgYear"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-10-05</terms:created>
+        <terms:modified>2021-10-05+14:42</terms:modified>
+        <terms:modified>2021-10-07+07:59</terms:modified>
+        <rdfs:label xml:lang="de">als XSD Date</rdfs:label>
+        <rdfs:label xml:lang="de">als XSD gYear</rdfs:label>
+        <rdfs:label xml:lang="en">in XSD Date</rdfs:label>
+        <rdfs:label xml:lang="en">in XSD gYear</rdfs:label>
+        <skos:definition xml:lang="de">Position eines Zeitpunkts, ausgedrückt durch xsd:date.</skos:definition>
+        <skos:definition xml:lang="de">Position eines Zeitpunkts, ausgedrückt durch xsd:gYear.</skos:definition>
+        <skos:definition xml:lang="en">Position of an instant, expressed using xsd:date.</skos:definition>
+        <skos:definition xml:lang="en">Position of an instant, expressed using xsd:gYear.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#language -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#language">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/lemon/lime#language"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#mainTitle -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#mainTitle">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/mainTitle"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Title"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-12</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Haupttitel</rdfs:label>
+        <rdfs:label xml:lang="en">main title</rdfs:label>
+        <skos:definition xml:lang="de">Angesprochener Titel. Mögliche Titelkomponente.</skos:definition>
+        <skos:definition xml:lang="en">Title being addressed. Possible title component.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#nameAddition -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#nameAddition">
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#nameAddition"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePerson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">Name addition</rdfs:label>
+        <rdfs:label xml:lang="de">Namensszusatz</rdfs:label>
+        <skos:definition xml:lang="en">Name addition of a person.</skos:definition>
+        <skos:definition xml:lang="de">Namensszusatz einer Person.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#partName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#partName">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/partName"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Title"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-12</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Nummer des Teils</rdfs:label>
+        <rdfs:label xml:lang="en">part number</rdfs:label>
+        <skos:definition xml:lang="en">Part or section name of a title. Possible title component.</skos:definition>
+        <skos:definition xml:lang="de">Teil- oder Abschnittsname eines Titels. Mögliche Titelkomponente.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#partNumber -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#partNumber">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/partNumber"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Title"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-12</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Nummer des Teils</rdfs:label>
+        <rdfs:label xml:lang="en">part number</rdfs:label>
+        <skos:definition xml:lang="en">Part or section enumeration of a title. Possible title component.</skos:definition>
+        <skos:definition xml:lang="de">Teil oder Abschnitt der Aufzählung eines Titels. Mögliche Titelkomponente.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#personalName -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#personalName">
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#personalName"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePerson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">Personal name</rdfs:label>
+        <rdfs:label xml:lang="de">Persönlicher Name</rdfs:label>
+        <skos:definition xml:lang="en">Personal name of a person.</skos:definition>
+        <skos:definition xml:lang="de">Persönlicher Name einer Person.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#placename -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#placename">
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePlace"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Ortsname</rdfs:label>
+        <rdfs:label xml:lang="en">place name</rdfs:label>
+        <skos:definition xml:lang="de">Name eines Ortes.</skos:definition>
+        <skos:definition xml:lang="en">Name of a place.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#prefix -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#prefix">
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#prefix"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePerson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Namenspräfix</rdfs:label>
+        <rdfs:label xml:lang="en">name prefix</rdfs:label>
+        <skos:definition xml:lang="de">Namenspräfix einer Person.</skos:definition>
+        <skos:definition xml:lang="en">name prefix of a person.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#provisionActivityStatement -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#provisionActivityStatement">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/provisionActivityStatement"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has provision activity statement</rdfs:label>
+        <rdfs:label xml:lang="de">hat Anmerkung zur Veröffentlichungsaktivität</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+        <skos:definition xml:lang="de">Aussage, die sich auf Anbieter einer Ressource bezieht; in der Regel transkribiert.</skos:definition>
+        <skos:definition xml:lang="en">Statement relating to providers of a resource; usually transcribed.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#responsibilityStatement -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#responsibilityStatement">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/responsibilityStatement"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has responsibility statement</rdfs:label>
+        <rdfs:label xml:lang="de">hat Anmerkung zur Verantwortlichkeit</rdfs:label>
+        <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
+        <skos:definition xml:lang="de">Aussage zu Personen, Familien oder Körperschaften, die für die Erstellung einer Ressource verantwortlich sind oder zum Inhalt beitragen; in der Regel transkribiert.</skos:definition>
+        <skos:definition xml:lang="en">Statement relating to any persons, families, or corporate bodies responsible for the creation of, or contributing to the content of a resource; usually transcribed.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#subtitle -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#subtitle">
+        <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/subtitle"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Title"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-12</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Untertitel</rdfs:label>
+        <rdfs:label xml:lang="en">sub title</rdfs:label>
+        <skos:definition xml:lang="en">Word, character, or group of words and/or characters that contains the remainder of the title after the main title. Possible title component.</skos:definition>
+        <skos:definition xml:lang="de">Wort, Zeichen oder Gruppe von Wörtern und/oder Zeichen, die den Rest des Titels nach dem Haupttitel enthält. Mögliche Titelkomponente.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#surname -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#surname">
+        <rdfs:subPropertyOf rdf:resource="http://www.wikidata.org/prop/direct/P734"/>
+        <rdfs:subPropertyOf rdf:resource="https://d-nb.info/standards/elementset/gnd#surname"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#NameOfThePerson"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">Nachname</rdfs:label>
+        <rdfs:label xml:lang="en">surname</rdfs:label>
+        <skos:definition xml:lang="de">Nachname einer Person.</skos:definition>
+        <skos:definition xml:lang="en">surname of a person.</skos:definition>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#timePrecision -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#timePrecision">
+        <rdfs:subPropertyOf rdf:resource="http://www.wikidata.org/prop/direct/P2803"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#TimeSpan"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#duration"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-10-05</terms:created>
+        <terms:modified>2021-10-07+07:59</terms:modified>
+        <rdfs:label xml:lang="de">Genauigkeit der Zeitangabe</rdfs:label>
+        <rdfs:label xml:lang="en">time precision</rdfs:label>
+        <skos:definition xml:lang="en">Defines the precision of a time value.</skos:definition>
+        <skos:definition xml:lang="de">Definiert die Genauigkeit eines Zeitwertes.</skos:definition>
+        <skos:example xml:lang="de">Die Präposition &apos;P5Y&apos; und die Jahreszahl 1250 implizieren, dass das Datum 1250±5 sein könnte, also der Zeitraum 1245–1255.</skos:example>
+        <skos:example xml:lang="en">Precesion &apos;P5Y&apos; and a date 1250 implies, the date could be 1250±5 – i.e. the period 1245–1255</skos:example>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#writtenRep -->
+
+
+    <owl:DatatypeProperty rdf:about="https://dh.plus.ac.at/ontology#writtenRep">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#writtenRep"/>
+        <rdfs:domain rdf:resource="https://dh.plus.ac.at/ontology#Form"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-29</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="de">graphische Repräsentation</rdfs:label>
+        <rdfs:label xml:lang="en">written representation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- _:genid-nodeid-node1ft0aqj11x4 -->
+
+
+    <owl:Class rdf:about="_:genid-nodeid-node1ft0aqj11x4"/>
+    
+
+
+    <!-- _:genid-nodeid-node1ft0aqj11x76 -->
+
+
+    <owl:Class rdf:about="_:genid-nodeid-node1ft0aqj11x76"/>
+    
+
+
+    <!-- _:genid-nodeid-node1ft0aqj11x82 -->
+
+
+    <owl:Class rdf:about="_:genid-nodeid-node1ft0aqj11x82"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive -->
+
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive"/>
+    
+
+
+    <!-- http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech -->
+
+
+    <owl:Class rdf:about="http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/sf#Geometry -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#Geometry"/>
+    
+
+
+    <!-- http://www.opengis.net/ont/sf#Point -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/sf#Point"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#ConceptScheme -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Instant -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Instant"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#Interval -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#Interval"/>
+    
+
+
+    <!-- http://www.w3.org/2006/time#TemporalEntity -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/2006/time#TemporalEntity"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/lime#Lexicon -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/lemon/lime#Lexicon"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#Affix -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/lemon/ontolex#Affix"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#ConceptSet -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/lemon/ontolex#ConceptSet"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#Form -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/lemon/ontolex#Form"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#LexicalConcept -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/lemon/ontolex#LexicalConcept"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#LexicalEntry -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/lemon/ontolex#LexicalEntry"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#LexicalSense -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/lemon/ontolex#LexicalSense"/>
+    
+
+
+    <!-- http://www.w3.org/ns/lemon/ontolex#Word -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/lemon/ontolex#Word"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#SPARQLTargetType -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/shacl#SPARQLTargetType"/>
+    
+
+
+    <!-- http://www.w3.org/ns/shacl#Target -->
+
+
+    <owl:Class rdf:about="http://www.w3.org/ns/shacl#Target"/>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q17334923 -->
+
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Q17334923"/>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q5 -->
+
+
+    <owl:Class rdf:about="http://www.wikidata.org/entity/Q5"/>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#AdminMetadata -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#AdminMetadata">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/AdminMetadata"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Admin Metadata</rdfs:label>
+        <rdfs:label xml:lang="de">Administrative Metadaten</rdfs:label>
+        <skos:definition xml:lang="en">Metadata about the metadata, especially provenance information.</skos:definition>
+        <skos:definition xml:lang="de">Metadaten über die Metadaten, insbesondere Provenienzinformationen.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Affix -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Affix">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#Affix"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#LexicalEntry"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Affixartikel</rdfs:label>
+        <rdfs:label xml:lang="en">affix entry</rdfs:label>
+        <skos:definition xml:lang="en">An affix is a lexical entry that represents a morpheme (suffix, prefix, infix, circumfix) that is attached to a word stem to form a new word.</skos:definition>
+        <skos:definition xml:lang="de">Ein Affix ist ein lexikalischer Eintrag, der ein Morphem (Suffix, Präfix, Infix, Zirkumfix) darstellt, das an einen Wortstamm angehängt wird, um ein neues Wort zu bilden.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Appellation -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Appellation">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E41_Appellation"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Indentifier</rdfs:label>
+        <rdfs:label xml:lang="en">Indentifier</rdfs:label>
+        <skos:definition xml:lang="de">Diese Klasse umfasst sinnvolle oder nicht sinnvolle Zeichen oder Anordnungen von Zeichen, die einer bestimmten Syntax folgen, die verwendet werden oder verwendet werden können, um auf eine bestimmte Instanz einer Klasse oder Kategorie innerhalb eines bestimmten Kontexts zu verweisen und diese zu identifizieren.</skos:definition>
+        <skos:definition xml:lang="en">This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#BeginningOfExistence -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#BeginningOfExistence">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E63_Beginning_of_Existence"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Event"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-23</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Beginn der Existenz</rdfs:label>
+        <rdfs:label xml:lang="en">Beginning of Existence</rdfs:label>
+        <skos:definition xml:lang="de">Diese Klasse umfasst Ereignisse, die eine beliebige Instanz von Persistent Item ins Leben rufen.</skos:definition>
+        <skos:definition xml:lang="en">This class comprises events that bring into existence any instance of Persistent Item.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Bibliographic -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Bibliographic">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E89_Propositional_Object"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Bibliographic Entity</rdfs:label>
+        <rdfs:label xml:lang="de">Bibliographische Entität</rdfs:label>
+        <skos:definition xml:lang="en">Bibliographic Entities are Works, Instances and Items.</skos:definition>
+        <skos:definition xml:lang="de">Bibliographische Entitäten sind Werke, Instanzen und Exemplare.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Birth -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Birth">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E67_Birth"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#BeginningOfExistence"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-23</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Birth</rdfs:label>
+        <rdfs:label xml:lang="de">Geburt</rdfs:label>
+        <skos:definition xml:lang="de">Diese Klasse umfasst die Geburten von Menschen. </skos:definition>
+        <skos:definition xml:lang="en">This class comprises the births of human beings.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Content -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Content">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Content"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Content</rdfs:label>
+        <rdfs:label xml:lang="de">Inhalt</rdfs:label>
+        <skos:definition xml:lang="en">Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived.</skos:definition>
+        <skos:definition xml:lang="de">Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Contribution -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Contribution">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Contribution"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Beitrag</rdfs:label>
+        <rdfs:label xml:lang="en">Contribution</rdfs:label>
+        <skos:definition xml:lang="en">Agent and role with respect to the resource being described.</skos:definition>
+        <skos:definition xml:lang="de">Agent und Rolle in Bezug auf die zu beschreibende Ressource.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Creation -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Creation">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E65_Creation"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#BeginningOfExistence"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-17</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Creation</rdfs:label>
+        <rdfs:label xml:lang="de">Erschaffung</rdfs:label>
+        <skos:definition xml:lang="de">Diese Klasse umfasst Ereignisse, die zur Schaffung von begrifflichen Gegenständen oder immateriellen Produkten führen, wie Legenden, Gedichte, Texte, Musik, Bilder, Filme, Gesetze, Schriften usw.</skos:definition>
+        <skos:definition xml:lang="en">This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts, music, images, movies, laws, types etc.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Death -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Death">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E69_Death"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Event"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-23</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Death</rdfs:label>
+        <rdfs:label xml:lang="de">Tod</rdfs:label>
+        <skos:definition xml:lang="de">Diese Klasse umfasst den Tod von Menschen. </skos:definition>
+        <skos:definition xml:lang="en">This class comprises the death of human beings.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Electronic -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Electronic">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Electronic"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Electronic</rdfs:label>
+        <rdfs:label xml:lang="de">Elektronische Ressource</rdfs:label>
+        <skos:definition xml:lang="en">Instance that is intended for manipulation by a computer, accessed either directly or remotely.</skos:definition>
+        <skos:definition xml:lang="de">Instanz, die für die Bearbeitung durch einen Computer vorgesehen ist und auf die entweder direkt oder aus der Ferne zugegriffen wird.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Entity -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Entity">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E1_CRM_Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <rdfs:label xml:lang="de">Entität</rdfs:label>
+        <skos:definition xml:lang="en">Base class for all dhpluso classes.</skos:definition>
+        <skos:definition xml:lang="de">Basisklasse aller dhpluso Klassen.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Event -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Event">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E5_Event"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Event"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-23</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Ereignis</rdfs:label>
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+        <skos:definition xml:lang="de">Diese Klasse umfasst eindeutige, abgegrenzte und kohärente Prozesse und Interaktionen materieller Natur in kulturellen, sozialen oder physischen Systemen, die Instanzen von Persistent Item in einer für die Art des Prozesses charakteristischen Weise einbeziehen und beeinflussen. Typische Beispiele sind Versammlungen, Geburten, Todesfälle, Handlungen der Entscheidungsfindung, des Herstellens oder Erfindens von Dingen, aber auch komplexere und umfangreichere wie Konferenzen, Wahlen, der Bau einer Burg oder Schlachten.</skos:definition>
+        <skos:definition xml:lang="en">This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Extent -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Extent">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Extent"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Extent</rdfs:label>
+        <rdfs:label xml:lang="de">Umfang</rdfs:label>
+        <skos:definition xml:lang="de">Anzahl und Typ der Einheiten und/oder Untereinheiten, aus denen eine Ressource besteht.</skos:definition>
+        <skos:definition xml:lang="en">Number and type of units and/or subunits making up a resource.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Form -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Form">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#Form"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-09-16+14:25</terms:modified>
+        <rdfs:label xml:lang="de">Form</rdfs:label>
+        <rdfs:label xml:lang="en">Form</rdfs:label>
+        <skos:definition xml:lang="en">A form represents one grammatical realization of a lexical entry.</skos:definition>
+        <skos:definition xml:lang="de">Eine Form stellt eine grammatikalische Realisierung eines lexikalischen Eintrags dar.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Gender -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Gender">
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Type"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-12</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Gender</rdfs:label>
+        <rdfs:label xml:lang="de">Geschlecht</rdfs:label>
+        <skos:definition xml:lang="en">Gender</skos:definition>
+        <skos:definition xml:lang="de">Geschlecht</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Geometry -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Geometry"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Appellation"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-12</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Geometrie</rdfs:label>
+        <rdfs:label xml:lang="en">Geometry</rdfs:label>
+        <skos:definition xml:lang="de">Oberklasse aller Geometrieklassen.</skos:definition>
+        <skos:definition xml:lang="en">Root of all geometry classes.</skos:definition>
+        <shacl:property rdf:nodeID="genid16"/>
+        <shacl:target rdf:nodeID="genid17"/>
+    </owl:Class>
+    <rdf:Description rdf:nodeID="genid16">
+        <shacl:datatype rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+        <shacl:path rdf:resource="https://dh.plus.ac.at/ontology#asWKT"/>
+        <shacl:severity rdf:resource="http://www.w3.org/ns/shacl#Violation"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid17">
+        <rdf:type rdf:resource="https://dh.plus.ac.at/ontology#SubclassTarget"/>
+        <tmp:class rdf:resource="https://dh.plus.ac.at/ontology#Geometry"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Identifier -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Identifier">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E42_Identifier"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Appellation"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Indentifier</rdfs:label>
+        <rdfs:label xml:lang="en">Indentifier</rdfs:label>
+        <skos:definition xml:lang="de">Diese Klasse umfasst Zeichenfolgen oder Codes, die Instanzen von E1 CRM Entity zugewiesen werden, um sie eindeutig und dauerhaft im Kontext einer oder mehrerer Organisationen zu identifizieren.</skos:definition>
+        <skos:definition xml:lang="en">This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#ImmediateAcquisition -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#ImmediateAcquisition">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/ImmediateAcquisition"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Erwerbungsumstände</rdfs:label>
+        <rdfs:label xml:lang="en">Immediate acquisition</rdfs:label>
+        <skos:definition xml:lang="en">Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired.</skos:definition>
+        <skos:definition xml:lang="de">Informationen über die Umstände, z. B. Quelle, Datum, Methode, unter denen die Ressource direkt erworben wurde.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Instance -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Instance">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E89_Propositional_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Instance"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Instance</rdfs:label>
+        <rdfs:label xml:lang="de">Instanz</rdfs:label>
+        <skos:definition xml:lang="en">Resource reflecting an individual, material embodiment of a Work.</skos:definition>
+        <skos:definition xml:lang="de">Ressource, die eine individuelle, materielle Verkörperung eines Werkes darstellt.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Instant -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Instant">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#TimeSpan"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-10-05</terms:created>
+        <terms:modified>2021-10-05+14:42</terms:modified>
+        <rdfs:label xml:lang="en">Instant</rdfs:label>
+        <rdfs:label xml:lang="de">Zeitpunkt</rdfs:label>
+        <skos:definition xml:lang="en">A temporal entity with zero extent or duration.</skos:definition>
+        <skos:definition xml:lang="de">Eine zeitliche Einheit ohne Ausmaß oder Dauer. </skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Interval -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Interval">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#Interval"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#TimeSpan"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-10-05</terms:created>
+        <terms:modified>2021-10-05+14:42</terms:modified>
+        <rdfs:label xml:lang="en">Interval</rdfs:label>
+        <rdfs:label xml:lang="de">Zeitspanne</rdfs:label>
+        <skos:definition xml:lang="en">A temporal entity with an extent or duration.</skos:definition>
+        <skos:definition xml:lang="de">Eine zeitliche Einheit mit einem Umfang oder einer Dauer. </skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Issuance -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Issuance">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Issuance"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Art der Veröffentlichung</rdfs:label>
+        <rdfs:label xml:lang="en">Mode of issuance</rdfs:label>
+        <skos:definition xml:lang="en">Information about whether a resource is issued in one or more parts, the way it is updated, and its intended termination.</skos:definition>
+        <skos:definition xml:lang="de">Informationen darüber, ob eine Ressource in einem oder mehreren Teilen veröffentlicht wird, wie sie aktualisiert wird und wie sie abgeschlossen werden soll.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Item -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Item">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E22_Human-Made_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Item"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Exemplar</rdfs:label>
+        <rdfs:label xml:lang="en">Item</rdfs:label>
+        <skos:definition xml:lang="de">Einzelnes Exemplar einer Instanz.</skos:definition>
+        <skos:definition xml:lang="en">Single example of an Instance.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Language -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Language">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Language"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Language</rdfs:label>
+        <rdfs:label xml:lang="en">Language</rdfs:label>
+        <skos:definition xml:lang="en">Language Entity.</skos:definition>
+        <skos:definition xml:lang="de">Sprachenentität.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#LexicalConcept -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#LexicalConcept">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalConcept"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Lexical Concept</rdfs:label>
+        <rdfs:label xml:lang="de">Lexikalischer Begriff</rdfs:label>
+        <skos:definition xml:lang="en">A lexical concept represents a mental abstraction, concept or unit of thought that can be lexicalized by a given collection of senses.</skos:definition>
+        <skos:definition xml:lang="de">Ein lexikalisches Konzept ist eine mentale Abstraktion, ein Konzept oder eine Gedankeneinheit, die durch eine bestimmte Sammlung von Bedeutungen lexikalisiert werden kann.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#LexicalConceptSet -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#LexicalConceptSet">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#ConceptSet"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Lexical Concept Set</rdfs:label>
+        <rdfs:label xml:lang="de">Lexikalisches Begriffssystem</rdfs:label>
+        <skos:definition xml:lang="en">A concept set represents a collection of lexical concepts.</skos:definition>
+        <skos:definition xml:lang="de">Ein Begriffssystem stellt eine Sammlung lexikalischer Begriffe dar.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#LexicalEntry -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#LexicalEntry">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalEntry"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">lexical entry</rdfs:label>
+        <rdfs:label xml:lang="de">lexikalischer Artikel</rdfs:label>
+        <skos:definition xml:lang="en">A lexical entry represents a unit of analysis of the lexicon that consists of a set of forms that are grammatically related and a set of base meanings that are associated with all of these forms. Thus, a lexical entry is a word, multiword expression or affix with a single part-of-speech, morphological pattern, etymology and set of senses.</skos:definition>
+        <skos:definition xml:lang="de">Ein lexikalischer Eintrag stellt eine Analyseeinheit des Lexikons dar, die aus einer Reihe von grammatikalisch verwandten Formen und einer Reihe von Grundbedeutungen besteht, die mit all diesen Formen verbunden sind. Ein lexikalischer Eintrag ist also ein Wort, ein Mehrwortausdruck oder ein Affix mit einem einzigen Part-of-Speech, einem morphologischen Muster, einer Etymologie und einer Reihe von Bedeutungen.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#LexicalSense -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#LexicalSense">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalSense"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">lexical sense</rdfs:label>
+        <rdfs:label xml:lang="de">lexikalische Bedeutung</rdfs:label>
+        <skos:definition xml:lang="en">A lexical sense represents the lexical meaning of a lexical entry when interpreted as referring to the corresponding ontology element. A lexical sense thus represents a reification of a pair of a uniquely determined lexical entry and a uniquely determined ontology entity it refers to. A link between a lexical entry and an ontology entity via a Lexical Sense object implies that the lexical entry can be used to refer to the ontology entity in question.</skos:definition>
+        <skos:definition xml:lang="de">Ein lexikalischer Sinn stellt die lexikalische Bedeutung eines lexikalischen Eintrags dar, wenn er als Verweis auf das entsprechende Ontologieelement interpretiert wird. Ein lexikalischer Sinn stellt somit eine Verdinglichung eines Paares aus einem eindeutig bestimmten lexikalischen Eintrag und einer eindeutig bestimmten Ontologie-Entität dar, auf die er sich bezieht. Eine Verknüpfung zwischen einem lexikalischen Eintrag und einer Ontologie-Entität über ein Lexical Sense-Objekt impliziert, dass der lexikalische Eintrag verwendet werden kann, um auf die betreffende Ontologie-Entität zu verweisen.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Lexicon -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Lexicon">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/lime#Lexicon"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Wörterbuch</rdfs:label>
+        <rdfs:label xml:lang="en">lexicon</rdfs:label>
+        <skos:definition xml:lang="en">A lexicon represents a collection of lexical entries for a particular language or domain.</skos:definition>
+        <skos:definition xml:lang="de">Ein Lexikon ist eine Sammlung von lexikalischen Einträgen für eine bestimmte Sprache oder einen bestimmten Bereich.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Manuscript -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Manuscript">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E22_Human-Made_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Manuscript"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Handschrift</rdfs:label>
+        <rdfs:label xml:lang="en">Manuscript</rdfs:label>
+        <skos:definition xml:lang="en">Instance that is written in handwriting or typescript. These are generally unique resources.</skos:definition>
+        <skos:definition xml:lang="de">Instanz die hand- oder maschinengeschrieben ist. Üblicherweise ein Unikat.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#NameOfThePerson -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#NameOfThePerson">
+        <rdfs:subClassOf rdf:resource="https://d-nb.info/standards/elementset/gnd#NameOfThePerson"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Appellation"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-12</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Name entity of a person</rdfs:label>
+        <rdfs:label xml:lang="de">Namensentität einer Person</rdfs:label>
+        <skos:definition xml:lang="en">Entity for the different data properties of a person&apos;s name.</skos:definition>
+        <skos:definition xml:lang="de">Entität für die verschiedenen Data Properties eines Personennamens.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#NameOfThePlace -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#NameOfThePlace">
+        <rdfs:subClassOf rdf:resource="https://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Appellation"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-12</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Name entity of a place</rdfs:label>
+        <rdfs:label xml:lang="de">Namensentität einer Place</rdfs:label>
+        <skos:definition xml:lang="en">Entity for the different data properties of a places name.</skos:definition>
+        <skos:definition xml:lang="de">Entität für die verschiedenen Data Properties eines Ortsnamens.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Note -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Note">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Note"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Anmerkung</rdfs:label>
+        <rdfs:label xml:lang="en">Note</rdfs:label>
+        <skos:definition xml:lang="en">Information, usually in textual form, on attributes of a resource or some aspect of a resource.</skos:definition>
+        <skos:definition xml:lang="de">Informationen, in der Regel in Textform, über Attribute einer Ressource oder einen Aspekt einer Ressource.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#OnomasticConcept -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#OnomasticConcept">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalConcept"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">onomastic concept</rdfs:label>
+        <rdfs:label xml:lang="de">onomastische Kategorie</rdfs:label>
+        <skos:definition xml:lang="en">A onomastic concept represents a categorization of names.</skos:definition>
+        <skos:definition xml:lang="de">Ein onomastisches Konzept stellt eine Kategorisierung von Namen dar.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#OnomasticConceptSet -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#OnomasticConceptSet">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#ConceptSet"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Sammlung von Namenskategorisierungen</rdfs:label>
+        <rdfs:label xml:lang="en">onomastic concept set</rdfs:label>
+        <skos:definition xml:lang="en">A onomastic concept set represents a collection of onomastic concepts.</skos:definition>
+        <skos:definition xml:lang="de">Eine Sammlung von Namenskategorisierungen stellt eine Sammlung onomastischer Kategorisierungen dar.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#OnomasticUsage -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#OnomasticUsage">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#LexicalSense"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Eigennamengebrauch</rdfs:label>
+        <rdfs:label xml:lang="en">onomastic usage</rdfs:label>
+        <skos:definition xml:lang="de">Eigennamengebrauch</skos:definition>
+        <skos:definition xml:lang="en">onomastic usage</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#PartOfSpeech -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#PartOfSpeech">
+        <rdfs:subClassOf rdf:resource="http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Wortart</rdfs:label>
+        <rdfs:label xml:lang="en">part of speech</rdfs:label>
+        <skos:definition xml:lang="en">A category assigned to a word based on its grammatical and semantic properties.</skos:definition>
+        <skos:definition xml:lang="de">Eine Kategorie, die einem Wort auf der Grundlage seiner grammatikalischen und semantischen Eigenschaften zugeordnet wird.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Person -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Person">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E21_Person"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.wikidata.org/entity/Q5"/>
+        <rdfs:subClassOf rdf:resource="https://d-nb.info/standards/elementset/gnd#Person"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-12</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Person</rdfs:label>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+        <skos:definition xml:lang="en">A dhpluso person.</skos:definition>
+        <skos:definition xml:lang="de">Eine dhpluso Person.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Place -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Place">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.wikidata.org/entity/Q17334923"/>
+        <rdfs:subClassOf rdf:resource="https://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-19</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Ort</rdfs:label>
+        <rdfs:label xml:lang="en">Place</rdfs:label>
+        <skos:definition xml:lang="en">A dhpluso place.</skos:definition>
+        <skos:definition xml:lang="de">Ein dhpluso Ort.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Point -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Point">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Point"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Geometry"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-12</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Point</rdfs:label>
+        <rdfs:label xml:lang="de">Punkt</rdfs:label>
+        <skos:definition xml:lang="en">A Point is a 0-dimensional geometric object and represents a single location in coordinate space.</skos:definition>
+        <skos:definition xml:lang="de">Ein Punkt ist ein 0-dimensionales geometrisches Objekt und repräsentiert einen einzelnen Ort im Koordinatenraum.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Print -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Print">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E89_Propositional_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Print"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Instance"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Druck</rdfs:label>
+        <rdfs:label xml:lang="en">Print</rdfs:label>
+        <skos:definition xml:lang="en">Resource that is printed.</skos:definition>
+        <skos:definition xml:lang="de">Ressource, die gedruckt ist.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#ProvisionActivity -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#ProvisionActivity">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E65_Creation"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/ProvisionActivity"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Event"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Provision Activity</rdfs:label>
+        <rdfs:label xml:lang="de">Veröffentlichung</rdfs:label>
+        <skos:definition xml:lang="en">Information about the agent or place relating to the publication, printing, distribution, issue, release, or production of a resource.</skos:definition>
+        <skos:definition xml:lang="de">Informationen über den Akteur oder Ort, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe oder die Produktion einer Ressource beziehen.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Publication -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Publication">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Publication"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#ProvisionActivity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-28</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Publication</rdfs:label>
+        <rdfs:label xml:lang="de">Veröffentlichung</rdfs:label>
+        <skos:definition xml:lang="en">Information relating to publication of a resource.</skos:definition>
+        <skos:definition xml:lang="de">Informationen über die Veröffentlichung einer Ressource.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#SubclassTarget -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#SubclassTarget">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/shacl#Target"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Text -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Text">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E89_Propositional_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Text"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Work"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Text</rdfs:label>
+        <rdfs:label xml:lang="en">Text</rdfs:label>
+        <skos:definition xml:lang="en">Resource intended to be perceived visually and understood through the use of language in written or spoken form.</skos:definition>
+        <skos:definition xml:lang="de">Ressource, die dazu bestimmt ist, visuell wahrgenommen und durch den Gebrauch von Sprache in schriftlicher oder gesprochener Form verstanden zu werden.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#TimeSpan -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#TimeSpan">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E52_Time-Span"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Temporal"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2006/time#TemporalEntity"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-23</terms:created>
+        <terms:modified>2021-10-05+14:42</terms:modified>
+        <rdfs:label xml:lang="de">Zeitspanne</rdfs:label>
+        <rdfs:label xml:lang="en">time span</rdfs:label>
+        <skos:definition xml:lang="de">Diese Klasse umfasst abstrakte zeitliche Ausdehnungen im Sinne der Galileischen Physik, die einen Anfang, ein Ende und eine Dauer haben. </skos:definition>
+        <skos:definition xml:lang="en">This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Title -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Title">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E35_Title"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Title"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Appellation"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Titel</rdfs:label>
+        <rdfs:label xml:lang="en">Titel</rdfs:label>
+        <skos:definition xml:lang="de">Titelinformationen zu einer Ressource: Werktitel, bevorzugter Titel, Instanztitel, transkribierter Titel, übersetzter Titel, abweichende Form des Titels usw.</skos:definition>
+        <skos:definition xml:lang="en">Title information relating to a resource: work title, preferred title, instance title, transcribed title, translated title, variant form of title, etc.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Type -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Type">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E55_Type"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Entity"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-17</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Typ</rdfs:label>
+        <rdfs:label xml:lang="en">Type</rdfs:label>
+        <skos:definition xml:lang="de">Diese Klasse umfasst Konzepte, die durch Begriffe aus Thesauri und kontrollierten Vokabularen bezeichnet werden, die zur Charakterisierung und Klassifizierung von Instanzen von CIDOC CRM-Klassen verwendet werden. Instanzen von E55 Type repräsentieren Konzepte im Gegensatz zu Instanzen von E41 Appellation, die zur Benennung von Instanzen von CIDOC-CRM-Klassen verwendet werden.</skos:definition>
+        <skos:definition xml:lang="en">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CIDOC CRM classes. Instances of E55 Type represent concepts in contrast to instances of E41 Appellation which are used to name instances of CIDOC CRM classes.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Word -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Word">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/lemon/ontolex#Word"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#LexicalEntry"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-08-02</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Wortartikel</rdfs:label>
+        <rdfs:label xml:lang="en">word entry</rdfs:label>
+        <skos:definition xml:lang="en">A word is a lexical entry that consists of a single token.</skos:definition>
+        <skos:definition xml:lang="de">Ein Wort ist ein lexikalischer Eintrag, der aus einem einzigen Token besteht.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#Work -->
+
+
+    <owl:Class rdf:about="https://dh.plus.ac.at/ontology#Work">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/200717/E89_Propositional_Object"/>
+        <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Work"/>
+        <rdfs:subClassOf rdf:resource="https://dh.plus.ac.at/ontology#Bibliographic"/>
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-21</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="de">Werk</rdfs:label>
+        <rdfs:label xml:lang="en">Work</rdfs:label>
+        <skos:definition xml:lang="en">Resource reflecting a conceptual essence of a cataloging resource.</skos:definition>
+        <skos:definition xml:lang="de">Ressource, die eine konzeptionelle Essenz einer Katalogisierungsressource widerspiegelt.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://mhdbdbd.plus.ac.at/xml-ontology#Document -->
+
+
+    <owl:Class rdf:about="https://mhdbdbd.plus.ac.at/xml-ontology#Document"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://id.loc.gov/vocabulary/relators -->
+
+
+    <owl:NamedIndividual rdf:about="http://id.loc.gov/vocabulary/relators">
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:label xml:lang="en">MARC Code List for Relators Scheme</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dh.plus.ac.at/ontology#SubclassTarget -->
+
+
+    <owl:NamedIndividual rdf:about="https://dh.plus.ac.at/ontology#SubclassTarget">
+        <rdf:type rdf:resource="http://www.w3.org/ns/shacl#SPARQLTargetType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="https://dh.plus.ac.at/constants/Prefixes">
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-05-11</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:label xml:lang="en">Prefixes</rdfs:label>
+        <rdfs:label xml:lang="de">Präfixe</rdfs:label>
+        <skos:definition xml:lang="de">Praäfixdeklaration für Shacl.</skos:definition>
+        <skos:definition xml:lang="en">Prefix declaration for Shacl.</skos:definition>
+        <shacl:declare rdf:nodeID="genid18"/>
+        <shacl:declare rdf:nodeID="genid19"/>
+        <shacl:declare rdf:nodeID="genid20"/>
+        <shacl:declare rdf:nodeID="genid21"/>
+        <shacl:declare rdf:nodeID="genid22"/>
+        <shacl:declare rdf:nodeID="genid23"/>
+        <shacl:declare rdf:nodeID="genid24"/>
+        <shacl:declare rdf:nodeID="genid25"/>
+        <shacl:declare rdf:nodeID="genid26"/>
+        <shacl:declare rdf:nodeID="genid27"/>
+        <shacl:declare rdf:nodeID="genid28"/>
+        <shacl:declare rdf:nodeID="genid29"/>
+        <shacl:declare rdf:nodeID="genid30"/>
+        <shacl:declare rdf:nodeID="genid31"/>
+        <shacl:declare rdf:nodeID="genid32"/>
+        <shacl:declare rdf:nodeID="genid33"/>
+        <shacl:declare rdf:nodeID="genid34"/>
+        <shacl:declare rdf:nodeID="genid35"/>
+        <shacl:declare rdf:nodeID="genid36"/>
+        <shacl:declare rdf:nodeID="genid37"/>
+        <shacl:declare rdf:nodeID="genid38"/>
+        <shacl:declare rdf:nodeID="genid39"/>
+        <shacl:declare rdf:nodeID="genid40"/>
+        <shacl:declare rdf:nodeID="genid41"/>
+        <shacl:declare rdf:nodeID="genid42"/>
+        <shacl:declare rdf:nodeID="genid43"/>
+        <shacl:declare rdf:nodeID="genid44"/>
+        <shacl:declare rdf:nodeID="genid45"/>
+        <shacl:declare rdf:nodeID="genid46"/>
+        <shacl:declare rdf:nodeID="genid47"/>
+        <shacl:declare rdf:nodeID="genid48"/>
+        <shacl:declare rdf:nodeID="genid49"/>
+        <shacl:declare rdf:nodeID="genid50"/>
+        <shacl:declare rdf:nodeID="genid51"/>
+        <shacl:declare rdf:nodeID="genid52"/>
+        <shacl:declare rdf:nodeID="genid53"/>
+        <shacl:declare rdf:nodeID="genid54"/>
+        <shacl:declare rdf:nodeID="genid55"/>
+        <shacl:declare rdf:nodeID="genid56"/>
+        <shacl:declare rdf:nodeID="genid57"/>
+        <shacl:declare rdf:nodeID="genid58"/>
+        <shacl:declare rdf:nodeID="genid59"/>
+        <shacl:declare rdf:nodeID="genid60"/>
+        <shacl:declare rdf:nodeID="genid61"/>
+        <shacl:declare rdf:nodeID="genid62"/>
+        <shacl:declare rdf:nodeID="genid63"/>
+        <shacl:declare rdf:nodeID="genid64"/>
+        <shacl:declare rdf:nodeID="genid65"/>
+        <shacl:declare rdf:nodeID="genid66"/>
+        <shacl:declare rdf:nodeID="genid67"/>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid18">
+        <shacl:namespace>http://www.w3.org/2000/01/rdf-schema#</shacl:namespace>
+        <shacl:prefix>rdfs</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid19">
+        <shacl:namespace>http://www.w3.org/ns/shacl#</shacl:namespace>
+        <shacl:prefix>sh</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid20">
+        <shacl:namespace>http://www.w3.org/2007/05/powder-s#</shacl:namespace>
+        <shacl:prefix>wdrs</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid21">
+        <shacl:namespace>http://id.loc.gov/ontologies/bflc/</shacl:namespace>
+        <shacl:prefix>bflc</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid22">
+        <shacl:namespace>http://purl.org/vocab/vann/</shacl:namespace>
+        <shacl:prefix>vann</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid23">
+        <shacl:namespace>http://www.w3.org/2006/time#</shacl:namespace>
+        <shacl:prefix>time</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid24">
+        <shacl:namespace>https://gams.uni-graz.at/o:szd.ontology#</shacl:namespace>
+        <shacl:prefix>szd</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid25">
+        <shacl:namespace>http://www.w3.org/2002/07/owl#</shacl:namespace>
+        <shacl:prefix>owl</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid26">
+        <shacl:namespace>http://id.loc.gov/ontologies/bibframe/</shacl:namespace>
+        <shacl:prefix>bf</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid27">
+        <shacl:namespace>https://dh.plus.ac.at/parameter/</shacl:namespace>
+        <shacl:prefix>parameteri</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid28">
+        <shacl:namespace>http://purl.org/dc/terms/</shacl:namespace>
+        <shacl:prefix>dcterms</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid29">
+        <shacl:namespace>http://www.w3.org/ns/lemon/decomp#</shacl:namespace>
+        <shacl:prefix>decomp</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid30">
+        <shacl:namespace>https://dh.plus.ac.at/mhdbdb/ontology#</shacl:namespace>
+        <shacl:prefix>mhdbdbo</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid31">
+        <shacl:namespace>http://www.w3.org/2001/XMLSchema#</shacl:namespace>
+        <shacl:prefix>xsd</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid32">
+        <shacl:namespace>https://dh.plus.ac.at/dhplusoValidation/</shacl:namespace>
+        <shacl:prefix>dhplusoValidation</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid33">
+        <shacl:namespace>http://erlangen-crm.org/200717/</shacl:namespace>
+        <shacl:prefix>ecrm</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid34">
+        <shacl:namespace>http://creativecommons.org/ns#</shacl:namespace>
+        <shacl:prefix>cc</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid35">
+        <shacl:namespace>https://dh.plus.ac.at/xml-ontology#</shacl:namespace>
+        <shacl:prefix>dhplusXml</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid36">
+        <shacl:namespace>https://d-nb.info/standards/elementset/gnd#</shacl:namespace>
+        <shacl:prefix>gndo</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid37">
+        <shacl:namespace>http://www.wikidata.org/prop/direct/</shacl:namespace>
+        <shacl:prefix>wdt</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid38">
+        <shacl:namespace>https://dh.plus.ac.at/ontology#</shacl:namespace>
+        <shacl:prefix>dhpluso</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid39">
+        <shacl:namespace>http://xmlns.com/foaf/0.1/</shacl:namespace>
+        <shacl:prefix>foaf</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid40">
+        <shacl:namespace>http://www.w3.org/2004/02/skos/core#</shacl:namespace>
+        <shacl:prefix>skos</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid41">
+        <shacl:namespace>https://mhdbdbd.plus.ac.at/xml-ontology#</shacl:namespace>
+        <shacl:prefix>mhdbdbxml</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid42">
+        <shacl:namespace>https://d-nb.info/</shacl:namespace>
+        <shacl:prefix>dnb</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid43">
+        <shacl:namespace>http://www.w3.org/ns/oa#</shacl:namespace>
+        <shacl:prefix>oa</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid44">
+        <shacl:namespace>https://dh.plus.ac.at/tmp/</shacl:namespace>
+        <shacl:prefix>tmp</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid45">
+        <shacl:namespace>https://dh.plus.ac.at/mhdbdb/instance/</shacl:namespace>
+        <shacl:prefix>mhdbdbi</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid46">
+        <shacl:namespace>http://www.opengis.net/ont/sf#</shacl:namespace>
+        <shacl:prefix>ogcsf</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid47">
+        <shacl:namespace>https://dh.plus.ac.at/parameter-ontology#</shacl:namespace>
+        <shacl:prefix>parameter</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid48">
+        <shacl:namespace>http://www.w3.org/1999/02/22-rdf-syntax-ns#</shacl:namespace>
+        <shacl:prefix>rdf</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid49">
+        <shacl:namespace>http://purl.org/dc/terms/</shacl:namespace>
+        <shacl:prefix>dct</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid50">
+        <shacl:namespace>http://www.opengis.net/ont/geosparql#</shacl:namespace>
+        <shacl:prefix>geo</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid51">
+        <shacl:namespace>https://dh.plus.ac.at/mhdbdb/text/</shacl:namespace>
+        <shacl:prefix>mhdbdbtext</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid52">
+        <shacl:namespace>http://schema.org/</shacl:namespace>
+        <shacl:prefix>schema</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid53">
+        <shacl:namespace>http://www.wikidata.org/entity/statement/</shacl:namespace>
+        <shacl:prefix>wds</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid54">
+        <shacl:namespace>https://dh.plus.ac.at/instance/</shacl:namespace>
+        <shacl:prefix>dhplusi</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid55">
+        <shacl:namespace>https://dh.plus.ac.at/constants/</shacl:namespace>
+        <shacl:prefix>constants</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid56">
+        <shacl:namespace>https://dh.plus.ac.at/vocabulary/</shacl:namespace>
+        <shacl:prefix>dhplusv</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid57">
+        <shacl:namespace>https://d-nb.info/gnd/</shacl:namespace>
+        <shacl:prefix>gnd</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid58">
+        <shacl:namespace>http://www.w3.org/ns/lemon/lime#</shacl:namespace>
+        <shacl:prefix>lime</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid59">
+        <shacl:namespace>http://www.wikidata.org/prop/direct-normalized/</shacl:namespace>
+        <shacl:prefix>wdtn</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid60">
+        <shacl:namespace>http://www.opengis.net/ont/sf#</shacl:namespace>
+        <shacl:prefix>sf</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid61">
+        <shacl:namespace>http://www.wikidata.org/entity/</shacl:namespace>
+        <shacl:prefix>wd</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid62">
+        <shacl:namespace>http://www.w3.org/XML/1998/namespace</shacl:namespace>
+        <shacl:prefix>xml</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid63">
+        <shacl:namespace>http://www.lexinfo.net/ontology/3.0/lexinfo#</shacl:namespace>
+        <shacl:prefix>lexinfo</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid64">
+        <shacl:namespace>http://www.cidoc-crm.org/cidoc-crm/</shacl:namespace>
+        <shacl:prefix>crm</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid65">
+        <shacl:namespace>http://www.w3.org/ns/lemon/ontolex#</shacl:namespace>
+        <shacl:prefix>ontolex</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid66">
+        <shacl:namespace>https://d-nb.info/standards/elementset/dnb#</shacl:namespace>
+        <shacl:prefix>dnbt</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid67">
+        <shacl:namespace>http://purl.org/dc/elements/1.1/</shacl:namespace>
+        <shacl:prefix>dc</shacl:prefix>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#SubclassTarget">
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-30</terms:created>
+        <terms:modified>2021-09-16+12:28</terms:modified>
+        <rdfs:definition xml:lang="en">Matches all nodes with a dhpluso-class or subclasses of this class.</rdfs:definition>
+        <rdfs:definition xml:lang="de">Matcht alle Knoten mit dhpluso-Klasse oder einer Unterklasse dieser Klasse.</rdfs:definition>
+        <rdfs:label xml:lang="en">Target for all subclasses or self</rdfs:label>
+        <rdfs:label xml:lang="de">Target für Unterklassen und die Klasse selbst</rdfs:label>
+        <shacl:labelTemplate xml:lang="en">All instances of class {$class} or subclasses of this class</shacl:labelTemplate>
+        <shacl:labelTemplate xml:lang="en">Alle Instanzen der Klasse {$class} oder Unterklassen dieser Klasse</shacl:labelTemplate>
+        <shacl:parameter rdf:nodeID="genid68"/>
+        <shacl:prefixes rdf:resource="https://dh.plus.ac.at/constants/Prefixes"/>
+        <shacl:select>
+        SELECT ?this
+WHERE {
+    {
+        ?this a $class .
+    }
+    UNION
+    {
+        BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+        ?this a ?currentClass .
+        SERVICE ?dhPLUSOntology {
+            ?currentClass rdfs:subClassOf* $class .
+        }
+    }
+}
+        </shacl:select>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid68">
+        <shacl:class rdf:resource="https://dh.plus.ac.at/tmp/class"/>
+        <shacl:description xml:lang="en">Klasse des zu prüfenden Knotens.</shacl:description>
+        <shacl:description xml:lang="en">The class of the focus nodes.</shacl:description>
+        <shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+        <shacl:path rdf:resource="https://dh.plus.ac.at/tmp/class"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="https://dh.plus.ac.at/ontology#language">
+        <dc:creator>Peter Hinkelmanns</dc:creator>
+        <terms:created>2021-07-22</terms:created>
+        <terms:modified>2021-10-05+08:50</terms:modified>
+        <rdfs:label xml:lang="en">has language</rdfs:label>
+        <rdfs:label xml:lang="de">hat Sprache</rdfs:label>
+        <skos:definition xml:lang="en">Language associated with a resource or its parts.</skos:definition>
+        <skos:definition xml:lang="de">Sprache, die mit einer Ressource oder ihren Teilen verbunden ist.</skos:definition>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/ -->
+
+

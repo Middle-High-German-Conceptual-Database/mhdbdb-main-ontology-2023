@@ -1,0 +1,5334 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://dh.plus.ac.at/ontology#Instance"
+    }, {
+      "@id" : "https://dh.plus.ac.at/ontology#Work"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid10",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://dh.plus.ac.at/ontology#Instance"
+    }, {
+      "@id" : "https://dh.plus.ac.at/ontology#Work"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://dh.plus.ac.at/ontology#Instance"
+    }, {
+      "@id" : "https://dh.plus.ac.at/ontology#Item"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "http://www.w3.org/ns/shacl#datatype" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#wktLiteral"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#asWKT"
+  } ],
+  "http://www.w3.org/ns/shacl#severity" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#Violation"
+  } ]
+}, {
+  "@id" : "_:genid17",
+  "@type" : [ "https://dh.plus.ac.at/ontology#SubclassTarget" ],
+  "https://dh.plus.ac.at/tmp/class" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Geometry"
+  } ]
+}, {
+  "@id" : "_:genid18",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/2000/01/rdf-schema#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "rdfs"
+  } ]
+}, {
+  "@id" : "_:genid19",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/ns/shacl#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "sh"
+  } ]
+}, {
+  "@id" : "_:genid20",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/2007/05/powder-s#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "wdrs"
+  } ]
+}, {
+  "@id" : "_:genid21",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://id.loc.gov/ontologies/bflc/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "bflc"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://purl.org/vocab/vann/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "vann"
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/2006/time#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "time"
+  } ]
+}, {
+  "@id" : "_:genid24",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://gams.uni-graz.at/o:szd.ontology#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "szd"
+  } ]
+}, {
+  "@id" : "_:genid25",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/2002/07/owl#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "owl"
+  } ]
+}, {
+  "@id" : "_:genid26",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://id.loc.gov/ontologies/bibframe/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "bf"
+  } ]
+}, {
+  "@id" : "_:genid27",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/parameter/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "parameteri"
+  } ]
+}, {
+  "@id" : "_:genid28",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://purl.org/dc/terms/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dcterms"
+  } ]
+}, {
+  "@id" : "_:genid29",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/ns/lemon/decomp#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "decomp"
+  } ]
+}, {
+  "@id" : "_:genid30",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/mhdbdb/ontology#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "mhdbdbo"
+  } ]
+}, {
+  "@id" : "_:genid31",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/2001/XMLSchema#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "xsd"
+  } ]
+}, {
+  "@id" : "_:genid32",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/dhplusoValidation/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dhplusoValidation"
+  } ]
+}, {
+  "@id" : "_:genid33",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://erlangen-crm.org/200717/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "ecrm"
+  } ]
+}, {
+  "@id" : "_:genid34",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://creativecommons.org/ns#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "cc"
+  } ]
+}, {
+  "@id" : "_:genid35",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/xml-ontology#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dhplusXml"
+  } ]
+}, {
+  "@id" : "_:genid36",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://d-nb.info/standards/elementset/gnd#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "gndo"
+  } ]
+}, {
+  "@id" : "_:genid37",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.wikidata.org/prop/direct/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "wdt"
+  } ]
+}, {
+  "@id" : "_:genid38",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/ontology#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dhpluso"
+  } ]
+}, {
+  "@id" : "_:genid39",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://xmlns.com/foaf/0.1/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "foaf"
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://dh.plus.ac.at/ontology#Instance"
+    }, {
+      "@id" : "https://dh.plus.ac.at/ontology#Work"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid40",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/2004/02/skos/core#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "skos"
+  } ]
+}, {
+  "@id" : "_:genid41",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://mhdbdbd.plus.ac.at/xml-ontology#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "mhdbdbxml"
+  } ]
+}, {
+  "@id" : "_:genid42",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://d-nb.info/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dnb"
+  } ]
+}, {
+  "@id" : "_:genid43",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/ns/oa#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "oa"
+  } ]
+}, {
+  "@id" : "_:genid44",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/tmp/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "tmp"
+  } ]
+}, {
+  "@id" : "_:genid45",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/mhdbdb/instance/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "mhdbdbi"
+  } ]
+}, {
+  "@id" : "_:genid46",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.opengis.net/ont/sf#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "ogcsf"
+  } ]
+}, {
+  "@id" : "_:genid47",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/parameter-ontology#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "parameter"
+  } ]
+}, {
+  "@id" : "_:genid48",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "rdf"
+  } ]
+}, {
+  "@id" : "_:genid49",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://purl.org/dc/terms/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dct"
+  } ]
+}, {
+  "@id" : "_:genid50",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.opengis.net/ont/geosparql#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "geo"
+  } ]
+}, {
+  "@id" : "_:genid51",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/mhdbdb/text/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "mhdbdbtext"
+  } ]
+}, {
+  "@id" : "_:genid52",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://schema.org/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "schema"
+  } ]
+}, {
+  "@id" : "_:genid53",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.wikidata.org/entity/statement/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "wds"
+  } ]
+}, {
+  "@id" : "_:genid54",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/instance/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dhplusi"
+  } ]
+}, {
+  "@id" : "_:genid55",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/constants/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "constants"
+  } ]
+}, {
+  "@id" : "_:genid56",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://dh.plus.ac.at/vocabulary/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dhplusv"
+  } ]
+}, {
+  "@id" : "_:genid57",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://d-nb.info/gnd/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "gnd"
+  } ]
+}, {
+  "@id" : "_:genid58",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/ns/lemon/lime#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "lime"
+  } ]
+}, {
+  "@id" : "_:genid59",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.wikidata.org/prop/direct-normalized/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "wdtn"
+  } ]
+}, {
+  "@id" : "_:genid60",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.opengis.net/ont/sf#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "sf"
+  } ]
+}, {
+  "@id" : "_:genid61",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.wikidata.org/entity/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "wd"
+  } ]
+}, {
+  "@id" : "_:genid62",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/XML/1998/namespace"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "xml"
+  } ]
+}, {
+  "@id" : "_:genid63",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.lexinfo.net/ontology/3.0/lexinfo#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "lexinfo"
+  } ]
+}, {
+  "@id" : "_:genid64",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.cidoc-crm.org/cidoc-crm/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "crm"
+  } ]
+}, {
+  "@id" : "_:genid65",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://www.w3.org/ns/lemon/ontolex#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "ontolex"
+  } ]
+}, {
+  "@id" : "_:genid66",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "https://d-nb.info/standards/elementset/dnb#"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dnbt"
+  } ]
+}, {
+  "@id" : "_:genid67",
+  "http://www.w3.org/ns/shacl#namespace" : [ {
+    "@value" : "http://purl.org/dc/elements/1.1/"
+  } ],
+  "http://www.w3.org/ns/shacl#prefix" : [ {
+    "@value" : "dc"
+  } ]
+}, {
+  "@id" : "_:genid68",
+  "http://www.w3.org/ns/shacl#class" : [ {
+    "@id" : "https://dh.plus.ac.at/tmp/class"
+  } ],
+  "http://www.w3.org/ns/shacl#description" : [ {
+    "@language" : "en",
+    "@value" : "Klasse des zu prüfenden Knotens."
+  }, {
+    "@language" : "en",
+    "@value" : "The class of the focus nodes."
+  } ],
+  "http://www.w3.org/ns/shacl#nodeKind" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#IRI"
+  } ],
+  "http://www.w3.org/ns/shacl#path" : [ {
+    "@id" : "https://dh.plus.ac.at/tmp/class"
+  } ]
+}, {
+  "@id" : "_:genid7",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://dh.plus.ac.at/ontology#Instance"
+    }, {
+      "@id" : "https://dh.plus.ac.at/ontology#Work"
+    } ]
+  } ]
+}, {
+  "@id" : "http://erlangen-crm.org/200717/P43_has_dimension",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://id.loc.gov/ontologies/bibframe/dimension",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://id.loc.gov/vocabulary/relators",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/2004/02/skos/core#ConceptScheme" ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "MARC Code List for Relators Scheme"
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/rights",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#antonym",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#hypernym",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#hyponym",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#synonym",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.opengis.net/ont/sf#Geometry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.opengis.net/ont/sf#Point",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2000/01/rdf-schema#definition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#date",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#duration",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#gYear",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#Instant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#Interval",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#TemporalEntity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#hasBeginning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#hasEnd",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#inXSDDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2006/time#inXSDgYear",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/decomp#subterm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/lime#Lexicon",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/lime#entry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/lime#language",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#Affix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#ConceptSet",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#Form",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#LexicalConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#LexicalEntry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#LexicalSense",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#Word",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#otherForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#sense",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/lemon/ontolex#writtenRep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#SPARQLTargetType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#Target",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#datatype",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#declare",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#labelTemplate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#namespace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#nodeKind",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#parameter",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#path",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#prefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#prefixes",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#property",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#select",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#severity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/shacl#target",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.wikidata.org/entity/Q17334923",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.wikidata.org/entity/Q5",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.wikidata.org/prop/direct/P21",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.wikidata.org/prop/direct/P2803",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.wikidata.org/prop/direct/P734",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "http://www.wikidata.org/prop/direct/P735",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePlace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://d-nb.info/standards/elementset/gnd#variantNameForThePlaceOrGeographicName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://dh.plus.ac.at/constants/Prefixes",
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Prefixes"
+  }, {
+    "@language" : "de",
+    "@value" : "Präfixe"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Praäfixdeklaration für Shacl."
+  }, {
+    "@language" : "en",
+    "@value" : "Prefix declaration for Shacl."
+  } ],
+  "http://www.w3.org/ns/shacl#declare" : [ {
+    "@id" : "_:genid18"
+  }, {
+    "@id" : "_:genid19"
+  }, {
+    "@id" : "_:genid20"
+  }, {
+    "@id" : "_:genid21"
+  }, {
+    "@id" : "_:genid22"
+  }, {
+    "@id" : "_:genid23"
+  }, {
+    "@id" : "_:genid24"
+  }, {
+    "@id" : "_:genid25"
+  }, {
+    "@id" : "_:genid26"
+  }, {
+    "@id" : "_:genid27"
+  }, {
+    "@id" : "_:genid28"
+  }, {
+    "@id" : "_:genid29"
+  }, {
+    "@id" : "_:genid30"
+  }, {
+    "@id" : "_:genid31"
+  }, {
+    "@id" : "_:genid32"
+  }, {
+    "@id" : "_:genid33"
+  }, {
+    "@id" : "_:genid34"
+  }, {
+    "@id" : "_:genid35"
+  }, {
+    "@id" : "_:genid36"
+  }, {
+    "@id" : "_:genid37"
+  }, {
+    "@id" : "_:genid38"
+  }, {
+    "@id" : "_:genid39"
+  }, {
+    "@id" : "_:genid40"
+  }, {
+    "@id" : "_:genid41"
+  }, {
+    "@id" : "_:genid42"
+  }, {
+    "@id" : "_:genid43"
+  }, {
+    "@id" : "_:genid44"
+  }, {
+    "@id" : "_:genid45"
+  }, {
+    "@id" : "_:genid46"
+  }, {
+    "@id" : "_:genid47"
+  }, {
+    "@id" : "_:genid48"
+  }, {
+    "@id" : "_:genid49"
+  }, {
+    "@id" : "_:genid50"
+  }, {
+    "@id" : "_:genid51"
+  }, {
+    "@id" : "_:genid52"
+  }, {
+    "@id" : "_:genid53"
+  }, {
+    "@id" : "_:genid54"
+  }, {
+    "@id" : "_:genid55"
+  }, {
+    "@id" : "_:genid56"
+  }, {
+    "@id" : "_:genid57"
+  }, {
+    "@id" : "_:genid58"
+  }, {
+    "@id" : "_:genid59"
+  }, {
+    "@id" : "_:genid60"
+  }, {
+    "@id" : "_:genid61"
+  }, {
+    "@id" : "_:genid62"
+  }, {
+    "@id" : "_:genid63"
+  }, {
+    "@id" : "_:genid64"
+  }, {
+    "@id" : "_:genid65"
+  }, {
+    "@id" : "_:genid66"
+  }, {
+    "@id" : "_:genid67"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  }, {
+    "@value" : "Richard Hörmann"
+  } ],
+  "http://purl.org/dc/elements/1.1/rights" : [ {
+    "@id" : "https://creativecommons.org/publicdomain/zero/1.0/"
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@language" : "de",
+    "@value" : "dhPLUS Ontologie"
+  }, {
+    "@language" : "en",
+    "@value" : "dhPLUS Ontology"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2019-12-27"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "dhpluso"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@value" : "https://dh.plus.ac.at/ontology#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "dhPLUS Ontologie"
+  }, {
+    "@language" : "en",
+    "@value" : "dhPLUS Ontology"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd_20191015.rdf"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/erlangen-crm/ecrm/master/ecrm_200717.owl"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/lcnetdev/bibframe-ontology/main/archive/bibframe-2.1.0.rdf"
+  }, {
+    "@id" : "https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology/0-1#"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2019-12-27"
+  }, {
+    "@value" : "0.1"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Dies ist eine Ontologie des dhPLUS-Repositoriums für Digital Humanities-Projekte der Universität Salzburg."
+  }, {
+    "@language" : "en",
+    "@value" : "This is an ontology of the dhPLUS repository for Digital Humanities Projects of the University of Salzburg."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#AdminMetadata",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Admin Metadata"
+  }, {
+    "@language" : "de",
+    "@value" : "Administrative Metadaten"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/AdminMetadata"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Metadata about the metadata, especially provenance information."
+  }, {
+    "@language" : "de",
+    "@value" : "Metadaten über die Metadaten, insbesondere Provenienzinformationen."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Affix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Affixartikel"
+  }, {
+    "@language" : "en",
+    "@value" : "affix entry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#Affix"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "An affix is a lexical entry that represents a morpheme (suffix, prefix, infix, circumfix) that is attached to a word stem to form a new word."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein Affix ist ein lexikalischer Eintrag, der ein Morphem (Suffix, Präfix, Infix, Zirkumfix) darstellt, das an einen Wortstamm angehängt wird, um ein neues Wort zu bilden."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Appellation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Indentifier"
+  }, {
+    "@language" : "en",
+    "@value" : "Indentifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E41_Appellation"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Klasse umfasst sinnvolle oder nicht sinnvolle Zeichen oder Anordnungen von Zeichen, die einer bestimmten Syntax folgen, die verwendet werden oder verwendet werden können, um auf eine bestimmte Instanz einer Klasse oder Kategorie innerhalb eines bestimmten Kontexts zu verweisen und diese zu identifizieren."
+  }, {
+    "@language" : "en",
+    "@value" : "This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#BeginningOfExistence",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-23"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Beginn der Existenz"
+  }, {
+    "@language" : "en",
+    "@value" : "Beginning of Existence"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E63_Beginning_of_Existence"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Event"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Klasse umfasst Ereignisse, die eine beliebige Instanz von Persistent Item ins Leben rufen."
+  }, {
+    "@language" : "en",
+    "@value" : "This class comprises events that bring into existence any instance of Persistent Item."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Bibliographic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Bibliographic Entity"
+  }, {
+    "@language" : "de",
+    "@value" : "Bibliographische Entität"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://erlangen-crm.org/200717/E89_Propositional_Object"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Bibliographic Entities are Works, Instances and Items."
+  }, {
+    "@language" : "de",
+    "@value" : "Bibliographische Entitäten sind Werke, Instanzen und Exemplare."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Birth",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-23"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Birth"
+  }, {
+    "@language" : "de",
+    "@value" : "Geburt"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E67_Birth"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#BeginningOfExistence"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Klasse umfasst die Geburten von Menschen. "
+  }, {
+    "@language" : "en",
+    "@value" : "This class comprises the births of human beings."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Content",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Content"
+  }, {
+    "@language" : "de",
+    "@value" : "Inhalt"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Content"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived."
+  }, {
+    "@language" : "de",
+    "@value" : "Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Contribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Beitrag"
+  }, {
+    "@language" : "en",
+    "@value" : "Contribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Contribution"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Agent and role with respect to the resource being described."
+  }, {
+    "@language" : "de",
+    "@value" : "Agent und Rolle in Bezug auf die zu beschreibende Ressource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Creation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Creation"
+  }, {
+    "@language" : "de",
+    "@value" : "Erschaffung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E65_Creation"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#BeginningOfExistence"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Klasse umfasst Ereignisse, die zur Schaffung von begrifflichen Gegenständen oder immateriellen Produkten führen, wie Legenden, Gedichte, Texte, Musik, Bilder, Filme, Gesetze, Schriften usw."
+  }, {
+    "@language" : "en",
+    "@value" : "This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts, music, images, movies, laws, types etc."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Death",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-23"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Death"
+  }, {
+    "@language" : "de",
+    "@value" : "Tod"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E69_Death"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Event"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Klasse umfasst den Tod von Menschen. "
+  }, {
+    "@language" : "en",
+    "@value" : "This class comprises the death of human beings."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Electronic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Electronic"
+  }, {
+    "@language" : "de",
+    "@value" : "Elektronische Ressource"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Electronic"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Instance that is intended for manipulation by a computer, accessed either directly or remotely."
+  }, {
+    "@language" : "de",
+    "@value" : "Instanz, die für die Bearbeitung durch einen Computer vorgesehen ist und auf die entweder direkt oder aus der Ferne zugegriffen wird."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Entity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Entity"
+  }, {
+    "@language" : "de",
+    "@value" : "Entität"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E1_CRM_Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Base class for all dhpluso classes."
+  }, {
+    "@language" : "de",
+    "@value" : "Basisklasse aller dhpluso Klassen."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Event",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-23"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Ereignis"
+  }, {
+    "@language" : "en",
+    "@value" : "Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E5_Event"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Event"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Klasse umfasst eindeutige, abgegrenzte und kohärente Prozesse und Interaktionen materieller Natur in kulturellen, sozialen oder physischen Systemen, die Instanzen von Persistent Item in einer für die Art des Prozesses charakteristischen Weise einbeziehen und beeinflussen. Typische Beispiele sind Versammlungen, Geburten, Todesfälle, Handlungen der Entscheidungsfindung, des Herstellens oder Erfindens von Dingen, aber auch komplexere und umfangreichere wie Konferenzen, Wahlen, der Bau einer Burg oder Schlachten."
+  }, {
+    "@language" : "en",
+    "@value" : "This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Extent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Extent"
+  }, {
+    "@language" : "de",
+    "@value" : "Umfang"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Extent"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Anzahl und Typ der Einheiten und/oder Untereinheiten, aus denen eine Ressource besteht."
+  }, {
+    "@language" : "en",
+    "@value" : "Number and type of units and/or subunits making up a resource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Form",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+14:25"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Form"
+  }, {
+    "@language" : "en",
+    "@value" : "Form"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#Form"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A form represents one grammatical realization of a lexical entry."
+  }, {
+    "@language" : "de",
+    "@value" : "Eine Form stellt eine grammatikalische Realisierung eines lexikalischen Eintrags dar."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Gender",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Gender"
+  }, {
+    "@language" : "de",
+    "@value" : "Geschlecht"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Type"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Gender"
+  }, {
+    "@language" : "de",
+    "@value" : "Geschlecht"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Geometry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Geometrie"
+  }, {
+    "@language" : "en",
+    "@value" : "Geometry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive"
+  }, {
+    "@id" : "http://www.opengis.net/ont/sf#Geometry"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Appellation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Oberklasse aller Geometrieklassen."
+  }, {
+    "@language" : "en",
+    "@value" : "Root of all geometry classes."
+  } ],
+  "http://www.w3.org/ns/shacl#property" : [ {
+    "@id" : "_:genid16"
+  } ],
+  "http://www.w3.org/ns/shacl#target" : [ {
+    "@id" : "_:genid17"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Indentifier"
+  }, {
+    "@language" : "en",
+    "@value" : "Indentifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E42_Identifier"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Appellation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Klasse umfasst Zeichenfolgen oder Codes, die Instanzen von E1 CRM Entity zugewiesen werden, um sie eindeutig und dauerhaft im Kontext einer oder mehrerer Organisationen zu identifizieren."
+  }, {
+    "@language" : "en",
+    "@value" : "This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#ImmediateAcquisition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Erwerbungsumstände"
+  }, {
+    "@language" : "en",
+    "@value" : "Immediate acquisition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/ImmediateAcquisition"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired."
+  }, {
+    "@language" : "de",
+    "@value" : "Informationen über die Umstände, z. B. Quelle, Datum, Methode, unter denen die Ressource direkt erworben wurde."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Instance",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Instance"
+  }, {
+    "@language" : "de",
+    "@value" : "Instanz"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E89_Propositional_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Instance"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Resource reflecting an individual, material embodiment of a Work."
+  }, {
+    "@language" : "de",
+    "@value" : "Ressource, die eine individuelle, materielle Verkörperung eines Werkes darstellt."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Instant",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-10-05"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+14:42"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Instant"
+  }, {
+    "@language" : "de",
+    "@value" : "Zeitpunkt"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#Instant"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#TimeSpan"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A temporal entity with zero extent or duration."
+  }, {
+    "@language" : "de",
+    "@value" : "Eine zeitliche Einheit ohne Ausmaß oder Dauer. "
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Interval",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-10-05"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+14:42"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Interval"
+  }, {
+    "@language" : "de",
+    "@value" : "Zeitspanne"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#Interval"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#TimeSpan"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A temporal entity with an extent or duration."
+  }, {
+    "@language" : "de",
+    "@value" : "Eine zeitliche Einheit mit einem Umfang oder einer Dauer. "
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Issuance",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Art der Veröffentlichung"
+  }, {
+    "@language" : "en",
+    "@value" : "Mode of issuance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Issuance"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Information about whether a resource is issued in one or more parts, the way it is updated, and its intended termination."
+  }, {
+    "@language" : "de",
+    "@value" : "Informationen darüber, ob eine Ressource in einem oder mehreren Teilen veröffentlicht wird, wie sie aktualisiert wird und wie sie abgeschlossen werden soll."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Item",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Exemplar"
+  }, {
+    "@language" : "en",
+    "@value" : "Item"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E22_Human-Made_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Item"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Einzelnes Exemplar einer Instanz."
+  }, {
+    "@language" : "en",
+    "@value" : "Single example of an Instance."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Language",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Language"
+  }, {
+    "@language" : "en",
+    "@value" : "Language"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Language"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Language Entity."
+  }, {
+    "@language" : "de",
+    "@value" : "Sprachenentität."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#LexicalConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Lexical Concept"
+  }, {
+    "@language" : "de",
+    "@value" : "Lexikalischer Begriff"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#LexicalConcept"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A lexical concept represents a mental abstraction, concept or unit of thought that can be lexicalized by a given collection of senses."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein lexikalisches Konzept ist eine mentale Abstraktion, ein Konzept oder eine Gedankeneinheit, die durch eine bestimmte Sammlung von Bedeutungen lexikalisiert werden kann."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#LexicalConceptSet",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Lexical Concept Set"
+  }, {
+    "@language" : "de",
+    "@value" : "Lexikalisches Begriffssystem"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#ConceptSet"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A concept set represents a collection of lexical concepts."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein Begriffssystem stellt eine Sammlung lexikalischer Begriffe dar."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "lexical entry"
+  }, {
+    "@language" : "de",
+    "@value" : "lexikalischer Artikel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#LexicalEntry"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A lexical entry represents a unit of analysis of the lexicon that consists of a set of forms that are grammatically related and a set of base meanings that are associated with all of these forms. Thus, a lexical entry is a word, multiword expression or affix with a single part-of-speech, morphological pattern, etymology and set of senses."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein lexikalischer Eintrag stellt eine Analyseeinheit des Lexikons dar, die aus einer Reihe von grammatikalisch verwandten Formen und einer Reihe von Grundbedeutungen besteht, die mit all diesen Formen verbunden sind. Ein lexikalischer Eintrag ist also ein Wort, ein Mehrwortausdruck oder ein Affix mit einem einzigen Part-of-Speech, einem morphologischen Muster, einer Etymologie und einer Reihe von Bedeutungen."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#LexicalSense",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "lexical sense"
+  }, {
+    "@language" : "de",
+    "@value" : "lexikalische Bedeutung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#LexicalSense"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A lexical sense represents the lexical meaning of a lexical entry when interpreted as referring to the corresponding ontology element. A lexical sense thus represents a reification of a pair of a uniquely determined lexical entry and a uniquely determined ontology entity it refers to. A link between a lexical entry and an ontology entity via a Lexical Sense object implies that the lexical entry can be used to refer to the ontology entity in question."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein lexikalischer Sinn stellt die lexikalische Bedeutung eines lexikalischen Eintrags dar, wenn er als Verweis auf das entsprechende Ontologieelement interpretiert wird. Ein lexikalischer Sinn stellt somit eine Verdinglichung eines Paares aus einem eindeutig bestimmten lexikalischen Eintrag und einer eindeutig bestimmten Ontologie-Entität dar, auf die er sich bezieht. Eine Verknüpfung zwischen einem lexikalischen Eintrag und einer Ontologie-Entität über ein Lexical Sense-Objekt impliziert, dass der lexikalische Eintrag verwendet werden kann, um auf die betreffende Ontologie-Entität zu verweisen."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Lexicon",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Wörterbuch"
+  }, {
+    "@language" : "en",
+    "@value" : "lexicon"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/lime#Lexicon"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A lexicon represents a collection of lexical entries for a particular language or domain."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein Lexikon ist eine Sammlung von lexikalischen Einträgen für eine bestimmte Sprache oder einen bestimmten Bereich."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Manuscript",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Handschrift"
+  }, {
+    "@language" : "en",
+    "@value" : "Manuscript"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E22_Human-Made_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Manuscript"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Instance that is written in handwriting or typescript. These are generally unique resources."
+  }, {
+    "@language" : "de",
+    "@value" : "Instanz die hand- oder maschinengeschrieben ist. Üblicherweise ein Unikat."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#NameOfThePerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Name entity of a person"
+  }, {
+    "@language" : "de",
+    "@value" : "Namensentität einer Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#NameOfThePerson"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Appellation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Entity for the different data properties of a person's name."
+  }, {
+    "@language" : "de",
+    "@value" : "Entität für die verschiedenen Data Properties eines Personennamens."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#NameOfThePlace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Name entity of a place"
+  }, {
+    "@language" : "de",
+    "@value" : "Namensentität einer Place"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Appellation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Entity for the different data properties of a places name."
+  }, {
+    "@language" : "de",
+    "@value" : "Entität für die verschiedenen Data Properties eines Ortsnamens."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Note",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Anmerkung"
+  }, {
+    "@language" : "en",
+    "@value" : "Note"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Note"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Information, usually in textual form, on attributes of a resource or some aspect of a resource."
+  }, {
+    "@language" : "de",
+    "@value" : "Informationen, in der Regel in Textform, über Attribute einer Ressource oder einen Aspekt einer Ressource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#OnomasticConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "onomastic concept"
+  }, {
+    "@language" : "de",
+    "@value" : "onomastische Kategorie"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#LexicalConcept"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A onomastic concept represents a categorization of names."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein onomastisches Konzept stellt eine Kategorisierung von Namen dar."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#OnomasticConceptSet",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Sammlung von Namenskategorisierungen"
+  }, {
+    "@language" : "en",
+    "@value" : "onomastic concept set"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#ConceptSet"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A onomastic concept set represents a collection of onomastic concepts."
+  }, {
+    "@language" : "de",
+    "@value" : "Eine Sammlung von Namenskategorisierungen stellt eine Sammlung onomastischer Kategorisierungen dar."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#OnomasticUsage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Eigennamengebrauch"
+  }, {
+    "@language" : "en",
+    "@value" : "onomastic usage"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#LexicalSense"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Eigennamengebrauch"
+  }, {
+    "@language" : "en",
+    "@value" : "onomastic usage"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#PartOfSpeech",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Wortart"
+  }, {
+    "@language" : "en",
+    "@value" : "part of speech"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A category assigned to a word based on its grammatical and semantic properties."
+  }, {
+    "@language" : "de",
+    "@value" : "Eine Kategorie, die einem Wort auf der Grundlage seiner grammatikalischen und semantischen Eigenschaften zugeordnet wird."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Person"
+  }, {
+    "@language" : "en",
+    "@value" : "Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E21_Person"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Person"
+  }, {
+    "@id" : "http://www.wikidata.org/entity/Q5"
+  }, {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#Person"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A dhpluso person."
+  }, {
+    "@language" : "de",
+    "@value" : "Eine dhpluso Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Place",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-19"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Ort"
+  }, {
+    "@language" : "en",
+    "@value" : "Place"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E53_Place"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Place"
+  }, {
+    "@id" : "http://www.wikidata.org/entity/Q17334923"
+  }, {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A dhpluso place."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein dhpluso Ort."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Point",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Point"
+  }, {
+    "@language" : "de",
+    "@value" : "Punkt"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.opengis.net/ont/sf#Point"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Geometry"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A Point is a 0-dimensional geometric object and represents a single location in coordinate space."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein Punkt ist ein 0-dimensionales geometrisches Objekt und repräsentiert einen einzelnen Ort im Koordinatenraum."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Print",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Druck"
+  }, {
+    "@language" : "en",
+    "@value" : "Print"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E89_Propositional_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Print"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Resource that is printed."
+  }, {
+    "@language" : "de",
+    "@value" : "Ressource, die gedruckt ist."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#ProvisionActivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Provision Activity"
+  }, {
+    "@language" : "de",
+    "@value" : "Veröffentlichung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E65_Creation"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/ProvisionActivity"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Event"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Information about the agent or place relating to the publication, printing, distribution, issue, release, or production of a resource."
+  }, {
+    "@language" : "de",
+    "@value" : "Informationen über den Akteur oder Ort, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe oder die Produktion einer Ressource beziehen."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Publication",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Publication"
+  }, {
+    "@language" : "de",
+    "@value" : "Veröffentlichung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E73_Information_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Publication"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#ProvisionActivity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Information relating to publication of a resource."
+  }, {
+    "@language" : "de",
+    "@value" : "Informationen über die Veröffentlichung einer Ressource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#SubclassTarget",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class", "http://www.w3.org/2002/07/owl#NamedIndividual", "http://www.w3.org/ns/shacl#SPARQLTargetType" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-30"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#definition" : [ {
+    "@language" : "en",
+    "@value" : "Matches all nodes with a dhpluso-class or subclasses of this class."
+  }, {
+    "@language" : "de",
+    "@value" : "Matcht alle Knoten mit dhpluso-Klasse oder einer Unterklasse dieser Klasse."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Target for all subclasses or self"
+  }, {
+    "@language" : "de",
+    "@value" : "Target für Unterklassen und die Klasse selbst"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/shacl#Target"
+  } ],
+  "http://www.w3.org/ns/shacl#labelTemplate" : [ {
+    "@language" : "en",
+    "@value" : "All instances of class {$class} or subclasses of this class"
+  }, {
+    "@language" : "en",
+    "@value" : "Alle Instanzen der Klasse {$class} oder Unterklassen dieser Klasse"
+  } ],
+  "http://www.w3.org/ns/shacl#parameter" : [ {
+    "@id" : "_:genid68"
+  } ],
+  "http://www.w3.org/ns/shacl#prefixes" : [ {
+    "@id" : "https://dh.plus.ac.at/constants/Prefixes"
+  } ],
+  "http://www.w3.org/ns/shacl#select" : [ {
+    "@value" : "\n        SELECT ?this\nWHERE {\n    {\n        ?this a $class .\n    }\n    UNION\n    {\n        BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .\nBIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .\nBIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .\nBIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .\nBIND(constants:EndpointWD() AS ?wd) .\n        ?this a ?currentClass .\n        SERVICE ?dhPLUSOntology {\n            ?currentClass rdfs:subClassOf* $class .\n        }\n    }\n}\n        "
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Text",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Text"
+  }, {
+    "@language" : "en",
+    "@value" : "Text"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E89_Propositional_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Text"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Resource intended to be perceived visually and understood through the use of language in written or spoken form."
+  }, {
+    "@language" : "de",
+    "@value" : "Ressource, die dazu bestimmt ist, visuell wahrgenommen und durch den Gebrauch von Sprache in schriftlicher oder gesprochener Form verstanden zu werden."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#TimeSpan",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-23"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+14:42"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Zeitspanne"
+  }, {
+    "@language" : "en",
+    "@value" : "time span"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E52_Time-Span"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Temporal"
+  }, {
+    "@id" : "http://www.w3.org/2006/time#TemporalEntity"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Klasse umfasst abstrakte zeitliche Ausdehnungen im Sinne der Galileischen Physik, die einen Anfang, ein Ende und eine Dauer haben. "
+  }, {
+    "@language" : "en",
+    "@value" : "This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Titel"
+  }, {
+    "@language" : "en",
+    "@value" : "Titel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E35_Title"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Title"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Appellation"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Titelinformationen zu einer Ressource: Werktitel, bevorzugter Titel, Instanztitel, transkribierter Titel, übersetzter Titel, abweichende Form des Titels usw."
+  }, {
+    "@language" : "en",
+    "@value" : "Title information relating to a resource: work title, preferred title, instance title, transcribed title, translated title, variant form of title, etc."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Type",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Typ"
+  }, {
+    "@language" : "en",
+    "@value" : "Type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E55_Type"
+  }, {
+    "@id" : "http://www.w3.org/2004/02/skos/core#Concept"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Klasse umfasst Konzepte, die durch Begriffe aus Thesauri und kontrollierten Vokabularen bezeichnet werden, die zur Charakterisierung und Klassifizierung von Instanzen von CIDOC CRM-Klassen verwendet werden. Instanzen von E55 Type repräsentieren Konzepte im Gegensatz zu Instanzen von E41 Appellation, die zur Benennung von Instanzen von CIDOC-CRM-Klassen verwendet werden."
+  }, {
+    "@language" : "en",
+    "@value" : "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CIDOC CRM classes. Instances of E55 Type represent concepts in contrast to instances of E41 Appellation which are used to name instances of CIDOC CRM classes."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Word",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Wortartikel"
+  }, {
+    "@language" : "en",
+    "@value" : "word entry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#Word"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "A word is a lexical entry that consists of a single token."
+  }, {
+    "@language" : "de",
+    "@value" : "Ein Wort ist ein lexikalischer Eintrag, der aus einem einzigen Token besteht."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#Work",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-09-16+12:28"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Werk"
+  }, {
+    "@language" : "en",
+    "@value" : "Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/E89_Propositional_Object"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/Work"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Resource reflecting a conceptual essence of a cataloging resource."
+  }, {
+    "@language" : "de",
+    "@value" : "Ressource, die eine konzeptionelle Essenz einer Katalogisierungsressource widerspiegelt."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#_:genid-nodeid-node1ft0aqj11x4",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#_:genid-nodeid-node1ft0aqj11x76",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#_:genid-nodeid-node1ft0aqj11x82",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#adminMetadata",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has admin metadata"
+  }, {
+    "@language" : "de",
+    "@value" : "hat administrative Metadaten"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#AdminMetadata"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/adminMetadata"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Metadata about the metadata, especially provenance information."
+  }, {
+    "@language" : "de",
+    "@value" : "Metadaten über die Metadaten, insbesondere Provenienzinformationen."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#antonym",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has antonym lexical sense"
+  }, {
+    "@language" : "de",
+    "@value" : "hat antonyme Bedeutung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#antonym"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Links a lexical sense with its antonym."
+  }, {
+    "@language" : "de",
+    "@value" : "Verbindet eine lexikalische Bedeutung mit ihrem Antonym."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#antonymConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-02"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has antonym lexical concept"
+  }, {
+    "@language" : "de",
+    "@value" : "hat antonymen Begriff"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalConcept"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#asWKT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Geometry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "als WKT"
+  }, {
+    "@language" : "en",
+    "@value" : "as WKT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#wktLiteral"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#asWKT"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Die WKT-Serialisierung einer Geometrie."
+  }, {
+    "@language" : "en",
+    "@value" : "The WKT serialization of a geometry."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#broughtIntoLife",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-23"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Birth"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "brachte zur Welt"
+  }, {
+    "@language" : "en",
+    "@value" : "brought into life"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P98_brought_into_life"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference from the birth event to the born person."
+  }, {
+    "@language" : "de",
+    "@value" : "Referenz vom Geburtsereignis auf die geborene Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#content",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has content"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Inhalt"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Content"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/content"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived."
+  }, {
+    "@language" : "de",
+    "@value" : "Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#continuedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#_:genid-nodeid-node1ft0aqj11x76"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "continued by"
+  }, {
+    "@language" : "de",
+    "@value" : "fortgesetzt von"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid1"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/continuedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Resource whose content continues an earlier resource under a new title."
+  }, {
+    "@language" : "de",
+    "@value" : "Ressource, deren Inhalt eine frühere Ressource unter einem neuen Titel fortsetzt."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#continues",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#_:genid-nodeid-node1ft0aqj11x82"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "continues"
+  }, {
+    "@language" : "de",
+    "@value" : "setzt fort"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid4"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/continues"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#continuedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Resource that is continued by the content of a later resource under a new title."
+  }, {
+    "@language" : "de",
+    "@value" : "Ressource, die durch den Inhalt einer späteren Ressource unter einem neuen Titel fortgesetzt wird."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#contribution",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has contribution"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Mitarbeit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Contribution"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/contribution"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Agent and its role in relation to the resource."
+  }, {
+    "@language" : "de",
+    "@value" : "Agent und seine Rolle in Bezug auf die Ressource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#coordinatesForThePlace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Place"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Koordinatenentität"
+  }, {
+    "@language" : "en",
+    "@value" : "coordinates entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Point"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePlace"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#isIdentifiedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference to the coordinates entity of a place."
+  }, {
+    "@language" : "de",
+    "@value" : "Verweis auf die Koordinatenentität eines Ortes."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#counting",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePerson"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Counting"
+  }, {
+    "@language" : "de",
+    "@value" : "Zählung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#counting"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Counting name of a person."
+  }, {
+    "@language" : "de",
+    "@value" : "Zählungsname einer Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#custodialHistory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid13"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Provenienzgeschichte"
+  }, {
+    "@language" : "en",
+    "@value" : "custodial history"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/custodialHistory"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Information about the provenance, such as origin, ownership and custodial history (chain of custody), of a resource."
+  }, {
+    "@language" : "de",
+    "@value" : "Informationen über die Provenienz einer Ressource, z. B. Herkunft, Eigentum und Aufbewahrungsgeschichte."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#derivativeOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Ableitung von"
+  }, {
+    "@language" : "en",
+    "@value" : "Derivative of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/derivativeOf"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Source work from which the described work is derived."
+  }, {
+    "@language" : "de",
+    "@value" : "Werk, von dem das beschriebene Werk abgeleitet ist."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#diedIn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "died"
+  }, {
+    "@language" : "de",
+    "@value" : "gestorben"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Death"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P100i_died_in"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference to the death event of a person."
+  }, {
+    "@language" : "de",
+    "@value" : "Verweis auf das Todesevent einer Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#dimension",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-21"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has dimension"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Dimension"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P43_has_dimension"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/dimension"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Maße des Trägers oder der Träger und/oder des Behälters einer Ressource."
+  }, {
+    "@language" : "en",
+    "@value" : "Measurements of the carrier or carriers and/or the container of a resource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#editionStatement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has edition statement"
+  }, {
+    "@language" : "de",
+    "@value" : "hat editorische Bemerkung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/editionStatement"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Information identifying the edition or version of the resource and associated statements of responsibility for the edition; usually transcribed."
+  }, {
+    "@language" : "de",
+    "@value" : "Informationen zur Identifizierung der Ausgabe oder Version der Ressource und zugehörige Erklärungen zur Verantwortung für die Ausgabe; in der Regel transkribiert."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#entry",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Lexicon"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has entry"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Artikel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/lime#entry"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#expressionOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Expression of"
+  }, {
+    "@language" : "de",
+    "@value" : "Expression von"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/expressionOf"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Werk, von dem das beschriebene Werk eine Expression ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verbinden. Bespielsweise ist eine kritische Edition eine Expression eines mhd. Werkes."
+  }, {
+    "@language" : "en",
+    "@value" : "Work that the described Work is an expression of. For use to connect Works under FRBR/RDA rules. For example, a critical edition is an expression of a gmh. work."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#extent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has extent"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Umfang"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Extent"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/extent"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Anzahl und Typ der Einheiten und/oder Untereinheiten des Umfangs einer Ressource."
+  }, {
+    "@language" : "en",
+    "@value" : "Number and type of units and/or subunits making up a resource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#forename",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePerson"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Vorname"
+  }, {
+    "@language" : "en",
+    "@value" : "forename"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.wikidata.org/prop/direct/P735"
+  }, {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#forename"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Forname of a person."
+  }, {
+    "@language" : "de",
+    "@value" : "Vorname einer Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#gender",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Geschlecht einer Person"
+  }, {
+    "@language" : "en",
+    "@value" : "gender of a person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Gender"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.wikidata.org/prop/direct/P21"
+  }, {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#gender"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#hasType"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference to the gender of a person."
+  }, {
+    "@language" : "de",
+    "@value" : "Verweis auf das Geschlecht einer Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasBeginning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-10-05"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+14:42"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#TimeSpan"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has beginning"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Anfang"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#hasBeginning"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Beginn einer zeitlichen Einheit."
+  }, {
+    "@language" : "en",
+    "@value" : "Beginning of a temporal entity."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasCreated",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Creation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has created"
+  }, {
+    "@language" : "de",
+    "@value" : "hat erschaffen"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P94_has_created"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Eigenschaft verknüpft eine Instanz von Creation mit der Instanz von Werk, die durch sie erstellt wurde."
+  }, {
+    "@language" : "en",
+    "@value" : "This property links an instance of Creation to the instance of Work created by it."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasDerivative",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Has Derivative"
+  }, {
+    "@language" : "de",
+    "@value" : "Hat Ableitung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/hasDerivative"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#derivativeOf"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Resource that is a modification of the described work."
+  }, {
+    "@language" : "de",
+    "@value" : "Ressource, die eine Ableitung des beschriebenen Werks ist."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasEnd",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-10-05"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+14:42"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#TimeSpan"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has end"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Ende"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#hasEnd"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "End of a temporal entity."
+  }, {
+    "@language" : "de",
+    "@value" : "Ende einer zeitlichen Einheit."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasExpression",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Has Expression"
+  }, {
+    "@language" : "de",
+    "@value" : "Hat Expression"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/hasExpression"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#expressionOf"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Werk, das eine Expression eines beschriebenen Werks ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verknüpfen."
+  }, {
+    "@language" : "en",
+    "@value" : "Work that is an expression of a described Work. For use to relate Works under FRBR/RDA rules."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasInstance",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has instance"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Instanz"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/hasInstance"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Die Instanz ist mit dem beschriebenen Werk verbunden."
+  }, {
+    "@language" : "en",
+    "@value" : "Instance is related to described Work."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasItem",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has Item"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Exemplar"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Item"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/hasItem"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#itemOf"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Exemplar, das ein Beispiel für die beschriebene Instanz ist."
+  }, {
+    "@language" : "en",
+    "@value" : "Item which is an example of the described Instance."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasPreferredIdentifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has preferred identifier"
+  }, {
+    "@language" : "de",
+    "@value" : "hat bevorzugten Identifizierer"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Identifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P48_has_preferred_identifier"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Eigenschaft zeichnet die bevorzugte Instanz von Identifier auf, die zur Identifizierung einer Instanz von Entity zum Zeitpunkt der Aufzeichnung dieser Eigenschaft verwendet wurde."
+  }, {
+    "@language" : "en",
+    "@value" : "This property records the preferred instance of Identifier that was used to identify an instance of Entity at the time this property was recorded."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasSeries",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#_:genid-nodeid-node1ft0aqj11x4"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has series"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Serie"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "_:genid7"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/hasSeries"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Resource in which the part has been issued; the title of the larger resource appears on the part."
+  }, {
+    "@language" : "de",
+    "@value" : "Ressource, in der der Band herausgegeben wurde; der Titel der größeren Ressource erscheint auf dem Band."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasTimeSpan",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has time span"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Zeitspanne"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#TimeSpan"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P4_has_time-span"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#isTimeSpanOf"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Eigenschaft verknüpft ein Ereignis mit der Zeitspanne, in der es stattfand."
+  }, {
+    "@language" : "en",
+    "@value" : "This property associates an instance of Event with the Time-Span during which it was on-going."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hasType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has type"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Typ"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P2_has_type"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Eigenschaft ermöglicht die Subtypisierung von dhPLUS-Entitäten - eine Form der Spezialisierung - durch die Verwendung einer terminologischen Hierarchie oder eines Thesaurus."
+  }, {
+    "@language" : "en",
+    "@value" : "This property allows sub typing of dhPLUS entities - a form of specialisation - through the use of a terminological hierarchy, or thesaurus."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hypernym",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has hypernym lexical sense"
+  }, {
+    "@language" : "de",
+    "@value" : "hat hypernyme Bedeutung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#hypernym"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#hyponym",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has hyponym lexical sense"
+  }, {
+    "@language" : "de",
+    "@value" : "hat hyponyme Bedeutung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#hyponym"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#immediateAcquisition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Item"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "direkte Erwerbung"
+  }, {
+    "@language" : "en",
+    "@value" : "immediate acquisition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#ImmediateAcquisition"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/immediateAcquisition"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired."
+  }, {
+    "@language" : "de",
+    "@value" : "Informationen über die Umstände (z. B. Quelle, Datum, Methode), unter denen die Ressource direkt erworben wurde."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#inXSDDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-10-05"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+14:42"
+  }, {
+    "@value" : "2021-10-07+07:59"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instant"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "als XSD Date"
+  }, {
+    "@language" : "de",
+    "@value" : "als XSD gYear"
+  }, {
+    "@language" : "en",
+    "@value" : "in XSD Date"
+  }, {
+    "@language" : "en",
+    "@value" : "in XSD gYear"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#date"
+  }, {
+    "@id" : "http://www.w3.org/2001/XMLSchema#gYear"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2006/time#inXSDDate"
+  }, {
+    "@id" : "http://www.w3.org/2006/time#inXSDgYear"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Position eines Zeitpunkts, ausgedrückt durch xsd:date."
+  }, {
+    "@language" : "de",
+    "@value" : "Position eines Zeitpunkts, ausgedrückt durch xsd:gYear."
+  }, {
+    "@language" : "en",
+    "@value" : "Position of an instant, expressed using xsd:date."
+  }, {
+    "@language" : "en",
+    "@value" : "Position of an instant, expressed using xsd:gYear."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#instanceOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Instanz von"
+  }, {
+    "@language" : "en",
+    "@value" : "instance of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/instanceOf"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#hasInstance"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Werk, das die beschriebene Instanz instanziiert oder minifestiert."
+  }, {
+    "@language" : "en",
+    "@value" : "Work the Instance described instantiates or manifests."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#isIdentifiedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-23"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is identified by"
+  }, {
+    "@language" : "de",
+    "@value" : "wird identifiziert durch"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Appellation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P1_is_identified_by"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/identifiedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Eigenschaft beschreibt die Benennung oder Identifizierung eines beliebigen Elements der realen Welt durch einen Namen oder einen anderen Bezeichner."
+  }, {
+    "@language" : "en",
+    "@value" : "This property describes the naming or identification of any real world item by a name or any other identifier."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#isIdentifiedByIdentifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "identified by identifier"
+  }, {
+    "@language" : "de",
+    "@value" : "identifiziert durch Zeichenkette"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Identifier"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/identifiedBy"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#isIdentifiedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Character string associated with a resource that serves to differentiate that resource from other resources, i.e., that uniquely identifies an entity."
+  }, {
+    "@language" : "de",
+    "@value" : "Einer Ressource zugeordnete Zeichenkette, die dazu dient, diese Ressource von anderen Ressourcen zu unterscheiden, d. h. die eine Entität eindeutig identifiziert."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#isLexicalizedSenseOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is lexicalized sense of"
+  }, {
+    "@language" : "de",
+    "@value" : "ist lexikalisierte Bedeutung von"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#isTimeSpanOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#TimeSpan"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is time span of"
+  }, {
+    "@language" : "de",
+    "@value" : "ist Zeitspanne von"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P4i_is_time-span_of"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Eigenschaft verknüpft die Zeitspanne mit einer Instanz von Event."
+  }, {
+    "@language" : "en",
+    "@value" : "This property associates the Time-Span with an instance of Event."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#isUsedOnomasticConceptOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#OnomasticUsage"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is used onomastic concept of"
+  }, {
+    "@language" : "de",
+    "@value" : "ist gebrauchte Namenskategorie von"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#OnomasticConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#issuance",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "_:genid10"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has issuance"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Ausgabe"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Issuance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/issuance"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Categorization reflecting whether a resource is issued in one or more parts, the way it is updated, and its intended termination."
+  }, {
+    "@language" : "de",
+    "@value" : "Kategorisierung, die widerspiegelt, ob eine Ressource in einem oder mehreren Teilen ausgegeben wird, wie sie aktualisiert wird und wie sie beendet werden soll."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#itemOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Item"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "is item of"
+  }, {
+    "@language" : "de",
+    "@value" : "ist Exemplar von"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/itemOf"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Instance for which the described Item is an example."
+  }, {
+    "@language" : "de",
+    "@value" : "Instanz, für die das beschriebene Exemplar ein Beispiel ist."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#language",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#Lexicon"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has language"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Sprache"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Language"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/language"
+  }, {
+    "@id" : "http://www.w3.org/ns/lemon/lime#language"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Language associated with a resource or its parts."
+  }, {
+    "@language" : "de",
+    "@value" : "Sprache, die mit einer Ressource oder ihren Teilen verbunden ist."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#mainTitle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Haupttitel"
+  }, {
+    "@language" : "en",
+    "@value" : "main title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/mainTitle"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Angesprochener Titel. Mögliche Titelkomponente."
+  }, {
+    "@language" : "en",
+    "@value" : "Title being addressed. Possible title component."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#nameAddition",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePerson"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Name addition"
+  }, {
+    "@language" : "de",
+    "@value" : "Namensszusatz"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#nameAddition"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Name addition of a person."
+  }, {
+    "@language" : "de",
+    "@value" : "Namensszusatz einer Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#note",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has note"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Anmerkung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Note"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/note"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Allgemeine Textinformationen, die sich auf eine Ressource beziehen, wie z. B. Informationen über eine bestimmte Kopie einer Ressource oder Informationen über ein bestimmtes Attribut einer Ressource."
+  }, {
+    "@language" : "en",
+    "@value" : "General textual information relating to a resource, such as Information about a specific copy of a resource or information about a particular attribute of a resource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#objectProperty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#onomasticUsage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has onomastic Usage"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Namensgebrauch"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#OnomasticUsage"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#sense"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#otherForm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has other form"
+  }, {
+    "@language" : "de",
+    "@value" : "hat weitere Form"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Form"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#otherForm"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#partName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Nummer des Teils"
+  }, {
+    "@language" : "en",
+    "@value" : "part number"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/partName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Part or section name of a title. Possible title component."
+  }, {
+    "@language" : "de",
+    "@value" : "Teil- oder Abschnittsname eines Titels. Mögliche Titelkomponente."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#partNumber",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Nummer des Teils"
+  }, {
+    "@language" : "en",
+    "@value" : "part number"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/partNumber"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Part or section enumeration of a title. Possible title component."
+  }, {
+    "@language" : "de",
+    "@value" : "Teil oder Abschnitt der Aufzählung eines Titels. Mögliche Titelkomponente."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#partOfSpeech",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has part of speech"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Wortart"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#PartOfSpeech"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#personalName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePerson"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Personal name"
+  }, {
+    "@language" : "de",
+    "@value" : "Persönlicher Name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#personalName"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Personal name of a person."
+  }, {
+    "@language" : "de",
+    "@value" : "Persönlicher Name einer Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#placename",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePlace"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Ortsname"
+  }, {
+    "@language" : "en",
+    "@value" : "place name"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Name eines Ortes."
+  }, {
+    "@language" : "en",
+    "@value" : "Name of a place."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#preferredNameEntityForThePerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "bevorzugte Namensentität"
+  }, {
+    "@language" : "en",
+    "@value" : "prefered name entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePerson"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePerson"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#isIdentifiedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference to the prefered name entity of a person."
+  }, {
+    "@language" : "de",
+    "@value" : "Verweis auf die bevorzugte Namensentität einer Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#preferredNameEntityForThePlace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Place"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "bevorzugte Namensentität"
+  }, {
+    "@language" : "en",
+    "@value" : "prefered name entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePlace"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#isIdentifiedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference to the prefered name entity of a place."
+  }, {
+    "@language" : "de",
+    "@value" : "Verweis auf die bevorzugte Namensentität einer Place."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#preferredTitle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-07+07:59"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has preferred title"
+  }, {
+    "@language" : "de",
+    "@value" : "hat preferred Titel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#title"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Name einer Ressource."
+  }, {
+    "@language" : "en",
+    "@value" : "Name given to a resource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#prefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePerson"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Namenspräfix"
+  }, {
+    "@language" : "en",
+    "@value" : "name prefix"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#prefix"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Namenspräfix einer Person."
+  }, {
+    "@language" : "en",
+    "@value" : "name prefix of a person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#provisionActivity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has provision activity"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Veröffentlichungsaktivität"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#ProvisionActivity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/provisionActivity"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Orts-, Namens- und/oder Datumsangaben, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe, die Produktion usw. einer Ressource beziehen."
+  }, {
+    "@language" : "en",
+    "@value" : "Place, name, and/or date information relating to the publication, printing, distribution, issue, release, production, etc. of a resource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#provisionActivityStatement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has provision activity statement"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Anmerkung zur Veröffentlichungsaktivität"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/provisionActivityStatement"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Aussage, die sich auf Anbieter einer Ressource bezieht; in der Regel transkribiert."
+  }, {
+    "@language" : "en",
+    "@value" : "Statement relating to providers of a resource; usually transcribed."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#responsibilityStatement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Instance"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has responsibility statement"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Anmerkung zur Verantwortlichkeit"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/responsibilityStatement"
+  } ],
+  "http://www.w3.org/2002/07/owl#deprecated" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#boolean",
+    "@value" : "true"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Aussage zu Personen, Familien oder Körperschaften, die für die Erstellung einer Ressource verantwortlich sind oder zum Inhalt beitragen; in der Regel transkribiert."
+  }, {
+    "@language" : "en",
+    "@value" : "Statement relating to any persons, families, or corporate bodies responsible for the creation of, or contributing to the content of a resource; usually transcribed."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#sense",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has lexical sense"
+  }, {
+    "@language" : "de",
+    "@value" : "hat lexikalische Bedeutung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#sense"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#subterm",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has subterm"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Wortbildungsbestandteil"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalEntry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/decomp#subterm"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#subtitle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-12"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Untertitel"
+  }, {
+    "@language" : "en",
+    "@value" : "sub title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/subtitle"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Word, character, or group of words and/or characters that contains the remainder of the title after the main title. Possible title component."
+  }, {
+    "@language" : "de",
+    "@value" : "Wort, Zeichen oder Gruppe von Wörtern und/oder Zeichen, die den Rest des Titels nach dem Haupttitel enthält. Mögliche Titelkomponente."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#surname",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePerson"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Nachname"
+  }, {
+    "@language" : "en",
+    "@value" : "surname"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.wikidata.org/prop/direct/P734"
+  }, {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#surname"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Nachname einer Person."
+  }, {
+    "@language" : "en",
+    "@value" : "surname of a person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#synonym",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has synonym lexical sense"
+  }, {
+    "@language" : "de",
+    "@value" : "hat synonyme Bedeutung"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalSense"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.lexinfo.net/ontology/3.0/lexinfo#synonym"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#synonymConcept",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has synonym lexical concept"
+  }, {
+    "@language" : "de",
+    "@value" : "hat synonymen Begriff"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#LexicalConcept"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#objectProperty"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#timePrecision",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-10-05"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-07+07:59"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#TimeSpan"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "Genauigkeit der Zeitangabe"
+  }, {
+    "@language" : "en",
+    "@value" : "time precision"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#duration"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.wikidata.org/prop/direct/P2803"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Defines the precision of a time value."
+  }, {
+    "@language" : "de",
+    "@value" : "Definiert die Genauigkeit eines Zeitwertes."
+  } ],
+  "http://www.w3.org/2004/02/skos/core#example" : [ {
+    "@language" : "de",
+    "@value" : "Die Präposition 'P5Y' und die Jahreszahl 1250 implizieren, dass das Datum 1250±5 sein könnte, also der Zeitraum 1245–1255."
+  }, {
+    "@language" : "en",
+    "@value" : "Precesion 'P5Y' and a date 1250 implies, the date could be 1250±5 – i.e. the period 1245–1255"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has title"
+  }, {
+    "@language" : "de",
+    "@value" : "hat Titel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P102_has_title"
+  }, {
+    "@id" : "http://id.loc.gov/ontologies/bibframe/title"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Name einer Ressource."
+  }, {
+    "@language" : "en",
+    "@value" : "Name given to a resource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#tookPlaceAt",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-26"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "fand statt an"
+  }, {
+    "@language" : "en",
+    "@value" : "took place at"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Place"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P7_took_place_at"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Eigenschaft beschreibt die räumliche Lage eines Ereignisses."
+  }, {
+    "@language" : "en",
+    "@value" : "This property describes the spatial location of an event."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#variantNameEntityForThePerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "alternative Namensentität"
+  }, {
+    "@language" : "en",
+    "@value" : "variant name entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePerson"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#variantNameEntityForThePerson"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#isIdentifiedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference to the variant name entity of a person."
+  }, {
+    "@language" : "de",
+    "@value" : "Verweis auf die alternative Namensentität einer Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#variantNameEntityForThePlace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Place"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "alternative Namensentität"
+  }, {
+    "@language" : "en",
+    "@value" : "variant name entity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#NameOfThePlace"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://d-nb.info/standards/elementset/gnd#variantNameForThePlaceOrGeographicName"
+  }, {
+    "@id" : "https://dh.plus.ac.at/ontology#isIdentifiedBy"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference to the variant name entity of a place."
+  }, {
+    "@language" : "de",
+    "@value" : "Verweis auf die alternative Namensentität einer Place."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#variantTitle",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-22"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-07+07:59"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Bibliographic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has variant title"
+  }, {
+    "@language" : "de",
+    "@value" : "hat variant Titel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Title"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#title"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Name einer Ressource."
+  }, {
+    "@language" : "en",
+    "@value" : "Name given to a resource."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#wasBorn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "was born"
+  }, {
+    "@language" : "de",
+    "@value" : "wurde geboren"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Birth"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P98i_was_born"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#broughtIntoLife"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference to the birth event of a person."
+  }, {
+    "@language" : "de",
+    "@value" : "Verweis auf das Geburtsevent einer Person."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#wasCreatedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-08-17"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Work"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "was created by"
+  }, {
+    "@language" : "de",
+    "@value" : "wurde erschaffen durch"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Creation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P94i_was_created_by"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#hasCreated"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Eigenschaft verknüpft eine Instanz von Werk mit der Instanz von Erschaffung, deren Produkt das Werk ist."
+  }, {
+    "@language" : "en",
+    "@value" : "This property links an instance of Work to the instance of Creation whose product is the work."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#wasDeathOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-05-11"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Death"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "war Tod von"
+  }, {
+    "@language" : "en",
+    "@value" : "was death of"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P100_was_death_of"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#diedIn"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Reference to the person dying in a death event."
+  }, {
+    "@language" : "de",
+    "@value" : "Verweis auf die Person, die in einem Todesevent verstorben ist."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#witnessed",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-26"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Place"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "fand statt an"
+  }, {
+    "@language" : "en",
+    "@value" : "took place at"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Event"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://erlangen-crm.org/200717/P7i_witnessed"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#tookPlaceAt"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "de",
+    "@value" : "Diese Eigenschaft beschreibt die Ereignisse, die an einem bestimmten Ort stattfinden."
+  }, {
+    "@language" : "en",
+    "@value" : "This property describes the events happening at a spatial location."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#writtenRep",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2021-07-29"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : "2021-10-05+08:50"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Form"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "de",
+    "@value" : "graphische Repräsentation"
+  }, {
+    "@language" : "en",
+    "@value" : "written representation"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2000/01/rdf-schema#Literal"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/lemon/ontolex#writtenRep"
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/ontology#xmlDocument",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://purl.org/dc/elements/1.1/creator" : [ {
+    "@value" : "Peter Hinkelmanns"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2022-02-28"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@value" : ""
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://dh.plus.ac.at/ontology#Electronic"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has xml document"
+  }, {
+    "@language" : "de",
+    "@value" : "hat xml Dokument"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://mhdbdbd.plus.ac.at/xml-ontology#Document"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#definition" : [ {
+    "@language" : "en",
+    "@value" : "Representation of Electronic as mhdbdbxml:Document."
+  }, {
+    "@language" : "de",
+    "@value" : "Repräsentation der elektronischen Ressource als mhdbdbxml:Document."
+  } ]
+}, {
+  "@id" : "https://dh.plus.ac.at/tmp/class",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://mhdbdbd.plus.ac.at/xml-ontology#Document",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+} ]

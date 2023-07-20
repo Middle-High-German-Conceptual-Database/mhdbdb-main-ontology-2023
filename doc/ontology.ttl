@@ -1,0 +1,2447 @@
+@prefix : <https://dh.plus.ac.at/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://dh.plus.ac.at/ontology#> .
+
+<https://dh.plus.ac.at/ontology#> rdf:type owl:Ontology ;
+                                   owl:versionIRI <https://dh.plus.ac.at/ontology/0-1#> ;
+                                   owl:imports <https://d-nb.info/standards/elementset/gnd_20191015.rdf> ,
+                                               <https://raw.githubusercontent.com/erlangen-crm/ecrm/master/ecrm_200717.owl> ,
+                                               <https://raw.githubusercontent.com/lcnetdev/bibframe-ontology/main/archive/bibframe-2.1.0.rdf> ,
+                                               <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl> ;
+                                   <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ,
+                                                                             "Richard Hörmann" ;
+                                   <http://purl.org/dc/elements/1.1/rights> <https://creativecommons.org/publicdomain/zero/1.0/> ;
+                                   <http://purl.org/dc/elements/1.1/title> "dhPLUS Ontologie"@de ,
+                                                                           "dhPLUS Ontology"@en ;
+                                   <http://purl.org/dc/terms/created> "2019-12-27" ;
+                                   <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                                   <http://purl.org/vocab/vann/preferredNamespacePrefix> "dhpluso" ;
+                                   <http://purl.org/vocab/vann/preferredNamespaceUri> "https://dh.plus.ac.at/ontology#" ;
+                                   rdfs:label "dhPLUS Ontologie"@de ,
+                                              "dhPLUS Ontology"@en ;
+                                   owl:versionInfo "2019-12-27"^^xsd:date ,
+                                                   "0.1" ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "Dies ist eine Ontologie des dhPLUS-Repositoriums für Digital Humanities-Projekte der Universität Salzburg."@de ,
+                                                                                    "This is an ontology of the dhPLUS repository for Digital Humanities Projects of the University of Salzburg."@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+<http://purl.org/dc/elements/1.1/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#definition
+rdfs:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#class
+<http://www.w3.org/ns/shacl#class> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#datatype
+<http://www.w3.org/ns/shacl#datatype> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#declare
+<http://www.w3.org/ns/shacl#declare> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#description
+<http://www.w3.org/ns/shacl#description> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#labelTemplate
+<http://www.w3.org/ns/shacl#labelTemplate> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#namespace
+<http://www.w3.org/ns/shacl#namespace> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#nodeKind
+<http://www.w3.org/ns/shacl#nodeKind> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#parameter
+<http://www.w3.org/ns/shacl#parameter> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#path
+<http://www.w3.org/ns/shacl#path> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#prefix
+<http://www.w3.org/ns/shacl#prefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#prefixes
+<http://www.w3.org/ns/shacl#prefixes> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#property
+<http://www.w3.org/ns/shacl#property> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#select
+<http://www.w3.org/ns/shacl#select> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#severity
+<http://www.w3.org/ns/shacl#severity> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/shacl#target
+<http://www.w3.org/ns/shacl#target> rdf:type owl:AnnotationProperty .
+
+
+###  https://dh.plus.ac.at/tmp/class
+<https://dh.plus.ac.at/tmp/class> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#duration
+xsd:duration rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#antonym
+<http://www.lexinfo.net/ontology/3.0/lexinfo#antonym> rdf:type owl:ObjectProperty .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#hypernym
+<http://www.lexinfo.net/ontology/3.0/lexinfo#hypernym> rdf:type owl:ObjectProperty .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#hyponym
+<http://www.lexinfo.net/ontology/3.0/lexinfo#hyponym> rdf:type owl:ObjectProperty .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech
+<http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech> rdf:type owl:ObjectProperty .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#synonym
+<http://www.lexinfo.net/ontology/3.0/lexinfo#synonym> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2006/time#hasBeginning
+<http://www.w3.org/2006/time#hasBeginning> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2006/time#hasEnd
+<http://www.w3.org/2006/time#hasEnd> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/decomp#subterm
+<http://www.w3.org/ns/lemon/decomp#subterm> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/lime#entry
+<http://www.w3.org/ns/lemon/lime#entry> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf
+<http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#otherForm
+<http://www.w3.org/ns/lemon/ontolex#otherForm> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#sense
+<http://www.w3.org/ns/lemon/ontolex#sense> rdf:type owl:ObjectProperty .
+
+
+###  http://www.wikidata.org/prop/direct/P21
+<http://www.wikidata.org/prop/direct/P21> rdf:type owl:ObjectProperty .
+
+
+###  https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePlace
+<https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePlace> rdf:type owl:ObjectProperty .
+
+
+###  https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName
+<https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName> rdf:type owl:ObjectProperty .
+
+
+###  https://d-nb.info/standards/elementset/gnd#variantNameForThePlaceOrGeographicName
+<https://d-nb.info/standards/elementset/gnd#variantNameForThePlaceOrGeographicName> rdf:type owl:ObjectProperty .
+
+
+###  https://dh.plus.ac.at/ontology#adminMetadata
+:adminMetadata rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/adminMetadata> ;
+               rdfs:domain :Bibliographic ;
+               rdfs:range :AdminMetadata ;
+               <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+               <http://purl.org/dc/terms/created> "2021-07-22" ;
+               <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+               rdfs:label "has admin metadata"@en ,
+                          "hat administrative Metadaten"@de ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Metadata about the metadata, especially provenance information."@en ,
+                                                                "Metadaten über die Metadaten, insbesondere Provenienzinformationen."@de .
+
+
+###  https://dh.plus.ac.at/ontology#antonym
+:antonym rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://www.lexinfo.net/ontology/3.0/lexinfo#antonym> ;
+         rdfs:domain :LexicalSense ;
+         rdfs:range :LexicalSense ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-07-22" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+         rdfs:label "has antonym lexical sense"@en ,
+                    "hat antonyme Bedeutung"@de ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Links a lexical sense with its antonym."@en ,
+                                                          "Verbindet eine lexikalische Bedeutung mit ihrem Antonym."@de .
+
+
+###  https://dh.plus.ac.at/ontology#antonymConcept
+:antonymConcept rdf:type owl:ObjectProperty ;
+                rdfs:domain :LexicalConcept ;
+                rdfs:range :LexicalConcept ;
+                <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                <http://purl.org/dc/terms/created> "2021-08-02" ;
+                <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                rdfs:label "has antonym lexical concept"@en ,
+                           "hat antonymen Begriff"@de .
+
+
+###  https://dh.plus.ac.at/ontology#broughtIntoLife
+:broughtIntoLife rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://erlangen-crm.org/200717/P98_brought_into_life> ;
+                 rdfs:domain :Birth ;
+                 rdfs:range :Person ;
+                 <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                 <http://purl.org/dc/terms/created> "2021-07-23" ;
+                 <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                 rdfs:label "brachte zur Welt"@de ,
+                            "brought into life"@en ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Reference from the birth event to the born person."@en ,
+                                                                  "Referenz vom Geburtsereignis auf die geborene Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#content
+:content rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/content> ;
+         rdfs:domain :Bibliographic ;
+         rdfs:range :Content ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-07-28" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+         rdfs:label "has content"@en ,
+                    "hat Inhalt"@de ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived."@en ,
+                                                          "Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll."@de .
+
+
+###  https://dh.plus.ac.at/ontology#continuedBy
+:continuedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/continuedBy> ;
+             rdfs:domain _:genid-nodeid-node1ft0aqj11x76 ;
+             rdfs:range [ rdf:type owl:Class ;
+                          owl:unionOf ( :Instance
+                                        :Work
+                                      )
+                        ] ;
+             <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+             <http://purl.org/dc/terms/created> "2021-07-28" ;
+             <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+             rdfs:label "continued by"@en ,
+                        "fortgesetzt von"@de ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Resource whose content continues an earlier resource under a new title."@en ,
+                                                              "Ressource, deren Inhalt eine frühere Ressource unter einem neuen Titel fortsetzt."@de .
+
+
+###  https://dh.plus.ac.at/ontology#continues
+:continues rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/continues> ;
+           owl:inverseOf :continuedBy ;
+           rdfs:domain _:genid-nodeid-node1ft0aqj11x82 ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Instance
+                                      :Work
+                                    )
+                      ] ;
+           <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+           <http://purl.org/dc/terms/created> "2021-07-28" ;
+           <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+           rdfs:label "continues"@en ,
+                      "setzt fort"@de ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Resource that is continued by the content of a later resource under a new title."@en ,
+                                                            "Ressource, die durch den Inhalt einer späteren Ressource unter einem neuen Titel fortgesetzt wird."@de .
+
+
+###  https://dh.plus.ac.at/ontology#contribution
+:contribution rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/contribution> ;
+              rdfs:domain :Bibliographic ;
+              rdfs:range :Contribution ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-07-29" ;
+              <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+              rdfs:label "has contribution"@en ,
+                         "hat Mitarbeit"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Agent and its role in relation to the resource."@en ,
+                                                               "Agent und seine Rolle in Bezug auf die Ressource."@de .
+
+
+###  https://dh.plus.ac.at/ontology#coordinatesForThePlace
+:coordinatesForThePlace rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePlace> ,
+                                           :isIdentifiedBy ;
+                        rdfs:domain :Place ;
+                        rdfs:range :Point ;
+                        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                        <http://purl.org/dc/terms/created> "2021-05-17" ;
+                        <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                        rdfs:label "Koordinatenentität"@de ,
+                                   "coordinates entity"@en ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "Reference to the coordinates entity of a place."@en ,
+                                                                         "Verweis auf die Koordinatenentität eines Ortes."@de .
+
+
+###  https://dh.plus.ac.at/ontology#derivativeOf
+:derivativeOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/derivativeOf> ;
+              rdfs:domain :Work ;
+              rdfs:range :Work ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-05-11" ;
+              <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+              rdfs:label "Ableitung von"@de ,
+                         "Derivative of"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Source work from which the described work is derived."@en ,
+                                                               "Werk, von dem das beschriebene Werk abgeleitet ist."@de .
+
+
+###  https://dh.plus.ac.at/ontology#diedIn
+:diedIn rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <http://erlangen-crm.org/200717/P100i_died_in> ;
+        rdfs:domain :Person ;
+        rdfs:range :Death ;
+        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+        <http://purl.org/dc/terms/created> "2021-05-11" ;
+        <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+        rdfs:label "died"@en ,
+                   "gestorben"@de ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Reference to the death event of a person."@en ,
+                                                         "Verweis auf das Todesevent einer Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#entry
+:entry rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf <http://www.w3.org/ns/lemon/lime#entry> ;
+       rdfs:domain :Lexicon ;
+       rdfs:range :LexicalEntry ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-07-29" ;
+       <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+       rdfs:label "has entry"@en ,
+                  "hat Artikel"@de .
+
+
+###  https://dh.plus.ac.at/ontology#expressionOf
+:expressionOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/expressionOf> ;
+              rdfs:domain :Work ;
+              rdfs:range :Work ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-05-11" ;
+              <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+              rdfs:label "Expression of"@en ,
+                         "Expression von"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Werk, von dem das beschriebene Werk eine Expression ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verbinden. Bespielsweise ist eine kritische Edition eine Expression eines mhd. Werkes."@de ,
+                                                               "Work that the described Work is an expression of. For use to connect Works under FRBR/RDA rules. For example, a critical edition is an expression of a gmh. work."@en .
+
+
+###  https://dh.plus.ac.at/ontology#extent
+:extent rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/extent> ;
+        rdfs:domain :Bibliographic ;
+        rdfs:range :Extent ;
+        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+        <http://purl.org/dc/terms/created> "2021-07-22" ;
+        <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+        rdfs:label "has extent"@en ,
+                   "hat Umfang"@de ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Anzahl und Typ der Einheiten und/oder Untereinheiten des Umfangs einer Ressource."@de ,
+                                                         "Number and type of units and/or subunits making up a resource."@en .
+
+
+###  https://dh.plus.ac.at/ontology#gender
+:gender rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <http://www.wikidata.org/prop/direct/P21> ,
+                           <https://d-nb.info/standards/elementset/gnd#gender> ,
+                           :hasType ;
+        rdfs:domain :Person ;
+        rdfs:range :Gender ;
+        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+        <http://purl.org/dc/terms/created> "2021-05-17" ;
+        <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+        rdfs:label "Geschlecht einer Person"@de ,
+                   "gender of a person"@en ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Reference to the gender of a person."@en ,
+                                                         "Verweis auf das Geschlecht einer Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#hasBeginning
+:hasBeginning rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.w3.org/2006/time#hasBeginning> ;
+              rdfs:domain :TimeSpan ;
+              rdfs:range :Instant ;
+              <http://purl.org/dc/terms/created> "2021-10-05" ;
+              <http://purl.org/dc/terms/modified> "2021-10-05+14:42" ;
+              rdfs:label "has beginning"@en ,
+                         "hat Anfang"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Beginn einer zeitlichen Einheit."@de ,
+                                                               "Beginning of a temporal entity."@en .
+
+
+###  https://dh.plus.ac.at/ontology#hasCreated
+:hasCreated rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://erlangen-crm.org/200717/P94_has_created> ;
+            rdfs:domain :Creation ;
+            rdfs:range :Work ;
+            <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+            <http://purl.org/dc/terms/created> "2021-08-17" ;
+            <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+            rdfs:label "has created"@en ,
+                       "hat erschaffen"@de ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Diese Eigenschaft verknüpft eine Instanz von Creation mit der Instanz von Werk, die durch sie erstellt wurde."@de ,
+                                                             "This property links an instance of Creation to the instance of Work created by it."@en .
+
+
+###  https://dh.plus.ac.at/ontology#hasDerivative
+:hasDerivative rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/hasDerivative> ;
+               owl:inverseOf :derivativeOf ;
+               rdfs:domain :Work ;
+               rdfs:range :Work ;
+               <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+               <http://purl.org/dc/terms/created> "2021-05-11" ;
+               <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+               rdfs:label "Has Derivative"@en ,
+                          "Hat Ableitung"@de ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Resource that is a modification of the described work."@en ,
+                                                                "Ressource, die eine Ableitung des beschriebenen Werks ist."@de .
+
+
+###  https://dh.plus.ac.at/ontology#hasEnd
+:hasEnd rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <http://www.w3.org/2006/time#hasEnd> ;
+        rdfs:domain :TimeSpan ;
+        rdfs:range :Instant ;
+        <http://purl.org/dc/terms/created> "2021-10-05" ;
+        <http://purl.org/dc/terms/modified> "2021-10-05+14:42" ;
+        rdfs:label "has end"@en ,
+                   "hat Ende"@de ;
+        <http://www.w3.org/2004/02/skos/core#definition> "End of a temporal entity."@en ,
+                                                         "Ende einer zeitlichen Einheit."@de .
+
+
+###  https://dh.plus.ac.at/ontology#hasExpression
+:hasExpression rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/hasExpression> ;
+               owl:inverseOf :expressionOf ;
+               rdfs:domain :Work ;
+               rdfs:range :Work ;
+               <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+               <http://purl.org/dc/terms/created> "2021-05-11" ;
+               <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+               rdfs:label "Has Expression"@en ,
+                          "Hat Expression"@de ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Werk, das eine Expression eines beschriebenen Werks ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verknüpfen."@de ,
+                                                                "Work that is an expression of a described Work. For use to relate Works under FRBR/RDA rules."@en .
+
+
+###  https://dh.plus.ac.at/ontology#hasInstance
+:hasInstance rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/hasInstance> ;
+             rdfs:domain :Work ;
+             rdfs:range :Instance ;
+             <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+             <http://purl.org/dc/terms/created> "2021-07-28" ;
+             <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+             rdfs:label "has instance"@en ,
+                        "hat Instanz"@de ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Die Instanz ist mit dem beschriebenen Werk verbunden."@de ,
+                                                              "Instance is related to described Work."@en .
+
+
+###  https://dh.plus.ac.at/ontology#hasItem
+:hasItem rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/hasItem> ;
+         owl:inverseOf :itemOf ;
+         rdfs:domain :Instance ;
+         rdfs:range :Item ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-07-22" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+         rdfs:label "has Item"@en ,
+                    "hat Exemplar"@de ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Exemplar, das ein Beispiel für die beschriebene Instanz ist."@de ,
+                                                          "Item which is an example of the described Instance."@en .
+
+
+###  https://dh.plus.ac.at/ontology#hasPreferredIdentifier
+:hasPreferredIdentifier rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf <http://erlangen-crm.org/200717/P48_has_preferred_identifier> ;
+                        rdfs:domain :Entity ;
+                        rdfs:range :Identifier ;
+                        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                        <http://purl.org/dc/terms/created> "2021-05-17" ;
+                        <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                        rdfs:label "has preferred identifier"@en ,
+                                   "hat bevorzugten Identifizierer"@de ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "Diese Eigenschaft zeichnet die bevorzugte Instanz von Identifier auf, die zur Identifizierung einer Instanz von Entity zum Zeitpunkt der Aufzeichnung dieser Eigenschaft verwendet wurde."@de ,
+                                                                         "This property records the preferred instance of Identifier that was used to identify an instance of Entity at the time this property was recorded."@en .
+
+
+###  https://dh.plus.ac.at/ontology#hasSeries
+:hasSeries rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/hasSeries> ;
+           rdfs:domain _:genid-nodeid-node1ft0aqj11x4 ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Instance
+                                      :Work
+                                    )
+                      ] ;
+           <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+           <http://purl.org/dc/terms/created> "2021-07-22" ;
+           <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+           rdfs:label "has series"@en ,
+                      "hat Serie"@de ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Resource in which the part has been issued; the title of the larger resource appears on the part."@en ,
+                                                            "Ressource, in der der Band herausgegeben wurde; der Titel der größeren Ressource erscheint auf dem Band."@de .
+
+
+###  https://dh.plus.ac.at/ontology#hasTimeSpan
+:hasTimeSpan rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://erlangen-crm.org/200717/P4_has_time-span> ;
+             owl:inverseOf :isTimeSpanOf ;
+             rdfs:domain :Event ;
+             rdfs:range :TimeSpan ;
+             <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+             <http://purl.org/dc/terms/created> "2021-07-22" ;
+             <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+             rdfs:label "has time span"@en ,
+                        "hat Zeitspanne"@de ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Diese Eigenschaft verknüpft ein Ereignis mit der Zeitspanne, in der es stattfand."@de ,
+                                                              "This property associates an instance of Event with the Time-Span during which it was on-going."@en .
+
+
+###  https://dh.plus.ac.at/ontology#hasType
+:hasType rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://erlangen-crm.org/200717/P2_has_type> ;
+         rdfs:domain :Entity ;
+         rdfs:range :Type ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-05-17" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+         rdfs:label "has type"@en ,
+                    "hat Typ"@de ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Diese Eigenschaft ermöglicht die Subtypisierung von dhPLUS-Entitäten - eine Form der Spezialisierung - durch die Verwendung einer terminologischen Hierarchie oder eines Thesaurus."@de ,
+                                                          "This property allows sub typing of dhPLUS entities - a form of specialisation - through the use of a terminological hierarchy, or thesaurus."@en .
+
+
+###  https://dh.plus.ac.at/ontology#hypernym
+:hypernym rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://www.lexinfo.net/ontology/3.0/lexinfo#hypernym> ;
+          rdfs:domain :LexicalSense ;
+          rdfs:range :LexicalSense ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-07-29" ;
+          <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+          rdfs:label "has hypernym lexical sense"@en ,
+                     "hat hypernyme Bedeutung"@de .
+
+
+###  https://dh.plus.ac.at/ontology#hyponym
+:hyponym rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://www.lexinfo.net/ontology/3.0/lexinfo#hyponym> ;
+         rdfs:domain :LexicalSense ;
+         rdfs:range :LexicalSense ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-07-29" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+         rdfs:label "has hyponym lexical sense"@en ,
+                    "hat hyponyme Bedeutung"@de .
+
+
+###  https://dh.plus.ac.at/ontology#immediateAcquisition
+:immediateAcquisition rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/immediateAcquisition> ;
+                      rdfs:domain :Item ;
+                      rdfs:range :ImmediateAcquisition ;
+                      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                      <http://purl.org/dc/terms/created> "2021-07-28" ;
+                      <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                      rdfs:label "direkte Erwerbung"@de ,
+                                 "immediate acquisition"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired."@en ,
+                                                                       "Informationen über die Umstände (z. B. Quelle, Datum, Methode), unter denen die Ressource direkt erworben wurde."@de .
+
+
+###  https://dh.plus.ac.at/ontology#instanceOf
+:instanceOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/instanceOf> ;
+            owl:inverseOf :hasInstance ;
+            rdfs:domain :Instance ;
+            rdfs:range :Work ;
+            <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+            <http://purl.org/dc/terms/created> "2021-07-22" ;
+            <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+            rdfs:label "Instanz von"@de ,
+                       "instance of"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Werk, das die beschriebene Instanz instanziiert oder minifestiert."@de ,
+                                                             "Work the Instance described instantiates or manifests."@en .
+
+
+###  https://dh.plus.ac.at/ontology#isIdentifiedBy
+:isIdentifiedBy rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://erlangen-crm.org/200717/P1_is_identified_by> ,
+                                   <http://id.loc.gov/ontologies/bibframe/identifiedBy> ;
+                rdfs:domain :Entity ;
+                rdfs:range :Appellation ;
+                <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                <http://purl.org/dc/terms/created> "2021-07-23" ;
+                <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                rdfs:label "is identified by"@en ,
+                           "wird identifiziert durch"@de ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Diese Eigenschaft beschreibt die Benennung oder Identifizierung eines beliebigen Elements der realen Welt durch einen Namen oder einen anderen Bezeichner."@de ,
+                                                                 "This property describes the naming or identification of any real world item by a name or any other identifier."@en .
+
+
+###  https://dh.plus.ac.at/ontology#isIdentifiedByIdentifier
+:isIdentifiedByIdentifier rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/identifiedBy> ,
+                                             :isIdentifiedBy ;
+                          rdfs:domain :Bibliographic ;
+                          rdfs:range :Identifier ;
+                          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                          <http://purl.org/dc/terms/created> "2021-07-22" ;
+                          <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                          rdfs:label "identified by identifier"@en ,
+                                     "identifiziert durch Zeichenkette"@de ;
+                          <http://www.w3.org/2004/02/skos/core#definition> "Character string associated with a resource that serves to differentiate that resource from other resources, i.e., that uniquely identifies an entity."@en ,
+                                                                           "Einer Ressource zugeordnete Zeichenkette, die dazu dient, diese Ressource von anderen Ressourcen zu unterscheiden, d. h. die eine Entität eindeutig identifiziert."@de .
+
+
+###  https://dh.plus.ac.at/ontology#isLexicalizedSenseOf
+:isLexicalizedSenseOf rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf <http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf> ;
+                      rdfs:domain :LexicalSense ;
+                      rdfs:range :LexicalConcept ;
+                      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                      <http://purl.org/dc/terms/created> "2021-07-29" ;
+                      <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                      rdfs:label "is lexicalized sense of"@en ,
+                                 "ist lexikalisierte Bedeutung von"@de .
+
+
+###  https://dh.plus.ac.at/ontology#isTimeSpanOf
+:isTimeSpanOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://erlangen-crm.org/200717/P4i_is_time-span_of> ;
+              rdfs:domain :TimeSpan ;
+              rdfs:range :Event ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-07-22" ;
+              <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+              rdfs:label "is time span of"@en ,
+                         "ist Zeitspanne von"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Diese Eigenschaft verknüpft die Zeitspanne mit einer Instanz von Event."@de ,
+                                                               "This property associates the Time-Span with an instance of Event."@en .
+
+
+###  https://dh.plus.ac.at/ontology#isUsedOnomasticConceptOf
+:isUsedOnomasticConceptOf rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf <http://www.w3.org/ns/lemon/ontolex#isLexicalizedSenseOf> ;
+                          rdfs:domain :OnomasticUsage ;
+                          rdfs:range :OnomasticConcept ;
+                          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                          <http://purl.org/dc/terms/created> "2021-07-29" ;
+                          <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                          rdfs:label "is used onomastic concept of"@en ,
+                                     "ist gebrauchte Namenskategorie von"@de .
+
+
+###  https://dh.plus.ac.at/ontology#issuance
+:issuance rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/issuance> ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Instance
+                                      :Work
+                                    )
+                      ] ;
+          rdfs:range :Issuance ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-07-22" ;
+          <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+          rdfs:label "has issuance"@en ,
+                     "hat Ausgabe"@de ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Categorization reflecting whether a resource is issued in one or more parts, the way it is updated, and its intended termination."@en ,
+                                                           "Kategorisierung, die widerspiegelt, ob eine Ressource in einem oder mehreren Teilen ausgegeben wird, wie sie aktualisiert wird und wie sie beendet werden soll."@de .
+
+
+###  https://dh.plus.ac.at/ontology#itemOf
+:itemOf rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/itemOf> ;
+        rdfs:domain :Item ;
+        rdfs:range :Instance ;
+        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+        <http://purl.org/dc/terms/created> "2021-07-22" ;
+        <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+        rdfs:label "is item of"@en ,
+                   "ist Exemplar von"@de ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Instance for which the described Item is an example."@en ,
+                                                         "Instanz, für die das beschriebene Exemplar ein Beispiel ist."@de .
+
+
+###  https://dh.plus.ac.at/ontology#language
+:language rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/language> ;
+          rdfs:domain :Bibliographic ,
+                      :Lexicon ;
+          rdfs:range :Language .
+
+
+###  https://dh.plus.ac.at/ontology#note
+:note rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/note> ;
+      rdfs:domain :Bibliographic ;
+      rdfs:range :Note ;
+      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+      <http://purl.org/dc/terms/created> "2021-07-22" ;
+      <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+      rdfs:label "has note"@en ,
+                 "hat Anmerkung"@de ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Allgemeine Textinformationen, die sich auf eine Ressource beziehen, wie z. B. Informationen über eine bestimmte Kopie einer Ressource oder Informationen über ein bestimmtes Attribut einer Ressource."@de ,
+                                                       "General textual information relating to a resource, such as Information about a specific copy of a resource or information about a particular attribute of a resource."@en .
+
+
+###  https://dh.plus.ac.at/ontology#objectProperty
+:objectProperty rdf:type owl:ObjectProperty .
+
+
+###  https://dh.plus.ac.at/ontology#onomasticUsage
+:onomasticUsage rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf <http://www.w3.org/ns/lemon/ontolex#sense> ;
+                rdfs:domain :LexicalEntry ;
+                rdfs:range :OnomasticUsage ;
+                <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                <http://purl.org/dc/terms/created> "2021-07-29" ;
+                <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                rdfs:label "has onomastic Usage"@en ,
+                           "hat Namensgebrauch"@de .
+
+
+###  https://dh.plus.ac.at/ontology#otherForm
+:otherForm rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.w3.org/ns/lemon/ontolex#otherForm> ;
+           rdfs:domain :LexicalEntry ;
+           rdfs:range :Form ;
+           <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+           <http://purl.org/dc/terms/created> "2021-07-29" ;
+           <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+           rdfs:label "has other form"@en ,
+                      "hat weitere Form"@de .
+
+
+###  https://dh.plus.ac.at/ontology#partOfSpeech
+:partOfSpeech rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.lexinfo.net/ontology/3.0/lexinfo#partOfSpeech> ;
+              rdfs:domain :LexicalEntry ;
+              rdfs:range :PartOfSpeech ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-07-29" ;
+              <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+              rdfs:label "has part of speech"@en ,
+                         "hat Wortart"@de .
+
+
+###  https://dh.plus.ac.at/ontology#preferredNameEntityForThePerson
+:preferredNameEntityForThePerson rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#preferredNameEntityForThePerson> ,
+                                                    :isIdentifiedBy ;
+                                 rdfs:domain :Person ;
+                                 rdfs:range :NameOfThePerson ;
+                                 <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                                 <http://purl.org/dc/terms/created> "2021-05-17" ;
+                                 <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                                 rdfs:label "bevorzugte Namensentität"@de ,
+                                            "prefered name entity"@en ;
+                                 <http://www.w3.org/2004/02/skos/core#definition> "Reference to the prefered name entity of a person."@en ,
+                                                                                  "Verweis auf die bevorzugte Namensentität einer Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#preferredNameEntityForThePlace
+:preferredNameEntityForThePlace rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#preferredNameForThePlaceOrGeographicName> ,
+                                                   :isIdentifiedBy ;
+                                rdfs:domain :Place ;
+                                rdfs:range :NameOfThePlace ;
+                                <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                                <http://purl.org/dc/terms/created> "2021-05-17" ;
+                                <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                                rdfs:label "bevorzugte Namensentität"@de ,
+                                           "prefered name entity"@en ;
+                                <http://www.w3.org/2004/02/skos/core#definition> "Reference to the prefered name entity of a place."@en ,
+                                                                                 "Verweis auf die bevorzugte Namensentität einer Place."@de .
+
+
+###  https://dh.plus.ac.at/ontology#preferredTitle
+:preferredTitle rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :title ;
+                rdfs:domain :Bibliographic ;
+                rdfs:range :Title ;
+                <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                <http://purl.org/dc/terms/created> "2021-07-22" ;
+                <http://purl.org/dc/terms/modified> "2021-10-07+07:59" ;
+                rdfs:label "has preferred title"@en ,
+                           "hat preferred Titel"@de ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Name einer Ressource."@de ,
+                                                                 "Name given to a resource."@en .
+
+
+###  https://dh.plus.ac.at/ontology#provisionActivity
+:provisionActivity rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/provisionActivity> ;
+                   rdfs:domain :Instance ;
+                   rdfs:range :ProvisionActivity ;
+                   <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                   <http://purl.org/dc/terms/created> "2021-07-22" ;
+                   <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                   rdfs:label "has provision activity"@en ,
+                              "hat Veröffentlichungsaktivität"@de ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Orts-, Namens- und/oder Datumsangaben, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe, die Produktion usw. einer Ressource beziehen."@de ,
+                                                                    "Place, name, and/or date information relating to the publication, printing, distribution, issue, release, production, etc. of a resource."@en .
+
+
+###  https://dh.plus.ac.at/ontology#sense
+:sense rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf <http://www.w3.org/ns/lemon/ontolex#sense> ;
+       rdfs:domain :LexicalEntry ;
+       rdfs:range :LexicalSense ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-07-29" ;
+       <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+       rdfs:label "has lexical sense"@en ,
+                  "hat lexikalische Bedeutung"@de .
+
+
+###  https://dh.plus.ac.at/ontology#subterm
+:subterm rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://www.w3.org/ns/lemon/decomp#subterm> ;
+         rdfs:domain :LexicalEntry ;
+         rdfs:range :LexicalEntry ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-07-29" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+         rdfs:label "has subterm"@en ,
+                    "hat Wortbildungsbestandteil"@de .
+
+
+###  https://dh.plus.ac.at/ontology#synonym
+:synonym rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://www.lexinfo.net/ontology/3.0/lexinfo#synonym> ;
+         rdfs:domain :LexicalSense ;
+         rdfs:range :LexicalSense ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-07-29" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+         rdfs:label "has synonym lexical sense"@en ,
+                    "hat synonyme Bedeutung"@de .
+
+
+###  https://dh.plus.ac.at/ontology#synonymConcept
+:synonymConcept rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :objectProperty ;
+                rdfs:domain :LexicalConcept ;
+                rdfs:range :LexicalConcept ;
+                <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                <http://purl.org/dc/terms/created> "2021-07-29" ;
+                <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                rdfs:label "has synonym lexical concept"@en ,
+                           "hat synonymen Begriff"@de .
+
+
+###  https://dh.plus.ac.at/ontology#title
+:title rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf <http://erlangen-crm.org/200717/P102_has_title> ,
+                          <http://id.loc.gov/ontologies/bibframe/title> ;
+       rdfs:domain :Bibliographic ;
+       rdfs:range :Title ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-07-22" ;
+       <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+       rdfs:label "has title"@en ,
+                  "hat Titel"@de ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Name einer Ressource."@de ,
+                                                        "Name given to a resource."@en .
+
+
+###  https://dh.plus.ac.at/ontology#tookPlaceAt
+:tookPlaceAt rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://erlangen-crm.org/200717/P7_took_place_at> ;
+             rdfs:domain :Event ;
+             rdfs:range :Place ;
+             <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+             <http://purl.org/dc/terms/created> "2021-07-26" ;
+             <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+             rdfs:label "fand statt an"@de ,
+                        "took place at"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Diese Eigenschaft beschreibt die räumliche Lage eines Ereignisses."@de ,
+                                                              "This property describes the spatial location of an event."@en .
+
+
+###  https://dh.plus.ac.at/ontology#variantNameEntityForThePerson
+:variantNameEntityForThePerson rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#variantNameEntityForThePerson> ,
+                                                  :isIdentifiedBy ;
+                               rdfs:domain :Person ;
+                               rdfs:range :NameOfThePerson ;
+                               <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                               <http://purl.org/dc/terms/created> "2021-05-17" ;
+                               <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                               rdfs:label "alternative Namensentität"@de ,
+                                          "variant name entity"@en ;
+                               <http://www.w3.org/2004/02/skos/core#definition> "Reference to the variant name entity of a person."@en ,
+                                                                                "Verweis auf die alternative Namensentität einer Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#variantNameEntityForThePlace
+:variantNameEntityForThePlace rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#variantNameForThePlaceOrGeographicName> ,
+                                                 :isIdentifiedBy ;
+                              rdfs:domain :Place ;
+                              rdfs:range :NameOfThePlace ;
+                              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                              <http://purl.org/dc/terms/created> "2021-05-17" ;
+                              <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                              rdfs:label "alternative Namensentität"@de ,
+                                         "variant name entity"@en ;
+                              <http://www.w3.org/2004/02/skos/core#definition> "Reference to the variant name entity of a place."@en ,
+                                                                               "Verweis auf die alternative Namensentität einer Place."@de .
+
+
+###  https://dh.plus.ac.at/ontology#variantTitle
+:variantTitle rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :title ;
+              rdfs:domain :Bibliographic ;
+              rdfs:range :Title ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-07-22" ;
+              <http://purl.org/dc/terms/modified> "2021-10-07+07:59" ;
+              rdfs:label "has variant title"@en ,
+                         "hat variant Titel"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Name einer Ressource."@de ,
+                                                               "Name given to a resource."@en .
+
+
+###  https://dh.plus.ac.at/ontology#wasBorn
+:wasBorn rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf <http://erlangen-crm.org/200717/P98i_was_born> ;
+         owl:inverseOf :broughtIntoLife ;
+         rdfs:domain :Person ;
+         rdfs:range :Birth ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-05-11" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+         rdfs:label "was born"@en ,
+                    "wurde geboren"@de ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Reference to the birth event of a person."@en ,
+                                                          "Verweis auf das Geburtsevent einer Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#wasCreatedBy
+:wasCreatedBy rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://erlangen-crm.org/200717/P94i_was_created_by> ;
+              owl:inverseOf :hasCreated ;
+              rdfs:domain :Work ;
+              rdfs:range :Creation ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-08-17" ;
+              <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+              rdfs:label "was created by"@en ,
+                         "wurde erschaffen durch"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Diese Eigenschaft verknüpft eine Instanz von Werk mit der Instanz von Erschaffung, deren Produkt das Werk ist."@de ,
+                                                               "This property links an instance of Work to the instance of Creation whose product is the work."@en .
+
+
+###  https://dh.plus.ac.at/ontology#wasDeathOf
+:wasDeathOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://erlangen-crm.org/200717/P100_was_death_of> ;
+            owl:inverseOf :diedIn ;
+            rdfs:domain :Death ;
+            rdfs:range :Person ;
+            <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+            <http://purl.org/dc/terms/created> "2021-05-11" ;
+            <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+            rdfs:label "war Tod von"@de ,
+                       "was death of"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Reference to the person dying in a death event."@en ,
+                                                             "Verweis auf die Person, die in einem Todesevent verstorben ist."@de .
+
+
+###  https://dh.plus.ac.at/ontology#witnessed
+:witnessed rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://erlangen-crm.org/200717/P7i_witnessed> ;
+           owl:inverseOf :tookPlaceAt ;
+           rdfs:domain :Place ;
+           rdfs:range :Event ;
+           <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+           <http://purl.org/dc/terms/created> "2021-07-26" ;
+           <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+           rdfs:label "fand statt an"@de ,
+                      "took place at"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Diese Eigenschaft beschreibt die Ereignisse, die an einem bestimmten Ort stattfinden."@de ,
+                                                            "This property describes the events happening at a spatial location."@en .
+
+
+###  https://dh.plus.ac.at/ontology#xmlDocument
+:xmlDocument rdf:type owl:ObjectProperty ;
+             rdfs:domain :Electronic ;
+             rdfs:range <https://mhdbdbd.plus.ac.at/xml-ontology#Document> ;
+             <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+             <http://purl.org/dc/terms/created> "2022-02-28" ;
+             <http://purl.org/dc/terms/modified> "" ;
+             rdfs:label "has xml document"@en ,
+                        "hat xml Dokument"@de ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Representation of Electronic as mhdbdbxml:Document."@en ,
+                                                              "Repräsentation der elektronischen Ressource als mhdbdbxml:Document."@de .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://erlangen-crm.org/200717/P43_has_dimension
+<http://erlangen-crm.org/200717/P43_has_dimension> rdf:type owl:DatatypeProperty .
+
+
+###  http://id.loc.gov/ontologies/bibframe/dimension
+<http://id.loc.gov/ontologies/bibframe/dimension> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2006/time#inXSDDate
+<http://www.w3.org/2006/time#inXSDDate> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/2006/time#inXSDgYear
+<http://www.w3.org/2006/time#inXSDgYear> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/ns/lemon/lime#language
+<http://www.w3.org/ns/lemon/lime#language> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#writtenRep
+<http://www.w3.org/ns/lemon/ontolex#writtenRep> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.wikidata.org/prop/direct/P2803
+<http://www.wikidata.org/prop/direct/P2803> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.wikidata.org/prop/direct/P734
+<http://www.wikidata.org/prop/direct/P734> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.wikidata.org/prop/direct/P735
+<http://www.wikidata.org/prop/direct/P735> rdf:type owl:DatatypeProperty .
+
+
+###  https://dh.plus.ac.at/ontology#asWKT
+:asWKT rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf <http://www.opengis.net/ont/geosparql#asWKT> ;
+       rdfs:domain :Geometry ;
+       rdfs:range <http://www.opengis.net/ont/geosparql#wktLiteral> ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-05-17" ;
+       <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+       rdfs:label "als WKT"@de ,
+                  "as WKT"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Die WKT-Serialisierung einer Geometrie."@de ,
+                                                        "The WKT serialization of a geometry."@en .
+
+
+###  https://dh.plus.ac.at/ontology#counting
+:counting rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#counting> ;
+          rdfs:domain :NameOfThePerson ;
+          rdfs:range xsd:string ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-05-17" ;
+          <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+          rdfs:label "Counting"@en ,
+                     "Zählung"@de ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Counting name of a person."@en ,
+                                                           "Zählungsname einer Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#custodialHistory
+:custodialHistory rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/custodialHistory> ;
+                  rdfs:domain [ rdf:type owl:Class ;
+                                owl:unionOf ( :Instance
+                                              :Item
+                                            )
+                              ] ;
+                  rdfs:range rdfs:Literal ;
+                  <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                  <http://purl.org/dc/terms/created> "2021-07-28" ;
+                  <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                  rdfs:label "Provenienzgeschichte"@de ,
+                             "custodial history"@en ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Information about the provenance, such as origin, ownership and custodial history (chain of custody), of a resource."@en ,
+                                                                   "Informationen über die Provenienz einer Ressource, z. B. Herkunft, Eigentum und Aufbewahrungsgeschichte."@de .
+
+
+###  https://dh.plus.ac.at/ontology#dimension
+:dimension rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://erlangen-crm.org/200717/P43_has_dimension> ,
+                              <http://id.loc.gov/ontologies/bibframe/dimension> ;
+           rdfs:domain :Instance ;
+           rdfs:range rdfs:Literal ;
+           <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+           <http://purl.org/dc/terms/created> "2021-07-21" ;
+           <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+           rdfs:label "has dimension"@en ,
+                      "hat Dimension"@de ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Maße des Trägers oder der Träger und/oder des Behälters einer Ressource."@de ,
+                                                            "Measurements of the carrier or carriers and/or the container of a resource."@en .
+
+
+###  https://dh.plus.ac.at/ontology#editionStatement
+:editionStatement rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/editionStatement> ;
+                  rdfs:domain :Instance ;
+                  rdfs:range rdfs:Literal ;
+                  <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                  <http://purl.org/dc/terms/created> "2021-07-22" ;
+                  <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                  rdfs:label "has edition statement"@en ,
+                             "hat editorische Bemerkung"@de ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "Information identifying the edition or version of the resource and associated statements of responsibility for the edition; usually transcribed."@en ,
+                                                                   "Informationen zur Identifizierung der Ausgabe oder Version der Ressource und zugehörige Erklärungen zur Verantwortung für die Ausgabe; in der Regel transkribiert."@de .
+
+
+###  https://dh.plus.ac.at/ontology#forename
+:forename rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf <http://www.wikidata.org/prop/direct/P735> ,
+                             <https://d-nb.info/standards/elementset/gnd#forename> ;
+          rdfs:domain :NameOfThePerson ;
+          rdfs:range xsd:string ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-05-17" ;
+          <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+          rdfs:label "Vorname"@de ,
+                     "forename"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Forname of a person."@en ,
+                                                           "Vorname einer Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#inXSDDate
+:inXSDDate rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://www.w3.org/2006/time#inXSDDate> ,
+                              <http://www.w3.org/2006/time#inXSDgYear> ;
+           rdfs:domain :Instant ;
+           rdfs:range xsd:date ,
+                      xsd:gYear ;
+           <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+           <http://purl.org/dc/terms/created> "2021-10-05" ;
+           <http://purl.org/dc/terms/modified> "2021-10-05+14:42" ,
+                                               "2021-10-07+07:59" ;
+           rdfs:label "als XSD Date"@de ,
+                      "als XSD gYear"@de ,
+                      "in XSD Date"@en ,
+                      "in XSD gYear"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Position eines Zeitpunkts, ausgedrückt durch xsd:date."@de ,
+                                                            "Position eines Zeitpunkts, ausgedrückt durch xsd:gYear."@de ,
+                                                            "Position of an instant, expressed using xsd:date."@en ,
+                                                            "Position of an instant, expressed using xsd:gYear."@en .
+
+
+###  https://dh.plus.ac.at/ontology#language
+:language rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf <http://www.w3.org/ns/lemon/lime#language> .
+
+
+###  https://dh.plus.ac.at/ontology#mainTitle
+:mainTitle rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/mainTitle> ;
+           rdfs:domain :Title ;
+           rdfs:range xsd:string ;
+           <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+           <http://purl.org/dc/terms/created> "2021-08-12" ;
+           <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+           rdfs:label "Haupttitel"@de ,
+                      "main title"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Angesprochener Titel. Mögliche Titelkomponente."@de ,
+                                                            "Title being addressed. Possible title component."@en .
+
+
+###  https://dh.plus.ac.at/ontology#nameAddition
+:nameAddition rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#nameAddition> ;
+              rdfs:domain :NameOfThePerson ;
+              rdfs:range xsd:string ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-05-17" ;
+              <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+              rdfs:label "Name addition"@en ,
+                         "Namensszusatz"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Name addition of a person."@en ,
+                                                               "Namensszusatz einer Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#partName
+:partName rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/partName> ;
+          rdfs:domain :Title ;
+          rdfs:range xsd:string ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-08-12" ;
+          <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+          rdfs:label "Nummer des Teils"@de ,
+                     "part number"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Part or section name of a title. Possible title component."@en ,
+                                                           "Teil- oder Abschnittsname eines Titels. Mögliche Titelkomponente."@de .
+
+
+###  https://dh.plus.ac.at/ontology#partNumber
+:partNumber rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/partNumber> ;
+            rdfs:domain :Title ;
+            rdfs:range xsd:string ;
+            <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+            <http://purl.org/dc/terms/created> "2021-08-12" ;
+            <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+            rdfs:label "Nummer des Teils"@de ,
+                       "part number"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Part or section enumeration of a title. Possible title component."@en ,
+                                                             "Teil oder Abschnitt der Aufzählung eines Titels. Mögliche Titelkomponente."@de .
+
+
+###  https://dh.plus.ac.at/ontology#personalName
+:personalName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#personalName> ;
+              rdfs:domain :NameOfThePerson ;
+              rdfs:range xsd:string ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-05-17" ;
+              <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+              rdfs:label "Personal name"@en ,
+                         "Persönlicher Name"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Personal name of a person."@en ,
+                                                               "Persönlicher Name einer Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#placename
+:placename rdf:type owl:DatatypeProperty ;
+           rdfs:domain :NameOfThePlace ;
+           rdfs:range xsd:string ;
+           <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+           <http://purl.org/dc/terms/created> "2021-05-17" ;
+           <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+           rdfs:label "Ortsname"@de ,
+                      "place name"@en ;
+           <http://www.w3.org/2004/02/skos/core#definition> "Name eines Ortes."@de ,
+                                                            "Name of a place."@en .
+
+
+###  https://dh.plus.ac.at/ontology#prefix
+:prefix rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf <https://d-nb.info/standards/elementset/gnd#prefix> ;
+        rdfs:domain :NameOfThePerson ;
+        rdfs:range xsd:string ;
+        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+        <http://purl.org/dc/terms/created> "2021-05-17" ;
+        <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+        rdfs:label "Namenspräfix"@de ,
+                   "name prefix"@en ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Namenspräfix einer Person."@de ,
+                                                         "name prefix of a person."@en .
+
+
+###  https://dh.plus.ac.at/ontology#provisionActivityStatement
+:provisionActivityStatement rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/provisionActivityStatement> ;
+                            rdfs:domain :Instance ;
+                            rdfs:range rdfs:Literal ;
+                            <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                            <http://purl.org/dc/terms/created> "2021-07-22" ;
+                            <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                            rdfs:label "has provision activity statement"@en ,
+                                       "hat Anmerkung zur Veröffentlichungsaktivität"@de ;
+                            owl:deprecated "true"^^xsd:boolean ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "Aussage, die sich auf Anbieter einer Ressource bezieht; in der Regel transkribiert."@de ,
+                                                                             "Statement relating to providers of a resource; usually transcribed."@en .
+
+
+###  https://dh.plus.ac.at/ontology#responsibilityStatement
+:responsibilityStatement rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/responsibilityStatement> ;
+                         rdfs:domain :Instance ;
+                         rdfs:range rdfs:Literal ;
+                         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                         <http://purl.org/dc/terms/created> "2021-07-22" ;
+                         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+                         rdfs:label "has responsibility statement"@en ,
+                                    "hat Anmerkung zur Verantwortlichkeit"@de ;
+                         owl:deprecated "true"^^xsd:boolean ;
+                         <http://www.w3.org/2004/02/skos/core#definition> "Aussage zu Personen, Familien oder Körperschaften, die für die Erstellung einer Ressource verantwortlich sind oder zum Inhalt beitragen; in der Regel transkribiert."@de ,
+                                                                          "Statement relating to any persons, families, or corporate bodies responsible for the creation of, or contributing to the content of a resource; usually transcribed."@en .
+
+
+###  https://dh.plus.ac.at/ontology#subtitle
+:subtitle rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf <http://id.loc.gov/ontologies/bibframe/subtitle> ;
+          rdfs:domain :Title ;
+          rdfs:range xsd:string ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-08-12" ;
+          <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+          rdfs:label "Untertitel"@de ,
+                     "sub title"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Word, character, or group of words and/or characters that contains the remainder of the title after the main title. Possible title component."@en ,
+                                                           "Wort, Zeichen oder Gruppe von Wörtern und/oder Zeichen, die den Rest des Titels nach dem Haupttitel enthält. Mögliche Titelkomponente."@de .
+
+
+###  https://dh.plus.ac.at/ontology#surname
+:surname rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf <http://www.wikidata.org/prop/direct/P734> ,
+                            <https://d-nb.info/standards/elementset/gnd#surname> ;
+         rdfs:domain :NameOfThePerson ;
+         rdfs:range xsd:string ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-05-17" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+         rdfs:label "Nachname"@de ,
+                    "surname"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Nachname einer Person."@de ,
+                                                          "surname of a person."@en .
+
+
+###  https://dh.plus.ac.at/ontology#timePrecision
+:timePrecision rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf <http://www.wikidata.org/prop/direct/P2803> ;
+               rdfs:domain :TimeSpan ;
+               rdfs:range xsd:duration ;
+               <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+               <http://purl.org/dc/terms/created> "2021-10-05" ;
+               <http://purl.org/dc/terms/modified> "2021-10-07+07:59" ;
+               rdfs:label "Genauigkeit der Zeitangabe"@de ,
+                          "time precision"@en ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Defines the precision of a time value."@en ,
+                                                                "Definiert die Genauigkeit eines Zeitwertes."@de ;
+               <http://www.w3.org/2004/02/skos/core#example> "Die Präposition 'P5Y' und die Jahreszahl 1250 implizieren, dass das Datum 1250±5 sein könnte, also der Zeitraum 1245–1255."@de ,
+                                                             "Precesion 'P5Y' and a date 1250 implies, the date could be 1250±5 – i.e. the period 1245–1255"@en .
+
+
+###  https://dh.plus.ac.at/ontology#writtenRep
+:writtenRep rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf <http://www.w3.org/ns/lemon/ontolex#writtenRep> ;
+            rdfs:domain :Form ;
+            rdfs:range rdfs:Literal ;
+            <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+            <http://purl.org/dc/terms/created> "2021-07-29" ;
+            <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+            rdfs:label "graphische Repräsentation"@de ,
+                       "written representation"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  _:genid-nodeid-node1ft0aqj11x4
+_:genid-nodeid-node1ft0aqj11x4 rdf:type owl:Class .
+
+
+###  _:genid-nodeid-node1ft0aqj11x76
+_:genid-nodeid-node1ft0aqj11x76 rdf:type owl:Class .
+
+
+###  _:genid-nodeid-node1ft0aqj11x82
+_:genid-nodeid-node1ft0aqj11x82 rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive
+<http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive> rdf:type owl:Class .
+
+
+###  http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech
+<http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech> rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/sf#Geometry
+<http://www.opengis.net/ont/sf#Geometry> rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/sf#Point
+<http://www.opengis.net/ont/sf#Point> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#Instant
+<http://www.w3.org/2006/time#Instant> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#Interval
+<http://www.w3.org/2006/time#Interval> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2006/time#TemporalEntity
+<http://www.w3.org/2006/time#TemporalEntity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/lime#Lexicon
+<http://www.w3.org/ns/lemon/lime#Lexicon> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#Affix
+<http://www.w3.org/ns/lemon/ontolex#Affix> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#ConceptSet
+<http://www.w3.org/ns/lemon/ontolex#ConceptSet> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#Form
+<http://www.w3.org/ns/lemon/ontolex#Form> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalConcept
+<http://www.w3.org/ns/lemon/ontolex#LexicalConcept> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalEntry
+<http://www.w3.org/ns/lemon/ontolex#LexicalEntry> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#LexicalSense
+<http://www.w3.org/ns/lemon/ontolex#LexicalSense> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/lemon/ontolex#Word
+<http://www.w3.org/ns/lemon/ontolex#Word> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shacl#SPARQLTargetType
+<http://www.w3.org/ns/shacl#SPARQLTargetType> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/shacl#Target
+<http://www.w3.org/ns/shacl#Target> rdf:type owl:Class .
+
+
+###  http://www.wikidata.org/entity/Q17334923
+<http://www.wikidata.org/entity/Q17334923> rdf:type owl:Class .
+
+
+###  http://www.wikidata.org/entity/Q5
+<http://www.wikidata.org/entity/Q5> rdf:type owl:Class .
+
+
+###  https://dh.plus.ac.at/ontology#AdminMetadata
+:AdminMetadata rdf:type owl:Class ;
+               rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                               <http://id.loc.gov/ontologies/bibframe/AdminMetadata> ,
+                               :Entity ;
+               <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+               <http://purl.org/dc/terms/created> "2021-07-21" ;
+               <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+               rdfs:label "Admin Metadata"@en ,
+                          "Administrative Metadaten"@de ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Metadata about the metadata, especially provenance information."@en ,
+                                                                "Metadaten über die Metadaten, insbesondere Provenienzinformationen."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Affix
+:Affix rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#Affix> ,
+                       :LexicalEntry ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-08-02" ;
+       <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+       rdfs:label "Affixartikel"@de ,
+                  "affix entry"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "An affix is a lexical entry that represents a morpheme (suffix, prefix, infix, circumfix) that is attached to a word stem to form a new word."@en ,
+                                                        "Ein Affix ist ein lexikalischer Eintrag, der ein Morphem (Suffix, Präfix, Infix, Zirkumfix) darstellt, das an einen Wortstamm angehängt wird, um ein neues Wort zu bilden."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Appellation
+:Appellation rdf:type owl:Class ;
+             rdfs:subClassOf <http://erlangen-crm.org/200717/E41_Appellation> ,
+                             :Entity ;
+             <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+             <http://purl.org/dc/terms/created> "2021-05-17" ;
+             <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+             rdfs:label "Indentifier"@de ,
+                        "Indentifier"@en ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Diese Klasse umfasst sinnvolle oder nicht sinnvolle Zeichen oder Anordnungen von Zeichen, die einer bestimmten Syntax folgen, die verwendet werden oder verwendet werden können, um auf eine bestimmte Instanz einer Klasse oder Kategorie innerhalb eines bestimmten Kontexts zu verweisen und diese zu identifizieren."@de ,
+                                                              "This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context."@en .
+
+
+###  https://dh.plus.ac.at/ontology#BeginningOfExistence
+:BeginningOfExistence rdf:type owl:Class ;
+                      rdfs:subClassOf <http://erlangen-crm.org/200717/E63_Beginning_of_Existence> ,
+                                      :Event ;
+                      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                      <http://purl.org/dc/terms/created> "2021-07-23" ;
+                      <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                      rdfs:label "Beginn der Existenz"@de ,
+                                 "Beginning of Existence"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Diese Klasse umfasst Ereignisse, die eine beliebige Instanz von Persistent Item ins Leben rufen."@de ,
+                                                                       "This class comprises events that bring into existence any instance of Persistent Item."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Bibliographic
+:Bibliographic rdf:type owl:Class ;
+               rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                               <http://erlangen-crm.org/200717/E89_Propositional_Object> ,
+                               :Entity ;
+               <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+               <http://purl.org/dc/terms/created> "2021-07-22" ;
+               <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+               rdfs:label "Bibliographic Entity"@en ,
+                          "Bibliographische Entität"@de ;
+               <http://www.w3.org/2004/02/skos/core#definition> "Bibliographic Entities are Works, Instances and Items."@en ,
+                                                                "Bibliographische Entitäten sind Werke, Instanzen und Exemplare."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Birth
+:Birth rdf:type owl:Class ;
+       rdfs:subClassOf <http://erlangen-crm.org/200717/E67_Birth> ,
+                       :BeginningOfExistence ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-07-23" ;
+       <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+       rdfs:label "Birth"@en ,
+                  "Geburt"@de ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Diese Klasse umfasst die Geburten von Menschen. "@de ,
+                                                        "This class comprises the births of human beings."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Content
+:Content rdf:type owl:Class ;
+         rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                         <http://id.loc.gov/ontologies/bibframe/Content> ,
+                         :Entity ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-07-28" ;
+         <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+         rdfs:label "Content"@en ,
+                    "Inhalt"@de ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived."@en ,
+                                                          "Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Contribution
+:Contribution rdf:type owl:Class ;
+              rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                              <http://id.loc.gov/ontologies/bibframe/Contribution> ,
+                              :Entity ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-07-21" ;
+              <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+              rdfs:label "Beitrag"@de ,
+                         "Contribution"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "Agent and role with respect to the resource being described."@en ,
+                                                               "Agent und Rolle in Bezug auf die zu beschreibende Ressource."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Creation
+:Creation rdf:type owl:Class ;
+          rdfs:subClassOf <http://erlangen-crm.org/200717/E65_Creation> ,
+                          :BeginningOfExistence ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-08-17" ;
+          <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+          rdfs:label "Creation"@en ,
+                     "Erschaffung"@de ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Diese Klasse umfasst Ereignisse, die zur Schaffung von begrifflichen Gegenständen oder immateriellen Produkten führen, wie Legenden, Gedichte, Texte, Musik, Bilder, Filme, Gesetze, Schriften usw."@de ,
+                                                           "This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts, music, images, movies, laws, types etc."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Death
+:Death rdf:type owl:Class ;
+       rdfs:subClassOf <http://erlangen-crm.org/200717/E69_Death> ,
+                       :Event ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-07-23" ;
+       <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+       rdfs:label "Death"@en ,
+                  "Tod"@de ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Diese Klasse umfasst den Tod von Menschen. "@de ,
+                                                        "This class comprises the death of human beings."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Electronic
+:Electronic rdf:type owl:Class ;
+            rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                            <http://id.loc.gov/ontologies/bibframe/Electronic> ,
+                            :Instance ;
+            <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+            <http://purl.org/dc/terms/created> "2021-05-11" ;
+            <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+            rdfs:label "Electronic"@en ,
+                       "Elektronische Ressource"@de ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Instance that is intended for manipulation by a computer, accessed either directly or remotely."@en ,
+                                                             "Instanz, die für die Bearbeitung durch einen Computer vorgesehen ist und auf die entweder direkt oder aus der Ferne zugegriffen wird."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Entity
+:Entity rdf:type owl:Class ;
+        rdfs:subClassOf <http://erlangen-crm.org/200717/E1_CRM_Entity> ;
+        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+        <http://purl.org/dc/terms/created> "2021-05-11" ;
+        <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+        rdfs:label "Entity"@en ,
+                   "Entität"@de ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Base class for all dhpluso classes."@en ,
+                                                         "Basisklasse aller dhpluso Klassen."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Event
+:Event rdf:type owl:Class ;
+       rdfs:subClassOf <http://erlangen-crm.org/200717/E5_Event> ,
+                       <http://id.loc.gov/ontologies/bibframe/Event> ,
+                       :Entity ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-07-23" ;
+       <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+       rdfs:label "Ereignis"@de ,
+                  "Event"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Diese Klasse umfasst eindeutige, abgegrenzte und kohärente Prozesse und Interaktionen materieller Natur in kulturellen, sozialen oder physischen Systemen, die Instanzen von Persistent Item in einer für die Art des Prozesses charakteristischen Weise einbeziehen und beeinflussen. Typische Beispiele sind Versammlungen, Geburten, Todesfälle, Handlungen der Entscheidungsfindung, des Herstellens oder Erfindens von Dingen, aber auch komplexere und umfangreichere wie Konferenzen, Wahlen, der Bau einer Burg oder Schlachten."@de ,
+                                                        "This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Extent
+:Extent rdf:type owl:Class ;
+        rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                        <http://id.loc.gov/ontologies/bibframe/Extent> ,
+                        :Entity ;
+        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+        <http://purl.org/dc/terms/created> "2021-07-21" ;
+        <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+        rdfs:label "Extent"@en ,
+                   "Umfang"@de ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Anzahl und Typ der Einheiten und/oder Untereinheiten, aus denen eine Ressource besteht."@de ,
+                                                         "Number and type of units and/or subunits making up a resource."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Form
+:Form rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#Form> ,
+                      :Entity ;
+      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+      <http://purl.org/dc/terms/created> "2021-05-17" ;
+      <http://purl.org/dc/terms/modified> "2021-09-16+14:25" ;
+      rdfs:label "Form"@de ,
+                 "Form"@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "A form represents one grammatical realization of a lexical entry."@en ,
+                                                       "Eine Form stellt eine grammatikalische Realisierung eines lexikalischen Eintrags dar."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Gender
+:Gender rdf:type owl:Class ;
+        rdfs:subClassOf :Type ;
+        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+        <http://purl.org/dc/terms/created> "2021-05-12" ;
+        <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+        rdfs:label "Gender"@en ,
+                   "Geschlecht"@de ;
+        <http://www.w3.org/2004/02/skos/core#definition> "Gender"@en ,
+                                                         "Geschlecht"@de .
+
+
+###  https://dh.plus.ac.at/ontology#Geometry
+:Geometry rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.cidoc-crm.org/cidoc-crm/E94_Space_Primitive> ,
+                          <http://www.opengis.net/ont/sf#Geometry> ,
+                          :Appellation ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-05-12" ;
+          <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+          rdfs:label "Geometrie"@de ,
+                     "Geometry"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Oberklasse aller Geometrieklassen."@de ,
+                                                           "Root of all geometry classes."@en ;
+          <http://www.w3.org/ns/shacl#property> _:genid16 ;
+          <http://www.w3.org/ns/shacl#target> _:genid17 .
+
+_:genid16 <http://www.w3.org/ns/shacl#datatype> <http://www.opengis.net/ont/geosparql#wktLiteral> ;
+           <http://www.w3.org/ns/shacl#path> :asWKT ;
+           <http://www.w3.org/ns/shacl#severity> <http://www.w3.org/ns/shacl#Violation> .
+
+_:genid17 rdf:type :SubclassTarget ;
+           <https://dh.plus.ac.at/tmp/class> :Geometry .
+
+
+###  https://dh.plus.ac.at/ontology#Identifier
+:Identifier rdf:type owl:Class ;
+            rdfs:subClassOf <http://erlangen-crm.org/200717/E42_Identifier> ,
+                            :Appellation ;
+            <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+            <http://purl.org/dc/terms/created> "2021-05-17" ;
+            <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+            rdfs:label "Indentifier"@de ,
+                       "Indentifier"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Diese Klasse umfasst Zeichenfolgen oder Codes, die Instanzen von E1 CRM Entity zugewiesen werden, um sie eindeutig und dauerhaft im Kontext einer oder mehrerer Organisationen zu identifizieren."@de ,
+                                                             "This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations."@en .
+
+
+###  https://dh.plus.ac.at/ontology#ImmediateAcquisition
+:ImmediateAcquisition rdf:type owl:Class ;
+                      rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                                      <http://id.loc.gov/ontologies/bibframe/ImmediateAcquisition> ,
+                                      :Entity ;
+                      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                      <http://purl.org/dc/terms/created> "2021-07-21" ;
+                      <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                      rdfs:label "Erwerbungsumstände"@de ,
+                                 "Immediate acquisition"@en ;
+                      <http://www.w3.org/2004/02/skos/core#definition> "Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired."@en ,
+                                                                       "Informationen über die Umstände, z. B. Quelle, Datum, Methode, unter denen die Ressource direkt erworben wurde."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Instance
+:Instance rdf:type owl:Class ;
+          rdfs:subClassOf <http://erlangen-crm.org/200717/E89_Propositional_Object> ,
+                          <http://id.loc.gov/ontologies/bibframe/Instance> ,
+                          :Bibliographic ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-07-21" ;
+          <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+          rdfs:label "Instance"@en ,
+                     "Instanz"@de ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Resource reflecting an individual, material embodiment of a Work."@en ,
+                                                           "Ressource, die eine individuelle, materielle Verkörperung eines Werkes darstellt."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Instant
+:Instant rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/2006/time#Instant> ,
+                         :TimeSpan ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-10-05" ;
+         <http://purl.org/dc/terms/modified> "2021-10-05+14:42" ;
+         rdfs:label "Instant"@en ,
+                    "Zeitpunkt"@de ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity with zero extent or duration."@en ,
+                                                          "Eine zeitliche Einheit ohne Ausmaß oder Dauer. "@de .
+
+
+###  https://dh.plus.ac.at/ontology#Interval
+:Interval rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2006/time#Interval> ,
+                          :TimeSpan ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-10-05" ;
+          <http://purl.org/dc/terms/modified> "2021-10-05+14:42" ;
+          rdfs:label "Interval"@en ,
+                     "Zeitspanne"@de ;
+          <http://www.w3.org/2004/02/skos/core#definition> "A temporal entity with an extent or duration."@en ,
+                                                           "Eine zeitliche Einheit mit einem Umfang oder einer Dauer. "@de .
+
+
+###  https://dh.plus.ac.at/ontology#Issuance
+:Issuance rdf:type owl:Class ;
+          rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                          <http://id.loc.gov/ontologies/bibframe/Issuance> ,
+                          :Entity ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-07-28" ;
+          <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+          rdfs:label "Art der Veröffentlichung"@de ,
+                     "Mode of issuance"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Information about whether a resource is issued in one or more parts, the way it is updated, and its intended termination."@en ,
+                                                           "Informationen darüber, ob eine Ressource in einem oder mehreren Teilen veröffentlicht wird, wie sie aktualisiert wird und wie sie abgeschlossen werden soll."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Item
+:Item rdf:type owl:Class ;
+      rdfs:subClassOf <http://erlangen-crm.org/200717/E22_Human-Made_Object> ,
+                      <http://id.loc.gov/ontologies/bibframe/Item> ,
+                      :Bibliographic ;
+      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+      <http://purl.org/dc/terms/created> "2021-07-21" ;
+      <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+      rdfs:label "Exemplar"@de ,
+                 "Item"@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Einzelnes Exemplar einer Instanz."@de ,
+                                                       "Single example of an Instance."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Language
+:Language rdf:type owl:Class ;
+          rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                          <http://id.loc.gov/ontologies/bibframe/Language> ,
+                          :Entity ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-07-28" ;
+          <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+          rdfs:label "Language"@de ,
+                     "Language"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Language Entity."@en ,
+                                                           "Sprachenentität."@de .
+
+
+###  https://dh.plus.ac.at/ontology#LexicalConcept
+:LexicalConcept rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#LexicalConcept> ,
+                                :Entity ;
+                <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                <http://purl.org/dc/terms/created> "2021-08-02" ;
+                <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                rdfs:label "Lexical Concept"@en ,
+                           "Lexikalischer Begriff"@de ;
+                <http://www.w3.org/2004/02/skos/core#definition> "A lexical concept represents a mental abstraction, concept or unit of thought that can be lexicalized by a given collection of senses."@en ,
+                                                                 "Ein lexikalisches Konzept ist eine mentale Abstraktion, ein Konzept oder eine Gedankeneinheit, die durch eine bestimmte Sammlung von Bedeutungen lexikalisiert werden kann."@de .
+
+
+###  https://dh.plus.ac.at/ontology#LexicalConceptSet
+:LexicalConceptSet rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#ConceptSet> ,
+                                   :Entity ;
+                   <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                   <http://purl.org/dc/terms/created> "2021-08-02" ;
+                   <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                   rdfs:label "Lexical Concept Set"@en ,
+                              "Lexikalisches Begriffssystem"@de ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "A concept set represents a collection of lexical concepts."@en ,
+                                                                    "Ein Begriffssystem stellt eine Sammlung lexikalischer Begriffe dar."@de .
+
+
+###  https://dh.plus.ac.at/ontology#LexicalEntry
+:LexicalEntry rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#LexicalEntry> ,
+                              :Entity ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-08-02" ;
+              <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+              rdfs:label "lexical entry"@en ,
+                         "lexikalischer Artikel"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A lexical entry represents a unit of analysis of the lexicon that consists of a set of forms that are grammatically related and a set of base meanings that are associated with all of these forms. Thus, a lexical entry is a word, multiword expression or affix with a single part-of-speech, morphological pattern, etymology and set of senses."@en ,
+                                                               "Ein lexikalischer Eintrag stellt eine Analyseeinheit des Lexikons dar, die aus einer Reihe von grammatikalisch verwandten Formen und einer Reihe von Grundbedeutungen besteht, die mit all diesen Formen verbunden sind. Ein lexikalischer Eintrag ist also ein Wort, ein Mehrwortausdruck oder ein Affix mit einem einzigen Part-of-Speech, einem morphologischen Muster, einer Etymologie und einer Reihe von Bedeutungen."@de .
+
+
+###  https://dh.plus.ac.at/ontology#LexicalSense
+:LexicalSense rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#LexicalSense> ,
+                              :Entity ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-08-02" ;
+              <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+              rdfs:label "lexical sense"@en ,
+                         "lexikalische Bedeutung"@de ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A lexical sense represents the lexical meaning of a lexical entry when interpreted as referring to the corresponding ontology element. A lexical sense thus represents a reification of a pair of a uniquely determined lexical entry and a uniquely determined ontology entity it refers to. A link between a lexical entry and an ontology entity via a Lexical Sense object implies that the lexical entry can be used to refer to the ontology entity in question."@en ,
+                                                               "Ein lexikalischer Sinn stellt die lexikalische Bedeutung eines lexikalischen Eintrags dar, wenn er als Verweis auf das entsprechende Ontologieelement interpretiert wird. Ein lexikalischer Sinn stellt somit eine Verdinglichung eines Paares aus einem eindeutig bestimmten lexikalischen Eintrag und einer eindeutig bestimmten Ontologie-Entität dar, auf die er sich bezieht. Eine Verknüpfung zwischen einem lexikalischen Eintrag und einer Ontologie-Entität über ein Lexical Sense-Objekt impliziert, dass der lexikalische Eintrag verwendet werden kann, um auf die betreffende Ontologie-Entität zu verweisen."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Lexicon
+:Lexicon rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/ns/lemon/lime#Lexicon> ,
+                         :Entity ;
+         <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+         <http://purl.org/dc/terms/created> "2021-08-02" ;
+         <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+         rdfs:label "Wörterbuch"@de ,
+                    "lexicon"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A lexicon represents a collection of lexical entries for a particular language or domain."@en ,
+                                                          "Ein Lexikon ist eine Sammlung von lexikalischen Einträgen für eine bestimmte Sprache oder einen bestimmten Bereich."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Manuscript
+:Manuscript rdf:type owl:Class ;
+            rdfs:subClassOf <http://erlangen-crm.org/200717/E22_Human-Made_Object> ,
+                            <http://id.loc.gov/ontologies/bibframe/Manuscript> ,
+                            :Instance ;
+            <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+            <http://purl.org/dc/terms/created> "2021-05-11" ;
+            <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+            rdfs:label "Handschrift"@de ,
+                       "Manuscript"@en ;
+            <http://www.w3.org/2004/02/skos/core#definition> "Instance that is written in handwriting or typescript. These are generally unique resources."@en ,
+                                                             "Instanz die hand- oder maschinengeschrieben ist. Üblicherweise ein Unikat."@de .
+
+
+###  https://dh.plus.ac.at/ontology#NameOfThePerson
+:NameOfThePerson rdf:type owl:Class ;
+                 rdfs:subClassOf <https://d-nb.info/standards/elementset/gnd#NameOfThePerson> ,
+                                 :Appellation ;
+                 <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                 <http://purl.org/dc/terms/created> "2021-05-12" ;
+                 <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                 rdfs:label "Name entity of a person"@en ,
+                            "Namensentität einer Person"@de ;
+                 <http://www.w3.org/2004/02/skos/core#definition> "Entity for the different data properties of a person's name."@en ,
+                                                                  "Entität für die verschiedenen Data Properties eines Personennamens."@de .
+
+
+###  https://dh.plus.ac.at/ontology#NameOfThePlace
+:NameOfThePlace rdf:type owl:Class ;
+                rdfs:subClassOf <https://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName> ,
+                                :Appellation ;
+                <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                <http://purl.org/dc/terms/created> "2021-05-12" ;
+                <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                rdfs:label "Name entity of a place"@en ,
+                           "Namensentität einer Place"@de ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Entity for the different data properties of a places name."@en ,
+                                                                 "Entität für die verschiedenen Data Properties eines Ortsnamens."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Note
+:Note rdf:type owl:Class ;
+      rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                      <http://id.loc.gov/ontologies/bibframe/Note> ,
+                      :Entity ;
+      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+      <http://purl.org/dc/terms/created> "2021-07-21" ;
+      <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+      rdfs:label "Anmerkung"@de ,
+                 "Note"@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Information, usually in textual form, on attributes of a resource or some aspect of a resource."@en ,
+                                                       "Informationen, in der Regel in Textform, über Attribute einer Ressource oder einen Aspekt einer Ressource."@de .
+
+
+###  https://dh.plus.ac.at/ontology#OnomasticConcept
+:OnomasticConcept rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#LexicalConcept> ,
+                                  :Entity ;
+                  <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                  <http://purl.org/dc/terms/created> "2021-08-02" ;
+                  <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                  rdfs:label "onomastic concept"@en ,
+                             "onomastische Kategorie"@de ;
+                  <http://www.w3.org/2004/02/skos/core#definition> "A onomastic concept represents a categorization of names."@en ,
+                                                                   "Ein onomastisches Konzept stellt eine Kategorisierung von Namen dar."@de .
+
+
+###  https://dh.plus.ac.at/ontology#OnomasticConceptSet
+:OnomasticConceptSet rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#ConceptSet> ,
+                                     :Entity ;
+                     <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                     <http://purl.org/dc/terms/created> "2021-08-02" ;
+                     <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                     rdfs:label "Sammlung von Namenskategorisierungen"@de ,
+                                "onomastic concept set"@en ;
+                     <http://www.w3.org/2004/02/skos/core#definition> "A onomastic concept set represents a collection of onomastic concepts."@en ,
+                                                                      "Eine Sammlung von Namenskategorisierungen stellt eine Sammlung onomastischer Kategorisierungen dar."@de .
+
+
+###  https://dh.plus.ac.at/ontology#OnomasticUsage
+:OnomasticUsage rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#LexicalSense> ,
+                                :Entity ;
+                <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                <http://purl.org/dc/terms/created> "2021-08-02" ;
+                <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                rdfs:label "Eigennamengebrauch"@de ,
+                           "onomastic usage"@en ;
+                <http://www.w3.org/2004/02/skos/core#definition> "Eigennamengebrauch"@de ,
+                                                                 "onomastic usage"@en .
+
+
+###  https://dh.plus.ac.at/ontology#PartOfSpeech
+:PartOfSpeech rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.lexinfo.net/ontology/3.0/lexinfo#PartOfSpeech> ,
+                              :Entity ;
+              <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+              <http://purl.org/dc/terms/created> "2021-08-02" ;
+              <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+              rdfs:label "Wortart"@de ,
+                         "part of speech"@en ;
+              <http://www.w3.org/2004/02/skos/core#definition> "A category assigned to a word based on its grammatical and semantic properties."@en ,
+                                                               "Eine Kategorie, die einem Wort auf der Grundlage seiner grammatikalischen und semantischen Eigenschaften zugeordnet wird."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf <http://erlangen-crm.org/200717/E21_Person> ,
+                        <http://id.loc.gov/ontologies/bibframe/Person> ,
+                        <http://www.wikidata.org/entity/Q5> ,
+                        <https://d-nb.info/standards/elementset/gnd#Person> ,
+                        :Entity ;
+        <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+        <http://purl.org/dc/terms/created> "2021-05-12" ;
+        <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+        rdfs:label "Person"@de ,
+                   "Person"@en ;
+        <http://www.w3.org/2004/02/skos/core#definition> "A dhpluso person."@en ,
+                                                         "Eine dhpluso Person."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Place
+:Place rdf:type owl:Class ;
+       rdfs:subClassOf <http://erlangen-crm.org/200717/E53_Place> ,
+                       <http://id.loc.gov/ontologies/bibframe/Place> ,
+                       <http://www.wikidata.org/entity/Q17334923> ,
+                       <https://d-nb.info/standards/elementset/gnd#PlaceOrGeographicName> ,
+                       :Entity ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-05-19" ;
+       <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+       rdfs:label "Ort"@de ,
+                  "Place"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A dhpluso place."@en ,
+                                                        "Ein dhpluso Ort."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Point
+:Point rdf:type owl:Class ;
+       rdfs:subClassOf <http://www.opengis.net/ont/sf#Point> ,
+                       :Geometry ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-05-12" ;
+       <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+       rdfs:label "Point"@en ,
+                  "Punkt"@de ;
+       <http://www.w3.org/2004/02/skos/core#definition> "A Point is a 0-dimensional geometric object and represents a single location in coordinate space."@en ,
+                                                        "Ein Punkt ist ein 0-dimensionales geometrisches Objekt und repräsentiert einen einzelnen Ort im Koordinatenraum."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Print
+:Print rdf:type owl:Class ;
+       rdfs:subClassOf <http://erlangen-crm.org/200717/E89_Propositional_Object> ,
+                       <http://id.loc.gov/ontologies/bibframe/Print> ,
+                       :Instance ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-07-21" ;
+       <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+       rdfs:label "Druck"@de ,
+                  "Print"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Resource that is printed."@en ,
+                                                        "Ressource, die gedruckt ist."@de .
+
+
+###  https://dh.plus.ac.at/ontology#ProvisionActivity
+:ProvisionActivity rdf:type owl:Class ;
+                   rdfs:subClassOf <http://erlangen-crm.org/200717/E65_Creation> ,
+                                   <http://id.loc.gov/ontologies/bibframe/ProvisionActivity> ,
+                                   :Event ;
+                   <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                   <http://purl.org/dc/terms/created> "2021-07-21" ;
+                   <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                   rdfs:label "Provision Activity"@en ,
+                              "Veröffentlichung"@de ;
+                   <http://www.w3.org/2004/02/skos/core#definition> "Information about the agent or place relating to the publication, printing, distribution, issue, release, or production of a resource."@en ,
+                                                                    "Informationen über den Akteur oder Ort, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe oder die Produktion einer Ressource beziehen."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Publication
+:Publication rdf:type owl:Class ;
+             rdfs:subClassOf <http://erlangen-crm.org/200717/E73_Information_Object> ,
+                             <http://id.loc.gov/ontologies/bibframe/Publication> ,
+                             :ProvisionActivity ;
+             <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+             <http://purl.org/dc/terms/created> "2021-07-28" ;
+             <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+             rdfs:label "Publication"@en ,
+                        "Veröffentlichung"@de ;
+             <http://www.w3.org/2004/02/skos/core#definition> "Information relating to publication of a resource."@en ,
+                                                              "Informationen über die Veröffentlichung einer Ressource."@de .
+
+
+###  https://dh.plus.ac.at/ontology#SubclassTarget
+:SubclassTarget rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/ns/shacl#Target> .
+
+
+###  https://dh.plus.ac.at/ontology#Text
+:Text rdf:type owl:Class ;
+      rdfs:subClassOf <http://erlangen-crm.org/200717/E89_Propositional_Object> ,
+                      <http://id.loc.gov/ontologies/bibframe/Text> ,
+                      :Work ;
+      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+      <http://purl.org/dc/terms/created> "2021-07-21" ;
+      <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+      rdfs:label "Text"@de ,
+                 "Text"@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Resource intended to be perceived visually and understood through the use of language in written or spoken form."@en ,
+                                                       "Ressource, die dazu bestimmt ist, visuell wahrgenommen und durch den Gebrauch von Sprache in schriftlicher oder gesprochener Form verstanden zu werden."@de .
+
+
+###  https://dh.plus.ac.at/ontology#TimeSpan
+:TimeSpan rdf:type owl:Class ;
+          rdfs:subClassOf <http://erlangen-crm.org/200717/E52_Time-Span> ,
+                          <http://id.loc.gov/ontologies/bibframe/Temporal> ,
+                          <http://www.w3.org/2006/time#TemporalEntity> ,
+                          :Entity ;
+          <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-07-23" ;
+          <http://purl.org/dc/terms/modified> "2021-10-05+14:42" ;
+          rdfs:label "Zeitspanne"@de ,
+                     "time span"@en ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Diese Klasse umfasst abstrakte zeitliche Ausdehnungen im Sinne der Galileischen Physik, die einen Anfang, ein Ende und eine Dauer haben. "@de ,
+                                                           "This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Title
+:Title rdf:type owl:Class ;
+       rdfs:subClassOf <http://erlangen-crm.org/200717/E35_Title> ,
+                       <http://id.loc.gov/ontologies/bibframe/Title> ,
+                       :Appellation ;
+       <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+       <http://purl.org/dc/terms/created> "2021-07-21" ;
+       <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+       rdfs:label "Titel"@de ,
+                  "Titel"@en ;
+       <http://www.w3.org/2004/02/skos/core#definition> "Titelinformationen zu einer Ressource: Werktitel, bevorzugter Titel, Instanztitel, transkribierter Titel, übersetzter Titel, abweichende Form des Titels usw."@de ,
+                                                        "Title information relating to a resource: work title, preferred title, instance title, transcribed title, translated title, variant form of title, etc."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Type
+:Type rdf:type owl:Class ;
+      rdfs:subClassOf <http://erlangen-crm.org/200717/E55_Type> ,
+                      <http://www.w3.org/2004/02/skos/core#Concept> ,
+                      :Entity ;
+      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+      <http://purl.org/dc/terms/created> "2021-05-17" ;
+      <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+      rdfs:label "Typ"@de ,
+                 "Type"@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Diese Klasse umfasst Konzepte, die durch Begriffe aus Thesauri und kontrollierten Vokabularen bezeichnet werden, die zur Charakterisierung und Klassifizierung von Instanzen von CIDOC CRM-Klassen verwendet werden. Instanzen von E55 Type repräsentieren Konzepte im Gegensatz zu Instanzen von E41 Appellation, die zur Benennung von Instanzen von CIDOC-CRM-Klassen verwendet werden."@de ,
+                                                       "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CIDOC CRM classes. Instances of E55 Type represent concepts in contrast to instances of E41 Appellation which are used to name instances of CIDOC CRM classes."@en .
+
+
+###  https://dh.plus.ac.at/ontology#Word
+:Word rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/ns/lemon/ontolex#Word> ,
+                      :LexicalEntry ;
+      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+      <http://purl.org/dc/terms/created> "2021-08-02" ;
+      <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+      rdfs:label "Wortartikel"@de ,
+                 "word entry"@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "A word is a lexical entry that consists of a single token."@en ,
+                                                       "Ein Wort ist ein lexikalischer Eintrag, der aus einem einzigen Token besteht."@de .
+
+
+###  https://dh.plus.ac.at/ontology#Work
+:Work rdf:type owl:Class ;
+      rdfs:subClassOf <http://erlangen-crm.org/200717/E89_Propositional_Object> ,
+                      <http://id.loc.gov/ontologies/bibframe/Work> ,
+                      :Bibliographic ;
+      <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+      <http://purl.org/dc/terms/created> "2021-07-21" ;
+      <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+      rdfs:label "Werk"@de ,
+                 "Work"@en ;
+      <http://www.w3.org/2004/02/skos/core#definition> "Resource reflecting a conceptual essence of a cataloging resource."@en ,
+                                                       "Ressource, die eine konzeptionelle Essenz einer Katalogisierungsressource widerspiegelt."@de .
+
+
+###  https://mhdbdbd.plus.ac.at/xml-ontology#Document
+<https://mhdbdbd.plus.ac.at/xml-ontology#Document> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://id.loc.gov/vocabulary/relators
+<http://id.loc.gov/vocabulary/relators> rdf:type owl:NamedIndividual ,
+                                                 <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                                        rdfs:label "MARC Code List for Relators Scheme"@en .
+
+
+###  https://dh.plus.ac.at/ontology#SubclassTarget
+:SubclassTarget rdf:type owl:NamedIndividual ,
+                         <http://www.w3.org/ns/shacl#SPARQLTargetType> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<https://dh.plus.ac.at/constants/Prefixes> <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                                           <http://purl.org/dc/terms/created> "2021-05-11" ;
+                                           <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                                           rdfs:label "Prefixes"@en ,
+                                                      "Präfixe"@de ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "Praäfixdeklaration für Shacl."@de ,
+                                                                                            "Prefix declaration for Shacl."@en ;
+                                           <http://www.w3.org/ns/shacl#declare> _:genid18 ,
+                                                                                _:genid19 ,
+                                                                                _:genid20 ,
+                                                                                _:genid21 ,
+                                                                                _:genid22 ,
+                                                                                _:genid23 ,
+                                                                                _:genid24 ,
+                                                                                _:genid25 ,
+                                                                                _:genid26 ,
+                                                                                _:genid27 ,
+                                                                                _:genid28 ,
+                                                                                _:genid29 ,
+                                                                                _:genid30 ,
+                                                                                _:genid31 ,
+                                                                                _:genid32 ,
+                                                                                _:genid33 ,
+                                                                                _:genid34 ,
+                                                                                _:genid35 ,
+                                                                                _:genid36 ,
+                                                                                _:genid37 ,
+                                                                                _:genid38 ,
+                                                                                _:genid39 ,
+                                                                                _:genid40 ,
+                                                                                _:genid41 ,
+                                                                                _:genid42 ,
+                                                                                _:genid43 ,
+                                                                                _:genid44 ,
+                                                                                _:genid45 ,
+                                                                                _:genid46 ,
+                                                                                _:genid47 ,
+                                                                                _:genid48 ,
+                                                                                _:genid49 ,
+                                                                                _:genid50 ,
+                                                                                _:genid51 ,
+                                                                                _:genid52 ,
+                                                                                _:genid53 ,
+                                                                                _:genid54 ,
+                                                                                _:genid55 ,
+                                                                                _:genid56 ,
+                                                                                _:genid57 ,
+                                                                                _:genid58 ,
+                                                                                _:genid59 ,
+                                                                                _:genid60 ,
+                                                                                _:genid61 ,
+                                                                                _:genid62 ,
+                                                                                _:genid63 ,
+                                                                                _:genid64 ,
+                                                                                _:genid65 ,
+                                                                                _:genid66 ,
+                                                                                _:genid67 .
+
+_:genid18 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/2000/01/rdf-schema#" ;
+           <http://www.w3.org/ns/shacl#prefix> "rdfs" .
+
+_:genid19 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/ns/shacl#" ;
+           <http://www.w3.org/ns/shacl#prefix> "sh" .
+
+_:genid20 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/2007/05/powder-s#" ;
+           <http://www.w3.org/ns/shacl#prefix> "wdrs" .
+
+_:genid21 <http://www.w3.org/ns/shacl#namespace> "http://id.loc.gov/ontologies/bflc/" ;
+           <http://www.w3.org/ns/shacl#prefix> "bflc" .
+
+_:genid22 <http://www.w3.org/ns/shacl#namespace> "http://purl.org/vocab/vann/" ;
+           <http://www.w3.org/ns/shacl#prefix> "vann" .
+
+_:genid23 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/2006/time#" ;
+           <http://www.w3.org/ns/shacl#prefix> "time" .
+
+_:genid24 <http://www.w3.org/ns/shacl#namespace> "https://gams.uni-graz.at/o:szd.ontology#" ;
+           <http://www.w3.org/ns/shacl#prefix> "szd" .
+
+_:genid25 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/2002/07/owl#" ;
+           <http://www.w3.org/ns/shacl#prefix> "owl" .
+
+_:genid26 <http://www.w3.org/ns/shacl#namespace> "http://id.loc.gov/ontologies/bibframe/" ;
+           <http://www.w3.org/ns/shacl#prefix> "bf" .
+
+_:genid27 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/parameter/" ;
+           <http://www.w3.org/ns/shacl#prefix> "parameteri" .
+
+_:genid28 <http://www.w3.org/ns/shacl#namespace> "http://purl.org/dc/terms/" ;
+           <http://www.w3.org/ns/shacl#prefix> "dcterms" .
+
+_:genid29 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/ns/lemon/decomp#" ;
+           <http://www.w3.org/ns/shacl#prefix> "decomp" .
+
+_:genid30 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/mhdbdb/ontology#" ;
+           <http://www.w3.org/ns/shacl#prefix> "mhdbdbo" .
+
+_:genid31 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/2001/XMLSchema#" ;
+           <http://www.w3.org/ns/shacl#prefix> "xsd" .
+
+_:genid32 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/dhplusoValidation/" ;
+           <http://www.w3.org/ns/shacl#prefix> "dhplusoValidation" .
+
+_:genid33 <http://www.w3.org/ns/shacl#namespace> "http://erlangen-crm.org/200717/" ;
+           <http://www.w3.org/ns/shacl#prefix> "ecrm" .
+
+_:genid34 <http://www.w3.org/ns/shacl#namespace> "http://creativecommons.org/ns#" ;
+           <http://www.w3.org/ns/shacl#prefix> "cc" .
+
+_:genid35 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/xml-ontology#" ;
+           <http://www.w3.org/ns/shacl#prefix> "dhplusXml" .
+
+_:genid36 <http://www.w3.org/ns/shacl#namespace> "https://d-nb.info/standards/elementset/gnd#" ;
+           <http://www.w3.org/ns/shacl#prefix> "gndo" .
+
+_:genid37 <http://www.w3.org/ns/shacl#namespace> "http://www.wikidata.org/prop/direct/" ;
+           <http://www.w3.org/ns/shacl#prefix> "wdt" .
+
+_:genid38 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/ontology#" ;
+           <http://www.w3.org/ns/shacl#prefix> "dhpluso" .
+
+_:genid39 <http://www.w3.org/ns/shacl#namespace> "http://xmlns.com/foaf/0.1/" ;
+           <http://www.w3.org/ns/shacl#prefix> "foaf" .
+
+_:genid40 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/2004/02/skos/core#" ;
+           <http://www.w3.org/ns/shacl#prefix> "skos" .
+
+_:genid41 <http://www.w3.org/ns/shacl#namespace> "https://mhdbdbd.plus.ac.at/xml-ontology#" ;
+           <http://www.w3.org/ns/shacl#prefix> "mhdbdbxml" .
+
+_:genid42 <http://www.w3.org/ns/shacl#namespace> "https://d-nb.info/" ;
+           <http://www.w3.org/ns/shacl#prefix> "dnb" .
+
+_:genid43 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/ns/oa#" ;
+           <http://www.w3.org/ns/shacl#prefix> "oa" .
+
+_:genid44 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/tmp/" ;
+           <http://www.w3.org/ns/shacl#prefix> "tmp" .
+
+_:genid45 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/mhdbdb/instance/" ;
+           <http://www.w3.org/ns/shacl#prefix> "mhdbdbi" .
+
+_:genid46 <http://www.w3.org/ns/shacl#namespace> "http://www.opengis.net/ont/sf#" ;
+           <http://www.w3.org/ns/shacl#prefix> "ogcsf" .
+
+_:genid47 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/parameter-ontology#" ;
+           <http://www.w3.org/ns/shacl#prefix> "parameter" .
+
+_:genid48 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/1999/02/22-rdf-syntax-ns#" ;
+           <http://www.w3.org/ns/shacl#prefix> "rdf" .
+
+_:genid49 <http://www.w3.org/ns/shacl#namespace> "http://purl.org/dc/terms/" ;
+           <http://www.w3.org/ns/shacl#prefix> "dct" .
+
+_:genid50 <http://www.w3.org/ns/shacl#namespace> "http://www.opengis.net/ont/geosparql#" ;
+           <http://www.w3.org/ns/shacl#prefix> "geo" .
+
+_:genid51 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/mhdbdb/text/" ;
+           <http://www.w3.org/ns/shacl#prefix> "mhdbdbtext" .
+
+_:genid52 <http://www.w3.org/ns/shacl#namespace> "http://schema.org/" ;
+           <http://www.w3.org/ns/shacl#prefix> "schema" .
+
+_:genid53 <http://www.w3.org/ns/shacl#namespace> "http://www.wikidata.org/entity/statement/" ;
+           <http://www.w3.org/ns/shacl#prefix> "wds" .
+
+_:genid54 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/instance/" ;
+           <http://www.w3.org/ns/shacl#prefix> "dhplusi" .
+
+_:genid55 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/constants/" ;
+           <http://www.w3.org/ns/shacl#prefix> "constants" .
+
+_:genid56 <http://www.w3.org/ns/shacl#namespace> "https://dh.plus.ac.at/vocabulary/" ;
+           <http://www.w3.org/ns/shacl#prefix> "dhplusv" .
+
+_:genid57 <http://www.w3.org/ns/shacl#namespace> "https://d-nb.info/gnd/" ;
+           <http://www.w3.org/ns/shacl#prefix> "gnd" .
+
+_:genid58 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/ns/lemon/lime#" ;
+           <http://www.w3.org/ns/shacl#prefix> "lime" .
+
+_:genid59 <http://www.w3.org/ns/shacl#namespace> "http://www.wikidata.org/prop/direct-normalized/" ;
+           <http://www.w3.org/ns/shacl#prefix> "wdtn" .
+
+_:genid60 <http://www.w3.org/ns/shacl#namespace> "http://www.opengis.net/ont/sf#" ;
+           <http://www.w3.org/ns/shacl#prefix> "sf" .
+
+_:genid61 <http://www.w3.org/ns/shacl#namespace> "http://www.wikidata.org/entity/" ;
+           <http://www.w3.org/ns/shacl#prefix> "wd" .
+
+_:genid62 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/XML/1998/namespace" ;
+           <http://www.w3.org/ns/shacl#prefix> "xml" .
+
+_:genid63 <http://www.w3.org/ns/shacl#namespace> "http://www.lexinfo.net/ontology/3.0/lexinfo#" ;
+           <http://www.w3.org/ns/shacl#prefix> "lexinfo" .
+
+_:genid64 <http://www.w3.org/ns/shacl#namespace> "http://www.cidoc-crm.org/cidoc-crm/" ;
+           <http://www.w3.org/ns/shacl#prefix> "crm" .
+
+_:genid65 <http://www.w3.org/ns/shacl#namespace> "http://www.w3.org/ns/lemon/ontolex#" ;
+           <http://www.w3.org/ns/shacl#prefix> "ontolex" .
+
+_:genid66 <http://www.w3.org/ns/shacl#namespace> "https://d-nb.info/standards/elementset/dnb#" ;
+           <http://www.w3.org/ns/shacl#prefix> "dnbt" .
+
+_:genid67 <http://www.w3.org/ns/shacl#namespace> "http://purl.org/dc/elements/1.1/" ;
+           <http://www.w3.org/ns/shacl#prefix> "dc" .
+
+
+:SubclassTarget <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+                <http://purl.org/dc/terms/created> "2021-07-30" ;
+                <http://purl.org/dc/terms/modified> "2021-09-16+12:28" ;
+                rdfs:definition "Matches all nodes with a dhpluso-class or subclasses of this class."@en ,
+                                "Matcht alle Knoten mit dhpluso-Klasse oder einer Unterklasse dieser Klasse."@de ;
+                rdfs:label "Target for all subclasses or self"@en ,
+                           "Target für Unterklassen und die Klasse selbst"@de ;
+                <http://www.w3.org/ns/shacl#labelTemplate> "All instances of class {$class} or subclasses of this class"@en ,
+                                                           "Alle Instanzen der Klasse {$class} oder Unterklassen dieser Klasse"@en ;
+                <http://www.w3.org/ns/shacl#parameter> _:genid68 ;
+                <http://www.w3.org/ns/shacl#prefixes> <https://dh.plus.ac.at/constants/Prefixes> ;
+                <http://www.w3.org/ns/shacl#select> """
+        SELECT ?this
+WHERE {
+    {
+        ?this a $class .
+    }
+    UNION
+    {
+        BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .
+        ?this a ?currentClass .
+        SERVICE ?dhPLUSOntology {
+            ?currentClass rdfs:subClassOf* $class .
+        }
+    }
+}
+        """ .
+
+_:genid68 <http://www.w3.org/ns/shacl#class> <https://dh.plus.ac.at/tmp/class> ;
+           <http://www.w3.org/ns/shacl#description> "Klasse des zu prüfenden Knotens."@en ,
+                                                    "The class of the focus nodes."@en ;
+           <http://www.w3.org/ns/shacl#nodeKind> <http://www.w3.org/ns/shacl#IRI> ;
+           <http://www.w3.org/ns/shacl#path> <https://dh.plus.ac.at/tmp/class> .
+
+
+:language <http://purl.org/dc/elements/1.1/creator> "Peter Hinkelmanns" ;
+          <http://purl.org/dc/terms/created> "2021-07-22" ;
+          <http://purl.org/dc/terms/modified> "2021-10-05+08:50" ;
+          rdfs:label "has language"@en ,
+                     "hat Sprache"@de ;
+          <http://www.w3.org/2004/02/skos/core#definition> "Language associated with a resource or its parts."@en ,
+                                                           "Sprache, die mit einer Ressource oder ihren Teilen verbunden ist."@de .
+
+
+###  Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

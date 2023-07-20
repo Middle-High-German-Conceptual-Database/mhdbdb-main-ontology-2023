@@ -1,0 +1,42 @@
+{
+    "LocalTripleStore": {
+        "baseURI":"http://localhost:7200"
+    },
+    "LocalTripleStoreRepositories": {
+        "dhPLUS": "dhPLUS",
+        "dhPLUSOntology": "dhPLUS-Ontology",
+        "authorityFiles": "AuthorityFiles",
+        "parameter": "Parameter",
+        "inferTemp": "inferTemp"
+    },
+    "LocalEndpoints":{
+        "dhPLUS":"http://localhost:7200/repositories/dhPLUS",
+        "inferTemp": "http://localhost:7200/repositories/inferTemp",
+        "dhPLUSOntology": "http://localhost:7200/repositories/dhPLUS-Ontology",
+        "authorityFiles": "http://localhost:7200/repositories/AuthorityFiles",
+        "parameter":"http://localhost:7200/repositories/Parameter"
+    },
+    "LocalTripleStoreCredentials":{
+        "user":"",
+        "password":"",
+        "authorizationKey":""
+    },
+    "TripleGeneration": {
+        "instancePrefix": "mhdbdbi"
+    },
+    "NamedGraphs": {
+        "mhdbdbDict": "https://dh.plus.ac.at/mhdbdb/namedGraph/mhdbdbDict",
+        "mhdbdbMeta": "https://dh.plus.ac.at/mhdbdb/namedGraph/mhdbdbMeta",
+        "mhdbdbVocab": "https://dh.plus.ac.at/mhdbdb/namedGraph/mhdbdbVocab",
+        "mhdbdbOnto": "https://dh.plus.ac.at/mhdbdb/namedGraph/mhdbdbOnto",
+        "dnb": "https://dh.plus.ac.at/mhdbdb/namedGraph/dnb",
+        "gnd": "https://dh.plus.ac.at/mhdbdb/namedGraph/gnd",
+        "wd": "https://dh.plus.ac.at/mhdbdb/namedGraph/wd",
+        "mhdbdbText": "https://dh.plus.ac.at/mhdbdb/namedGraph/mhdbdbText",
+        "mhdbdbAnno": "https://dh.plus.ac.at/mhdbdb/namedGraph/mhdbdbAnno"
+    },
+    "NamedGraphsPrefixed": {},
+    "Environment": {
+        "widoco": "E:\One Drive PLUS\OneDrive - Universität Salzburg\MHDBDB\Widoco"
+    }
+}
