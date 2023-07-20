@@ -1,0 +1,10 @@
+?parameterset parameter:hasParameter ?this .
+OPTIONAL {    
+    {
+        ?parameterset ?pp ?po .
+    }
+    MINUS
+    {
+        ?parameterset parameter:hasParameter ?po .
+    }           
+}

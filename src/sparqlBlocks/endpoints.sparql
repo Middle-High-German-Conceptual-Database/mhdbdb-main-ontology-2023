@@ -1,0 +1,5 @@
+BIND(constants:EndpointMirroredAuthorityFiles() AS ?af) .
+BIND(constants:EndpointDhplusInstances() AS ?dhPLUSInstances) .
+BIND(constants:EndpointDhplusOntology() AS ?dhPLUSOntology) .
+BIND(constants:EndpointDhplusInferTemp() AS ?dhPLUSInferTemp) .
+BIND(constants:EndpointWD() AS ?wd) .

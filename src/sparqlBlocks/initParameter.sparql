@@ -1,0 +1,5 @@
+?set parameter:hasParameter ?this .
+?set parameter:now ?now .
+?this parameter:dhpUri ?dhpUri .
+?this parameter:dhpClass ?dhpClass .
+?this parameter:authorityUri ?authorityUri .
