@@ -1,0 +1,37 @@
+dhplusoValidation:targetPropertyNS a sh:SPARQLTargetType ;
+    rdfs:subClassOf sh:Target ;
+    rdfs:label
+        "target property of specific name space"@en ,
+        "Zieleigenschaft eines bestimmten Namensraums"@de ;
+    rdfs:definition
+        "Matches all instances of owl:ObjectProperty, owl:DatatypeProperty and owl:AnnotationProperty of the specific namespace."@en ,
+        "Entspricht allen Instanzen von owl:class des spezifischen Namespace."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:parameter [
+        sh:path tmp:nameSpace ;
+        sh:description
+            "Name space."@en ,
+            "Namensraum"@de ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:select """
+        SELECT ?this
+        WHERE {
+            {
+                ?this a owl:ObjectProperty .
+            }
+            UNION
+            {
+                ?this a owl:DatatypeProperty .
+            }
+            UNION
+            {
+                ?this a owl:AnnotationProperty .
+            }
+            FILTER(STRSTARTS(STR(?this), $nameSpace))
+        }
+        """ ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,61 @@
+dhplusoValidation:dhplusoOwlProperty a sh:NodeShape ;
+    rdfs:label
+        "Validation of owl properties for dhPLUS Ontologies"@en ,
+        "Validierung von OWL Eigenschaften für dhPLUS Ontologien"@de ;
+    rdfs:definition
+        "Validates owl properties."@en ,
+        "Validiert OWL Eigenschaften."@de ;
+    sh:target [
+        a dhplusoValidation:targetPropertyNS ;
+        tmp:nameSpace "https://dh.plus.ac.at/ontology#" ;
+    ] ;
+    sh:property
+        [
+            sh:path rdfs:subPropertyOf ;
+            sh:NodeKind sh:IRI ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path rdfs:domain ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path rdfs:range ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path rdfs:label ;
+            sh:NodeKind sh:Literal ;
+            sh:minCount 2 ;
+            sh:languageIn ( "de" "en" ) ;
+            sh:uniqueLang true ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path skos:definition ;
+            sh:NodeKind sh:Literal ;
+            sh:languageIn ( "de" "en" ) ;
+            sh:uniqueLang true ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dc:creator ;
+            sh:NodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dcterms:created ;
+            sh:NodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dcterms:modified ;
+            sh:NodeKind sh:Literal ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ;
+.

@@ -1,0 +1,27 @@
+dhplusoValidation:targetClassNS a sh:SPARQLTargetType ;
+    rdfs:subClassOf sh:Target ;
+    rdfs:label
+        "target class of specific name space"@en ,
+        "Zielklasse eines bestimmten Namensraums"@de ;
+    rdfs:definition
+        "Matches all instances of owl:class of the specific namespace."@en ,
+        "Entspricht allen Instanzen von owl:class des spezifischen Namespace."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:parameter [
+        sh:path tmp:nameSpace ;
+        sh:description
+            "Name space."@en ,
+            "Namensraum"@de ;
+        sh:nodeKind sh:Literal ;
+    ] ;
+    sh:select """
+        SELECT ?this
+        WHERE {
+            ?this a owl:Class .
+            FILTER(STRSTARTS(STR(?this), $nameSpace))
+        }
+        """ ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
