@@ -1,0 +1,11 @@
+constants:EndpointDhplusInferTemp a sh:SPARQLFunction ;
+    rdfs:label
+        "Sparql endpoint inferTemp."@en ,
+        "Sparql endpoint inferTemp."@de ;
+    sh:prefixes constants:Prefixes ;
+    # Specify endpoint in config.json
+    sh:select """
+        SELECT (<{{ endpoint.inferTemp }}> AS ?res)
+        WHERE {}
+        """ ;
+.

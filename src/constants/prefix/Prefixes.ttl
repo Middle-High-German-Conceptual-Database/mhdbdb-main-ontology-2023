@@ -1,0 +1,21 @@
+constants:Prefixes
+    rdfs:label
+        "Prefixes"@en ,
+        "Präfixe"@de ;
+    skos:definition
+        "Prefix declaration for Shacl."@en ,
+        "Praäfixdeklaration für Shacl."@de ;
+
+    ######################################################################
+    ##### Declerations are generated in build process from namespaces.json
+    ######################################################################
+    # Example:
+    # sh:declare [
+    #     sh:prefix "bf" ;
+    #     sh:namespace "http://id.loc.gov/ontologies/bibframe/"^^xsd:anyURI ;
+    # ] ;
+
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,14 @@
+constants:MirroredAuthorityFilesGraphPrefix a sh:SPARQLFunction ;
+rdfs:label
+    "Named Graph Prefix for Authorityfiles."@en ,
+    "Named Graph Prefix for Authorityfiles."@de ;
+sh:prefixes constants:Prefixes ;
+sh:select """
+
+    SELECT (?res)
+    WHERE {
+        {{ sparqlBlocks.endpoints }}
+        BIND(IRI(CONCAT(STR(?af),'/rdf-graphs/')) AS ?res)
+    }
+    """ ;
+.

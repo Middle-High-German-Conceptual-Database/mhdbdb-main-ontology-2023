@@ -1,0 +1,11 @@
+constants:EndpointDhplusInstances a sh:SPARQLFunction ;
+    rdfs:label
+        "Sparql endpoint DHPLUS."@en ,
+        "Sparql endpoint DHPLUS."@de ;
+    sh:prefixes constants:Prefixes ;
+    # Specify endpoint in config.json
+    sh:select """
+        SELECT (<{{ endpoint.dhPLUS }}> AS ?res)
+        WHERE {}
+        """ ;
+.

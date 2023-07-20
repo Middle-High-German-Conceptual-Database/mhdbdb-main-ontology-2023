@@ -1,0 +1,11 @@
+constants:EndpointMirroredAuthorityFiles a sh:SPARQLFunction ;
+rdfs:label
+    "Sparql endpoint AUTHORITYFILES."@en ,
+    "Sparql endpoint AUTHORITYFILES."@de ;
+sh:prefixes constants:Prefixes ;
+# Specify endpoint in config.json
+sh:select """
+    SELECT (<{{ endpoint.authorityFiles }}> AS ?res)
+    WHERE {}
+    """ ;
+.

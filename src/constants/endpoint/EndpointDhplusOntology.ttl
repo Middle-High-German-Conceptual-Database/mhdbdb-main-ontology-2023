@@ -1,0 +1,11 @@
+constants:EndpointDhplusOntology a sh:SPARQLFunction ;
+    rdfs:label
+        "Sparql endpoint DHPLUS Ontology and DHPLUS Vocabulary."@en ,
+        "Sparql endpoint DHPLUS Ontology and DHPLUS Vocabulary."@de ;
+    sh:prefixes constants:Prefixes ;
+    # Specify endpoint in config.json
+    sh:select """
+        SELECT (<{{ endpoint.dhPLUSOntology }}> AS ?res)
+        WHERE {}
+        """ ;
+.

@@ -1,0 +1,10 @@
+constants:EndpointWD a sh:SPARQLFunction ;
+    rdfs:label
+        "Sparql endpoint WD."@en ,
+        "Sparql endpoint WD."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        SELECT (<https://query.wikidata.org/sparql> AS ?res)
+        WHERE {}
+        """ ;
+.
