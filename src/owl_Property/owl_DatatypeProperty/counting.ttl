@@ -1,0 +1,14 @@
+dhpluso:counting a owl:DatatypeProperty ;
+    rdfs:subPropertyOf gndo:counting ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:label
+        "Counting"@en ,
+        "Zählung"@de ;
+    skos:definition
+        "Counting name of a person."@en ,
+        "Zählungsname einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

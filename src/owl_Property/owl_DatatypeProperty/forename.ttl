@@ -1,0 +1,16 @@
+dhpluso:forename a owl:DatatypeProperty ;
+    rdfs:subPropertyOf
+        gndo:forename ,
+        wdt:P735 ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:label
+        "forename"@en ,
+        "Vorname"@de ;
+    skos:definition
+        "Forname of a person."@en ,
+        "Vorname einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

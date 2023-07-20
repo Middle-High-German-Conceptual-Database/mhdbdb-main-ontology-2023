@@ -1,0 +1,16 @@
+dhpluso:provisionActivityStatement a owl:DatatypeProperty ;
+    owl:deprecated true ;
+    rdfs:subPropertyOf
+        bf:provisionActivityStatement ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label
+        "has provision activity statement"@en ,
+        "hat Anmerkung zur Veröffentlichungsaktivität"@de ;
+    skos:definition
+        "Statement relating to providers of a resource; usually transcribed."@en ,
+        "Aussage, die sich auf Anbieter einer Ressource bezieht; in der Regel transkribiert."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

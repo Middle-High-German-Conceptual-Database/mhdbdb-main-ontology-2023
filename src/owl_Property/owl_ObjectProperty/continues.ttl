@@ -1,0 +1,19 @@
+dhpluso:continues a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:continues ;
+    rdfs:domain [
+        owl:unionOf (dhpluso:Work dhpluso:Instance)
+    ] ;
+    rdfs:range [
+        owl:unionOf (dhpluso:Work dhpluso:Instance)
+    ] ;
+    owl:inverseOf dhpluso:continuedBy ;
+    rdfs:label
+        "continues"@en ,
+        "setzt fort"@de ;
+    skos:definition
+        "Resource that is continued by the content of a later resource under a new title."@en ,
+        "Ressource, die durch den Inhalt einer späteren Ressource unter einem neuen Titel fortgesetzt wird."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

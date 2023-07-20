@@ -1,0 +1,10 @@
+dhpluso:antonymConcept a owl:ObjectProperty ;
+    rdfs:domain dhpluso:LexicalConcept ;
+    rdfs:range dhpluso:LexicalConcept ;
+    rdfs:label
+        "has antonym lexical concept"@en ,
+        "hat antonymen Begriff"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

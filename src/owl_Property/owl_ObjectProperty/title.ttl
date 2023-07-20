@@ -1,0 +1,16 @@
+dhpluso:title a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        bf:title ,
+        ecrm:P102_has_title ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Title ;
+    rdfs:label
+        "has title"@en ,
+        "hat Titel"@de ;
+    skos:definition
+        "Name given to a resource."@en ,
+        "Name einer Ressource."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

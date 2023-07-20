@@ -1,0 +1,15 @@
+dhpluso:variantTitle a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        dhpluso:title ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Title ;
+    rdfs:label
+        "has variant title"@en ,
+        "hat variant Titel"@de ;
+    skos:definition
+        "Name given to a resource."@en ,
+        "Name einer Ressource."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

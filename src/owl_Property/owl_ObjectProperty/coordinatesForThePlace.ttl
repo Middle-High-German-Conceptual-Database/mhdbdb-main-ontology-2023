@@ -1,0 +1,16 @@
+dhpluso:coordinatesForThePlace a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        dhpluso:isIdentifiedBy , # -> Entity Ontology
+        gndo:preferredNameEntityForThePlace ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:Point ;
+    rdfs:label
+        "coordinates entity"@en ,
+        "Koordinatenentität"@de ;
+    skos:definition
+        "Reference to the coordinates entity of a place."@en ,
+        "Verweis auf die Koordinatenentität eines Ortes."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

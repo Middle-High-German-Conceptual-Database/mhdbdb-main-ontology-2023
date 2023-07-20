@@ -1,0 +1,15 @@
+dhpluso:issuance a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        bf:issuance ;
+    rdfs:domain [owl:unionOf (dhpluso:Instance dhpluso:Work)] ;
+    rdfs:range dhpluso:Issuance ;
+    rdfs:label
+        "has issuance"@en ,
+        "hat Ausgabe"@de ;
+    skos:definition
+        "Categorization reflecting whether a resource is issued in one or more parts, the way it is updated, and its intended termination."@en ,
+        "Kategorisierung, die widerspiegelt, ob eine Ressource in einem oder mehreren Teilen ausgegeben wird, wie sie aktualisiert wird und wie sie beendet werden soll."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,14 @@
+dhpluso:nameAddition a owl:DatatypeProperty ;
+    rdfs:subPropertyOf gndo:nameAddition ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:label
+        "Name addition"@en ,
+        "Namensszusatz"@de ;
+    skos:definition
+        "Name addition of a person."@en ,
+        "Namensszusatz einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

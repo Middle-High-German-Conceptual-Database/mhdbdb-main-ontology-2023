@@ -1,0 +1,11 @@
+dhpluso:hyponym a owl:ObjectProperty ;
+    rdfs:subPropertyOf lexinfo:hyponym ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:label
+        "has hyponym lexical sense"@en ,
+        "hat hyponyme Bedeutung"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

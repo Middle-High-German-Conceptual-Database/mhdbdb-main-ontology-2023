@@ -1,0 +1,15 @@
+dhpluso:hasInstance a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:hasInstance ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range  dhpluso:Instance ;
+    owl:inverseOf dhpluso:instanceOf ;
+    rdfs:label
+        "has instance"@en ,
+        "hat Instanz"@de ;
+    skos:definition
+        "Instance is related to described Work."@en ,
+        "Die Instanz ist mit dem beschriebenen Werk verbunden."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

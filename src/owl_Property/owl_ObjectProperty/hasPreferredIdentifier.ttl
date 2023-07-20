@@ -1,0 +1,15 @@
+dhpluso:hasPreferredIdentifier a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        ecrm:P48_has_preferred_identifier ;
+    rdfs:domain dhpluso:Entity ;
+    rdfs:range dhpluso:Identifier ;
+    rdfs:label
+        "has preferred identifier"@en ,
+        "hat bevorzugten Identifizierer"@de ;
+    skos:definition
+        "This property records the preferred instance of Identifier that was used to identify an instance of Entity at the time this property was recorded."@en ,
+        "Diese Eigenschaft zeichnet die bevorzugte Instanz von Identifier auf, die zur Identifizierung einer Instanz von Entity zum Zeitpunkt der Aufzeichnung dieser Eigenschaft verwendet wurde."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

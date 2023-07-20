@@ -1,0 +1,16 @@
+dhpluso:isIdentifiedBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        bf:identifiedBy ,
+        ecrm:P1_is_identified_by ;
+    rdfs:domain dhpluso:Entity ;
+    rdfs:range dhpluso:Appellation ;
+    rdfs:label
+        "is identified by"@en ,
+        "wird identifiziert durch"@de ;
+    skos:definition
+        "This property describes the naming or identification of any real world item by a name or any other identifier."@en ,
+        "Diese Eigenschaft beschreibt die Benennung oder Identifizierung eines beliebigen Elements der realen Welt durch einen Namen oder einen anderen Bezeichner."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

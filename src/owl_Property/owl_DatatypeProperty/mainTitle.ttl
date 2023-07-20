@@ -1,0 +1,15 @@
+dhpluso:mainTitle a owl:DatatypeProperty ;
+        rdfs:subPropertyOf
+            bf:mainTitle ;
+        rdfs:domain dhpluso:Title ;
+        rdfs:range xsd:string ;
+        rdfs:label
+            "main title"@en ,
+            "Haupttitel"@de ;
+        skos:definition
+            "Title being addressed. Possible title component."@en ,
+            "Angesprochener Titel. Mögliche Titelkomponente."@de ;
+        dc:creator "Peter Hinkelmanns" ;
+        dcterms:created "2021-08-12" ;
+        dcterms:modified "{{ modificationDate }}" ;
+.

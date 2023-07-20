@@ -1,0 +1,11 @@
+dhpluso:otherForm a owl:ObjectProperty ;
+    rdfs:subPropertyOf ontolex:otherForm ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:Form ;
+    rdfs:label
+        "has other form"@en ,
+        "hat weitere Form"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

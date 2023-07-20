@@ -1,0 +1,15 @@
+dhpluso:editionStatement a owl:DatatypeProperty ;
+    rdfs:subPropertyOf
+        bf:editionStatement ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label
+        "has edition statement"@en ,
+        "hat editorische Bemerkung"@de ;
+    skos:definition
+        "Information identifying the edition or version of the resource and associated statements of responsibility for the edition; usually transcribed."@en ,
+        "Informationen zur Identifizierung der Ausgabe oder Version der Ressource und zugehörige Erklärungen zur Verantwortung für die Ausgabe; in der Regel transkribiert."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

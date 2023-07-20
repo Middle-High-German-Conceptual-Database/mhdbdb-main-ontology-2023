@@ -1,0 +1,16 @@
+dhpluso:variantNameEntityForThePerson a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        dhpluso:isIdentifiedBy ,
+        gndo:variantNameEntityForThePerson ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:NameOfThePerson ;
+    rdfs:label
+        "variant name entity"@en ,
+        "alternative Namensentität"@de ;
+    skos:definition
+        "Reference to the variant name entity of a person."@en ,
+        "Verweis auf die alternative Namensentität einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

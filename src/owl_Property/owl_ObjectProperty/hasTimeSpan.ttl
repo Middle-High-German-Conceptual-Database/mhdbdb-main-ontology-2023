@@ -1,0 +1,16 @@
+dhpluso:hasTimeSpan a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        ecrm:P4_has_time-span ;
+    rdfs:domain dhpluso:Event ;
+    rdfs:range dhpluso:TimeSpan ;
+    owl:inverseOf dhpluso:isTimeSpanOf ;
+    rdfs:label
+        "has time span"@en ,
+        "hat Zeitspanne"@de ;
+    skos:definition
+        "This property associates an instance of Event with the Time-Span during which it was on-going."@en ,
+        "Diese Eigenschaft verknüpft ein Ereignis mit der Zeitspanne, in der es stattfand."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

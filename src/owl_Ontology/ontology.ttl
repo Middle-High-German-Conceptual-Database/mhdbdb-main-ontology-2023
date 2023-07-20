@@ -1,0 +1,30 @@
+<https://dh.plus.ac.at/ontology#> a owl:Ontology ;
+    rdfs:label
+        "dhPLUS Ontology"@en ,
+        "dhPLUS Ontologie"@de ;
+    dc:title
+        "dhPLUS Ontology"@en ,
+        "dhPLUS Ontologie"@de ;
+    skos:definition
+            "This is an ontology of the dhPLUS repository for Digital Humanities Projects of the University of Salzburg."@en ,
+            "Dies ist eine Ontologie des dhPLUS-Repositoriums für Digital Humanities-Projekte der Universität Salzburg."@de ;
+    owl:versionInfo "0.1"^^xsd:string, "2019-12-27"^^xsd:date ;
+    vann:preferredNamespaceUri "https://dh.plus.ac.at/ontology#" ;
+    vann:preferredNamespacePrefix "dhpluso" ;
+    owl:ontologyIRI <https://dh.plus.ac.at/ontology#> ;
+    owl:versionIRI <https://dh.plus.ac.at/ontology/0-1#> ;
+    dc:rights <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    owl:imports
+        # Ontologies
+        <https://raw.githubusercontent.com/lcnetdev/bibframe-ontology/main/archive/bibframe-2.1.0.rdf> , #Bibframe 2.1.0
+        <https://raw.githubusercontent.com/erlangen-crm/ecrm/master/ecrm_200717.owl> , #ECRM 200717 / CIDOC-CRM 6.2.9
+        <https://d-nb.info/standards/elementset/gnd_20191015.rdf> , #GNDO 20191015
+        <https://raw.githubusercontent.com/opengeospatial/ogc-geosparql/master/1.1/geo.ttl> , #Geo Sparql 1.1
+        # Vocabularies
+        <http://id.loc.gov/vocabulary/relators.skos.rdf> ; # LOC Relators, 20 May 2020
+    dc:creator
+        "Richard Hörmann" ,
+        "Peter Hinkelmanns" ;
+    dcterms:created "2019-12-27" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

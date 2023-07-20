@@ -1,0 +1,11 @@
+dhpluso:synonym a owl:ObjectProperty ;
+    rdfs:subPropertyOf lexinfo:synonym ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:label
+        "has synonym lexical sense"@en ,
+        "hat synonyme Bedeutung"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

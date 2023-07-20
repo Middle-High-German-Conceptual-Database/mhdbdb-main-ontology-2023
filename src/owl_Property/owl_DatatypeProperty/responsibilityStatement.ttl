@@ -1,0 +1,16 @@
+dhpluso:responsibilityStatement a owl:DatatypeProperty ;
+    owl:deprecated true ;
+    rdfs:subPropertyOf
+        bf:responsibilityStatement ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label
+        "has responsibility statement"@en ,
+        "hat Anmerkung zur Verantwortlichkeit"@de ;
+    skos:definition
+        "Statement relating to any persons, families, or corporate bodies responsible for the creation of, or contributing to the content of a resource; usually transcribed."@en ,
+        "Aussage zu Personen, Familien oder Körperschaften, die für die Erstellung einer Ressource verantwortlich sind oder zum Inhalt beitragen; in der Regel transkribiert."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,16 @@
+dhpluso:preferredNameEntityForThePerson a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        dhpluso:isIdentifiedBy ,
+        gndo:preferredNameEntityForThePerson ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:NameOfThePerson ;
+    rdfs:label
+        "prefered name entity"@en ,
+        "bevorzugte Namensentität"@de ;
+    skos:definition
+        "Reference to the prefered name entity of a person."@en ,
+        "Verweis auf die bevorzugte Namensentität einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

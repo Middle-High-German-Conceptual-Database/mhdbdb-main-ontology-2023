@@ -1,0 +1,15 @@
+dhpluso:diedIn a owl:ObjectProperty ;
+    rdfs:subPropertyOf ecrm:P100i_died_in ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:Death ;
+    owl:inverseOf dhpluso:wasDeathOf ;
+    rdfs:label
+        "died"@en ,
+        "gestorben"@de ;
+    skos:definition
+        "Reference to the death event of a person."@en ,
+        "Verweis auf das Todesevent einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

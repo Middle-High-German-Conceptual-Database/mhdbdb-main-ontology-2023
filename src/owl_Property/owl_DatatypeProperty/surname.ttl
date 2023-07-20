@@ -1,0 +1,16 @@
+dhpluso:surname a owl:DatatypeProperty ;
+    rdfs:subPropertyOf
+        gndo:surname ,
+        wdt:P734 ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:label
+        "surname"@en ,
+        "Nachname"@de ;
+    skos:definition
+        "surname of a person."@en ,
+        "Nachname einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,17 @@
+dhpluso:timePrecision a owl:DatatypeProperty ;
+    rdfs:subPropertyOf wdt:P2803 ;
+    rdfs:domain dhpluso:TimeSpan ;
+    rdfs:range xsd:duration ;
+    rdfs:label
+        "time precision"@en ,
+        "Genauigkeit der Zeitangabe"@de ;
+    skos:definition
+        "Defines the precision of a time value."@en ,
+        "Definiert die Genauigkeit eines Zeitwertes."@de ;
+    skos:example
+        "Precesion 'P5Y' and a date 1250 implies, the date could be 1250±5 – i.e. the period 1245–1255"@en ,    
+        "Die Präposition 'P5Y' und die Jahreszahl 1250 implizieren, dass das Datum 1250±5 sein könnte, also der Zeitraum 1245–1255."@de ; 
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

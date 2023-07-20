@@ -1,0 +1,16 @@
+dhpluso:variantNameEntityForThePlace a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        dhpluso:isIdentifiedBy , # -> Entity Ontology
+        gndo:variantNameForThePlaceOrGeographicName ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:NameOfThePlace ;
+    rdfs:label
+        "variant name entity"@en ,
+        "alternative Namensentität"@de ;
+    skos:definition
+        "Reference to the variant name entity of a place."@en ,
+        "Verweis auf die alternative Namensentität einer Place."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

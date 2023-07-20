@@ -1,0 +1,15 @@
+dhpluso:note a owl:ObjectProperty ;
+        rdfs:subPropertyOf
+            bf:note ;
+        rdfs:domain dhpluso:Bibliographic ;
+        rdfs:range dhpluso:Note ;
+        rdfs:label
+            "has note"@en ,
+            "hat Anmerkung"@de ;
+        skos:definition
+            "General textual information relating to a resource, such as Information about a specific copy of a resource or information about a particular attribute of a resource."@en ,
+            "Allgemeine Textinformationen, die sich auf eine Ressource beziehen, wie z. B. Informationen über eine bestimmte Kopie einer Ressource oder Informationen über ein bestimmtes Attribut einer Ressource."@de ;
+        dc:creator "Peter Hinkelmanns" ;
+        dcterms:created "2021-07-22" ;
+        dcterms:modified "{{ modificationDate }}" ;
+.

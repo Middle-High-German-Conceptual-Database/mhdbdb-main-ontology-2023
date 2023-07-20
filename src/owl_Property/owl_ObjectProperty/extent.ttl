@@ -1,0 +1,15 @@
+dhpluso:extent a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        bf:extent ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Extent ;
+    rdfs:label
+        "has extent"@en ,
+        "hat Umfang"@de ;
+    skos:definition
+        "Number and type of units and/or subunits making up a resource."@en ,
+        "Anzahl und Typ der Einheiten und/oder Untereinheiten des Umfangs einer Ressource."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

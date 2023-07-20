@@ -1,0 +1,11 @@
+dhpluso:sense a owl:ObjectProperty ;
+    rdfs:subPropertyOf ontolex:sense ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:label
+        "has lexical sense"@en ,
+        "hat lexikalische Bedeutung"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

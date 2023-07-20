@@ -1,0 +1,13 @@
+dhpluso:placename a owl:DatatypeProperty ;
+    rdfs:domain dhpluso:NameOfThePlace ;
+    rdfs:range xsd:string ;
+    rdfs:label
+        "place name"@en ,
+        "Ortsname"@de ;
+    skos:definition
+        "Name of a place."@en ,
+        "Name eines Ortes."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

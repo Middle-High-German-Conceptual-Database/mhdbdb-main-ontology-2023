@@ -1,0 +1,14 @@
+dhpluso:antonym a owl:ObjectProperty ;
+    rdfs:subPropertyOf lexinfo:antonym ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:label
+        "has antonym lexical sense"@en ,
+        "hat antonyme Bedeutung"@de ;
+    skos:definition
+        "Links a lexical sense with its antonym."@en ,
+        "Verbindet eine lexikalische Bedeutung mit ihrem Antonym."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

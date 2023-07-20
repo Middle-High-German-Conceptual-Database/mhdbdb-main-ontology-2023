@@ -1,0 +1,15 @@
+dhpluso:hasType a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        ecrm:P2_has_type ;
+    rdfs:domain dhpluso:Entity ;
+    rdfs:range dhpluso:Type ;
+    rdfs:label
+        "has type"@en ,
+        "hat Typ"@de ;
+    skos:definition
+        "This property allows sub typing of dhPLUS entities - a form of specialisation - through the use of a terminological hierarchy, or thesaurus."@en ,
+        "Diese Eigenschaft ermöglicht die Subtypisierung von dhPLUS-Entitäten - eine Form der Spezialisierung - durch die Verwendung einer terminologischen Hierarchie oder eines Thesaurus."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

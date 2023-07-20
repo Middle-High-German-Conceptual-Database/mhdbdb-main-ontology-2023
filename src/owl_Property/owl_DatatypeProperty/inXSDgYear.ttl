@@ -1,0 +1,14 @@
+dhpluso:inXSDDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf time:inXSDgYear ;
+    rdfs:domain dhpluso:Instant ;
+    rdfs:range xsd:gYear ;
+    rdfs:label
+        "in XSD gYear"@en ,
+        "als XSD gYear"@de ;
+    skos:definition
+        "Position of an instant, expressed using xsd:gYear."@en ,
+        "Position eines Zeitpunkts, ausgedrückt durch xsd:gYear."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,11 @@
+dhpluso:onomasticUsage a owl:ObjectProperty ;
+    rdfs:subPropertyOf ontolex:sense ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:OnomasticUsage ;
+    rdfs:label
+        "has onomastic Usage"@en ,
+        "hat Namensgebrauch"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

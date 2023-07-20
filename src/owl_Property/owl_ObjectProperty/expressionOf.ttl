@@ -1,0 +1,15 @@
+dhpluso:expressionOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:expressionOf ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    owl:inverseOf dhpluso:hasExpression ;
+    rdfs:label
+        "Expression of"@en ,
+        "Expression von"@de ;
+    skos:definition
+        "Work that the described Work is an expression of. For use to connect Works under FRBR/RDA rules. For example, a critical edition is an expression of a gmh. work."@en ,
+        "Werk, von dem das beschriebene Werk eine Expression ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verbinden. Bespielsweise ist eine kritische Edition eine Expression eines mhd. Werkes."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

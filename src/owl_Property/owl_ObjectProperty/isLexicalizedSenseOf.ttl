@@ -1,0 +1,11 @@
+dhpluso:isLexicalizedSenseOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf ontolex:isLexicalizedSenseOf ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalConcept ;
+    rdfs:label
+        "is lexicalized sense of"@en ,
+        "ist lexikalisierte Bedeutung von"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

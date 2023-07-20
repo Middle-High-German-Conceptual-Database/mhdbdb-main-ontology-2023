@@ -1,0 +1,11 @@
+dhpluso:synonymConcept a owl:ObjectProperty ;
+    rdfs:subPropertyOf dhpluso:objectProperty ;
+    rdfs:domain dhpluso:LexicalConcept ;
+    rdfs:range dhpluso:LexicalConcept ;
+    rdfs:label
+        "has synonym lexical concept"@en ,
+        "hat synonymen Begriff"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

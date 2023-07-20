@@ -1,0 +1,14 @@
+dhpluso:prefix a owl:DatatypeProperty ;
+    rdfs:subPropertyOf gndo:prefix ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:label
+        "name prefix"@en ,
+        "Namenspräfix"@de ;
+    skos:definition
+        "name prefix of a person."@en ,
+        "Namenspräfix einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

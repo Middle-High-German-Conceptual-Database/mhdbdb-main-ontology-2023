@@ -1,0 +1,15 @@
+dhpluso:wasCreatedBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf ecrm:P94i_was_created_by ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Creation ;
+    owl:inverseOf dhpluso:hasCreated ;
+    rdfs:label
+        "was created by"@en ,
+        "wurde erschaffen durch"@de ;
+    skos:definition
+        "This property links an instance of Work to the instance of Creation whose product is the work."@en ,
+        "Diese Eigenschaft verknüpft eine Instanz von Werk mit der Instanz von Erschaffung, deren Produkt das Werk ist."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

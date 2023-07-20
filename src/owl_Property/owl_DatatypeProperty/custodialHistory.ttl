@@ -1,0 +1,17 @@
+dhpluso:custodialHistory a owl:DatatypeProperty ;
+    rdfs:subPropertyOf bf:custodialHistory ;
+    rdfs:domain [
+        owl:unionOf (dhpluso:Item dhpluso:Instance)
+    ] ;
+    rdfs:range
+        rdfs:Literal ;
+    rdfs:label
+        "custodial history"@en ,
+        "Provenienzgeschichte"@de ;
+    skos:definition
+        "Information about the provenance, such as origin, ownership and custodial history (chain of custody), of a resource."@en ,
+        "Informationen über die Provenienz einer Ressource, z. B. Herkunft, Eigentum und Aufbewahrungsgeschichte."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

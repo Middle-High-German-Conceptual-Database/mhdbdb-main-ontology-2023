@@ -1,0 +1,15 @@
+dhpluso:witnessed a owl:ObjectProperty ;
+    rdfs:subPropertyOf ecrm:P7i_witnessed ;
+    rdfs:domain dhpluso:Place ;
+    rdfs:range dhpluso:Event ;
+    owl:inverseOf dhpluso:tookPlaceAt ;
+    rdfs:label
+        "took place at"@en ,
+        "fand statt an"@de ;
+    skos:definition
+        "This property describes the events happening at a spatial location."@en ,
+        "Diese Eigenschaft beschreibt die Ereignisse, die an einem bestimmten Ort stattfinden."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-26" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

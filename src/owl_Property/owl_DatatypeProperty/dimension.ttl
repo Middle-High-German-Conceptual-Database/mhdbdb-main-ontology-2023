@@ -1,0 +1,16 @@
+dhpluso:dimension a owl:DatatypeProperty ;
+    rdfs:subPropertyOf
+        bf:dimension ,
+        ecrm:P43_has_dimension ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label
+        "has dimension"@en ,
+        "hat Dimension"@de ;
+    skos:definition
+        "Measurements of the carrier or carriers and/or the container of a resource."@en ,
+        "Maße des Trägers oder der Träger und/oder des Behälters einer Ressource."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

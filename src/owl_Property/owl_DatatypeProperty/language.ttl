@@ -1,0 +1,18 @@
+dhpluso:language a owl:DatatypeProperty ;
+    rdfs:subPropertyOf
+        lime:language ,
+        bf:language ;
+    rdfs:domain
+        dhpluso:Lexicon ,
+        dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Language ;
+    rdfs:label
+        "has language"@en ,
+        "hat Sprache"@de ;
+    skos:definition
+        "Language associated with a resource or its parts."@en ,
+        "Sprache, die mit einer Ressource oder ihren Teilen verbunden ist."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

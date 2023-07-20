@@ -1,0 +1,15 @@
+dhpluso:broughtIntoLife a owl:ObjectProperty ;
+    rdfs:subPropertyOf ecrm:P98_brought_into_life ;
+    rdfs:domain dhpluso:Birth ;
+    rdfs:range dhpluso:Person ;
+    owl:inverseOf dhpluso:wasBorn ;
+    rdfs:label
+        "brought into life"@en ,
+        "brachte zur Welt"@de ;
+    skos:definition
+        "Reference from the birth event to the born person."@en ,
+        "Referenz vom Geburtsereignis auf die geborene Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

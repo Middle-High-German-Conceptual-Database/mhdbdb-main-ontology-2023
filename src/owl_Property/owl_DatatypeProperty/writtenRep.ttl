@@ -1,0 +1,11 @@
+dhpluso:writtenRep a owl:DatatypeProperty ;
+    rdfs:subPropertyOf ontolex:writtenRep ;
+    rdfs:domain dhpluso:Form ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label
+        "written representation"@en ,
+        "graphische Repräsentation"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

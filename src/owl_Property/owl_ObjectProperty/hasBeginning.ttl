@@ -1,0 +1,13 @@
+dhpluso:hasBeginning a owl:ObjectProperty ;
+    rdfs:subPropertyOf time:hasBeginning ;
+    rdfs:domain dhpluso:TimeSpan ;
+    rdfs:range dhpluso:Instant ;    
+    rdfs:label
+        "has beginning"@en ,
+        "hat Anfang"@de ;
+    skos:definition
+        "Beginning of a temporal entity."@en ,
+        "Beginn einer zeitlichen Einheit."@de ;    
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

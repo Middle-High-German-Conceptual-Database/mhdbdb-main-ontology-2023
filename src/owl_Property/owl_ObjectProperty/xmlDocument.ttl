@@ -1,0 +1,15 @@
+dhpluso:xmlDocument a owl:ObjectProperty ;
+    rdfs:domain
+        dhpluso:Electronic ;
+    rdfs:range
+        mhdbdbxml:Document ;
+    rdfs:label
+        "has xml document"@en ,
+        "hat xml Dokument"@de ;
+    skos:definition
+        "Representation of Electronic as mhdbdbxml:Document."@en ,
+        "Repräsentation der elektronischen Ressource als mhdbdbxml:Document."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2022-02-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

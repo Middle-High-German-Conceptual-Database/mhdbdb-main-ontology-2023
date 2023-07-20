@@ -1,0 +1,16 @@
+dhpluso:preferredNameEntityForThePlace a owl:ObjectProperty ;
+        rdfs:subPropertyOf
+            dhpluso:isIdentifiedBy , # -> Entity Ontology
+            gndo:preferredNameForThePlaceOrGeographicName ;
+        rdfs:domain dhpluso:Place ;
+        rdfs:range dhpluso:NameOfThePlace ;
+        rdfs:label
+            "prefered name entity"@en ,
+            "bevorzugte Namensentität"@de ;
+        skos:definition
+            "Reference to the prefered name entity of a place."@en ,
+            "Verweis auf die bevorzugte Namensentität einer Place."@de ;
+        dc:creator "Peter Hinkelmanns" ;
+        dcterms:created "2021-05-17" ;
+        dcterms:modified "{{ modificationDate }}" ;
+.

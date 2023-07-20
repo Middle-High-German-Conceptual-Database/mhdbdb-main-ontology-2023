@@ -1,0 +1,14 @@
+dhpluso:adminMetadata a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:adminMetadata ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:AdminMetadata ;
+    rdfs:label
+        "has admin metadata"@en ,
+        "hat administrative Metadaten"@de ;
+    skos:definition
+        "Metadata about the metadata, especially provenance information."@en ,
+        "Metadaten über die Metadaten, insbesondere Provenienzinformationen."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

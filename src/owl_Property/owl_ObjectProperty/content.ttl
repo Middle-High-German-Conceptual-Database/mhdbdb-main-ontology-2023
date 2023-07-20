@@ -1,0 +1,16 @@
+dhpluso:content a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:content ;
+    rdfs:domain
+        dhpluso:Bibliographic ;
+    rdfs:range
+        dhpluso:Content ;
+    rdfs:label
+        "has content"@en ,
+        "hat Inhalt"@de ;
+    skos:definition
+        "Categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived."@en ,
+        "Die Kategorisierung spiegelt die grundlegende Form der Kommunikation wider, in der der Inhalt ausgedrückt wird, und den menschlichen Sinn, mit dem er wahrgenommen werden soll."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

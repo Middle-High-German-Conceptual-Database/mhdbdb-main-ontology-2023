@@ -1,0 +1,11 @@
+dhpluso:hypernym a owl:ObjectProperty ;
+    rdfs:subPropertyOf lexinfo:hypernym ;
+    rdfs:domain dhpluso:LexicalSense ;
+    rdfs:range dhpluso:LexicalSense ;
+    rdfs:label
+        "has hypernym lexical sense"@en ,
+        "hat hypernyme Bedeutung"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,15 @@
+dhpluso:partNumber a owl:DatatypeProperty ;
+        rdfs:subPropertyOf
+            bf:partNumber ;
+        rdfs:domain dhpluso:Title ;
+        rdfs:range xsd:string ;
+        rdfs:label
+            "part number"@en ,
+            "Nummer des Teils"@de ;
+        skos:definition
+            "Part or section enumeration of a title. Possible title component."@en ,
+            "Teil oder Abschnitt der Aufzählung eines Titels. Mögliche Titelkomponente."@de ;
+        dc:creator "Peter Hinkelmanns" ;
+        dcterms:created "2021-08-12" ;
+        dcterms:modified "{{ modificationDate }}" ;
+.

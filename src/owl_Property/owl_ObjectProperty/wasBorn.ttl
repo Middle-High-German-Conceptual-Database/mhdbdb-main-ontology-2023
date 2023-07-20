@@ -1,0 +1,15 @@
+dhpluso:wasBorn a owl:ObjectProperty ;
+    rdfs:subPropertyOf ecrm:P98i_was_born ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:Birth ;
+    owl:inverseOf dhpluso:broughtIntoLife ;
+    rdfs:label
+        "was born"@en ,
+        "wurde geboren"@de ;
+    skos:definition
+        "Reference to the birth event of a person."@en ,
+        "Verweis auf das Geburtsevent einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

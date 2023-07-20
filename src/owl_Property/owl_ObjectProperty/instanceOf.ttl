@@ -1,0 +1,16 @@
+dhpluso:instanceOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        bf:instanceOf ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range dhpluso:Work ;
+    owl:inverseOf dhpluso:hasInstance ;
+    rdfs:label
+        "instance of"@en ,
+        "Instanz von"@de ;
+    skos:definition
+        "Work the Instance described instantiates or manifests."@en ,
+        "Werk, das die beschriebene Instanz instanziiert oder minifestiert."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

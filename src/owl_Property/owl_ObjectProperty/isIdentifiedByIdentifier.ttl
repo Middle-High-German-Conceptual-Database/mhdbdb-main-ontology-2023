@@ -1,0 +1,16 @@
+dhpluso:isIdentifiedByIdentifier a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        bf:identifiedBy ,
+        dhpluso:isIdentifiedBy ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Identifier ;
+    rdfs:label
+        "identified by identifier"@en ,
+        "identifiziert durch Zeichenkette"@de ;
+    skos:definition
+        "Character string associated with a resource that serves to differentiate that resource from other resources, i.e., that uniquely identifies an entity."@en ,
+        "Einer Ressource zugeordnete Zeichenkette, die dazu dient, diese Ressource von anderen Ressourcen zu unterscheiden, d. h. die eine Entität eindeutig identifiziert."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

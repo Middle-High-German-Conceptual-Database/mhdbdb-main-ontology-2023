@@ -1,0 +1,14 @@
+dhpluso:personalName a owl:DatatypeProperty ;
+    rdfs:subPropertyOf gndo:personalName ;
+    rdfs:domain dhpluso:NameOfThePerson ;
+    rdfs:range xsd:string ;
+    rdfs:label
+        "Personal name"@en ,
+        "Persönlicher Name"@de ;
+    skos:definition
+        "Personal name of a person."@en ,
+        "Persönlicher Name einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

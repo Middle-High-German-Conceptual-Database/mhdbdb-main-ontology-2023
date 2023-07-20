@@ -1,0 +1,15 @@
+dhpluso:subtitle a owl:DatatypeProperty ;
+        rdfs:subPropertyOf
+            bf:subtitle ;
+        rdfs:domain dhpluso:Title ;
+        rdfs:range xsd:string ;
+        rdfs:label
+            "sub title"@en ,
+            "Untertitel"@de ;
+        skos:definition
+            "Word, character, or group of words and/or characters that contains the remainder of the title after the main title. Possible title component."@en ,
+            "Wort, Zeichen oder Gruppe von Wörtern und/oder Zeichen, die den Rest des Titels nach dem Haupttitel enthält. Mögliche Titelkomponente."@de ;
+        dc:creator "Peter Hinkelmanns" ;
+        dcterms:created "2021-08-12" ;
+        dcterms:modified "{{ modificationDate }}" ;
+.

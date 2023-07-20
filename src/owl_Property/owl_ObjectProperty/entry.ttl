@@ -1,0 +1,11 @@
+dhpluso:entry a owl:ObjectProperty ;
+    rdfs:subPropertyOf lime:entry ;
+    rdfs:domain dhpluso:Lexicon ;
+    rdfs:range dhpluso:LexicalEntry ;
+    rdfs:label
+        "has entry"@en ,
+        "hat Artikel"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

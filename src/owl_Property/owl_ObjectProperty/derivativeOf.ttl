@@ -1,0 +1,15 @@
+dhpluso:derivativeOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:derivativeOf ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    owl:inverseOf dhpluso:hasDerivative ;
+    rdfs:label
+        "Derivative of"@en ,
+        "Ableitung von"@de ;
+    skos:definition
+        "Source work from which the described work is derived."@en ,
+        "Werk, von dem das beschriebene Werk abgeleitet ist."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

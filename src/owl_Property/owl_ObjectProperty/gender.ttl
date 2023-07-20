@@ -1,0 +1,17 @@
+dhpluso:gender a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        dhpluso:hasType ,
+        gndo:gender ,
+        wdt:P21 ;
+    rdfs:domain dhpluso:Person ;
+    rdfs:range dhpluso:Gender ;
+    rdfs:label
+        "gender of a person"@en ,
+        "Geschlecht einer Person"@de ;
+    skos:definition
+        "Reference to the gender of a person."@en ,
+        "Verweis auf das Geschlecht einer Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

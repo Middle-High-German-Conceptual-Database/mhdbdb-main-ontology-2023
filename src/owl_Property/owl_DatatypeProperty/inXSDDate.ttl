@@ -1,0 +1,14 @@
+dhpluso:inXSDDate a owl:DatatypeProperty ;
+    rdfs:subPropertyOf time:inXSDDate ;
+    rdfs:domain dhpluso:Instant ;
+    rdfs:range xsd:date ;
+    rdfs:label
+        "in XSD Date"@en ,
+        "als XSD Date"@de ;
+    skos:definition
+        "Position of an instant, expressed using xsd:date."@en ,
+        "Position eines Zeitpunkts, ausgedrückt durch xsd:date."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

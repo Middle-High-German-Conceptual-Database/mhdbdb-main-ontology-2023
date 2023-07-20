@@ -1,0 +1,16 @@
+dhpluso:itemOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        bf:itemOf ;
+    rdfs:domain dhpluso:Item ;
+    rdfs:range dhpluso:Instance ;
+    owl:inverseOf dhpluso:hasItem ;
+    rdfs:label
+        "is item of"@en ,
+        "ist Exemplar von"@de ;
+    skos:definition
+        "Instance for which the described Item is an example."@en ,
+        "Instanz, für die das beschriebene Exemplar ein Beispiel ist."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

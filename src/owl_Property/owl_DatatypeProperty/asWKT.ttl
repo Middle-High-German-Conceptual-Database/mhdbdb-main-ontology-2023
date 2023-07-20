@@ -1,0 +1,14 @@
+dhpluso:asWKT a owl:DatatypeProperty ;
+    rdfs:subPropertyOf geo:asWKT ;
+    rdfs:domain dhpluso:Geometry ;
+    rdfs:range geo:wktLiteral ;
+    rdfs:label
+        "as WKT"@en ,
+        "als WKT"@de ;
+    skos:definition
+        "The WKT serialization of a geometry."@en ,
+        "Die WKT-Serialisierung einer Geometrie."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

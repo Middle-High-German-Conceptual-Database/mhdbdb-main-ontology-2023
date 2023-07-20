@@ -1,0 +1,14 @@
+dhpluso:contribution a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:contribution ;
+    rdfs:domain dhpluso:Bibliographic ;
+    rdfs:range dhpluso:Contribution ;
+    rdfs:label
+        "has contribution"@en ,
+        "hat Mitarbeit"@de ;
+    skos:definition
+        "Agent and its role in relation to the resource."@en ,
+        "Agent und seine Rolle in Bezug auf die Ressource."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

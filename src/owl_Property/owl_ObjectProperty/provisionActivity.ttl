@@ -1,0 +1,15 @@
+dhpluso:provisionActivity a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        bf:provisionActivity ;
+    rdfs:domain dhpluso:Instance ;
+    rdfs:range dhpluso:ProvisionActivity ;
+    rdfs:label
+        "has provision activity"@en ,
+        "hat Veröffentlichungsaktivität"@de ;
+    skos:definition
+        "Place, name, and/or date information relating to the publication, printing, distribution, issue, release, production, etc. of a resource."@en ,
+        "Orts-, Namens- und/oder Datumsangaben, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe, die Produktion usw. einer Ressource beziehen."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

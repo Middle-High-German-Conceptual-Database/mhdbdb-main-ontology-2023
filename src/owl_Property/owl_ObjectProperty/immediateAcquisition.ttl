@@ -1,0 +1,14 @@
+dhpluso:immediateAcquisition a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:immediateAcquisition ;
+    rdfs:domain dhpluso:Item ;
+    rdfs:range dhpluso:ImmediateAcquisition ;
+    rdfs:label
+        "immediate acquisition"@en ,
+        "direkte Erwerbung"@de ;
+    skos:definition
+        "Information about the circumstances, e.g., source, date, method, under which the resource was directly acquired."@en ,
+        "Informationen über die Umstände (z. B. Quelle, Datum, Methode), unter denen die Ressource direkt erworben wurde."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

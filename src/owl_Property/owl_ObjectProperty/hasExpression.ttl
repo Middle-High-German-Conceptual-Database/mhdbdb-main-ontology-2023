@@ -1,0 +1,15 @@
+dhpluso:hasExpression a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:hasExpression ;
+    rdfs:domain dhpluso:Work ;
+    rdfs:range dhpluso:Work ;
+    owl:inverseOf dhpluso:expressionOf ;
+    rdfs:label
+        "Has Expression"@en ,
+        "Hat Expression"@de ;
+    skos:definition
+        "Work that is an expression of a described Work. For use to relate Works under FRBR/RDA rules."@en ,
+        "Werk, das eine Expression eines beschriebenen Werks ist. Zur Verwendung, um Werke unter FRBR/RDA-Regeln zu verknüpfen."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

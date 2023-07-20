@@ -1,0 +1,11 @@
+dhpluso:isUsedOnomasticConceptOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf ontolex:isLexicalizedSenseOf ;
+    rdfs:domain dhpluso:OnomasticUsage ;
+    rdfs:range dhpluso:OnomasticConcept ;
+    rdfs:label
+        "is used onomastic concept of"@en ,
+        "ist gebrauchte Namenskategorie von"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,19 @@
+dhpluso:continuedBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf bf:continuedBy ;
+    rdfs:domain [
+        owl:unionOf (dhpluso:Work dhpluso:Instance)
+    ] ;
+    rdfs:range [
+        owl:unionOf (dhpluso:Work dhpluso:Instance)
+    ] ;
+    owl:inverseOf dhpluso:continues ;
+    rdfs:label
+        "continued by"@en ,
+        "fortgesetzt von"@de ;
+    skos:definition
+        "Resource whose content continues an earlier resource under a new title."@en ,
+        "Ressource, deren Inhalt eine frühere Ressource unter einem neuen Titel fortsetzt."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

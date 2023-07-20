@@ -1,0 +1,15 @@
+dhpluso:hasSeries a owl:ObjectProperty ;
+    rdfs:subPropertyOf
+        bf:hasSeries ;
+    rdfs:domain [owl:unionOf (dhpluso:Instance dhpluso:Work)] ;
+    rdfs:range [owl:unionOf (dhpluso:Instance dhpluso:Work)] ;
+    rdfs:label
+        "has series"@en ,
+        "hat Serie"@de ;
+    skos:definition
+        "Resource in which the part has been issued; the title of the larger resource appears on the part."@en ,
+        "Ressource, in der der Band herausgegeben wurde; der Titel der größeren Ressource erscheint auf dem Band."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,11 @@
+dhpluso:subterm a owl:ObjectProperty ;
+    rdfs:subPropertyOf decomp:subterm ;
+    rdfs:domain dhpluso:LexicalEntry ;
+    rdfs:range dhpluso:LexicalEntry ;
+    rdfs:label
+        "has subterm"@en ,
+        "hat Wortbildungsbestandteil"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-29" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
