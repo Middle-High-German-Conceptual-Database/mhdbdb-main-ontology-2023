@@ -1,0 +1,19 @@
+dhpluso:IF_dnbUri a sh:SPARQLFunction ;
+    rdfs:label
+        "Functions tests if a given string is a DNB uri."@en ,
+        "Funktions testet ob ein übergebener String eine DNB Uri ist."@de ;
+    skos:definition
+        "Returns true if string is DNB uri."@en ,
+        "Gibt true zurück wenn string DNB uri ist."@de ;
+    sh:parameter [
+        sh:path tmp:dnb ;
+        sh:datatype rdf:Description ;
+        sh:description "passed string"@en ;
+        sh:description "übergebener String"@de ;
+    ] ;
+    sh:returnType xsd:boolean ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """
+.

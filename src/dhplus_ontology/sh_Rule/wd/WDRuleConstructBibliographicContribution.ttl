@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructBibliographicContribution a sh:SPARQLRule ;
+    rdfs:label
+        "Infer contribution from WD"@en ,
+        "Leite Mitwirkung von WD ab"@de ;
+    rdfs:definition
+        "Infers contribution from a WD authority file."@en ,
+        "Leitet Mitwirkung von einem WD Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

@@ -1,0 +1,6 @@
+dhpluso:RuleInferInit a sh:SPARQLRule ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """;
+.

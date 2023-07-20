@@ -1,0 +1,34 @@
+dhpluso:ValidationAnnotation a sh:NodeShape ;
+    sh:targetClass oa:Annotation ;
+    sh:property [
+            sh:path oa:hasBody ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path oa:hasTarget ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        # Dublin Core Metadata Element Set
+        [
+            sh:path dc:creator ;
+            sh:or (
+                [sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;]
+                [sh:class dhpluso:Person ;]
+            ) ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dc:date ;
+            sh:datatype xsd:dateTime ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:severity sh:Violation ;
+        ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

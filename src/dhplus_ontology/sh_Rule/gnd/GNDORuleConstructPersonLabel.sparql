@@ -1,0 +1,12 @@
+CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?af {
+        ?authorityUri gndo:preferredNameForThePerson ?label .
+    }
+}

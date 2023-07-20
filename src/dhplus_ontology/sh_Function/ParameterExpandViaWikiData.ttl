@@ -1,0 +1,14 @@
+dhpluso:ParameterExpandViaWikiData a sh:SPARQLFunction ;
+    rdfs:comment "return set expandViaWikiData" ;
+    sh:returnType rdf:Description ;
+    sh:prefixes constants:Prefixes ;
+    sh:parameter [
+        sh:path tmp:parameter ;
+        sh:datatype rdf:Description ;
+        sh:description "passed parameter"@en ;
+        sh:description "übergebener parameter"@de ;
+    ] ;
+    sh:select """
+        {{ sparql }}
+        """
+.

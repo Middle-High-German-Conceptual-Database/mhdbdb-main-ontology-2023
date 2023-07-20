@@ -1,0 +1,28 @@
+dhpluso:ValidationEvent a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Event ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:isIdentifiedBy ;
+        sh:class dhpluso:Date ;
+        sh:optional true ;
+        sh:severity sh:Info ;
+    ] ,
+    [
+        sh:path dhpluso:hasTimeSpan ;
+        sh:class dhpluso:TimeSpan ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:tookPlaceAt ;
+        sh:class dhpluso:Place ;
+        sh:optional true ;
+        sh:severity sh:Info ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

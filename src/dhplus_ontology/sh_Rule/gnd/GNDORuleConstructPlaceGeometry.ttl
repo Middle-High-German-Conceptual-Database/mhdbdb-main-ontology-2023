@@ -1,0 +1,12 @@
+dhpluso:GNDORuleConstructPlaceGeometry a sh:SPARQLRule ;
+    rdfs:label
+        "Infer dhpluso:Geometry from GND"@en ,
+        "Leite dhpluso:Geometry von GND ab"@de ;
+    rdfs:definition
+        "Infers geometry from a GND authority file."@en ,
+        "Leitet Geometrie von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

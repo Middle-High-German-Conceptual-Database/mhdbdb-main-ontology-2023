@@ -1,0 +1,30 @@
+SELECT (GROUP_CONCAT(DISTINCT ?ng; separator = ", ") as ?nameString)
+WHERE {
+    {
+        #nameGroup1
+        SELECT (GROUP_CONCAT(DISTINCT ?name; separator = " ") as ?ng)
+        WHERE {
+            $nameEntity gndo:surname ?name .
+        }
+        GROUP BY ?nameEntity
+    }
+    UNION
+    {
+        #nameGroup2
+        SELECT (GROUP_CONCAT(DISTINCT ?name; separator = " ") as ?ng)
+        WHERE {
+            $nameEntity gndo:forename|gndo:personalName|gndo:counting|gndo:prefix ?name .
+        }
+        GROUP BY ?nameEntity
+    }
+    UNION
+    {
+        #nameGroup3
+        SELECT (GROUP_CONCAT(DISTINCT ?name; separator = " ") as ?ng)
+        WHERE {
+            $nameEntity gndo:nameAddition ?name .
+        }
+        GROUP BY ?nameEntity
+    }
+}
+GROUP BY ?nameEntity

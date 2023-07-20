@@ -1,0 +1,15 @@
+dhpluso:ValidationCreation a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Creation ;
+    ] ;
+    sh:property [
+            sh:path dhpluso:hasCreated ;
+            sh:class dhpluso:Work ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

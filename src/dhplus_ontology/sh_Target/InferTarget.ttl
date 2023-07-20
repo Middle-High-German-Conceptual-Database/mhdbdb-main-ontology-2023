@@ -1,0 +1,31 @@
+dhpluso:InferTarget a sh:SPARQLTargetType ;
+    rdfs:subClassOf sh:Target ;
+    rdfs:label
+        "Target for all subclasses or self"@en ,
+        "Target für Unterklassen und die Klasse selbst"@de ;
+    rdfs:definition
+        "Matches all nodes with a dhpluso-class or subclasses of this class."@en ,
+        "Matcht alle Knoten mit dhpluso-Klasse oder einer Unterklasse dieser Klasse."@de ;
+    sh:labelTemplate
+        "All instances of class {$class} or subclasses of this class"@en ,
+        "Alle Instanzen der Klasse {$class} oder Unterklassen dieser Klasse"@en ;
+    sh:parameter [
+        sh:path tmp:authorityNamespace ;
+        sh:description "The Namespace of the authority file."@en ;
+        sh:description "Namespace der Normdaten."@en ;
+        sh:order 1 ;
+    ] ;
+    sh:parameter [
+        sh:path tmp:class ;
+        sh:description "The class of the nodes."@en ;
+        sh:description "Klasse des Knotens."@en ;
+        sh:order 2 ;
+    ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """ ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-13" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

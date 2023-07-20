@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructPersonDeath a sh:SPARQLRule ;
+    rdfs:label
+        "Infer Death from WD"@en ,
+        "Leite Death von WD ab"@de ;
+    rdfs:definition
+        "Infers Death Event from a WD authority file."@en ,
+        "Leitet Geburtsevent von einem WD Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

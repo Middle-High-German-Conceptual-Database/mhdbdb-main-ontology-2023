@@ -1,0 +1,36 @@
+dhpluso:ValidationProvisionActivity a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:ProvisionActivity ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:agent ;
+        sh:class dhpluso:Agent ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:date ;
+        sh:or (
+                [ sh:datatype <http://id.loc.gov/datatypes/edtf> ]
+                [ sh:datatype xsd:date ]
+            ) ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:place ;
+        sh:or (
+            [sh:class dhpluso:Place ;]
+            [
+                sh:nodeKind sh:IRI ;
+                sh:pattern '^http://id.loc.gov/vocabulary/countries/' ;
+                sh:flags "i" ;
+            ]
+        ) ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,22 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:preferredNameEntityForThePerson ?bnode .
+    ?bnode a dhpluso:NameOfThePerson ;
+        ?dhpNameProperty ?label .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?wd {
+        ?authorityUri ?wdtNameProperty ?wdNameEntity .
+        ?wdNameEntity rdfs:label ?label .
+        BIND(BNODE(STR(LANG(?label))) AS ?bnode)
+    }
+    FILTER (dhpluso:IF_inLanguages(?this,?label)) .
+
+    SERVICE ?dhPLUSOntology {
+        ?dhpNameProperty rdfs:subPropertyOf ?wdtNameProperty .
+        ?dhpNameProperty rdfs:domain dhpluso:NameOfThePerson .
+    }
+}

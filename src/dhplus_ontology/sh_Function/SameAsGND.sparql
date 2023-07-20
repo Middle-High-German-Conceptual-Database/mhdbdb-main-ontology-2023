@@ -1,0 +1,9 @@
+SELECT ?res
+WHERE {
+    {{ sparqlBlocks.endpoints }}
+    SERVICE ?wd {
+        $wikidataUri wdt:P227 ?gndNo.
+    }
+    BIND(IRI(CONCAT(STR(gnd:),?gndNo)) AS ?res)
+}
+LIMIT 1

@@ -1,0 +1,18 @@
+SELECT ?dhpInstance
+WHERE {
+    {{ sparqlBlocks.endpoints }}
+    {
+        SERVICE ?dhPLUSInstances {
+            ?dhpInstance owl:sameAs $authority .            
+        }
+    } UNION
+    {
+        SERVICE ?dhPLUSInferTemp {
+            ?dhpInstance owl:sameAs $authority .            
+        }
+    } UNION
+    {
+        ?parameter parameter:dhpUri ?dhpInstance .
+        ?parameter parameter:authorityUri $authority .
+    }
+}

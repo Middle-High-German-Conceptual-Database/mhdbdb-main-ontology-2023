@@ -1,0 +1,39 @@
+dhpluso:ValidationLexicalSense a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:LexicalSense ;
+    ] ;
+    sh:property [
+        sh:name "Related lexical concept"@en ,
+        "Verknüpfter lexikalischer Begriff"@de ;
+        sh:path dhpluso:isLexicalizedSenseOf ;
+        sh:class dhpluso:LexicalConcept ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:name "sense relation"@en ,
+        "Bedeutungsrelation"@de ;
+        sh:or (
+            [
+            sh:path dhpluso:antonym ;
+            ]
+            [
+            sh:path dhpluso:synonym ;
+            ]
+            [
+            sh:path dhpluso:hypernym ;
+            ]
+            [
+            sh:path dhpluso:hyponym ;
+            ]
+        ) ;
+        sh:class dhpluso:LexicalSense ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Info ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

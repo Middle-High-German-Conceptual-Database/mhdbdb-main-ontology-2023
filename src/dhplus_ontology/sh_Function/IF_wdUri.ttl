@@ -1,0 +1,19 @@
+dhpluso:IF_wdUri a sh:SPARQLFunction ;
+    rdfs:label
+        "Functions tests if a given string is a Wikidata uri."@en ,
+        "Funktions testet ob ein übergebener String eine Wikidata Uri ist."@de ;
+    skos:definition
+        "Returns true if string is Wikidata uri."@en ,
+        "Gibt true zurück wenn string Wikidata uri ist."@de ;
+    sh:parameter [
+        sh:path tmp:wd ;
+        sh:datatype rdf:Description ;
+        sh:description "passed string"@en ;
+        sh:description "übergebener String"@de ;
+    ] ;
+    sh:returnType xsd:boolean ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """ ;
+.

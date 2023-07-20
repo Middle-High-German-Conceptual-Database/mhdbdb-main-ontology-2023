@@ -1,0 +1,12 @@
+SELECT ?res
+WHERE {
+    BIND(
+        IF(
+            STRSTARTS(STR($dnb), STR(gnd:)),
+            false,
+            STRSTARTS(STR($dnb), STR(dnb:))
+        )
+        AS
+        ?res
+    )
+}

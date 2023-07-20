@@ -1,0 +1,20 @@
+CONSTRUCT {
+    ?dhpUri ?dhpNameEntityProperty ?bnode .
+    ?bnode a dhpluso:NameOfThePlace ;
+        dhpluso:placename ?label .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?af {
+        ?authorityUri gndo:preferredNameForThePlaceOrGeographicName|gndo:variantNameForThePlaceOrGeographicName ?label .
+        ?authorityUri ?gndoPlaceNameProperty ?label .
+    }
+    BIND(BNODE(STR(?label)) AS ?bnode) .
+    SERVICE ?dhPLUSOntology {
+        ?dhpNameEntityProperty rdfs:subPropertyOf ?gndoPlaceNameProperty .
+        ?dhpNameEntityProperty rdfs:domain dhpluso:Place .        
+    }
+}

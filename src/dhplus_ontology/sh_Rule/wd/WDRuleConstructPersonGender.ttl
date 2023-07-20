@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructPersonGender a sh:SPARQLRule ;
+    rdfs:label
+        "Infer gender from GND"@en ,
+        "Leite Gender von GND ab"@de ;
+    rdfs:definition
+        "Infers gender from a GND authority file."@en ,
+        "Leitet Gender von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

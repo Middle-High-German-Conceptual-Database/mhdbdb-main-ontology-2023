@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructPersonBirth a sh:SPARQLRule ;
+    rdfs:label
+        "Infer Birth from WD"@en ,
+        "Leite Birth von WD ab"@de ;
+    rdfs:definition
+        "Infers Birth Event from a WD authority file."@en ,
+        "Leitet Geburtsevent von einem WD Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

@@ -1,0 +1,12 @@
+dhpluso:RuleConstructDhplusType a sh:SPARQLRule ;
+    rdfs:label
+        "Infer class"@en ,
+        "Leite Klasse ab"@de ;
+    rdfs:definition
+        "Infers class from parameter."@en ,
+        "Leitet Klasse von Parameter ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+       {{ sparql }}
+    """ ;
+.

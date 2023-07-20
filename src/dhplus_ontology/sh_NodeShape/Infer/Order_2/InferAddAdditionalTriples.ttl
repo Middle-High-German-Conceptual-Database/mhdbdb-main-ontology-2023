@@ -1,0 +1,24 @@
+dhpluso:InferAddAdditionalTriples a sh:NodeShape ;
+    rdfs:label
+        "add additional triples"@en ,
+        "fürge weitere triple hinzu"@de ;
+    rdfs:definition
+        "Add more triples to the graph that have been passed in the ParameterSet."@en ,
+        "Füge dem Graph weitere Triple hinzu, die im ParameterSet übergeben worden sind."@de ;
+    sh:target [
+        a sh:SPARQLTarget ;
+        sh:prefixes constants:Prefixes ;
+        sh:select """
+            SELECT ?this
+            WHERE {
+                ?this a parameter:Statement .
+            }
+            """ ;
+    ] ;
+    sh:order 2 ;
+    sh:rule
+        dhpluso:RuleAddAdditionalTriples ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-13" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

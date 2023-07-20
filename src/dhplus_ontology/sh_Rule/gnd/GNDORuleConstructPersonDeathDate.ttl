@@ -1,0 +1,12 @@
+dhpluso:GNDORuleConstructPersonDeathDate a sh:SPARQLRule ;
+    rdfs:label
+        "Infer Death date from GND"@en ,
+        "Leite Todesdatum von GND ab"@de ;
+    rdfs:definition
+        "Infers Death date from a GND authority file."@en ,
+        "Leitet Todesdatum von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

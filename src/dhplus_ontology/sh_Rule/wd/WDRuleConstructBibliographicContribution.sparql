@@ -1,0 +1,48 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:contribution ?contribution .
+    ?contribution
+        a dhpluso:Contribution ;
+        dhpluso:agent ?author ;
+        dhpluso:role <http://id.loc.gov/vocabulary/relators/aut> .
+
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?author ;
+        parameter:dhpClass dhpluso:Person ;
+        parameter:authorityUri ?wdAuthor ;
+    .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    BIND (
+        IRI(CONCAT(STR(?dhpUri),'/authors'))
+        AS ?contribution
+    )
+
+    #Output Parameter Options
+    {{ sparqlBlocks.literalsParameterset }}
+
+    SERVICE ?wd {
+        ?authorityUri wdt:P50 ?wdAuthor .
+        FILTER (!isBlank(?wdAuthor)) # needed to filter wikidata 'Nothing'
+    }
+
+    BIND (dhpluso:DhPlusUri(?wdAuthor) AS ?author)
+
+    # OutputParameterSet
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?author) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?wdAuthor)
+        )
+        AS ?OutputParameter
+    )
+}

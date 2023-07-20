@@ -1,0 +1,25 @@
+dhpluso:InferWDPerson a sh:NodeShape ;
+    rdfs:label
+        "Infer Person from WikiData"@en ,
+        "Leite Person von WikiData ab"@de ;
+    rdfs:definition
+        "Infers a person from a WikiData authority file."@en ,
+        "Leitet eine Person von einem WikiData Normdatensatz ab."@de ;
+    sh:target [
+        a dhpluso:InferTarget ;
+        tmp:authorityNamespace wd: ;
+        tmp:class dhpluso:Person ;
+    ] ;
+    sh:order 2 ;
+    sh:rule
+        dhpluso:RuleConstructDhplusType ,
+        dhpluso:OwlRuleConstructSameAs ,
+        dhpluso:WDRuleConstructPersonLabel ,
+        dhpluso:WDRuleConstructPersonNameOfThePerson ,
+        dhpluso:WDRuleConstructPersonGender ,
+        dhpluso:WDRuleConstructPersonBirth ,
+        dhpluso:WDRuleConstructPersonDeath ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-04" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

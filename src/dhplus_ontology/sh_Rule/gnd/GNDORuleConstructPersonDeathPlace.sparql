@@ -1,0 +1,61 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:diedIn ?dhpDeath .
+    
+    ?dhpDeath
+        a dhpluso:Death ;
+        dhpluso:wasDeathOf ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;    
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+    
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?gndPlace 
+    . 
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}    
+
+    {{ sparqlBlocks.literalsParameterset }}
+    
+    SERVICE ?af {
+        ?authorityUri gndo:placeOfDeath ?gndPlace .
+    }  
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            IRI(CONCAT(STR(?dhpUri),'/death')),
+            ?nothing
+        )
+        AS ?dhpDeath
+    ) .  
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            dhpluso:DhPlusUri(?gndPlace),
+            ?nothing
+        )
+        AS ?place
+    ) .  
+
+    # OutputParameterSet
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?place) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?gndPlace)
+        )
+        AS ?OutputParameter
+    )
+}

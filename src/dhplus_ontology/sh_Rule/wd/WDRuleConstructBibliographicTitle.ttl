@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructBibliographicTitle a sh:SPARQLRule ;
+    rdfs:label
+        "Infer title from WD"@en ,
+        "Leite Titel von WD ab"@de ;
+    rdfs:definition
+        "Infers title from a WD authority file."@en ,
+        "Leitet Titel von einem WD Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

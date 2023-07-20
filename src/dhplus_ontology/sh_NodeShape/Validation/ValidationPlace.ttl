@@ -1,0 +1,33 @@
+dhpluso:ValidationPlace a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Place ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:preferredNameEntityForThePlace ;
+        sh:class dhpluso:NameOfThePlace ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:variantNameEntityForThePlace ;
+        sh:class dhpluso:NameOfThePlace ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:coordinatesForThePlace ;
+        sh:class dhpluso:Point ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:witnessed ;
+        sh:class dhpluso:Event ;
+        sh:optional true ;
+        sh:severity sh:Info ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

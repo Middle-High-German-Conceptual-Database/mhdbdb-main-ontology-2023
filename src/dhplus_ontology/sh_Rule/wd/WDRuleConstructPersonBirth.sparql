@@ -1,0 +1,49 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:wasBorn ?dhpBirth .
+    ?dhpBirth
+        a dhpluso:Birth ;
+        dhpluso:broughtIntoLife ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .    
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate ;
+    .    
+
+    # Output Parameter
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?wdPlace .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}    
+
+    BIND (IRI(CONCAT(STR(?dhpUri),'/birth')) AS ?dhpBirth) .
+    BIND (BNODE() AS ?dhpTimeSpan) .
+    {{ sparqlBlocks.literalsParameterset }}
+    SERVICE ?wd {
+        ?authorityUri wdt:P19 ?wdPlace .
+        ?authorityUri wdt:P569 ?date .
+        BIND(xsd:date(?date) AS ?xsDate)
+        FILTER (!isBlank(?wdPlace)) # needed to filter wikidata 'Nothing'
+    }
+    BIND (dhpluso:DhPlusUri(?wdPlace) AS ?place)
+
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?place) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?wdPlace)
+        )
+        AS ?OutputParameter
+    )
+}

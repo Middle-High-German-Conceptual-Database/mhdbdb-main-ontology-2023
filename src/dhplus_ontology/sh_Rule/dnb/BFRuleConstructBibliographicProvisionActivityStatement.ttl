@@ -1,0 +1,12 @@
+dhpluso:BFRuleConstructBibliographicProvisionActivityStatement a sh:SPARQLRule ;
+    rdfs:label
+        "Infer ProvisionActivity from DNB"@en ,
+        "Leite ProvisionActivity von DNB ab"@de ;
+    rdfs:definition
+        "Infers ProvisionActivity from a DNB authority file."@en ,
+        "Leitet ProvisionActivity von einem DNB Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

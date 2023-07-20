@@ -1,0 +1,88 @@
+dhpluso:ValidationWork a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Work ;
+    ] ;
+    sh:property [
+        sh:path [ sh:alternativePath ( dhpluso:expressionOf dhpluso:hasExpression  ) ] ;
+        sh:class dhpluso:Work ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path [ sh:alternativePath ( dhpluso:derivativeOf dhpluso:hasDerivative  ) ] ;
+        sh:class dhpluso:Work ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:content ;
+        sh:class dhpluso:Content ;
+        ##~## PH: Laut BF soll Ziel von bf:content eine Instanz von bf:Content sein
+        sh:pattern '^https://id.loc.gov/vocabulary/contentTypes/' ;
+        sh:flags "i" ;
+        sh:severity sh:Warning ;
+    ] ,
+    [
+        sh:path dhpluso:continuedBy ;
+        sh:class dhpluso:Work ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:continues ;
+        sh:class dhpluso:Work ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:contribution ;
+        sh:class dhpluso:Contribution ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:hasInstance ;
+        sh:class dhpluso:Instance ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:hasSeries ;
+        sh:class dhpluso:Work ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:hasPart ;
+        sh:class dhpluso:Work ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:issuance ;
+        sh:class dhpluso:Issuance ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:language ;
+        sh:class dhpluso:Language ;
+        ##~## PH: Laut BF soll Ziel von bf:language eine Instanz von bf:Language sein
+        sh:pattern '^https://id.loc.gov/vocabulary/languages/' ;
+        sh:flags "i" ;
+        sh:severity sh:Warning ;
+    ] ,
+    [
+        sh:path dhpluso:partOf ;
+        sh:class dhpluso:Work ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:seriesOf ;
+        sh:class dhpluso:Work ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:wasCreatedBy ;
+        sh:class dhpluso:Creation ;
+        sh:severity sh:Violation ;
+    ];
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

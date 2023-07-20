@@ -1,0 +1,17 @@
+dhpluso:InferInit a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class parameter:ParameterSet ;
+    ] ;
+    sh:order 1 ;
+    rdfs:label
+        "Initialising infer"@en ,
+        "Initialisiere Herleitung"@de ;
+    skos:definition
+        "Initialise dhPLUS instances for infer from authority files."@en ,
+        "dhPLUS-Instanzen für die Herleitung aus Autoritätsdateien initialisieren."@de ;
+    sh:rule dhpluso:RuleInferInit ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

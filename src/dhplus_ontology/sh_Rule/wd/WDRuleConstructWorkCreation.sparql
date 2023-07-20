@@ -1,0 +1,43 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:wasCreatedBy ?dhpCreation .
+    ?dhpCreation
+        a dhpluso:Creation ;
+        dhpluso:hasCreated ?dhpUri ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate ;
+    .    
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    BIND (BNODE() AS ?dhpTimeSpan) .
+
+    {{ sparqlBlocks.literalsParameterset }}
+
+    SERVICE ?wd {
+        ?authorityUri wdt:P571 ?date .
+    }
+    BIND(
+        IF(
+            BOUND(?date),
+            xsd:date(?date),
+            ?nothing
+        )
+        AS ?xsDate
+    )
+    BIND (
+        IF(
+            BOUND(?xsDate) ,
+            IRI(CONCAT(STR(?dhpUri),'/creation')),
+            ?nothing
+        )
+        AS ?dhpCreation
+    ) .
+}

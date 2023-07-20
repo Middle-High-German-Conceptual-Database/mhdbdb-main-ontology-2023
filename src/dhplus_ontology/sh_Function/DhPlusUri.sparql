@@ -1,0 +1,77 @@
+
+SELECT ?uri
+WHERE {
+    {{ sparqlBlocks.endpoints }}
+
+    # Search for equivalent in Wikidata
+    SERVICE ?wd {
+        OPTIONAL {
+            ?wdUri ?p $passedUri .
+            FILTER(STRSTARTS(STR(?wdUri),STR(wd:)))
+            FILTER(!(STRSTARTS(STR(?wdUri),STR(wds:))))
+        }
+    }
+
+    # If found, bind as uri, else bind passed authority uri
+    BIND (
+        IF (
+            STRSTARTS(
+                STR($passedUri), STR(wd:)
+            ),
+            $passedUri,
+            IF (
+                BOUND(?wdUri),
+                ?wdUri,
+                $passedUri
+            )
+        )
+        AS ?foundWdUri
+    )
+
+    # Search for equivalent in dhPLUS triple store
+    SERVICE ?dhPLUSInstances {
+        OPTIONAL {
+            ?dhpUri
+                owl:sameAs $passedUri .            
+        }
+    }
+
+    # Search for equivalent in dhPLUS temp infer triple store
+    SERVICE ?dhPLUSInferTemp {
+        OPTIONAL {
+            ?dhpUriTmp
+                owl:sameAs $passedUri .            
+        }
+    }
+
+    # Search for equivalent in Parameter Files
+    OPTIONAL {
+        ?parameter
+            a parameter:InstanceParameter ;
+            parameter:dhpUri ?dhpParameterUri ;
+            parameter:authorityUri $passedUri .
+    }
+
+    BIND (
+        IF(
+            BOUND(?dhpUri),
+            ?dhpUri,
+            IF(
+                BOUND(?dhpUriTmp),
+                ?dhpUriTmp,
+                IF(
+                    BOUND(?dhpParameterUri),
+                    ?dhpParameterUri,
+                    IRI (
+                        CONCAT(
+                            STR({{ instancePrefix }}:) ,
+                            SHA256(STR(?foundWdUri))
+                        )
+                    )
+                )    
+            )
+            
+        )
+        AS ?uri
+    )
+}

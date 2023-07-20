@@ -1,0 +1,12 @@
+dhpluso:BFRuleConstructInstanceInstanceOf a sh:SPARQLRule ;
+    rdfs:label
+        "Infer instanceOf from DNB"@en ,
+        "Leite instanceOf von DNB ab"@de ;
+    rdfs:definition
+        "Infers instanceOf from a DNB authority file."@en ,
+        "Leitet instanceOf von einem DNB Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

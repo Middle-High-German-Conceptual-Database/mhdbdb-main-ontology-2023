@@ -1,0 +1,32 @@
+CONSTRUCT {
+    ?dhpUri ?dhpNameEntityProperty ?bnode .
+    ?bnode a dhpluso:NameOfThePerson ;
+        ?dhpNameProperty ?label .   
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?af {
+        {
+            SELECT DISTINCT
+                (BNODE() AS ?bnode)
+                ?GndoNameEntity
+            WHERE {
+                ?authorityUri gndo:preferredNameEntityForThePerson|gndo:variantNameEntityForThePerson ?GndoNameEntity .
+            }
+            GROUP BY ?GndoNameEntity
+        }
+        ?authorityUri ?gndoNameEntityProperty ?GndoNameEntity .
+        ?GndoNameEntity ?gndoNameProperty ?label . 
+    }
+
+
+    SERVICE ?dhPLUSOntology {
+        ?dhpNameEntityProperty rdfs:subPropertyOf ?gndoNameEntityProperty .
+        ?dhpNameEntityProperty rdfs:domain dhpluso:Person .
+        ?dhpNameProperty rdfs:subPropertyOf ?gndoNameProperty .
+        ?dhpNameProperty rdfs:domain dhpluso:NameOfThePerson .
+    }
+}

@@ -1,0 +1,16 @@
+dhpluso:ValidationExtent a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Extent ;
+    ] ;
+    sh:property [
+            sh:path rdf:value ;
+            sh:uniqueLang true ;
+            sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

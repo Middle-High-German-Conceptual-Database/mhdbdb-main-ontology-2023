@@ -1,0 +1,15 @@
+dhpluso:ValidationElectronic a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Electronic ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:xmlDocument ;
+        mhdbdbxml:Document ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;       
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2022-02-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

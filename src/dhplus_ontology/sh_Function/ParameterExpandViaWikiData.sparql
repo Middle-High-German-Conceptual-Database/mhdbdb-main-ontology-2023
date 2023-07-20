@@ -1,0 +1,6 @@
+
+SELECT ?expandViaWikiData
+WHERE {
+    ?set parameter:hasParameter $parameter .
+    ?set parameter:expandViaWikiData ?expandViaWikiData .
+}

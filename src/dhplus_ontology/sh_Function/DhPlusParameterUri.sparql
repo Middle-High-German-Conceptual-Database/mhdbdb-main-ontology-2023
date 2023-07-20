@@ -1,0 +1,36 @@
+SELECT ?uri
+WHERE {
+    {{ sparqlBlocks.endpoints }}
+    SERVICE ?wd {
+        OPTIONAL {
+            ?wdUri ?p $s .
+            FILTER(STRSTARTS(STR(?wdUri),STR(wd:)))
+            FILTER(!(STRSTARTS(STR(?wdUri),STR(wds:))))
+        }
+    }
+
+    BIND (
+        IF (
+            STRSTARTS(
+                STR($s), STR(wd:)
+            ),
+            $s,
+            IF (
+                BOUND(?wdUri),
+                ?wdUri,
+                $s
+            )
+        )
+        AS ?foundUri
+    )
+
+    BIND (
+        IRI (
+            CONCAT(
+                STR(parameter:) ,
+                SHA256(STR(?foundUri))
+            )
+        )
+        AS ?uri
+    )
+}

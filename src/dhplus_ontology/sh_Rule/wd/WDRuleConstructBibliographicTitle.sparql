@@ -1,0 +1,18 @@
+CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+    ?dhpUri dhpluso:preferredTitle ?bnode .
+    ?bnode a dhpluso:Title .
+    ?bnode rdfs:label ?label .    
+    ?bnode dhpluso:mainTitle ?label .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?wd {
+        ?authorityUri rdfs:label ?label .
+        BIND(BNODE() AS ?bnode)
+    }
+    FILTER (dhpluso:IF_inLanguages(?this,?label)) .
+}

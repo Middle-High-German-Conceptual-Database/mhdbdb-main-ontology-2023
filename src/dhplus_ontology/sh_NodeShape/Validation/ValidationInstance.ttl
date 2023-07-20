@@ -1,0 +1,74 @@
+dhpluso:ValidationInstance a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Instance ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:dimension ;
+        sh:uniqueLang true ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:editionStatement ;
+        sh:uniqueLang true ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:hasItem ;
+        sh:class dhpluso:Instance ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:hasSeries ;
+        sh:class dhpluso:Instance ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:instanceOf ;
+        sh:class dhpluso:Work ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:issuance ;
+        sh:class dhpluso:Issuance ;
+        sh:pattern '^https://id.loc.gov/vocabulary/issuance/'; # Vocab!
+        sh:flags "i" ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:note ;
+        sh:class dhpluso:Note ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:provisionActivity ;
+        sh:class dhpluso:ProvisionActivity ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:provisionActivityStatement ;
+        sh:uniqueLang true ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:responsibilityStatement ;
+        sh:uniqueLang true ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:title ;
+        sh:class dhpluso:Title ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

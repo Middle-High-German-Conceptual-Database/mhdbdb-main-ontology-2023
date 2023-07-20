@@ -1,0 +1,12 @@
+dhpluso:GNDORuleConstructWorkTitle a sh:SPARQLRule ;
+    rdfs:label
+        "Infer title from GND"@en ,
+        "Leite Titel von GND ab"@de ;
+    rdfs:definition
+        "Infers title from a GND authority file."@en ,
+        "Leitet Titel von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

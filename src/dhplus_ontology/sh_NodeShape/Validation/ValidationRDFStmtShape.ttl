@@ -1,0 +1,53 @@
+dhpluso:ValidationRDFStmtShape a sh:NodeShape ;
+    sh:targetClass rdf:Statement ;
+    sh:property [
+            sh:path rdf:subject ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:path rdf:predicate ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:path rdf:object ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:path dc:creator ;
+            sh:or (
+                    [ sh:datatype xsd:string ]
+                    [ sh:nodeKind sh:IRI ]
+                )
+        ] ,
+        [
+            sh:path dcterms:created ;
+            sh:datatype xsd:dateTime ;
+        ] ,
+        [
+            sh:path dcterms:modified ;
+            sh:datatype xsd:dateTime ;
+        ] ,
+        [
+            sh:path dhpluso:value-source-uri ;
+            sh:nodeKind sh:IRI ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:path dhpluso:value-source-prop ;
+            sh:nodeKind sh:IRI ;
+            sh:maxCount 1 ;
+        ] ,
+        [
+            sh:path dhpluso:value-code ;
+            sh:nodeKind sh:IRI ;
+            sh:pattern "https://dh.plus.ac.at/vocabulary#" ;
+        ] ;
+        dc:creator "Peter Hinkelmanns" ;
+        dcterms:created "2021-08-16" ;
+        dcterms:modified "{{ modificationDate }}" ;
+.

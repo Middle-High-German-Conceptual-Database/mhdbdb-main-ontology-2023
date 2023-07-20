@@ -1,0 +1,47 @@
+dhpluso:ValidationContribution a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Contribution ;
+    ] ;
+    sh:property [
+            sh:path dhpluso:agent ;
+            sh:class dhpluso:Person ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dhpluso:role ;
+            sh:nodeKind sh:IRI ;
+            sh:minCount 1 ;
+            ##~## PH: Besser wäre es, hier tatsächlich das Vokabular abzufragen
+            # sh:pattern '^https://id.loc.gov/vocabulary/relators/' ;
+            # sh:flags "i" ;
+            sh:or (
+                #author
+                [ sh:hasValue <http://id.loc.gov/vocabulary/relators/aut> ]
+                #author afterword
+                [ sh:hasValue <http://id.loc.gov/vocabulary/relators/aft> ]
+                #composer
+                [ sh:hasValue <http://id.loc.gov/vocabulary/relators/cmp> ]
+                #contributor
+                [ sh:hasValue <http://id.loc.gov/vocabulary/relators/ctb> ]
+                #editor
+                [ sh:hasValue <http://id.loc.gov/vocabulary/relators/edt> ]
+                #illustrator
+                [ sh:hasValue <http://id.loc.gov/vocabulary/relators/ill> ]
+                #other
+                [ sh:hasValue <http://id.loc.gov/vocabulary/relators/oth> ]
+                #translator
+                [ sh:hasValue <http://id.loc.gov/vocabulary/relators/trl> ]
+                #writer preface
+                [ sh:hasValue <http://id.loc.gov/vocabulary/relators/wpr> ]
+                #Blank Node
+                [ sh:nodeKind sh:BlankNode ] ##~## PH: Warum braucht es den Eintrag?
+            ) ;
+            sh:severity sh:Violation ;
+        ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

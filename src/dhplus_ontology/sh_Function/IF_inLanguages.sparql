@@ -1,0 +1,2 @@
+SELECT (CONTAINS(dhpluso:ParameterFilterLanguage($parameter), STR(LANG($passedString))) AS ?res)
+WHERE {}

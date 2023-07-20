@@ -1,0 +1,12 @@
+dhpluso:RuleAddAdditionalTriples a sh:SPARQLRule ;
+    rdfs:label
+        "add additional triples"@en ,
+        "fürge weitere triple hinzu"@de ;
+    rdfs:definition
+        "Add more triples to the graph that have been passed in the ParameterSet."@en ,
+        "Füge dem Graph weitere Triple hinzu, die im ParameterSet übergeben worden sind."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

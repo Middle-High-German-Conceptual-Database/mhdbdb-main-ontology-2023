@@ -1,0 +1,16 @@
+CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+    ?dhpUri dhpluso:preferredTitle ?bnode .
+    ?bnode a dhpluso:Title .
+    ?bnode dhpluso:mainTitle ?label .
+    ?bnode rdfs:label ?label .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}    
+
+    SERVICE ?af {
+        ?authorityUri gndo:preferredNameForTheWork ?label .
+        BIND(BNODE() AS ?bnode)
+    }
+}

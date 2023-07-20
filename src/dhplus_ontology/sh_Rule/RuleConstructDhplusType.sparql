@@ -1,0 +1,6 @@
+CONSTRUCT {
+    ?dhpUri a ?dhpClass .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+}

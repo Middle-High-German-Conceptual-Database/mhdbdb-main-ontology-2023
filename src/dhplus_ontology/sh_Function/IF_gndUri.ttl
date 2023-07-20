@@ -1,0 +1,19 @@
+dhpluso:IF_gndUri a sh:SPARQLFunction ;
+    rdfs:label
+        "Functions tests if a given string is a GND uri."@en ,
+        "Funktions testet ob ein übergebener String eine GND Uri ist."@de ;
+    skos:definition
+        "Returns true if string is GND uri."@en ,
+        "Gibt true zurück wenn string GND uri ist."@de ;
+    sh:parameter [
+        sh:path tmp:gnd ;
+        sh:datatype rdf:Description ;
+        sh:description "passed string"@en ;
+        sh:description "übergebener String"@de ;
+    ] ;
+    sh:returnType xsd:boolean ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """
+.

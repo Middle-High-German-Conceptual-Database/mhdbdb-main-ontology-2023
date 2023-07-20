@@ -1,0 +1,11 @@
+SELECT ?wdUri
+WHERE {
+    {{ sparqlBlocks.endpoints }}
+    SERVICE ?wd {
+        ?wdUri ?p $passedUri .
+        FILTER(STRSTARTS(STR(?wdUri),STR(wd:)))
+        FILTER(!(STRSTARTS(STR(?wdUri),STR(wds:))))
+        FILTER(STRSTARTS(STR($passedUri),STR(wd:)))
+        FILTER(!(STRSTARTS(STR($passedUri),STR(wds:))))
+    }
+}

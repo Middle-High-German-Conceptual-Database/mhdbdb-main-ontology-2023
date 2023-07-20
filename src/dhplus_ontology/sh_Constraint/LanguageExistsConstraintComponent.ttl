@@ -1,0 +1,28 @@
+dhpluso:LanguageExistsConstraintComponent a sh:ConstraintComponent ;
+    rdfs:label
+        "Language exists constraint component"@en ,
+        "Sprache existiert constraint component"@de ;
+    rdfs:definition
+        "Returns true if a Literal of a given language and path exists for given node."@en ,
+        "Gibt true zurück, wenn ein Literal einer bestimmten Sprache und eines bestimmten Pfades für den angegebenen Knoten existiert."@de ;
+    sh:parameter [
+        sh:path tmp:languageExists ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:minLength 2 ;
+        sh:name "language"@en ;
+        sh:name "Sprache"@de ;
+        sh:description "The language tag, e.g. \"de\"."@en ;
+        sh:description "Der Sprachtag, z.B. \"de\"."@de ;
+    ] ;
+    sh:labelTemplate "{$this}/{$PATH} has no values with language tag \"{$languageExists}\""@en ;
+    sh:labelTemplate "{$this}/{$PATH} hat keine Werte mit Sprach-Tag \"{$languageExists}\""@en ;
+    sh:propertyValidator [
+        a sh:SPARQLSelectValidator ;
+        sh:prefixes constants:Prefixes ;
+        sh:message "{$this}/{$PATH} has no values with language tag \"{$languageExists}\""@en ;
+        sh:message "{$this}/{$PATH} hat keine Werte mit Sprach-Tag \"{$languageExists}\""@en ;
+        sh:select """
+            {{ sparql }}
+            """
+    ]
+.

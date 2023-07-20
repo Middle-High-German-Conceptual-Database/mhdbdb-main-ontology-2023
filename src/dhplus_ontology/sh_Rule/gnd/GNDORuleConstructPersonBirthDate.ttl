@@ -1,0 +1,12 @@
+dhpluso:GNDORuleConstructPersonBirthDate a sh:SPARQLRule ;
+    rdfs:label
+        "Infer Birth date from GND"@en ,
+        "Leite Geburtsdatum von GND ab"@de ;
+    rdfs:definition
+        "Infers Birth date from a GND authority file."@en ,
+        "Leitet Geburtsdatum von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

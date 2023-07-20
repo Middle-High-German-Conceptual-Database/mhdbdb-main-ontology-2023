@@ -1,0 +1,16 @@
+dhpluso:NamedBnode a sh:SPARQLFunction ;
+    rdfs:label
+        "Returns a unique BNODE from string"@en ,
+        "Gibt einen eindeutigen BNODE aus string zurück."@de ;
+    sh:parameter [
+        sh:path tmp:passedString ;
+        sh:datatype rdf:Description ;
+        sh:description "passed string"@en ;
+        sh:description "übergebener String"@de ;
+    ] ;
+    sh:returnType xsd:boolean ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """
+.

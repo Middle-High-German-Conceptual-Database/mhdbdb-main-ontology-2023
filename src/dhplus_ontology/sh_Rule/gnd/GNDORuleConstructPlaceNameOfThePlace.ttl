@@ -1,0 +1,12 @@
+dhpluso:GNDORuleConstructPlaceNameOfThePlace a sh:SPARQLRule ;
+    rdfs:label
+        "Infer dhpluso:NameOfThePlace from GND"@en ,
+        "Leite dhpluso:NameOfThePlace von GND ab"@de ;
+    rdfs:definition
+        "Infers all names from a GND authority file."@en ,
+        "Leitet alle Namen von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

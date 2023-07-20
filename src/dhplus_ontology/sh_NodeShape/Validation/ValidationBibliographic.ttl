@@ -1,0 +1,37 @@
+dhpluso:ValidationBibliographic a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Bibliographic ;
+    ] ;
+    sh:property [
+            sh:path dhpluso:adminMetadata ;
+            sh:class dhpluso:AdminMetadata ;
+            sh:maxCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dhpluso:extent ;
+            sh:class dhpluso:Extent ;
+            sh:maxCount 1 ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dhpluso:note ;
+            sh:class dhpluso:Note ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dhpluso:contribution ;
+            sh:class dhpluso:Contribution ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dhpluso:title ;
+            sh:class dhpluso:Title ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

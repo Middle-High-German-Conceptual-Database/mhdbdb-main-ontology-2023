@@ -1,0 +1,12 @@
+dhpluso:ValidationIssuance a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Issuance ;
+    ] ;
+    sh:property [ sh:maxCount 1 ;
+        sh:nodeKind sh:Literal ;
+        sh:path dhpluso:code ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

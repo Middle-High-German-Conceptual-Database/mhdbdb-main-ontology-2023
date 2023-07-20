@@ -1,0 +1,13 @@
+CONSTRUCT {
+    ?dhpUri rdfs:label ?label .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?wd {
+        ?authorityUri rdfs:label ?label .
+    }
+    FILTER (dhpluso:IF_inLanguages(?this,?label)) .
+}

@@ -1,0 +1,16 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:preferredNameEntityForThePlace ?bnode .
+    ?bnode a dhpluso:NameOfThePlace ;
+        dhpluso:placename ?label .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?wd {
+        ?authorityUri rdfs:label ?label .
+    }
+    BIND (BNODE(STR(CONCAT(?label,LANG(?label)))) AS ?bnode) .
+    FILTER (dhpluso:IF_inLanguages(?this,?label)) .
+}

@@ -1,0 +1,51 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:hasInstance ?instance .
+
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?instance ;
+        parameter:dhpClass dhpluso:Instance ;
+        parameter:authorityUri ?dnbInstance ;
+    .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    {{ sparqlBlocks.literalsParameterset }}
+
+    SERVICE ?af {
+        ?authorityUri bf:hasInstance ?dnbInstance .
+    }
+
+    OPTIONAL {
+        SERVICE ?dhPLUSInferTemp {
+            ?dhpInstance owl:sameAs ?dnbInstance .            
+        }
+    }
+
+    BIND (
+        IF(
+            bound(?dhpInstance) ,
+            ?dhpInstance ,
+            dhpluso:DhPlusUri(?dnbInstance)
+        )
+        AS ?instance
+    )
+
+    # OutputParameterSet   
+    BIND (
+        IF(
+            bound(?dhpInstance) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?dnbInstance)
+        )
+        AS ?OutputParameter
+    )    
+}

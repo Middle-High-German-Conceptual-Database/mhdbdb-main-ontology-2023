@@ -1,0 +1,17 @@
+SELECT DISTINCT $this $languageExists $PATH
+WHERE
+{
+    $this $PATH ?label .
+
+    FILTER NOT EXISTS
+    {
+        SELECT DISTINCT $this $languageExists
+        WHERE {
+            $this $PATH ?label .
+        }
+        GROUP BY $this $languageExists ?label
+        HAVING (
+            langMatches(lang(?label), $languageExists)
+        )
+    }
+}

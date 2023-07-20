@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructPlaceGeometry a sh:SPARQLRule ;
+    rdfs:label
+        "Infer dhpluso:Geometry from WD"@en ,
+        "Leite dhpluso:Geometry von WD ab"@de ;
+    rdfs:definition
+        "Infers geometry from a WD authority file."@en ,
+        "Leitet Geometrie von einem WD Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

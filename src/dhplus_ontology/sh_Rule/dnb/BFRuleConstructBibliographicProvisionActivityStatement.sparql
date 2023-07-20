@@ -1,0 +1,12 @@
+
+CONSTRUCT {
+    ?dhpUri dhpluso:provisionActivityStatement ?provisionActivityStatement .    
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+    SERVICE ?af {
+        ?authorityUri bf:provisionActivityStatement ?provisionActivityStatement .
+    }
+}

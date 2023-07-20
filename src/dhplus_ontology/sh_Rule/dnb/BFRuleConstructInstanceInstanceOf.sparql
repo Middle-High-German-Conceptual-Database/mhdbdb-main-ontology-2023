@@ -1,0 +1,52 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:instanceOf ?work .
+
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?work ;
+        parameter:dhpClass dhpluso:Work ;
+        parameter:authorityUri ?dnbWork ;
+    .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    {{ sparqlBlocks.literalsParameterset }}
+
+    SERVICE ?af {
+        ?authorityUri bf:instanceOf ?dnbWork .
+    }
+
+    OPTIONAL {
+        SERVICE ?dhPLUSInferTemp {
+            ?dhpWork owl:sameAs ?dnbWork .
+            ?dhpWork rdfs:subClassOf* dhpluso:Entity .
+        }
+    }
+
+    BIND (
+        IF(
+            bound(?dhpWork) ,
+            ?dhpWork ,
+            dhpluso:DhPlusUri(?dnbWork)
+        )
+        AS ?work
+    )
+
+    # OutputParameterSet    
+    BIND (
+        IF(
+            bound(?dhpWork) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?dnbWork)
+        )
+        AS ?OutputParameter
+    )
+}

@@ -1,0 +1,53 @@
+dhpluso:ValidationWord a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Word ;
+    ] ;
+    sh:property [
+            sh:name "Component"@en ,
+            "Wortbildungsbestandteil"@de ;
+            sh:path dhpluso:subterm ;
+            sh:or (
+                [
+                    sh:class dhpluso:Word ;
+                ]
+                [
+                    sh:class dhpluso:Affix ;
+                ]
+            ) ;
+            sh:nodeKind sh:IRI ;
+            sh:severity sh:Info ;
+        ] ,
+        [
+            sh:name
+                "Lexical Sense"@en ,
+                "Lexikalische Bedeutunge"@de ;
+            sh:path dhpluso:sense ;
+            sh:class dhpluso:LexicalSense ;
+            sh:nodeKind sh:IRI ;
+            sh:minCount 1 ;
+            sh:severity sh:Warning ;
+        ] ,
+        [
+            sh:name
+                "onomastic Usage"@en ,
+                "Namensgebrauch"@de ;
+            sh:path dhpluso:onomasticUsage ;
+            sh:class dhpluso:OnomasticUsage ;
+            sh:nodeKind sh:IRI ;
+            sh:severity sh:Info ;
+        ] ,
+        [
+            sh:name
+                "Part of Speech"@en ,
+                "Wortart"@de ;
+            sh:path dhpluso:partOfSpeech ;
+            sh:class dhpluso:PartOfSpeech ;
+            sh:minCount 1 ;
+            sh:nodeKind sh:IRI ;
+            sh:severity sh:Warning ;
+        ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

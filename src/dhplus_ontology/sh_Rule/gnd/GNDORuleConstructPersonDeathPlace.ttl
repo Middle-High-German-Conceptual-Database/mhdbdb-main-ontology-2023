@@ -1,0 +1,12 @@
+dhpluso:GNDORuleConstructPersonDeathPlace a sh:SPARQLRule ;
+    rdfs:label
+        "Infer Death Place from GND"@en ,
+        "Leite Sterbeort von GND ab"@de ;
+    rdfs:definition
+        "Infers Death Place from a GND authority file."@en ,
+        "Leitet Sterbeort von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

@@ -1,0 +1,6 @@
+
+SELECT ?addReificationStatements
+WHERE {
+    ?set parameter:hasParameter $parameter .
+    ?set parameter:addReificationStatements ?addReificationStatements .
+}

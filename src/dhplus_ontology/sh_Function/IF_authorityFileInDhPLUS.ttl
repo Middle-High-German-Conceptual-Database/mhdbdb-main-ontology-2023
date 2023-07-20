@@ -1,0 +1,19 @@
+dhpluso:IF_authorityFileInDhPLUS a sh:SPARQLFunction ;
+    rdfs:label
+        "Is authority file in dhPLUS?"@en ,
+        "Ist Normdatensatz in dhPLUS?"@de ;
+    skos:definition
+        "Function tests if a given authority file is referenced as owl:sameAs from a dhpluso Entity."@en ,
+        "Funktion testet, ob eine gegebener Normdatensatz als owl:sameAs von einer dhpluso-Entität referenziert wird."@de ;
+    sh:parameter [
+        sh:path tmp:af ;
+        sh:datatype rdf:Description ;
+        sh:description "passed authority file"@en ;
+        sh:description "übergebener Normdatensatz"@de ;
+    ] ;
+    sh:returnType xsd:boolean ;
+    sh:prefixes constants:Prefixes ;
+    sh:ask """
+        {{ sparql }}
+        """ ;
+.

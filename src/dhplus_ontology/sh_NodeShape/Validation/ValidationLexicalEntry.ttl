@@ -1,0 +1,34 @@
+dhpluso:ValidationLexicalEntry a sh:NodeShape ;
+    sh:target [
+            a dhpluso:SubclassTarget ;
+            tmp:class dhpluso:LexicalEntry ;
+        ] ;
+    sh:property [
+        sh:name "Canonical Form"@en ;
+        sh:name "Ansatzform"@de ;
+        sh:path dhpluso:canonicalForm ;
+        sh:class dhpluso:Form ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:name "Other Forms"@en ,
+        "Andere Formen"@de ;
+        sh:path dhpluso:otherForm ;
+        sh:class dhpluso:Form ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Info ;
+    ] ,
+    [
+        sh:name "See also"@en ,
+        "Siehe auch"@de ;
+        sh:path rdfs:seeAlso ;
+        sh:datatype xsd:anyURI ;
+        sh:severity sh:Info ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,27 @@
+dhpluso:InferDNBWork a sh:NodeShape ;
+    rdfs:label
+        "Infer Work from DNB"@en ,
+        "Leite Werk von DNB ab"@de ;
+    rdfs:definition
+        "Infers an Work from a DNB authority file."@en ,
+        "Leitet eine Werk von einem DNB Normdatensatz ab."@de ;
+    sh:target [
+        a dhpluso:InferTarget ;
+        tmp:authorityNamespace dnb: ;
+        tmp:class dhpluso:Work ;
+    ] ;
+    sh:order 2 ;
+    sh:rule
+
+        dhpluso:RuleConstructDhplusType ,
+        dhpluso:OwlRuleConstructSameAs ,
+        dhpluso:BFRuleConstructBibliographicLabel ,
+        dhpluso:BFRuleConstructBibliographicTitle ,
+        dhpluso:BFRuleConstructBibliographicProvisionActivityStatement ,
+        dhpluso:BFRuleConstructInstanceHasInstance ,
+        dhpluso:BFRuleConstructWorkCreation ;
+
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

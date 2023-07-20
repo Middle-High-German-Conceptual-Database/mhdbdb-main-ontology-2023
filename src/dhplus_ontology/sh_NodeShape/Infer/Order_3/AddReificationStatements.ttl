@@ -1,0 +1,23 @@
+dhpluso:AddReificationStatements a sh:NodeShape ;
+    rdfs:label
+        "Add reification statements for all inferred Triple."@en ,
+        "Hinzufügen von Reification Statements für alle abgeleiteten Triple."@de ;
+    rdfs:definition
+        "Add reification statements for all inferred Triple."@en ,
+        "Hinzufügen von Reification Statements für alle abgeleiteten Triple."@de ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Entity ;
+    ] ;
+    sh:order 3 ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes constants:Prefixes ;
+        sh:construct """
+            {{ sparql }}
+        """ ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

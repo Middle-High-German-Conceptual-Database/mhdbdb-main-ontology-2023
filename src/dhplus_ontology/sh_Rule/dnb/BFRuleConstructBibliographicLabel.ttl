@@ -1,0 +1,12 @@
+dhpluso:BFRuleConstructBibliographicLabel a sh:SPARQLRule ;
+    rdfs:label
+        "Infer label from DNB"@en ,
+        "Leite Label von DNB ab"@de ;
+    rdfs:definition
+        "Infers label from a DNB authority file."@en ,
+        "Leitet Label von einem DNB Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

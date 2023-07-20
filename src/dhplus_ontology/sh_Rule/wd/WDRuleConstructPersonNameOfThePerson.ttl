@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructPersonNameOfThePerson a sh:SPARQLRule ;
+    rdfs:label
+        "Infer dhpluso:NameOfThePerson from GND"@en ,
+        "Leite dhpluso:NameOfThePerson von GND ab"@de ;
+    rdfs:definition
+        "Infers all names from a GND authority file."@en ,
+        "Leitet alle Namen von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

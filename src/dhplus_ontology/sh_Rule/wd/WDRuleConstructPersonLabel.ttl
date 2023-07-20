@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructPersonLabel a sh:SPARQLRule ;
+    rdfs:label
+        "Infer label from WikiData"@en ,
+        "Leite Label von WikiData ab"@de ;
+    rdfs:definition
+        "Infers label from a WikiData authority file."@en ,
+        "Leitet Label von einem WikiData Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

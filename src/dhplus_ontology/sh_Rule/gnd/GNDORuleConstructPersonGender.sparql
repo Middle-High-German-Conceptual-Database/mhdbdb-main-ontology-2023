@@ -1,0 +1,16 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:gender ?Gender . 
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?af {
+        ?authorityUri gndo:gender ?GndoGender .
+    }
+    SERVICE ?dhPLUSOntology {
+        ?Gender owl:sameAs ?GndoGender .
+        ?Gender skos:inScheme dhplusv:GenderVocabulary .
+    }
+}

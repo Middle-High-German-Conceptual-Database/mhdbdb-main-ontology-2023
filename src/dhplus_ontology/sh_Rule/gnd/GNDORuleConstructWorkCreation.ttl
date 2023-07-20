@@ -1,0 +1,12 @@
+dhpluso:GNDORuleConstructWorkCreation a sh:SPARQLRule ;
+    rdfs:label
+        "Infer Creation from GND"@en ,
+        "Leite Erschaffung von GND ab"@de ;
+    rdfs:definition
+        "Infers Creation from a GND authority file."@en ,
+        "Leitet Erschaffung von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

@@ -1,0 +1,98 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:wasCreatedBy ?dhpCreation .
+    
+    ?dhpCreation
+        a dhpluso:Creation ;
+        dhpluso:hasCreated ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate ;
+    .    
+
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?dnbPlace .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+
+    {{ sparqlBlocks.literalsParameterset }}
+
+    OPTIONAL {
+        SERVICE ?af {
+            ?authorityUri bf:originPlace ?dnbPlace .
+        }
+    }
+    OPTIONAL {
+        SERVICE ?af {
+            ?authorityUri bf:originDate ?date .
+        }
+    }
+    BIND (
+        IF(
+            BOUND(?date),
+            BNODE(),
+            ?nothing
+        )
+        AS ?dhpTimeSpan
+    ) 
+    BIND(
+        IF(
+            BOUND(?date),
+            xsd:date(?date),
+            ?nothing
+        )
+        AS ?xsDate
+    )
+    BIND (
+        IF(
+            BOUND(?xsDate),
+            IRI(CONCAT(STR(?dhpUri),'/creation')),
+            IF(
+                BOUND(?dnbPlace),
+                IRI(CONCAT(STR(?dhpUri),'/creation')),
+                ?nothing
+            )
+        )
+        AS ?dhpCreation
+    )
+
+    BIND (
+        IF(
+            BOUND(?dnbPlace),
+            dhpluso:DhPlusUri(?dnbPlace),
+            ?nothing
+        )
+        AS ?place
+    )
+
+    # OutputParameterSet
+    BIND (
+        IF (
+            BOUND(?dnbPlace),
+            IF(
+                dhpluso:IF_authorityFileInDhPLUS(?place) ,
+                ?nothing ,
+                dhpluso:DhPlusParameterUri(?dnbPlace)
+            ),
+            ?nothing
+        )
+        AS ?OutputParameter
+    )
+}

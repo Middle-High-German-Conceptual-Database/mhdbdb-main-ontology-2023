@@ -1,0 +1,27 @@
+dhpluso:ValidationAdminMetadata a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:AdminMetadata ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:changeDate ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:creationDate ;
+        sh:datatype xsd:date ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dc:source ;
+        sh:class dc:source ;
+        sh:severity sh:Info ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

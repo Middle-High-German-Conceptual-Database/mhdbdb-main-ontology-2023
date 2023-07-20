@@ -1,0 +1,26 @@
+dhpluso:InferDNBInstance a sh:NodeShape ;
+    rdfs:label
+        "Infer Instance from DNB"@en ,
+        "Leite Instanz von DNB ab"@de ;
+    rdfs:definition
+        "Infers an instance from a DNB authority file."@en ,
+        "Leitet eine Instanz von einem DNB Normdatensatz ab."@de ;
+    sh:target [
+        a dhpluso:InferTarget ;
+        tmp:authorityNamespace dnb: ;
+        tmp:class dhpluso:Instance ;
+    ] ;
+    sh:order 2 ;
+    sh:rule
+
+        dhpluso:RuleConstructDhplusType ,
+        dhpluso:OwlRuleConstructSameAs ,
+        dhpluso:BFRuleConstructBibliographicLabel ,
+        dhpluso:BFRuleConstructBibliographicTitle ,
+        dhpluso:BFRuleConstructBibliographicProvisionActivityStatement ,
+        dhpluso:BFRuleConstructInstanceInstanceOf ;
+
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

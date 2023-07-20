@@ -1,0 +1,12 @@
+dhpluso:GNDORuleConstructWorkContribution a sh:SPARQLRule ;
+    rdfs:label
+        "Infer contribution from GND"@en ,
+        "Leite Mitwirkung von GND ab"@de ;
+    rdfs:definition
+        "Infers contribution from a GND authority file."@en ,
+        "Leitet Mitwirkung von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+       {{ sparql }}
+    """ ;
+.

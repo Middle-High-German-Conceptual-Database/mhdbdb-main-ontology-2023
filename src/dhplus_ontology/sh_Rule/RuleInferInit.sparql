@@ -1,0 +1,35 @@
+CONSTRUCT {
+    ?dhpUri a ?dhpClass ;            
+        dc:source ?authorityUri ;    
+        dcterms:created ?now ;    
+    . 
+    
+    parameter:output 
+        a parameter:OutputParameterSet ;
+        parameter:filterLanguage ?lang ;
+        parameter:expandViaWikiData ?expandWD ;
+        parameter:addReificationStatements ?addReificationStatements ;
+        dc:creator ?creator ;
+    .   
+    
+    ?this parameter:now ?now .
+
+} WHERE {      
+    BIND(xsd:dateTime(NOW()) AS ?now) .    
+    OPTIONAL {
+        ?this parameter:filterLanguage ?lang .
+    }                
+    OPTIONAL {
+        ?this parameter:expandViaWikiData ?expandWD .
+    }
+    OPTIONAL {
+        ?this parameter:addReificationStatements ?addReificationStatements .
+    }
+    OPTIONAL {
+        ?this dc:creator ?creator .
+    }
+    ?this parameter:hasParameter ?instanceParameter .
+    ?instanceParameter parameter:dhpUri ?dhpUri .
+    ?instanceParameter parameter:dhpClass ?dhpClass .
+    ?instanceParameter parameter:authorityUri ?authorityUri .    
+}

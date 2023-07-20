@@ -1,0 +1,82 @@
+dhpluso:ValidationLexicalConcept a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:LexicalConcept ;
+    ] ;
+    sh:property [
+        sh:name "preferred label"@en ,
+        "primäres Label"@de ;
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+        sh:minCount 2 ;
+        sh:uniqueLang true ;
+        sh:languageIn ( "en" "de") ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:name "alternate label"@en ,
+        "alternatives Label"@de ;
+        sh:path skos:altLabel ;
+        sh:datatype rdf:langString ;
+        sh:languageIn ( "en" "de") ;
+        sh:severity sh:Info ;
+    ] ,
+    [
+        sh:name "part of conceptual system"@en ,
+        "Teil eines Begriffssystems"@de ;
+        sh:path skos:inScheme ;
+        sh:class dhpluso:LexicalConceptSet ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:name "related concept"@en ,
+        "verwandter Begriff"@de ;
+        sh:or (
+            [
+            sh:path skos:related ;
+            ]
+            [
+            sh:path skos:broader ;
+            ]
+            [
+            sh:path dhpluso:antonymConcept ;
+            ]
+            [
+            sh:path dhpluso:synonymConcept ;
+            ]
+        ) ;
+        sh:class dhpluso:LexicalConcept ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Info ;
+    ] ,
+    [
+        sh:name "related concept"@en ,
+        "verwandtes Konzept"@de ;
+        sh:or (
+            [
+            sh:path skos:relatedMatch ;
+            ]
+            [
+            sh:path skos:broadMatch ;
+            ]
+            [
+            sh:path skos:narrowMatch ;
+            ]
+            [
+            sh:path skos:closeMatch ;
+            ]
+            [
+            sh:path skos:exactMatch ;
+            ]
+        ) ;
+        sh:class skos:Concept ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Info ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

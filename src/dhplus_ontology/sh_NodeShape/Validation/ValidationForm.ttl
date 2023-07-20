@@ -1,0 +1,18 @@
+dhpluso:ValidationForm a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Form ;
+    ] ;
+    sh:property [
+        sh:name "written representation"@en ,
+        "Orthographihsche Form"@de ;
+        sh:path dhpluso:writtenRep ;
+        sh:datatype rdfs:Literal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

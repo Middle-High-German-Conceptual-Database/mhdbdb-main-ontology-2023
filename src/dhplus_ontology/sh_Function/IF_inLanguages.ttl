@@ -1,0 +1,27 @@
+dhpluso:IF_inLanguages a sh:SPARQLFunction ;
+    rdfs:label
+        "Function tests if a given string lang matches the parameter filter language."@en ,
+        "Die Funktion prüft, ob eine gegebene Zeichenkette lang mit dem Parameter filter language übereinstimmt."@de ;
+    skos:definition
+        "Returns true if string has matching language or not language tag is set."@en ,
+        "Gibt true zurück, wenn die Zeichenkette die passende Sprache hat oder kein Sprach-Tag gesetzt ist."@de ;
+    sh:parameter [
+        sh:path tmp:parameter ;
+        sh:datatype rdf:Description ;
+        sh:description "passed parameter"@en ;
+        sh:description "übergebener parameter"@de ;
+        sh:order 1 ;
+    ] ;
+    sh:parameter [
+        sh:path tmp:passedString ;
+        sh:datatype rdf:Description ;
+        sh:description "passed string"@en ;
+        sh:description "übergebener String"@de ;
+        sh:order 2 ;
+    ] ;
+    sh:returnType xsd:boolean ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """
+.

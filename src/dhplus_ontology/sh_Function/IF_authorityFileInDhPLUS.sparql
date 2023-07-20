@@ -1,0 +1,14 @@
+ASK {
+    {{ sparqlBlocks.endpoints }}
+    {
+        SERVICE ?dhPLUSInstances {
+            ?uri owl:sameAs $af .        
+        }
+    }
+    UNION
+    {
+        SERVICE ?dhPLUSInferTemp {
+            ?uri owl:sameAs $af .        
+        }
+    }
+}

@@ -1,0 +1,16 @@
+dhpluso:AllSubjectsTarget a sh:SPARQLTargetType ;
+    rdfs:subClassOf sh:Target ;
+    rdfs:label
+        "Target for all subjects"@en ,
+        "Target für alle Subjekte"@de ;
+    rdfs:definition
+        "Target for all subjects."@en ,
+        "Target für alle Subjekte."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """ ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-10-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

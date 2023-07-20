@@ -1,0 +1,14 @@
+dhpluso:SameAsWikiData a sh:SPARQLFunction ;
+    rdfs:comment "Returns wikidata uri for instance" ;
+    sh:returnType rdf:Description ;
+    sh:prefixes constants:Prefixes ;
+    sh:parameter [
+        sh:path tmp:passedUri ;
+        sh:datatype rdf:Description ;
+        sh:description "passed uri of other authority file than wikidata"@en ;
+        sh:description "uri einer anderen Autoritätsdatei als Wikidata"@de ;
+    ] ;
+    sh:select """
+        {{ sparql }}
+        """
+.

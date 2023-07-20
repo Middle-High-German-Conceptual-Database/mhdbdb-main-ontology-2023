@@ -1,0 +1,12 @@
+dhpluso:DhPlusParameterUri a sh:SPARQLFunction ;
+    rdfs:comment "generate a new dhPLUS Parameter Uri" ;
+    sh:returnType rdf:Description ;
+    sh:prefixes constants:Prefixes ;
+    sh:parameter [
+        sh:path tmp:s ;
+        sh:datatype rdf:Description ;
+        sh:description "passed string"@en ;
+        sh:description "übergebener String"@de ;
+    ] ;
+    sh:select """{{ sparql }}"""
+.

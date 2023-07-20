@@ -1,0 +1,15 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:coordinatesForThePlace ?bnode .
+    ?bnode a dhpluso:Point ;
+        dhpluso:asWKT ?wtkValue .                 
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?wd {
+        BIND(BNODE() AS ?bnode)
+        ?authorityUri wdt:P625 ?wtkValue .
+    }
+}

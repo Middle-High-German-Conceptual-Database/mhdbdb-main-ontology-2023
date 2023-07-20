@@ -1,0 +1,33 @@
+SELECT ?return
+WHERE {
+    {{ sparqlBlocks.endpoints }}
+
+    ?this a parameter:InstanceParameter .
+
+    {
+        ?this parameter:dhpClass $class .
+    }
+    UNION
+    {
+        ?this parameter:dhpClass ?currentClass .
+        SERVICE ?dhPLUSOntology {
+            ?currentClass rdfs:subClassOf* $class .
+        }
+    }
+
+    ?this parameter:authorityUri ?authorityUri .
+    BIND(
+        IF(
+            # DNB is problematic, because it is part of GND namespace
+            STR($authorityNamespace) = STR(dnb:),
+            ?this,
+            IF (
+                STRSTARTS(STR(?authorityUri), STR($authorityNamespace)),
+                ?this,
+                ?nothing
+            )
+        )
+        AS ?return
+    )
+
+}

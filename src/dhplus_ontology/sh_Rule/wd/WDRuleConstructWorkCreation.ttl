@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructWorkCreation a sh:SPARQLRule ;
+    rdfs:label
+        "Infer Creation from Wikidata"@en ,
+        "Leite Erschaffung von Wikidata ab"@de ;
+    rdfs:definition
+        "Infers Creation from a Wikidata authority file."@en ,
+        "Leitet Erschaffung von einem Wikidata Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

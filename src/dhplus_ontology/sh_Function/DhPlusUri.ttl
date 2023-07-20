@@ -1,0 +1,18 @@
+dhpluso:DhPlusUri a sh:SPARQLFunction ;
+    rdfs:label
+        "GET dhPLUS Uri"@en ,
+        "GET dhPLUS Uri"@de ;
+    rdfs:definition "Generates a dhPLUS Uri from a passed authority URI. A Uri is generated in this order: 1. correspondence in the Triple Store 2. correspondence in the parameter dataset 3. correspondence in Wikidata, Uri generated with SHA256 4 generation from passed Uri (SHA256)"@en ;
+    rdfs:definition "Erzeugt eine dhPLUS Uri aus einer übergebenen Authority URI. In dieser Reihenfolge wird eine Uri erzeugt: 1. Entsprechung im Triple Store 2. Entsprechung im Parameterdatensatz 3. Entsprechung in Wikidata, Uri erzeugt mit SHA256 4 erzeugung aus übergebener Uri (SHA256)"@de ;
+    sh:returnType rdf:Description ;
+    sh:prefixes constants:Prefixes ;
+    sh:parameter [
+        sh:path tmp:passedUri ;
+        sh:datatype rdf:Description ;
+        sh:description "passed uri"@en ;
+        sh:description "übergebener uri"@de ;
+    ] ;
+    sh:select """
+        {{ sparql }}
+    """
+.

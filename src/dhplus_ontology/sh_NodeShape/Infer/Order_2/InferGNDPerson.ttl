@@ -1,0 +1,27 @@
+dhpluso:InferGNDPerson a sh:NodeShape ;
+    rdfs:label
+        "Infer Person from GND"@en ,
+        "Leite Person von GND ab"@de ;
+    rdfs:definition
+        "Infers a person from a GND authority file."@en ,
+        "Leitet eine Person von einem GND Normdatensatz ab."@de ;
+    sh:target [
+        a dhpluso:InferTarget ;
+        tmp:authorityNamespace gnd: ;
+        tmp:class dhpluso:Person ;
+    ] ;
+    sh:order 2 ;
+    sh:rule
+        dhpluso:RuleConstructDhplusType ,
+        dhpluso:OwlRuleConstructSameAs ,
+        dhpluso:GNDORuleConstructPersonLabel ,
+        dhpluso:GNDORuleConstructPersonNameOfThePerson ,
+        dhpluso:GNDORuleConstructPersonGender ,
+        dhpluso:GNDORuleConstructPersonBirthDate ,
+        dhpluso:GNDORuleConstructPersonBirthPlace ,
+        dhpluso:GNDORuleConstructPersonDeathDate ,
+        dhpluso:GNDORuleConstructPersonDeathPlace ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

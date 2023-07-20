@@ -1,0 +1,6 @@
+
+SELECT ?filterLanguage
+WHERE {
+    ?set parameter:hasParameter $parameter .
+    ?set parameter:filterLanguage ?filterLanguage .
+}

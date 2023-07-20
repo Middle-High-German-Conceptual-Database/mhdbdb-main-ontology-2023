@@ -1,0 +1,12 @@
+dhpluso:OwlRuleConstructSameAs a sh:SPARQLRule ;
+    rdfs:label
+        "dhpUri owl:sameAs authorityUri"@en ,
+        "dhpUri owl:sameAs authorityUri"@de ;
+    rdfs:definition
+        "dhpUri owl:sameAs authorityUri."@en ,
+        "dhpUri owl:sameAs authorityUri."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

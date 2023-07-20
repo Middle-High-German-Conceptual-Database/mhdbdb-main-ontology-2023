@@ -1,0 +1,6 @@
+CONSTRUCT {
+    ?dhpUri owl:sameAs ?authorityUri .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+}

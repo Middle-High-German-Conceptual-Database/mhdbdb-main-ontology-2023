@@ -1,0 +1,12 @@
+dhpluso:BFRuleConstructWorkCreation a sh:SPARQLRule ;
+    rdfs:label
+        "Infer Creation from DNB"@en ,
+        "Leite Erschaffung von DNB ab"@de ;
+    rdfs:definition
+        "Infers Creation from a DNB authority file."@en ,
+        "Leitet Erschaffung von einem DNB Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+       {{ sparql }}
+    """ ;
+.

@@ -1,0 +1,14 @@
+SELECT ?this
+WHERE {
+    {
+        ?this a $class .
+    }
+    UNION
+    {
+        {{ sparqlBlocks.endpoints }}
+        ?this a ?currentClass .
+        SERVICE ?dhPLUSOntology {
+            ?currentClass rdfs:subClassOf* $class .
+        }
+    }
+}

@@ -1,0 +1,40 @@
+dhpluso:ValidationPerson a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Person ;
+    ] ;
+    sh:property
+    [
+        sh:path dhpluso:wasBorn ;
+        sh:class dhpluso:Birth ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:diedIn ;
+        sh:class dhpluso:Death ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:preferredNameEntityForThePerson ;
+        sh:class dhpluso:NameOfThePerson ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:variantNameEntityForThePerson ;
+        sh:class dhpluso:NameOfThePerson ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:gender ;
+        sh:class dhpluso:Gender ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,35 @@
+dhpluso:ValidationLexicalConceptSet a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:LexicalConceptSet ;
+    ] ;
+    sh:property [
+        sh:name "preferred label"@en ,
+        "primäres Label"@de ;
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+        sh:minCount 2 ;
+        sh:uniqueLang true ;
+        sh:languageIn ( "en" "de") ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:name "alternate label"@en ,
+        "alternatives Label"@de ;
+        sh:path skos:altLabel ;
+        sh:datatype rdf:langString ;
+        sh:languageIn ( "en" "de") ;
+        sh:severity sh:Info ;
+    ] ,
+    [
+        sh:name "top concept"@en ,
+        "Oberbegriff"@de ;
+        sh:path skos:hasTopConcept ;
+        sh:class dhpluso:LexicalConcept ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

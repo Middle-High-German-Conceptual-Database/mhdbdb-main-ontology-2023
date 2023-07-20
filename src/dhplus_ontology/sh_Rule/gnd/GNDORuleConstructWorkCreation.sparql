@@ -1,0 +1,103 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:wasCreatedBy ?dhpCreation .
+    ?dhpCreation
+        a dhpluso:Creation ;
+        dhpluso:hasCreated ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .    
+
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate ;
+    .
+    
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?gndPlace .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+
+    {{ sparqlBlocks.literalsParameterset }}
+
+    OPTIONAL {
+        SERVICE ?af {
+            ?authorityUri gndo:placeOfManufacture ?gndPlace .
+        }
+    }
+    OPTIONAL {
+        SERVICE ?af {
+            # gndo:dateOfProduction and gndo:dateOfPublication can be used in gnd instances with the same intend
+            {
+                ?authorityUri gndo:dateOfProduction ?date .
+            }
+            UNION
+            {
+                ?authorityUri gndo:dateOfPublication ?date .
+            }
+            ?authorityUri ?dateProperty ?date .
+        }
+    }
+    BIND (
+        IF(
+            BOUND(?date),
+            BNODE(),
+            ?nothing
+        )
+        AS ?dhpTimeSpan
+    ) .
+    BIND(
+        IF(
+            BOUND(?date),
+            xsd:date(?date),
+            ?nothing
+        )
+        AS ?xsDate
+    )
+    BIND (
+        IF(
+            BOUND(?xsDate),
+            IRI(CONCAT(STR(?dhpUri),'/creation')),
+            IF(
+                BOUND(?gndPlace),
+                IRI(CONCAT(STR(?dhpUri),'/creation')),
+                ?nothing
+            )
+        )
+        AS ?dhpCreation
+    )
+
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            dhpluso:DhPlusUri(?gndPlace),
+            ?nothing
+        )
+        AS ?place
+    )
+
+    # OutputParameterSet
+    BIND (
+        IF (
+            BOUND(?gndPlace),
+            IF(
+                dhpluso:IF_authorityFileInDhPLUS(?place) ,
+                ?nothing ,
+                dhpluso:DhPlusParameterUri(?gndPlace)
+            ),
+            ?nothing
+        )
+        AS ?OutputParameter
+    )
+}

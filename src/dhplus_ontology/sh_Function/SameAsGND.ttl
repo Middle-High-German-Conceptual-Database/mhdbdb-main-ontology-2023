@@ -1,0 +1,14 @@
+dhpluso:SameAsGND a sh:SPARQLFunction ;
+    rdfs:comment "Returns GND uri for instance. Use Wikidate endpoint" ;
+    sh:returnType rdf:Description ;
+    sh:prefixes constants:Prefixes ;
+    sh:parameter [
+        sh:path tmp:wikidataUri ;
+        sh:datatype rdf:Description ;
+        sh:description "passed wikidata uri"@en ;
+        sh:description "übergebener wikidata uri"@de ;
+    ] ;
+    sh:select """
+        {{ sparql }}
+        """
+.

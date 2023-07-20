@@ -1,0 +1,12 @@
+dhpluso:GNDORuleConstructPersonLabel a sh:SPARQLRule ;
+    rdfs:label
+        "Infer label from GND"@en ,
+        "Leite Label von GND ab"@de ;
+    rdfs:definition
+        "Infers label from a GND authority file."@en ,
+        "Leitet Label von einem GND Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

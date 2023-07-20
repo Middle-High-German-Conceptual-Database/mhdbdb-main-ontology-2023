@@ -1,0 +1,35 @@
+dhpluso:ValidationLexicon a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Lexicon ;
+    ] ;
+    sh:property [
+        sh:name "title of dictionary"@en ,
+        "Titel des Wörterbuchs"@de ;
+        sh:path dc:title ;
+        sh:datatype rdf:langString ;
+        sh:minCount 2 ;
+        sh:uniqueLang true ;
+        sh:languageIn ( "en" "de") ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:name "language of dictionary"@en ,
+        "Sprache des Wörterbuchs"@de ;
+        sh:path dhpluso:language ;
+        sh:datatype xsd:language ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:name "entry of dictionary"@en ,
+        "Artikel des Wörterbuchs"@de ;
+        sh:path dhpluso:entry ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

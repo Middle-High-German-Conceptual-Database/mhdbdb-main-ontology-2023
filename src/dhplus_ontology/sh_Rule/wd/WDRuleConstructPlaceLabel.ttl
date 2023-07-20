@@ -1,0 +1,12 @@
+dhpluso:WDRuleConstructPlaceLabel a sh:SPARQLRule ;
+    rdfs:label
+        "Infer label from WD"@en ,
+        "Leite Label von WD ab"@de ;
+    rdfs:definition
+        "Infers label from a WD authority file."@en ,
+        "Leitet Label von einem WD Normdatensatz ab."@de ;
+    sh:prefixes constants:Prefixes ;
+    sh:construct """
+        {{ sparql }}
+    """ ;
+.

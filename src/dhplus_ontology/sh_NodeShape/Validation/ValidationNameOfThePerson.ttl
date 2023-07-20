@@ -1,0 +1,39 @@
+dhpluso:ValidationNameOfThePerson a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:NameOfThePerson ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:forename ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:prefix ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:surname ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:personalName ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:counting ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:nameAddition ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-18-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

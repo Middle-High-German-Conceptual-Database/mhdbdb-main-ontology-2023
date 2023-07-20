@@ -1,0 +1,8 @@
+CONSTRUCT {
+    ?s ?p ?o .
+}
+WHERE {
+    ?this parameter:subject ?s .
+    ?this parameter:predicate ?p .
+    ?this parameter:object ?o .
+}

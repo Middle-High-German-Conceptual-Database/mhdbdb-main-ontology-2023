@@ -1,0 +1,61 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:wasBorn ?dhpBirth .
+    
+    ?dhpBirth
+        a dhpluso:Birth ;
+        dhpluso:broughtIntoLife ?dhpUri ;
+        dhpluso:tookPlaceAt ?place ;    
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+    
+    # OutputParameterSet
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+    
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?place ;
+        parameter:dhpClass dhpluso:Place ;
+        parameter:authorityUri ?gndPlace 
+    .   
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}    
+
+    {{ sparqlBlocks.literalsParameterset }}
+    
+    SERVICE ?af {
+        ?authorityUri gndo:placeOfBirth ?gndPlace .
+    }  
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            IRI(CONCAT(STR(?dhpUri),'/birth')),
+            ?nothing
+        )
+        AS ?dhpBirth
+    ) .  
+
+    BIND (
+        IF(
+            BOUND(?gndPlace),
+            dhpluso:DhPlusUri(?gndPlace),
+            ?nothing
+        )
+        AS ?place
+    ) .  
+
+    # OutputParameterSet
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?place) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?gndPlace)
+        )
+        AS ?OutputParameter
+    )  
+}

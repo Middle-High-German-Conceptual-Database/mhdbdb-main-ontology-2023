@@ -1,0 +1,30 @@
+construct {
+    ?statement
+        a rdf:Statement ;
+        rdf:subject ?this ;
+        rdf:predicate ?p ;
+        rdf:object ?o ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;                    
+    .
+} where {                 
+    ?in a parameter:InputParameterSet .                            
+    OPTIONAL{?in parameter:addReificationStatements ?addReificationStatements}
+    OPTIONAL{?in parameter:now ?now}
+    ?in parameter:hasParameter ?parameter .
+    ?parameter parameter:authorityUri ?authorityUri .
+    ?this ?p ?o .      
+    
+    BIND (
+        IF(
+            BOUND(?addReificationStatements),
+            IF(
+                ?addReificationStatements = true,
+                BNODE(),
+                ?nothing
+            ),
+            ?nothing
+        )
+        AS ?statement
+    )  
+}

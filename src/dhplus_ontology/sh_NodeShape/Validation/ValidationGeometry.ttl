@@ -1,0 +1,14 @@
+dhpluso:ValidationGeometry a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Geometry ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:asWKT ;
+        sh:datatype geo:wktLiteral ;
+        sh:severity sh:Violation ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

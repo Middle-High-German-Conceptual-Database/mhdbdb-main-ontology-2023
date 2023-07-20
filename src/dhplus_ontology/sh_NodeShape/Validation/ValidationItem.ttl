@@ -1,0 +1,26 @@
+dhpluso:ValidationItem a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Item ;
+    ] ;
+    sh:property
+        [
+            sh:path dhpluso:immediateAcquisition ;
+            sh:class dhpluso:ImmediateAcquisition ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dhpluso:itemOf ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+            sh:class dhpluso:Instance ;
+            sh:severity sh:Violation ;
+        ] ,
+        [
+            sh:path dhpluso:custodialHistory ;
+            sh:severity sh:Warning ;
+        ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

@@ -1,0 +1,5 @@
+SELECT ?this
+WHERE {
+    ?this a $class .
+    FILTER (!isBlank(?this))
+}

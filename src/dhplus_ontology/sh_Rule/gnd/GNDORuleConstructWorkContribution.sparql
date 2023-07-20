@@ -1,0 +1,49 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:contribution ?contribution .
+    ?contribution
+        a dhpluso:Contribution ;
+        dhpluso:agent ?author ;
+        dhpluso:role <http://id.loc.gov/vocabulary/relators/aut> .
+
+
+    # Output Parameter
+    parameter:output 
+        parameter:hasParameter ?OutputParameter;
+    .
+
+    ?OutputParameter
+        a parameter:InstanceParameter ;
+        parameter:dhpUri ?author ;
+        parameter:dhpClass dhpluso:Person ;
+        parameter:authorityUri ?gndAuthor ;
+    .
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    BIND (
+        IRI(CONCAT(STR(?dhpUri),'/authors'))
+        AS ?contribution
+    )
+
+    #Output Parameter Options
+    {{ sparqlBlocks.literalsParameterset }}
+
+    SERVICE ?af {
+        ?authorityUri gndo:firstAuthor ?gndAuthor .
+    }
+
+    BIND (dhpluso:DhPlusUri(?gndAuthor) AS ?author)
+
+    # Output Parameter
+    BIND (
+        IF(
+            dhpluso:IF_authorityFileInDhPLUS(?author) ,
+            ?nothing ,
+            dhpluso:DhPlusParameterUri(?gndAuthor)
+        )
+        AS ?OutputParameter
+    )
+}

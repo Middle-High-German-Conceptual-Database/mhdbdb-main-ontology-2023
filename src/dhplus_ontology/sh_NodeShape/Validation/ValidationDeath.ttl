@@ -1,0 +1,15 @@
+dhpluso:ValidationDeath a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Death ;
+    ] ;
+    sh:property [
+            sh:path dhpluso:wasDeathOf ;
+            sh:class dhpluso:Person ;
+            sh:minCount 1 ;
+            sh:severity sh:Violation ;
+        ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

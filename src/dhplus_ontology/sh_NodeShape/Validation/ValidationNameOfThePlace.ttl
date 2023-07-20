@@ -1,0 +1,15 @@
+dhpluso:ValidationNameOfThePlace a sh:NodeShape ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:NameOfThePlace ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:placename ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:severity sh:Violation ;
+        sh:minCount 1 ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

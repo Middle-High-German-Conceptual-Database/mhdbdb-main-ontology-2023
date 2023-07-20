@@ -1,0 +1,2 @@
+SELECT (STRSTARTS(STR($wd), STR(wd:)) AS ?res)
+WHERE {}

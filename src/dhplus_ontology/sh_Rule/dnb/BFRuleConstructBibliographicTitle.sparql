@@ -1,0 +1,24 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:preferredTitle ?titleBnode .
+
+    ?titleBnode
+        a dhpluso:Title ;
+        ?dhpTitleProperty ?label ;
+    .  
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}
+    
+
+    SERVICE ?af {
+        ?authorityUri bf:title ?title .
+        ?title ?bfTitleProperty ?label .
+        BIND (BNODE() AS ?titleBnode)
+    }
+
+    SERVICE ?dhPLUSOntology {
+        ?dhpTitleProperty rdfs:subPropertyOf ?bfTitleProperty .
+        ?dhpTitleProperty rdfs:domain dhpluso:preferredTitle .
+    }
+}

@@ -1,0 +1,51 @@
+CONSTRUCT {
+    ?dhpUri dhpluso:wasBorn ?dhpBirth .
+    
+    ?dhpBirth
+        a dhpluso:Birth ;
+        dhpluso:broughtIntoLife ?dhpUri ;
+        dhpluso:hasTimeSpan ?dhpTimeSpan ;
+        dcterms:created ?now ;
+        dc:source ?authorityUri ;
+    .
+
+    ?dhpTimeSpan
+        a dhpluso:Instant ;
+        dhpluso:inXSDDate ?xsDate 
+    .    
+}
+WHERE {
+    {{ sparqlBlocks.initParameter }}
+    {{ sparqlBlocks.endpoints }}    
+    
+    SERVICE ?af {
+        ?authorityUri gndo:dateOfBirth ?date .
+    }
+    
+    BIND(
+        IF(
+            BOUND(?date),
+            IRI(CONCAT(STR(?dhpUri),'/birth')),
+            ?nothing
+        )
+        AS ?dhpBirth
+    )
+    
+    BIND(
+        IF(
+            BOUND(?date),
+            xsd:date(?date),
+            ?nothing
+        )
+        AS ?xsDate
+    )
+
+    BIND(
+        IF(
+            BOUND(?xsDate),
+            BNODE(),
+            ?nothing
+        )
+        AS ?dhpTimeSpan
+    )    
+}

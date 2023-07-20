@@ -1,0 +1,110 @@
+dhpluso:ValidationEntity a sh:NodeShape ;
+    sh:target [
+        a dhpluso:NamedEntityTarget ;
+        tmp:class dhpluso:Entity ;
+    ] ;
+    sh:property [
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:path rdf:type
+    ] ,
+    # RDF Schema
+    [
+        sh:path rdfs:label ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+        sh:severity sh:Violation ;
+    ] ,
+    # Dublin Core Metadata Element Set
+    [
+        sh:path dc:creator ;
+        sh:or (
+            [sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;]
+            [sh:class dhpluso:Person ;]
+        ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dc:date ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dc:publisher ;
+        sh:or (
+            [sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;]
+            [sh:class dhpluso:Person ;]
+        ) ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dc:rights ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dc:source ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dc:title ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+        sh:severity sh:Violation ;
+    ] ,
+    # DCMI Metadata Terms
+    [
+        sh:path dcterms:created ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dcterms:modified ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dcterms:available ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ] ,
+    # Web Ontology Language
+    [
+        sh:path owl:sameAs ;
+        sh:nodeKind sh:IRI ;
+        sh:severity sh:Violation ;
+    ] ,
+    # dhPLUS Ontology (from Cidoc)
+    [
+        sh:path dhpluso:isIdentifiedBy ;
+        sh:class dhpluso:Appellation ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:hasType ;
+        sh:class dhpluso:Type ;
+        sh:severity sh:Violation ;
+    ] ,
+    [
+        sh:path dhpluso:hasPreferredIdentifier ;
+        sh:class dhpluso:Identifier ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-16" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

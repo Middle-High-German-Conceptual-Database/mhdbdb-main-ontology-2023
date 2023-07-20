@@ -1,0 +1,25 @@
+dhpluso:InferPassAll a sh:NodeShape ;    
+    rdfs:label
+        "Pass all infered triples to the next stage."@en ,
+        "Gib alle abgeleiteten Triples an die nächste Stufe weiter."@de ;
+    skos:definition
+        "Pass all triples. "@en ,
+        "Übergebe alle Triples"@de ;
+    sh:target [
+        a dhpluso:AllSubjectsTarget ;        
+    ] ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes constants:Prefixes ;
+        sh:construct """
+            construct {
+                ?this ?p ?o .
+            } where {                
+                ?this ?p ?o .
+            }
+        """ ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-18" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

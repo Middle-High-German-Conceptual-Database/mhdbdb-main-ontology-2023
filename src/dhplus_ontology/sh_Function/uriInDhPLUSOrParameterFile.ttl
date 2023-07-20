@@ -1,0 +1,19 @@
+dhpluso:uriInDhPLUSOrParameterFile a sh:SPARQLFunction ;
+    rdfs:label
+        "Search already assigned dhPLUS-Uri in Triple Store and Parameter-File."@en ,
+        "Suche bereits vergebene dhPLUS-Uri in Triple Store und Parameter-File."@de ;
+    skos:definition
+        "Search already assigned dhPLUS-Uri in Triple Store and parameter file based on a authority file URI"@en ,
+        "Suche bereits vergebene dhPLUS-Uri in Triple Store und Parameter-File auf Basis einer Normdaten-URI."@de ;
+    sh:parameter [
+        sh:path tmp:af ;
+        sh:datatype rdf:Description ;
+        sh:description "passed authority file"@en ;
+        sh:description "übergebener Normdatensatz"@de ;
+    ] ;
+    sh:returnType xsd:boolean ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """ ;
+.

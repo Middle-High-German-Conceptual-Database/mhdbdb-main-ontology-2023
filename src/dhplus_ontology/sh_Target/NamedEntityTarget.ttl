@@ -1,0 +1,26 @@
+dhpluso:NamedEntityTarget a sh:SPARQLTargetType ;
+    rdfs:subClassOf sh:Target ;
+    rdfs:label
+        "Target for named nodes of class"@en ,
+        "Target für benannte Knoten einer Klasse"@de ;
+    rdfs:definition
+        "Matches all nodes with a dhpluso-class and defined URI."@en ,
+        "Matcht alle Knoten mit dhpluso-Klasse und definierter URI."@de ;
+    sh:labelTemplate
+        "All named entities of class {$class}"@en ,
+        "Alle benannten Entitäten der Klasse {$class}"@en ;
+    sh:parameter [
+        sh:path tmp:class ;
+        sh:description "The class of the focus nodes."@en ;
+        sh:description "Klasse des zu prüfenden Knotens."@en ;
+        sh:class tmp:class ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """ ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

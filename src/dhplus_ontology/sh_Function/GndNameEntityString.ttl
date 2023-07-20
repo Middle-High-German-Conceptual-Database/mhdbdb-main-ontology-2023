@@ -1,0 +1,18 @@
+dhpluso:GndNameEntityString a sh:SPARQLFunction ;
+    rdfs:label
+        "Function to generate a string from a GNDO name entity"@en ,
+        "Funktion zur Generierung eines Strings aus einer GNDO name entity"@de ;
+    skos:definition
+        "Generates a GND-like string from a given name entity."@en ,
+        "Basisklasse aller dhpluso Klassen."@de ;
+    sh:parameter [
+        sh:path dhpluso:nameEntity ;
+        sh:description "a GNDO name entity"@en ;
+        sh:description "eine GNDO name entity"@en ;
+    ] ;
+    sh:returnType xsd:string ;
+    sh:prefixes constants:Prefixes ;
+    sh:select """
+        {{ sparql }}
+        """
+.
