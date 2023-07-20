@@ -1,0 +1,15 @@
+dhpluso:Death a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E69_Death ,
+        dhpluso:Event ;
+    rdfs:label
+        "Death"@en ,
+        "Tod"@de ;
+    skos:definition
+        "This class comprises the death of human beings."@en ,
+        "Diese Klasse umfasst den Tod von Menschen. "@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

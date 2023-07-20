@@ -1,0 +1,14 @@
+dhpluso:BeginningOfExistence a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E63_Beginning_of_Existence ,
+        dhpluso:Event ;
+    rdfs:label
+        "Beginning of Existence"@en ,
+        "Beginn der Existenz"@de ;
+    skos:definition
+        "This class comprises events that bring into existence any instance of Persistent Item."@en ,
+        "Diese Klasse umfasst Ereignisse, die eine beliebige Instanz von Persistent Item ins Leben rufen."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

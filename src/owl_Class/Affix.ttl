@@ -1,0 +1,14 @@
+dhpluso:Affix a owl:Class ;
+    rdfs:subClassOf
+        ontolex:Affix ,
+        dhpluso:LexicalEntry ;
+    rdfs:label
+        "affix entry"@en ,
+        "Affixartikel"@de ;
+    skos:definition
+        "An affix is a lexical entry that represents a morpheme (suffix, prefix, infix, circumfix) that is attached to a word stem to form a new word."@en ,
+        "Ein Affix ist ein lexikalischer Eintrag, der ein Morphem (Suffix, Präfix, Infix, Zirkumfix) darstellt, das an einen Wortstamm angehängt wird, um ein neues Wort zu bilden."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

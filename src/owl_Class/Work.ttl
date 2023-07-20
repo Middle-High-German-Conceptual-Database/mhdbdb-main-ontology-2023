@@ -1,0 +1,16 @@
+dhpluso:Work a owl:Class ;
+    rdfs:subClassOf
+        bf:Work ,
+        ecrm:E89_Propositional_Object ,
+        dhpluso:Bibliographic ;
+    rdfs:label
+    "Work"@en ,
+    "Werk"@de ;
+    skos:definition
+        "Resource reflecting a conceptual essence of a cataloging resource."@en ,
+        "Ressource, die eine konzeptionelle Essenz einer Katalogisierungsressource widerspiegelt."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

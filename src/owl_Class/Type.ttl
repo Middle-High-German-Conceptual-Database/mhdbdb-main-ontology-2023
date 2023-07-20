@@ -1,0 +1,15 @@
+dhpluso:Type a owl:Class;
+    rdfs:subClassOf
+        skos:Concept ,
+        ecrm:E55_Type ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Type"@en ,
+        "Typ"@de ;
+    skos:definition
+        "This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CIDOC CRM classes. Instances of E55 Type represent concepts in contrast to instances of E41 Appellation which are used to name instances of CIDOC CRM classes."@en ,
+        "Diese Klasse umfasst Konzepte, die durch Begriffe aus Thesauri und kontrollierten Vokabularen bezeichnet werden, die zur Charakterisierung und Klassifizierung von Instanzen von CIDOC CRM-Klassen verwendet werden. Instanzen von E55 Type repräsentieren Konzepte im Gegensatz zu Instanzen von E41 Appellation, die zur Benennung von Instanzen von CIDOC-CRM-Klassen verwendet werden."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

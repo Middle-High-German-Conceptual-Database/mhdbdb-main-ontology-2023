@@ -1,0 +1,15 @@
+dhpluso:Print a owl:Class ;
+    rdfs:subClassOf
+        dhpluso:Instance ,
+        ecrm:E89_Propositional_Object ,
+        bf:Print ;
+    rdfs:label
+        "Print"@en ,
+        "Druck"@de ;
+    skos:definition
+        "Resource that is printed."@en ,
+        "Ressource, die gedruckt ist."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

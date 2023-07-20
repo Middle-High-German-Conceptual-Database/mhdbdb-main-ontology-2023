@@ -1,0 +1,15 @@
+dhpluso:Lexicon a owl:Class ;
+    rdfs:subClassOf
+        lime:Lexicon ,
+        dhpluso:Entity ;
+    rdfs:label
+        "lexicon"@en ,
+        "Wörterbuch"@de ;
+    skos:definition
+        "A lexicon represents a collection of lexical entries for a particular language or domain."@en ,
+        "Ein Lexikon ist eine Sammlung von lexikalischen Einträgen für eine bestimmte Sprache oder einen bestimmten Bereich."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

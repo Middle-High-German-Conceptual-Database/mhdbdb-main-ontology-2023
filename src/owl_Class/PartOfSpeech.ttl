@@ -1,0 +1,14 @@
+dhpluso:PartOfSpeech a owl:Class ;
+    rdfs:subClassOf
+        lexinfo:PartOfSpeech ,
+        dhpluso:Entity ;
+    rdfs:label
+        "part of speech"@en ,
+        "Wortart"@de ;
+    skos:definition
+        "A category assigned to a word based on its grammatical and semantic properties."@en ,
+        "Eine Kategorie, die einem Wort auf der Grundlage seiner grammatikalischen und semantischen Eigenschaften zugeordnet wird."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

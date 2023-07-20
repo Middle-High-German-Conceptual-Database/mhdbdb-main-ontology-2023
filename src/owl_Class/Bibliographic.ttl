@@ -1,0 +1,16 @@
+dhpluso:Bibliographic a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E89_Propositional_Object ,
+        ecrm:E73_Information_Object ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Bibliographic Entity"@en ,
+        "Bibliographische Entität"@de ;
+    skos:definition
+        "Bibliographic Entities are Works, Instances and Items."@en ,
+        "Bibliographische Entitäten sind Werke, Instanzen und Exemplare."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-22" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

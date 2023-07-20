@@ -1,0 +1,13 @@
+dhpluso:Gender a owl:Class ;
+    rdfs:subClassOf
+        dhpluso:Type ;
+    rdfs:label
+        "Gender"@en ,
+        "Geschlecht"@de ;
+    skos:definition
+        "Gender"@en ,
+        "Geschlecht"@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

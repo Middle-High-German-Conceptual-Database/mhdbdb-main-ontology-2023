@@ -1,0 +1,14 @@
+dhpluso:Form a owl:Class ;
+    rdfs:subClassOf
+        ontolex:Form ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Form"@en ,
+        "Form"@de ;
+    skos:definition
+        "A form represents one grammatical realization of a lexical entry."@en ,
+        "Eine Form stellt eine grammatikalische Realisierung eines lexikalischen Eintrags dar."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

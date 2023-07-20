@@ -1,0 +1,15 @@
+dhpluso:OnomasticConcept a owl:Class ;
+    rdfs:subClassOf
+        ontolex:LexicalConcept ,
+        dhpluso:Entity ;
+    rdfs:label
+        "onomastic concept"@en ,
+        "onomastische Kategorie"@de ;
+    skos:definition
+        "A onomastic concept represents a categorization of names."@en ,
+        "Ein onomastisches Konzept stellt eine Kategorisierung von Namen dar."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

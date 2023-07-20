@@ -1,0 +1,15 @@
+dhpluso:LexicalConcept a owl:Class ;
+    rdfs:subClassOf
+        ontolex:LexicalConcept ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Lexical Concept"@en ,
+        "Lexikalischer Begriff"@de ;
+    skos:definition
+        "A lexical concept represents a mental abstraction, concept or unit of thought that can be lexicalized by a given collection of senses."@en ,
+        "Ein lexikalisches Konzept ist eine mentale Abstraktion, ein Konzept oder eine Gedankeneinheit, die durch eine bestimmte Sammlung von Bedeutungen lexikalisiert werden kann."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

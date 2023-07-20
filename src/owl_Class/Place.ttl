@@ -1,0 +1,18 @@
+dhpluso:Place a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E53_Place ,
+        gndo:PlaceOrGeographicName ,
+        wd:Q17334923 ,
+        bf:Place ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Place"@en ,
+        "Ort"@de ;
+    skos:definition
+        "A dhpluso place."@en ,
+        "Ein dhpluso Ort."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-19" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

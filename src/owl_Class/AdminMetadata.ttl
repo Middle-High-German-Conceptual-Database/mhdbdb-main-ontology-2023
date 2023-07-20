@@ -1,0 +1,16 @@
+dhpluso:AdminMetadata a owl:Class ;
+    rdfs:subClassOf
+        bf:AdminMetadata ,
+        ecrm:E73_Information_Object ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Admin Metadata"@en , 
+        "Administrative Metadaten"@de ;
+    skos:definition
+        "Metadata about the metadata, especially provenance information."@en ,
+        "Metadaten über die Metadaten, insbesondere Provenienzinformationen."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

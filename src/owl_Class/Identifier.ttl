@@ -1,0 +1,14 @@
+dhpluso:Identifier a owl:Class ;
+    rdfs:subClassOf
+        dhpluso:Appellation ,
+        ecrm:E42_Identifier ;
+    rdfs:label
+        "Indentifier"@en ,
+        "Indentifier"@de ;
+    skos:definition
+        "This class comprises strings or codes assigned to instances of E1 CRM Entity in order to identify them uniquely and permanently within the context of one or more organisations."@en ,
+        "Diese Klasse umfasst Zeichenfolgen oder Codes, die Instanzen von E1 CRM Entity zugewiesen werden, um sie eindeutig und dauerhaft im Kontext einer oder mehrerer Organisationen zu identifizieren."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

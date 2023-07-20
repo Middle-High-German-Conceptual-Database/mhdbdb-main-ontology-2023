@@ -1,0 +1,15 @@
+dhpluso:NameOfThePlace a owl:Class ;
+    rdfs:subClassOf
+        dhpluso:Appellation ,
+        gndo:PlaceOrGeographicName ;
+    rdfs:label
+        "Name entity of a place"@en ,
+        "Namensentität einer Place"@de ;
+    skos:definition
+        "Entity for the different data properties of a places name."@en ,
+        "Entität für die verschiedenen Data Properties eines Ortsnamens."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

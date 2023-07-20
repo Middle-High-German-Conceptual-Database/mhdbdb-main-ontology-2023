@@ -1,0 +1,15 @@
+dhpluso:Birth a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E67_Birth ,
+        dhpluso:BeginningOfExistence ;
+    rdfs:label
+        "Birth"@en ,
+        "Geburt"@de ;
+    skos:definition
+        "This class comprises the births of human beings."@en ,
+        "Diese Klasse umfasst die Geburten von Menschen. "@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

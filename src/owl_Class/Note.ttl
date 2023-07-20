@@ -1,0 +1,16 @@
+dhpluso:Note a owl:Class ;
+    rdfs:subClassOf
+        bf:Note ,
+        ecrm:E73_Information_Object ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Note"@en ,
+        "Anmerkung"@de ;
+    skos:definition
+        "Information, usually in textual form, on attributes of a resource or some aspect of a resource."@en ,
+        "Informationen, in der Regel in Textform, über Attribute einer Ressource oder einen Aspekt einer Ressource."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

@@ -1,0 +1,15 @@
+dhpluso:Creation a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E65_Creation ,
+        dhpluso:BeginningOfExistence ;
+    rdfs:label
+        "Creation"@en ,
+        "Erschaffung"@de ;
+    skos:definition
+        "This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts, music, images, movies, laws, types etc."@en ,
+        "Diese Klasse umfasst Ereignisse, die zur Schaffung von begrifflichen Gegenständen oder immateriellen Produkten führen, wie Legenden, Gedichte, Texte, Musik, Bilder, Filme, Gesetze, Schriften usw."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

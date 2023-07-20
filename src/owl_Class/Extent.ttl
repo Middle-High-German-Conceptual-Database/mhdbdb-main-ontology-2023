@@ -1,0 +1,16 @@
+dhpluso:Extent a owl:Class ;
+    rdfs:subClassOf
+        bf:Extent ,
+        ecrm:E73_Information_Object ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Extent"@en ,
+        "Umfang"@de ;
+    skos:definition
+        "Number and type of units and/or subunits making up a resource."@en ,
+        "Anzahl und Typ der Einheiten und/oder Untereinheiten, aus denen eine Ressource besteht."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

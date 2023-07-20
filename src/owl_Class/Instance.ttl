@@ -1,0 +1,16 @@
+dhpluso:Instance a owl:Class ;
+    rdfs:subClassOf
+        bf:Instance ,
+        ecrm:E89_Propositional_Object ,
+        dhpluso:Bibliographic ;
+    rdfs:label
+        "Instance"@en ,
+        "Instanz"@de ;
+    skos:definition
+        "Resource reflecting an individual, material embodiment of a Work."@en ,
+        "Ressource, die eine individuelle, materielle Verkörperung eines Werkes darstellt."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

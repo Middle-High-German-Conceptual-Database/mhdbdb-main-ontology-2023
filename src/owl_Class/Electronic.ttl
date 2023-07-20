@@ -1,0 +1,15 @@
+dhpluso:Electronic a owl:Class ;
+    rdfs:subClassOf
+        dhpluso:Instance ,
+        bf:Electronic ,
+        ecrm:E73_Information_Object ;
+    rdfs:label
+        "Electronic"@en ,
+        "Elektronische Ressource"@de ;
+    skos:definition
+        "Instance that is intended for manipulation by a computer, accessed either directly or remotely."@en ,
+        "Instanz, die für die Bearbeitung durch einen Computer vorgesehen ist und auf die entweder direkt oder aus der Ferne zugegriffen wird."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

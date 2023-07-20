@@ -1,0 +1,16 @@
+dhpluso:TimeSpan a owl:Class ;
+    rdfs:subClassOf
+        time:TemporalEntity ,
+        ecrm:E52_Time-Span ,
+        bf:Temporal ,
+        dhpluso:Entity ;
+    rdfs:label
+        "time span"@en ,
+        "Zeitspanne"@de ;
+    skos:definition
+        "This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration."@en ,
+        "Diese Klasse umfasst abstrakte zeitliche Ausdehnungen im Sinne der Galileischen Physik, die einen Anfang, ein Ende und eine Dauer haben. "@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

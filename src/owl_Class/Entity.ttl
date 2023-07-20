@@ -1,0 +1,14 @@
+dhpluso:Entity a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E1_CRM_Entity ;
+    rdfs:label
+        "Entity"@en ,
+        "Entität"@de ;
+    skos:definition
+        "Base class for all dhpluso classes."@en ,
+        "Basisklasse aller dhpluso Klassen."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

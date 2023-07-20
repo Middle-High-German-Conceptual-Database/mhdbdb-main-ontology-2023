@@ -1,0 +1,25 @@
+dhpluso:Geometry a owl:Class ;
+    rdfs:subClassOf
+        dhpluso:Appellation ,
+        crm:E94_Space_Primitive , # Not yet in ECRM
+        sf:Geometry ;
+    rdfs:label
+        "Geometry"@en ,
+        "Geometrie"@de ;
+    skos:definition
+        "Root of all geometry classes."@en ,
+        "Oberklasse aller Geometrieklassen."@de ;
+    sh:target [
+        a dhpluso:SubclassTarget ;
+        tmp:class dhpluso:Geometry ;
+    ] ;
+    sh:property [
+        sh:path dhpluso:asWKT ;
+        sh:datatype geo:wktLiteral ;
+        sh:severity sh:Violation ;
+    ] ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

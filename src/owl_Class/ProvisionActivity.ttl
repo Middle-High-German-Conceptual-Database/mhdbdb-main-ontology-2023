@@ -1,0 +1,16 @@
+dhpluso:ProvisionActivity a owl:Class ;
+    rdfs:subClassOf
+        bf:ProvisionActivity ,
+        ecrm:E65_Creation ,
+        dhpluso:Event ;
+    rdfs:label
+        "Provision Activity"@en ,
+        "Veröffentlichung"@de ;
+    skos:definition
+        "Information about the agent or place relating to the publication, printing, distribution, issue, release, or production of a resource."@en ,
+        "Informationen über den Akteur oder Ort, die sich auf die Veröffentlichung, den Druck, die Verteilung, die Ausgabe, die Freigabe oder die Produktion einer Ressource beziehen."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

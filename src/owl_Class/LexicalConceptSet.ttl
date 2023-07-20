@@ -1,0 +1,15 @@
+dhpluso:LexicalConceptSet a owl:Class ;
+    rdfs:subClassOf
+        ontolex:ConceptSet ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Lexical Concept Set"@en ,
+        "Lexikalisches Begriffssystem"@de ;
+    skos:definition
+        "A concept set represents a collection of lexical concepts."@en ,
+        "Ein Begriffssystem stellt eine Sammlung lexikalischer Begriffe dar."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

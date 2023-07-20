@@ -1,0 +1,16 @@
+dhpluso:Title a owl:Class ;
+    rdfs:subClassOf
+        bf:Title ,
+        ecrm:E35_Title ,
+        dhpluso:Appellation ;
+    rdfs:label
+        "Titel"@en ,
+        "Titel"@de ;
+    skos:definition
+        "Title information relating to a resource: work title, preferred title, instance title, transcribed title, translated title, variant form of title, etc."@en ,
+        "Titelinformationen zu einer Ressource: Werktitel, bevorzugter Titel, Instanztitel, transkribierter Titel, übersetzter Titel, abweichende Form des Titels usw."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

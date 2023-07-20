@@ -1,0 +1,14 @@
+dhpluso:Instant a owl:Class ;
+    rdfs:subClassOf
+        time:Instant ,
+        dhpluso:TimeSpan ;
+    rdfs:label
+        "Instant"@en ,
+        "Zeitpunkt"@de ;
+    skos:definition
+        "A temporal entity with zero extent or duration."@en ,
+        "Eine zeitliche Einheit ohne Ausmaß oder Dauer. "@de ;
+    dc:creator "Peter Hinkelmanns" ;    
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

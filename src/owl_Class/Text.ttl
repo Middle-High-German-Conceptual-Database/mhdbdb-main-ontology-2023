@@ -1,0 +1,15 @@
+dhpluso:Text a owl:Class ;
+    rdfs:subClassOf
+        bf:Text ,
+        ecrm:E89_Propositional_Object ,
+        dhpluso:Work ;
+    rdfs:label
+    "Text"@en ,
+    "Text"@de ;
+    skos:definition
+        "Resource intended to be perceived visually and understood through the use of language in written or spoken form."@en ,
+        "Ressource, die dazu bestimmt ist, visuell wahrgenommen und durch den Gebrauch von Sprache in schriftlicher oder gesprochener Form verstanden zu werden."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

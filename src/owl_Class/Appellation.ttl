@@ -1,0 +1,14 @@
+dhpluso:Appellation a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E41_Appellation ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Indentifier"@en ,
+        "Indentifier"@de ;
+    skos:definition
+        "This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context."@en ,
+        "Diese Klasse umfasst sinnvolle oder nicht sinnvolle Zeichen oder Anordnungen von Zeichen, die einer bestimmten Syntax folgen, die verwendet werden oder verwendet werden können, um auf eine bestimmte Instanz einer Klasse oder Kategorie innerhalb eines bestimmten Kontexts zu verweisen und diese zu identifizieren."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-17" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

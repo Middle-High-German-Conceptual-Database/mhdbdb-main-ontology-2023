@@ -1,0 +1,15 @@
+dhpluso:Manuscript a owl:Class ;
+    rdfs:subClassOf
+        dhpluso:Instance ,
+        bf:Manuscript ,
+        ecrm:E22_Human-Made_Object ;
+    rdfs:label
+        "Manuscript"@en ,
+        "Handschrift"@de ;
+    skos:definition
+        "Instance that is written in handwriting or typescript. These are generally unique resources."@en ,
+        "Instanz die hand- oder maschinengeschrieben ist. Üblicherweise ein Unikat."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-11" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

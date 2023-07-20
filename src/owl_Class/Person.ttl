@@ -1,0 +1,18 @@
+dhpluso:Person a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E21_Person ,
+        gndo:Person ,
+        wd:Q5 ,
+        bf:Person ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Person"@en ,
+        "Person"@de ;
+    skos:definition
+        "A dhpluso person."@en ,
+        "Eine dhpluso Person."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

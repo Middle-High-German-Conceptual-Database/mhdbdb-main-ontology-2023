@@ -1,0 +1,15 @@
+dhpluso:OnomasticConceptSet a owl:Class ;
+    rdfs:subClassOf
+        ontolex:ConceptSet ,
+        dhpluso:Entity ;
+    rdfs:label
+        "onomastic concept set"@en ,
+        "Sammlung von Namenskategorisierungen"@de ;
+    skos:definition
+        "A onomastic concept set represents a collection of onomastic concepts."@en ,
+        "Eine Sammlung von Namenskategorisierungen stellt eine Sammlung onomastischer Kategorisierungen dar."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

@@ -1,0 +1,14 @@
+dhpluso:Point a owl:Class ;
+    rdfs:subClassOf
+        dhpluso:Geometry ,
+        ogcsf:Point ;
+    rdfs:label
+        "Point"@en ,
+        "Punkt"@de ;
+    skos:definition
+        "A Point is a 0-dimensional geometric object and represents a single location in coordinate space."@en ,
+        "Ein Punkt ist ein 0-dimensionales geometrisches Objekt und repräsentiert einen einzelnen Ort im Koordinatenraum."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

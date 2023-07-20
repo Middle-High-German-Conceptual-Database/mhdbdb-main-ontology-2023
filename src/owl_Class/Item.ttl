@@ -1,0 +1,16 @@
+dhpluso:Item a owl:Class ;
+    rdfs:subClassOf
+        bf:Item ,
+        ecrm:E22_Human-Made_Object ,
+        dhpluso:Bibliographic ;
+    rdfs:label
+    "Item"@en ,
+    "Exemplar"@de ;
+    skos:definition
+        "Single example of an Instance."@en ,
+        "Einzelnes Exemplar einer Instanz."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

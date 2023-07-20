@@ -1,0 +1,16 @@
+dhpluso:Event a owl:Class ;
+    rdfs:subClassOf
+        ecrm:E5_Event ,
+        bf:Event ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Event"@en ,
+        "Ereignis"@de ;
+    skos:definition
+        "This class comprises distinct, delimited and coherent processes and interactions of a material nature, in cultural, social or physical systems, involving and affecting instances of Persistent Item in a way characteristic of the kind of process. Typical examples are meetings, births, deaths, actions of decision taking, making or inventing things, but also more complex and extended ones such as conferences, elections, building of a castle, or battles."@en ,
+        "Diese Klasse umfasst eindeutige, abgegrenzte und kohärente Prozesse und Interaktionen materieller Natur in kulturellen, sozialen oder physischen Systemen, die Instanzen von Persistent Item in einer für die Art des Prozesses charakteristischen Weise einbeziehen und beeinflussen. Typische Beispiele sind Versammlungen, Geburten, Todesfälle, Handlungen der Entscheidungsfindung, des Herstellens oder Erfindens von Dingen, aber auch komplexere und umfangreichere wie Konferenzen, Wahlen, der Bau einer Burg oder Schlachten."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-23" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

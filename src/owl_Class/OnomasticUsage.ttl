@@ -1,0 +1,15 @@
+dhpluso:OnomasticUsage a owl:Class ;
+    rdfs:label
+        "onomastic usage"@en ,
+        "Eigennamengebrauch"@de ;
+    skos:definition
+        "onomastic usage"@en ,
+        "Eigennamengebrauch"@de ;
+    rdfs:subClassOf
+        ontolex:LexicalSense ,
+        dhpluso:Entity ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

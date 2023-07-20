@@ -1,0 +1,15 @@
+dhpluso:Word a owl:Class ;
+    rdfs:subClassOf
+        ontolex:Word ,
+        dhpluso:LexicalEntry ;
+    rdfs:label
+        "word entry"@en ,
+        "Wortartikel"@de ;
+    skos:definition
+        "A word is a lexical entry that consists of a single token."@en ,
+        "Ein Wort ist ein lexikalischer Eintrag, der aus einem einzigen Token besteht."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

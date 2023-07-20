@@ -1,0 +1,15 @@
+dhpluso:LexicalEntry a owl:Class ;
+    rdfs:subClassOf
+        ontolex:LexicalEntry ,
+        dhpluso:Entity ;
+    rdfs:label
+        "lexical entry"@en ,
+        "lexikalischer Artikel"@de ;
+    skos:definition
+        "A lexical entry represents a unit of analysis of the lexicon that consists of a set of forms that are grammatically related and a set of base meanings that are associated with all of these forms. Thus, a lexical entry is a word, multiword expression or affix with a single part-of-speech, morphological pattern, etymology and set of senses."@en ,
+        "Ein lexikalischer Eintrag stellt eine Analyseeinheit des Lexikons dar, die aus einer Reihe von grammatikalisch verwandten Formen und einer Reihe von Grundbedeutungen besteht, die mit all diesen Formen verbunden sind. Ein lexikalischer Eintrag ist also ein Wort, ein Mehrwortausdruck oder ein Affix mit einem einzigen Part-of-Speech, einem morphologischen Muster, einer Etymologie und einer Reihe von Bedeutungen."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-08-02" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

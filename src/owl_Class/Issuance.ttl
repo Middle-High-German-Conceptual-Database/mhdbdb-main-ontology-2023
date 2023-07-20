@@ -1,0 +1,16 @@
+dhpluso:Issuance a owl:Class ;
+    rdfs:subClassOf
+        bf:Issuance ,
+        ecrm:E73_Information_Object ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Mode of issuance"@en ,
+        "Art der Veröffentlichung"@de ;
+    skos:definition
+        "Information about whether a resource is issued in one or more parts, the way it is updated, and its intended termination."@en ,
+        "Informationen darüber, ob eine Ressource in einem oder mehreren Teilen veröffentlicht wird, wie sie aktualisiert wird und wie sie abgeschlossen werden soll."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

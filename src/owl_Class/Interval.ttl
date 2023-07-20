@@ -1,0 +1,14 @@
+dhpluso:Interval a owl:Class ;
+    rdfs:subClassOf
+        time:Interval ,
+        dhpluso:TimeSpan ;
+    rdfs:label
+        "Interval"@en ,
+        "Zeitspanne"@de ;
+    skos:definition
+        "A temporal entity with an extent or duration."@en ,
+        "Eine zeitliche Einheit mit einem Umfang oder einer Dauer. "@de ;
+    dc:creator "Peter Hinkelmanns" ;    
+    dcterms:created "2021-10-05" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.

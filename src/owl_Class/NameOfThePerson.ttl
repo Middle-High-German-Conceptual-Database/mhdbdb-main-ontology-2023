@@ -1,0 +1,15 @@
+dhpluso:NameOfThePerson a owl:Class ;
+    rdfs:subClassOf
+        dhpluso:Appellation ,
+        gndo:NameOfThePerson ;
+    rdfs:label
+        "Name entity of a person"@en ,
+        "Namensentität einer Person"@de ;
+    skos:definition
+        "Entity for the different data properties of a person's name."@en ,
+        "Entität für die verschiedenen Data Properties eines Personennamens."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-05-12" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

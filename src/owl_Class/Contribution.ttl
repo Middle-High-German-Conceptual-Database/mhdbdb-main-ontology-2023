@@ -1,0 +1,16 @@
+dhpluso:Contribution a owl:Class ;
+    rdfs:subClassOf
+        bf:Contribution ,
+        ecrm:E73_Information_Object ,
+        dhpluso:Entity ;
+    rdfs:label
+        "Contribution"@en ,
+        "Beitrag"@de ;
+    skos:definition
+        "Agent and role with respect to the resource being described."@en ,
+        "Agent und Rolle in Bezug auf die zu beschreibende Ressource."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-21" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
+

@@ -1,0 +1,15 @@
+dhpluso:Publication a owl:Class ;
+    rdfs:subClassOf
+        bf:Publication ,
+        ecrm:E73_Information_Object ,
+        dhpluso:ProvisionActivity ;
+    rdfs:label
+        "Publication"@en ,
+        "Veröffentlichung"@de ;
+    skos:definition
+        "Information relating to publication of a resource."@en ,
+        "Informationen über die Veröffentlichung einer Ressource."@de ;
+    dc:creator "Peter Hinkelmanns" ;
+    dcterms:created "2021-07-28" ;
+    dcterms:modified "{{ modificationDate }}" ;
+.
